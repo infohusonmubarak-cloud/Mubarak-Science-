@@ -25,6 +25,7 @@ export interface Level {
   slug: string;
   name: string;
   description: string;
+  status: ContentStatus;
   chapters: Chapter[];
 }
 
@@ -61,6 +62,13 @@ export interface Concept extends ConceptSummary {
   practiceQuestions: PracticeQuestion[];
   commonMistake: string;
   quickReview: string[];
+  /** Optional links into other subjects/chapters where a genuine conceptual connection exists (e.g. Physics motion → Math line equations). */
+  relatedConcepts?: RelatedConcept[];
+}
+
+export interface RelatedConcept {
+  label: string;
+  href: string;
 }
 
 export interface Formula {
@@ -73,7 +81,7 @@ export interface Formula {
   relatedConceptSlugs: string[];
 }
 
-export type DiagramComponentKey = 'CoordinatePlane' | 'NumberLine' | 'StaticImage';
+export type DiagramComponentKey = 'CoordinatePlane' | 'NumberLine' | 'StaticImage' | 'CellDiagram' | 'MoleculeDiagram';
 
 export interface Diagram {
   id: string;

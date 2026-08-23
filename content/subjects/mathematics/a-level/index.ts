@@ -297,9 +297,10 @@ const chapter10: Chapter = {
   ],
 };
 
-export const levelA = {
-  slug: 'level-a',
-  name: 'Level A',
+export const aLevelMath = {
+  slug: 'a-level',
+  name: 'A-Level',
   description: 'Ten foundational chapters — from coordinate geometry through trigonometry.',
+  status: 'available' as const,
   chapters: [chapter1, chapter2, chapter3, chapter4, chapter5, chapter6, chapter7, chapter8, chapter9, chapter10],
 };

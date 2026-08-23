@@ -3,6 +3,8 @@ import type { DiagramComponentKey } from '@/types/content';
 import { CoordinatePlane } from './CoordinatePlane';
 import { NumberLine } from './NumberLine';
 import { StaticImage } from './StaticImage';
+import { CellDiagram } from './CellDiagram';
+import { MoleculeDiagram } from './MoleculeDiagram';
 
 // Maps a `Diagram.component` key to its implementation. Adding a new
 // diagram type (TriangleDiagram, CircleDiagram, ParabolaGraph, ...) later
@@ -13,4 +15,6 @@ export const diagramRegistry: Record<DiagramComponentKey, ComponentType<any>> = 
   CoordinatePlane,
   NumberLine,
   StaticImage,
+  CellDiagram,
+  MoleculeDiagram,
 };

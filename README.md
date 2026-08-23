@@ -8,16 +8,22 @@ planned to slot in later without rebuilding the app. Every lesson follows the sa
 
 ## Status
 
-This is the foundation build:
+All four subjects — Mathematics, Biology, Chemistry, Physics — are wired up, each with an
+A-Level, B-Level, and C-Level tier:
 
-- The full navigation map exists for all 21 Mathematics chapters (Level A × 10, Level B × 11).
-- **Level A, Chapter 1 — Introduction to Coordinate Geometry** has complete content: 13 concepts,
-  4 formulas, interactive diagrams, worked examples, and practice questions.
+- The full navigation map exists for every chapter: Mathematics 21 (A-Level), Biology 5, Chemistry
+  8, and Physics 11 (all A-Level). B-Level and C-Level are structurally present for every subject
+  but render a "Coming soon" state — no rebuild needed to bring them online later.
+- One flagship chapter per subject has complete content — every concept, formula, diagram, worked
+  example, and practice question fully authored:
+  - **Mathematics, A-Level — Coordinate Geometry** (13 concepts, 4 formulas)
+  - **Biology, A-Level — Cell Structure and Organization** (10 concepts, 1 formula, `CellDiagram`)
+  - **Chemistry, A-Level — Quantities of Substances** (10 concepts, 4 formulas, `MoleculeDiagram`)
+  - **Physics, A-Level — Motion** (9 concepts, 6 formulas, interactive velocity-time graph)
 - Every other chapter renders as a real page in a "Coming soon" state, with its topic/concept
   outline already in place.
 - Progress, bookmarks, and notes persist to the browser via `localStorage` — no account or
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
-- Physics, Chemistry, and Biology are wired up as subjects but have no content yet.
 - Teacher Guide and an admin CMS are stubbed but not built.
 
 ## Getting started
@@ -53,8 +59,10 @@ npm run lint    # eslint
 
 ## Adding content
 
-Chapter 1's files under `content/subjects/mathematics/level-a/chapter-1-coordinate-geometry/`
-(`topics.ts`, `concepts.ts`, `formulas.ts`, `quickRevision.ts`) are the reference example for what
-a fully-authored chapter looks like. Every other chapter in `content/subjects/mathematics/level-a/`
-and `level-b/` is an outline-only stub (`status: 'coming-soon'`) — give it the same treatment to
-bring it online.
+Any of the four flagship chapters' files (e.g.
+`content/subjects/mathematics/a-level/chapter-1-coordinate-geometry/` — `topics.ts`, `concepts.ts`,
+`formulas.ts`, `quickRevision.ts`) are the reference example for what a fully-authored chapter
+looks like. Every other chapter is an outline-only stub (`status: 'coming-soon'`) — give it the
+same treatment to bring it online. Register a new chapter's concepts/formulas in
+`CONTENT_PACKS` in `lib/content/getters.ts`, keyed `${levelSlug}/${chapterSlug}` — chapter slugs
+must stay globally unique across the whole app (see the same note in `CLAUDE.md`).

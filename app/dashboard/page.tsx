@@ -72,7 +72,7 @@ export default function DashboardPage() {
         ) : (
           <p className="text-sm text-foreground-muted">
             No chapters available to track yet — start with{' '}
-            <Button href="/subjects/mathematics/level-a/coordinate-geometry" variant="ghost" size="sm">
+            <Button href="/subjects/mathematics/a-level/coordinate-geometry" variant="ghost" size="sm">
               Coordinate Geometry
             </Button>
             .

@@ -6,9 +6,9 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 ## What this is
 
-Mubarek Science — a modular Science learning platform. Mathematics is the first subject;
-Physics, Chemistry, and Biology are architected for but not yet built. See `README.md` for
-product status and setup commands.
+Mubarek Science — a modular Science learning platform covering Mathematics, Biology, Chemistry,
+and Physics, each with an A-Level, B-Level, and C-Level tier. See `README.md` for product status
+and setup commands.
 
 ## Content architecture — the most important thing to understand here
 
@@ -17,33 +17,49 @@ Content lives entirely as typed data in `content/`, never hardcoded into JSX. Th
 decision: `Chapter.topics` (a `Topic[]`, each holding `ConceptSummary[]`) is the **always-present
 navigation outline** — title, slug, difficulty — while the **full pedagogical body** (`Concept`,
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
-every one of the 21 Mathematics chapters is a real, correctly-titled page even though only
-Chapter 1 (`level-a/coordinate-geometry`) has full content — the rest are outline-only stubs with
-`status: 'coming-soon'`.
+every chapter across all four subjects is a real, correctly-titled page even though only one
+flagship chapter per subject has full content yet — the rest are outline-only stubs with
+`status: 'coming-soon'`. `Level` also carries its own `status` — every subject's B-Level and
+C-Level are `coming-soon` with an empty `chapters: []` until content is written for them; the
+level page (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead
+of a chapter grid when `level.status === 'coming-soon'`.
+
+The four flagship chapters, one per subject, are the reference examples for a fully-authored
+chapter: `mathematics/a-level/coordinate-geometry`, `biology/a-level/cell-structure-and-organization`,
+`chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`.
 
 `lib/content/getters.ts` is the only way pages should read content. It holds a small
 `CONTENT_PACKS` registry mapping `level/chapter` to that chapter's full `{ concepts, formulas }`
 — add an entry there when a new chapter gets full content. Chapter slugs must stay **globally
-unique across the whole app** (not just within a level) — storage (`lib/storage/progress.ts`)
-keys a concept's completion by bare `chapterSlug`, so two chapters sharing a slug would corrupt
-each other's progress. This is why Level B's Circles/Trigonometry chapters are
-`circles-advanced`/`trigonometry-advanced` rather than reusing Level A's `circles`/`trigonometry`.
+unique across the whole app** (not just within a level, and not just within a subject — `a-level`
+is a shared level slug across all four subjects) — storage (`lib/storage/progress.ts`) keys a
+concept's completion by bare `chapterSlug`, so two chapters sharing a slug would corrupt each
+other's progress. This is why Math's Level B Circles/Trigonometry chapters are
+`circles-advanced`/`trigonometry-advanced` rather than reusing Level A's `circles`/`trigonometry`
+— re-check this invariant (e.g. `grep` every chapter's `slug:` across `content/`) whenever adding
+a new subject or level's worth of chapters.
 
 Every full `Concept` follows a fixed nine-part structure (see any entry in
-`content/subjects/mathematics/level-a/chapter-1-coordinate-geometry/concepts.ts`): simple
+`content/subjects/mathematics/a-level/chapter-1-coordinate-geometry/concepts.ts`): simple
 explanation, why it matters, an optional diagram, an optional formula, a worked example, why it
 works, a real-life example, practice questions, a common mistake, and a quick-review bullet list.
 Keep new concepts to that same shape — `components/content/ConceptPageLayout.tsx` renders it
-directly.
+directly. A concept can also carry an optional `relatedConcepts` array (`{ label, href }`) for
+genuine cross-subject links (e.g. a Physics kinematics concept linking to the Math equation it
+relies on) — only add one where a real connection exists, don't force it on every concept.
 
 ## Diagrams
 
 `components/diagrams/registry.ts` maps a `Diagram.component` key (`'CoordinatePlane' |
-'NumberLine' | 'StaticImage'`) to its implementation. `DiagramContainer` renders the registered
-component and — this is a common trap — applies `interactive={diagram.interactive}` **after**
-spreading `diagram.props`, so the top-level `Diagram.interactive` flag on the content object is
-the single source of truth for whether a diagram is draggable. Don't also set `interactive` inside
-a diagram's `props` in content data; it would be redundant at best and confusing at worst.
+'NumberLine' | 'StaticImage' | 'CellDiagram' | 'MoleculeDiagram'`) to its implementation.
+`DiagramContainer` renders the registered component and — this is a common trap — applies
+`interactive={diagram.interactive}` **after** spreading `diagram.props`, so the top-level
+`Diagram.interactive` flag on the content object is the single source of truth for whether a
+diagram is draggable. Don't also set `interactive` inside a diagram's `props` in content data; it
+would be redundant at best and confusing at worst. `CoordinatePlane` is deliberately generic
+enough to be relabelled for non-Math use (see its `xLabel`/`yLabel`/`slopeSymbol` props, used by
+Physics's Motion chapter to present it as a velocity-time graph) — prefer reusing it with new
+labels over building a near-duplicate graphing component.
 
 ## localStorage and hydration
 

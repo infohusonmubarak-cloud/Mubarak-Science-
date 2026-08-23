@@ -501,6 +501,10 @@ export const chapter1Concepts: Record<string, Concept> = {
       'A positive slope rises left to right; a negative slope falls.',
       'Slope is the same wherever you measure it along a straight line.',
     ],
+    relatedConcepts: [
+      { label: 'Distance-Time Graphs (Physics)', href: '/subjects/physics/a-level/motion/distance-time-graphs' },
+      { label: 'Velocity-Time Graphs (Physics)', href: '/subjects/physics/a-level/motion/velocity-time-graphs' },
+    ],
   },
 
   'equation-of-a-straight-line': {
@@ -583,6 +587,9 @@ export const chapter1Concepts: Record<string, Concept> = {
       'y = mx + c describes any straight (non-vertical) line.',
       'm is the slope; c is the y-intercept.',
       'Substitute one known point to solve for c once you know m.',
+    ],
+    relatedConcepts: [
+      { label: 'The First Equation of Motion (Physics)', href: '/subjects/physics/a-level/motion/the-first-equation-of-motion' },
     ],
   },
 
