@@ -12,16 +12,27 @@ All four subjects — Mathematics, Biology, Chemistry, Physics — are wired up,
 A-Level, B-Level, and C-Level tier:
 
 - The full navigation map exists for every chapter: Mathematics 21 (A-Level), Biology 5, Chemistry
-  8, and Physics 11 (all A-Level). B-Level and C-Level are structurally present for every subject
-  but render a "Coming soon" state — no rebuild needed to bring them online later.
-- One flagship chapter per subject has complete content — every concept, formula, diagram, worked
-  example, and practice question fully authored:
+  8, Physics 11 (A-Level) + 13 (C-Level). B-Level is structurally present for every subject (and
+  C-Level for Biology/Chemistry/Mathematics) but renders a "Coming soon" state — no rebuild needed
+  to bring it online later.
+- One flagship chapter per subject/level has complete content — every concept, formula, diagram,
+  worked example, and practice question fully authored:
   - **Mathematics, A-Level — Coordinate Geometry** (13 concepts, 4 formulas)
   - **Biology, A-Level — Cell Structure and Organization** (10 concepts, 1 formula, `CellDiagram`)
   - **Chemistry, A-Level — Quantities of Substances** (10 concepts, 4 formulas, `MoleculeDiagram`)
   - **Physics, A-Level — Motion** (9 concepts, 6 formulas, interactive velocity-time graph)
+  - **Physics, C-Level — Forces in Circular Motion** (8 concepts, 2 formulas, `CircularMotionDiagram`,
+    plus a full graded Assessment — see below)
 - Every other chapter renders as a real page in a "Coming soon" state, with its topic/concept
   outline already in place.
+- **Assessments**: a chapter can carry a graded `Assessment` — a balanced set of questions across
+  five parts (concept, formula application, problem solving, real-life application, challenge).
+  `AssessmentRunner` collects every answer before scoring (no per-question feedback until submit),
+  then shows a score, a correct/incorrect breakdown, and a "topics to review" list linking back to
+  the concepts behind any wrong answer. Results persist to `localStorage`
+  (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Currently wired up only
+  for Physics C-Level's flagship chapter; every other chapter's `/assessment` route renders a
+  "Coming soon" panel until one is authored.
 - Progress, bookmarks, and notes persist to the browser via `localStorage` — no account or
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
 - Teacher Guide and an admin CMS are stubbed but not built.
@@ -59,10 +70,12 @@ npm run lint    # eslint
 
 ## Adding content
 
-Any of the four flagship chapters' files (e.g.
-`content/subjects/mathematics/a-level/chapter-1-coordinate-geometry/` — `topics.ts`, `concepts.ts`,
-`formulas.ts`, `quickRevision.ts`) are the reference example for what a fully-authored chapter
-looks like. Every other chapter is an outline-only stub (`status: 'coming-soon'`) — give it the
-same treatment to bring it online. Register a new chapter's concepts/formulas in
-`CONTENT_PACKS` in `lib/content/getters.ts`, keyed `${levelSlug}/${chapterSlug}` — chapter slugs
-must stay globally unique across the whole app (see the same note in `CLAUDE.md`).
+Any of the five flagship chapters' files (e.g.
+`content/subjects/physics/c-level/chapter-2-forces-in-circular-motion/` — `topics.ts`,
+`concepts.ts`, `formulas.ts`, `quickRevision.ts`, and optionally `assessment.ts`) are the
+reference example for what a fully-authored chapter looks like. Every other chapter is an
+outline-only stub (`status: 'coming-soon'`) — give it the same treatment to bring it online.
+Register a new chapter's concepts/formulas in `CONTENT_PACKS` in `lib/content/getters.ts`, keyed
+`${levelSlug}/${chapterSlug}` — chapter slugs (and concept slugs) must stay globally unique across
+the whole app (see the same note in `CLAUDE.md`). A chapter's `assessment` field needs no separate
+registration — like `quickRevision`, it's just set directly on the `Chapter` object.

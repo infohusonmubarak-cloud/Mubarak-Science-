@@ -16,6 +16,10 @@ import {
   chapter2PhysicsConcepts,
   chapter2PhysicsFormulas,
 } from '@/content/subjects/physics/a-level/chapter-2-motion';
+import {
+  chapter2CForcesConcepts,
+  chapter2CForcesFormulas,
+} from '@/content/subjects/physics/c-level/chapter-2-forces-in-circular-motion';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -30,6 +34,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
+  'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {

@@ -37,6 +37,7 @@ export interface Chapter {
   status: ContentStatus;
   topics: Topic[];
   quickRevision?: QuickRevision;
+  assessment?: Assessment;
 }
 
 export interface Topic {
@@ -81,7 +82,13 @@ export interface Formula {
   relatedConceptSlugs: string[];
 }
 
-export type DiagramComponentKey = 'CoordinatePlane' | 'NumberLine' | 'StaticImage' | 'CellDiagram' | 'MoleculeDiagram';
+export type DiagramComponentKey =
+  | 'CoordinatePlane'
+  | 'NumberLine'
+  | 'StaticImage'
+  | 'CellDiagram'
+  | 'MoleculeDiagram'
+  | 'CircularMotionDiagram';
 
 export interface Diagram {
   id: string;
@@ -148,4 +155,26 @@ export interface RevisionItem {
   keyPoint: string;
   formulaSlug?: string;
   miniExample: string;
+}
+
+// A chapter's graded assessment. Deliberately reuses `PracticeQuestion`
+// (multiple-choice/numeric) rather than inventing a parallel question
+// format — an assessment question is a practice question plus the two
+// things scoring needs: which curriculum "part" it belongs to (for a
+// balanced assessment, mirroring the PRD's Part A-E structure) and which
+// concept it maps back to (so a wrong answer can be attributed to a
+// specific "weak topic" to review, not just a raw score).
+export type AssessmentPart = 'concept' | 'formula-application' | 'problem-solving' | 'real-life-application' | 'challenge';
+
+export interface AssessmentQuestion {
+  id: string;
+  part: AssessmentPart;
+  conceptSlug: string;
+  conceptTitle: string;
+  question: PracticeQuestion;
+}
+
+export interface Assessment {
+  id: string;
+  questions: AssessmentQuestion[];
 }
