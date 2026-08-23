@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import type { Concept, Formula } from '@/types/content';
 import { DiagramContainer } from '@/components/diagrams/DiagramContainer';
 import { FormulaCard } from './FormulaCard';
@@ -92,6 +93,23 @@ export function ConceptPageLayout({ concept, formula, chapterSlug }: ConceptPage
       <Section title="Quick Review">
         <QuickReviewList points={concept.quickReview} />
       </Section>
+
+      {concept.relatedConcepts && concept.relatedConcepts.length > 0 ? (
+        <Section title="Related Concepts">
+          <ul className="flex flex-wrap gap-2">
+            {concept.relatedConcepts.map((related) => (
+              <li key={related.href}>
+                <Link
+                  href={related.href}
+                  className="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1.5 text-sm text-accent transition-colors hover:border-accent/50 hover:bg-accent-soft"
+                >
+                  {related.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
     </article>
   );
 }

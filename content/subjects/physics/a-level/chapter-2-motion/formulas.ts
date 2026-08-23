@@ -1,0 +1,86 @@
+import type { Formula } from '@/types/content';
+
+export const chapter2PhysicsFormulas: Record<string, Formula> = {
+  'speed-formula': {
+    slug: 'speed-formula',
+    name: 'Speed',
+    expression: 'speed = distance / time',
+    meaning: 'How fast an object is moving, regardless of direction.',
+    variables: [
+      { symbol: 'speed', meaning: 'rate of motion, in metres per second (m/s)' },
+      { symbol: 'distance', meaning: 'total path length travelled, in metres (m)' },
+      { symbol: 'time', meaning: 'time taken, in seconds (s)' },
+    ],
+    whenToUse: 'Whenever you need how fast something moved, without needing to know its direction.',
+    relatedConceptSlugs: ['speed', 'distance-time-graphs'],
+  },
+  'velocity-formula': {
+    slug: 'velocity-formula',
+    name: 'Velocity',
+    expression: 'velocity = displacement / time',
+    meaning: 'Speed in a specific direction.',
+    variables: [
+      { symbol: 'velocity', meaning: 'rate of displacement, in metres per second (m/s), in a stated direction' },
+      { symbol: 'displacement', meaning: 'straight-line distance from start to finish, in a direction, in metres (m)' },
+      { symbol: 'time', meaning: 'time taken, in seconds (s)' },
+    ],
+    whenToUse: 'Whenever direction matters, not just how fast something is moving.',
+    relatedConceptSlugs: ['velocity'],
+  },
+  'acceleration-formula': {
+    slug: 'acceleration-formula',
+    name: 'Acceleration',
+    expression: 'a = (v − u) / t',
+    meaning: 'How quickly velocity is changing.',
+    variables: [
+      { symbol: 'a', meaning: 'acceleration, in metres per second squared (m/s²)' },
+      { symbol: 'v', meaning: 'final velocity, in m/s' },
+      { symbol: 'u', meaning: 'initial velocity, in m/s' },
+      { symbol: 't', meaning: 'time taken for the change, in seconds (s)' },
+    ],
+    whenToUse: 'Whenever an object is speeding up, slowing down, or changing direction, and you need to measure the rate.',
+    relatedConceptSlugs: ['acceleration', 'velocity-time-graphs'],
+  },
+  'suvat-v-equals-u-plus-at': {
+    slug: 'suvat-v-equals-u-plus-at',
+    name: 'Equation of Motion: v = u + at',
+    expression: 'v = u + at',
+    meaning: 'Final velocity from initial velocity, acceleration, and time.',
+    variables: [
+      { symbol: 'v', meaning: 'final velocity (m/s)' },
+      { symbol: 'u', meaning: 'initial velocity (m/s)' },
+      { symbol: 'a', meaning: 'acceleration (m/s²)' },
+      { symbol: 't', meaning: 'time (s)' },
+    ],
+    whenToUse: 'Whenever you know initial velocity, acceleration and time, and need the final velocity.',
+    relatedConceptSlugs: ['the-first-equation-of-motion'],
+  },
+  'suvat-s-equals-ut-plus-half-at-squared': {
+    slug: 'suvat-s-equals-ut-plus-half-at-squared',
+    name: 'Equation of Motion: s = ut + ½at²',
+    expression: 's = ut + ½at²',
+    meaning: 'Displacement from initial velocity, acceleration, and time.',
+    variables: [
+      { symbol: 's', meaning: 'displacement (m)' },
+      { symbol: 'u', meaning: 'initial velocity (m/s)' },
+      { symbol: 'a', meaning: 'acceleration (m/s²)' },
+      { symbol: 't', meaning: 'time (s)' },
+    ],
+    whenToUse: 'Whenever you know initial velocity, acceleration and time, and need the distance travelled.',
+    relatedConceptSlugs: ['the-second-equation-of-motion', 'free-fall'],
+  },
+  'suvat-v-squared-equals-u-squared-plus-2as': {
+    slug: 'suvat-v-squared-equals-u-squared-plus-2as',
+    name: 'Equation of Motion: v² = u² + 2as',
+    expression: 'v² = u² + 2as',
+    meaning: 'Final velocity from initial velocity, acceleration, and displacement — no time needed.',
+    variables: [
+      { symbol: 'v', meaning: 'final velocity (m/s)' },
+      { symbol: 'u', meaning: 'initial velocity (m/s)' },
+      { symbol: 'a', meaning: 'acceleration (m/s²)' },
+      { symbol: 's', meaning: 'displacement (m)' },
+    ],
+    whenToUse: 'Whenever time is unknown but displacement is, and you need velocity or acceleration.',
+    relatedConceptSlugs: ['the-third-equation-of-motion'],
+  },
+};

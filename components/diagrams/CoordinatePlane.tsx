@@ -23,6 +23,11 @@ export interface CoordinatePlaneProps {
   /** Mark and label where that line crosses each axis. Requires `showLine`. */
   showIntercepts?: boolean;
   highlightQuadrants?: boolean;
+  /** Axis labels — lets this component double as e.g. a velocity-time graph without a separate component. Defaults to 'x'/'y'. */
+  xLabel?: string;
+  yLabel?: string;
+  /** Symbol shown in the live slope readout when `showSlope` is set (e.g. 'a' for acceleration on a velocity-time graph). Defaults to 'm'. */
+  slopeSymbol?: string;
 }
 
 const SIZE = 320;
@@ -44,6 +49,9 @@ export function CoordinatePlane({
   showLine = false,
   showIntercepts = false,
   highlightQuadrants = false,
+  xLabel = 'x',
+  yLabel = 'y',
+  slopeSymbol = 'm',
 }: CoordinatePlaneProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [pointA, setPointA] = useState(initialA ?? { x: -2, y: -2, label: 'A' });
@@ -190,6 +198,8 @@ export function CoordinatePlane({
         );
       })}
       <text x={originPixel.px - 6} y={originPixel.py + 12} textAnchor="end" className="fill-foreground-muted text-[8px]">0</text>
+      <text x={SIZE - PADDING} y={originPixel.py - 6} textAnchor="end" className="fill-foreground-muted text-[9px] font-medium">{xLabel}</text>
+      <text x={originPixel.px + 8} y={PADDING + 2} textAnchor="start" className="fill-foreground-muted text-[9px] font-medium">{yLabel}</text>
 
       {lineEndpoints ? (
         <line
@@ -261,7 +271,7 @@ export function CoordinatePlane({
         <foreignObject x={PADDING} y={2} width={SIZE - 2 * PADDING} height={20}>
           <div className="flex justify-center gap-3 text-[10px] font-medium text-foreground-muted">
             {showDistance ? <span>d = {round1(distance)}</span> : null}
-            {showSlope ? <span>m = {slopeUndefined ? 'undefined' : round1(slope ?? 0)}</span> : null}
+            {showSlope ? <span>{slopeSymbol} = {slopeUndefined ? 'undefined' : round1(slope ?? 0)}</span> : null}
           </div>
         </foreignObject>
       ) : null}

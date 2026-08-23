@@ -31,7 +31,7 @@ export default function HomePage() {
         <h1 className="mx-auto max-w-2xl text-3xl font-bold text-foreground sm:text-4xl">{BRAND.tagline}</h1>
         <p className="mx-auto max-w-xl text-base text-foreground-muted">{BRAND.description}</p>
         <div className="flex flex-wrap justify-center gap-3 pt-2">
-          <Button href="/subjects/mathematics/level-a/coordinate-geometry">Start Learning</Button>
+          <Button href="/subjects/mathematics/a-level/coordinate-geometry">Start Learning</Button>
           <Button href="/subjects/mathematics" variant="secondary">Explore Mathematics</Button>
           <Button href="/teacher-guide" variant="secondary">Teacher Guide</Button>
           <Button href="/revision" variant="ghost">Quick Revision</Button>

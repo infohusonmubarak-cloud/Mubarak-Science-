@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllSubjectParams, getSubject } from '@/lib/content/getters';
 import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/Badge';
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { ComingSoonPanel } from '@/components/content/ComingSoonPanel';
 
@@ -40,9 +41,14 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
         <div className="grid gap-4 sm:grid-cols-2">
           {subject.levels.map((level) => (
             <Card key={level.slug} href={`/subjects/${subject.slug}/${level.slug}`} className="p-6">
-              <h2 className="text-lg font-semibold text-foreground">{level.name}</h2>
+              <div className="flex items-start justify-between gap-3">
+                <h2 className="text-lg font-semibold text-foreground">{level.name}</h2>
+                {level.status === 'coming-soon' ? <Badge tone="brand">Coming soon</Badge> : null}
+              </div>
               <p className="mt-1 text-sm text-foreground-muted">{level.description}</p>
-              <p className="mt-3 text-sm font-medium text-brand">{level.chapters.length} chapters</p>
+              {level.status === 'available' ? (
+                <p className="mt-3 text-sm font-medium text-brand">{level.chapters.length} chapters</p>
+              ) : null}
             </Card>
           ))}
         </div>

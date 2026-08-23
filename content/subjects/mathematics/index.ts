@@ -1,6 +1,14 @@
-import type { Subject } from '@/types/content';
-import { levelA } from './level-a';
-import { levelB } from './level-b';
+import type { Level, Subject } from '@/types/content';
+import { aLevelMath } from './a-level';
+import { bLevelMath } from './b-level';
+
+const cLevelMath: Level = {
+  slug: 'c-level',
+  name: 'C-Level',
+  description: 'The next tier of Mathematics chapters — not written yet.',
+  status: 'coming-soon',
+  chapters: [],
+};
 
 export const mathematics: Subject = {
   slug: 'mathematics',
@@ -8,5 +16,5 @@ export const mathematics: Subject = {
   shortDescription: 'Coordinate geometry, functions, trigonometry, statistics, vectors and more — understood, not memorized.',
   iconKey: 'mathematics',
   status: 'available',
-  levels: [levelA, levelB],
+  levels: [aLevelMath, bLevelMath, cLevelMath],
 };

@@ -3,16 +3,33 @@ import { subjects, subjectsBySlug } from '@/content';
 import {
   chapter1Concepts,
   chapter1Formulas,
-} from '@/content/subjects/mathematics/level-a/chapter-1-coordinate-geometry';
+} from '@/content/subjects/mathematics/a-level/chapter-1-coordinate-geometry';
+import {
+  chapter2BioConcepts,
+  chapter2BioFormulas,
+} from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
+import {
+  chapter4ChemConcepts,
+  chapter4ChemFormulas,
+} from '@/content/subjects/chemistry/a-level/chapter-4-quantities-of-substances';
+import {
+  chapter2PhysicsConcepts,
+  chapter2PhysicsFormulas,
+} from '@/content/subjects/physics/a-level/chapter-2-motion';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
- * authored (currently just Chapter 1). This registry maps `level/chapter`
- * to that chapter's full content pack, so getters can look bodies up
- * without every stub chapter needing empty placeholder files.
+ * authored. This registry maps `level/chapter` to that chapter's full
+ * content pack, so getters can look bodies up without every stub chapter
+ * needing empty placeholder files. The key omits `subjectSlug` — safe only
+ * because chapter slugs are a documented globally-unique invariant (see
+ * CLAUDE.md), verified again each time a subject is added.
  */
 const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formulas: Record<string, Formula> }> = {
-  'level-a/coordinate-geometry': { concepts: chapter1Concepts, formulas: chapter1Formulas },
+  'a-level/coordinate-geometry': { concepts: chapter1Concepts, formulas: chapter1Formulas },
+  'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
+  'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
+  'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {
