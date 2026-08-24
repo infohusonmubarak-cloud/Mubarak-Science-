@@ -1,47 +1,12 @@
 import type { Chapter } from '@/types/content';
 import { chapter1 } from './chapter-1-coordinate-geometry';
 import { chapter2 } from './chapter-2-exponents-and-radicals';
+import { chapter3 } from './chapter-3-logarithms';
 
-// Chapters 3-10 are outline-only stubs for this pass: every chapter is a
+// Chapters 4-10 are outline-only stubs for this pass: every chapter is a
 // real, navigable page with an accurate topic/concept map, but only
-// Chapters 1-2 have full concept bodies written. `status: 'coming-soon'`
+// Chapters 1-3 have full concept bodies written. `status: 'coming-soon'`
 // drives the ComingSoonPanel instead of a full concept template.
-
-const chapter3: Chapter = {
-  slug: 'logarithms',
-  number: 3,
-  title: 'Logarithms',
-  blurb: 'What a logarithm means, how it connects to exponents, and the product, quotient, and power rules used to solve exponential and logarithmic equations.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'what-is-a-logarithm',
-      title: 'What Is a Logarithm?',
-      concepts: [
-        { slug: 'meaning-of-a-logarithm', title: 'Meaning of a Logarithm' },
-        { slug: 'common-and-natural-logarithms', title: 'Common and Natural Logarithms' },
-      ],
-    },
-    {
-      slug: 'logarithm-rules',
-      title: 'Logarithm Rules',
-      concepts: [
-        { slug: 'product-and-quotient-rules', title: 'Product and Quotient Rules' },
-        { slug: 'power-rule', title: 'Power Rule' },
-        { slug: 'change-of-base', title: 'Change of Base' },
-      ],
-    },
-    {
-      slug: 'solving-equations',
-      title: 'Solving Exponential and Logarithmic Equations',
-      concepts: [
-        { slug: 'solving-exponential-equations', title: 'Solving Exponential Equations' },
-        { slug: 'solving-logarithmic-equations', title: 'Solving Logarithmic Equations' },
-        { slug: 'logarithms-in-real-life', title: 'Logarithms in Real Life (pH, Sound, Earthquakes)' },
-      ],
-    },
-  ],
-};
 
 const chapter4: Chapter = {
   slug: 'functions',

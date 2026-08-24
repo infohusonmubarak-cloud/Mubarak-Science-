@@ -9,6 +9,10 @@ import {
   chapter2Formulas as chapter2MathFormulas,
 } from '@/content/subjects/mathematics/a-level/chapter-2-exponents-and-radicals';
 import {
+  chapter3Concepts as chapter3MathConcepts,
+  chapter3Formulas as chapter3MathFormulas,
+} from '@/content/subjects/mathematics/a-level/chapter-3-logarithms';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -140,6 +144,7 @@ import {
 const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formulas: Record<string, Formula> }> = {
   'a-level/coordinate-geometry': { concepts: chapter1Concepts, formulas: chapter1Formulas },
   'a-level/exponents-and-radicals': { concepts: chapter2MathConcepts, formulas: chapter2MathFormulas },
+  'a-level/logarithms': { concepts: chapter3MathConcepts, formulas: chapter3MathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
