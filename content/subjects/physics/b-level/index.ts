@@ -5,46 +5,11 @@ import { chapter3Pressure } from './chapter-3-pressure-in-fluids-and-atmosphere'
 import { chapter4Power } from './chapter-4-power-and-efficiency';
 import { chapter5Heat } from './chapter-5-heat-and-thermal-phenomena';
 import { chapter6Vibration } from './chapter-6-vibration-of-strings-and-resonance';
+import { chapter7Refraction } from './chapter-7-refraction-of-light-b-level';
 
-// Chapters 1-6 are fully authored; the remaining six are outline-only
+// Chapters 1-7 are fully authored; the remaining five are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter7: Chapter = {
-  slug: 'refraction-of-light-b-level',
-  number: 7,
-  title: 'Refraction of Light',
-  blurb: 'The nature and velocity of light, the laws of refraction, refractive index, critical angle and total internal reflection.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'nature-and-velocity-of-light-topic',
-      title: 'The Nature of Light and Velocity of Light',
-      concepts: [
-        { slug: 'the-nature-of-light', title: 'The Nature of Light' },
-        { slug: 'velocity-of-light', title: 'Velocity of Light' },
-      ],
-    },
-    {
-      slug: 'refraction-and-laws-topic',
-      title: 'Refraction of Light and Laws of Refraction',
-      concepts: [
-        { slug: 'refraction-of-light-b-level', title: 'Refraction of Light' },
-        { slug: 'laws-of-refraction', title: 'Laws of Refraction' },
-      ],
-    },
-    {
-      slug: 'refractive-index-topic',
-      title: 'Refractive Index',
-      concepts: [{ slug: 'refractive-index-b-level', title: 'Refractive Index' }],
-    },
-    {
-      slug: 'critical-angle-and-tir-topic',
-      title: 'Critical Angle and Total Internal Reflection',
-      concepts: [{ slug: 'critical-angle-and-total-internal-reflection', title: 'Critical Angle and Total Internal Reflection' }],
-    },
-  ],
-};
 
 const chapter8: Chapter = {
   slug: 'lenses',
@@ -218,6 +183,6 @@ export const bLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6Vibration,
-    chapter7, chapter8, chapter9, chapter10, chapter11, chapter12,
+    chapter7Refraction, chapter8, chapter9, chapter10, chapter11, chapter12,
   ],
 };

@@ -41,6 +41,10 @@ import {
   chapter6VibrationFormulas,
 } from '@/content/subjects/physics/b-level/chapter-6-vibration-of-strings-and-resonance';
 import {
+  chapter7RefractionConcepts,
+  chapter7RefractionFormulas,
+} from '@/content/subjects/physics/b-level/chapter-7-refraction-of-light-b-level';
+import {
   chapter2CForcesConcepts,
   chapter2CForcesFormulas,
 } from '@/content/subjects/physics/c-level/chapter-2-forces-in-circular-motion';
@@ -120,6 +124,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/power-and-efficiency': { concepts: chapter4PowerConcepts, formulas: chapter4PowerFormulas },
   'b-level/heat-and-thermal-phenomena': { concepts: chapter5HeatConcepts, formulas: chapter5HeatFormulas },
   'b-level/vibration-of-strings-and-resonance': { concepts: chapter6VibrationConcepts, formulas: chapter6VibrationFormulas },
+  'b-level/refraction-of-light-b-level': { concepts: chapter7RefractionConcepts, formulas: chapter7RefractionFormulas },
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
