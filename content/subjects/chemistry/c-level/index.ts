@@ -1,44 +1,10 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1Bonding } from './chapter-1-chemical-bonding-and-intermolecular-forces';
+import { chapter2Energy } from './chapter-2-energy-changes-in-chemical-reactions';
 
-// Chapter 1 is fully authored; the other seven are outline-only stubs for
-// now — real, navigable pages with an accurate section map, upgraded to
-// full chapters one batch at a time.
-
-const chapter2: Chapter = {
-  slug: 'energy-changes-in-chemical-reactions',
-  number: 2,
-  title: 'Energy Changes in Chemical Reactions',
-  blurb: 'Energy changes, exothermic and endothermic reactions, and using Hess\'s law to find enthalpy changes indirectly.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'energy-changes-topic',
-      title: 'Energy Changes',
-      concepts: [
-        { slug: 'forms-of-energy-in-chemistry', title: 'Forms of Energy in Chemistry' },
-        { slug: 'internal-energy-and-enthalpy', title: 'Internal Energy and Enthalpy' },
-      ],
-    },
-    {
-      slug: 'energy-changes-in-chemical-reactions-topic',
-      title: 'Energy Changes in Chemical Reactions',
-      concepts: [
-        { slug: 'exothermic-and-endothermic-reactions', title: 'Exothermic and Endothermic Reactions' },
-        { slug: 'enthalpy-diagrams', title: 'Enthalpy Diagrams' },
-        { slug: 'standard-enthalpy-of-reaction', title: 'Standard Enthalpy of Reaction' },
-      ],
-    },
-    {
-      slug: 'hesss-law-topic',
-      title: "Hess's Law",
-      concepts: [
-        { slug: 'hesss-law', title: "Hess's Law" },
-        { slug: 'calculating-enthalpy-changes-using-hesss-law', title: "Calculating Enthalpy Changes Using Hess's Law" },
-      ],
-    },
-  ],
-};
+// Chapters 1-2 are fully authored; the other six are outline-only stubs
+// for now — real, navigable pages with an accurate section map, upgraded
+// to full chapters one batch at a time.
 
 const chapter3: Chapter = {
   slug: 'chemical-kinetics-rates-of-reaction',
@@ -273,5 +239,5 @@ export const cLevelChemistry: Level = {
   name: 'C-Level',
   description: 'Eight chapters — from chemical bonding through organic compounds and macromolecules.',
   status: 'available',
-  chapters: [chapter1Bonding, chapter2, chapter3, chapter4, chapter5, chapter6, chapter7, chapter8],
+  chapters: [chapter1Bonding, chapter2Energy, chapter3, chapter4, chapter5, chapter6, chapter7, chapter8],
 };
