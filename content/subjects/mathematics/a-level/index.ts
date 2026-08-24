@@ -2,41 +2,12 @@ import type { Chapter } from '@/types/content';
 import { chapter1 } from './chapter-1-coordinate-geometry';
 import { chapter2 } from './chapter-2-exponents-and-radicals';
 import { chapter3 } from './chapter-3-logarithms';
+import { chapter4 } from './chapter-4-functions';
 
-// Chapters 4-10 are outline-only stubs for this pass: every chapter is a
+// Chapters 5-10 are outline-only stubs for this pass: every chapter is a
 // real, navigable page with an accurate topic/concept map, but only
-// Chapters 1-3 have full concept bodies written. `status: 'coming-soon'`
+// Chapters 1-4 have full concept bodies written. `status: 'coming-soon'`
 // drives the ComingSoonPanel instead of a full concept template.
-
-const chapter4: Chapter = {
-  slug: 'functions',
-  number: 4,
-  title: 'Functions',
-  blurb: 'Relations, domain and range, function notation, and how to combine and invert functions.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'what-is-a-function',
-      title: 'What Is a Function?',
-      concepts: [
-        { slug: 'relations-and-functions', title: 'Relations and Functions' },
-        { slug: 'domain-and-range', title: 'Domain and Range' },
-        { slug: 'function-notation', title: 'Function Notation and Evaluating Functions' },
-      ],
-    },
-    {
-      slug: 'working-with-functions',
-      title: 'Working with Functions',
-      concepts: [
-        { slug: 'graphs-of-functions', title: 'Graphs of Functions' },
-        { slug: 'one-to-one-functions', title: 'One-to-One Functions' },
-        { slug: 'composite-functions', title: 'Composite Functions' },
-        { slug: 'inverse-functions', title: 'Inverse Functions' },
-        { slug: 'increasing-and-decreasing-functions', title: 'Increasing and Decreasing Functions' },
-      ],
-    },
-  ],
-};
 
 const chapter5: Chapter = {
   slug: 'quadratic-functions',
