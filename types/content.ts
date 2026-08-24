@@ -97,7 +97,9 @@ export type DiagramComponentKey =
   | 'StaticImage'
   | 'CellDiagram'
   | 'MoleculeDiagram'
-  | 'CircularMotionDiagram';
+  | 'CircularMotionDiagram'
+  | 'FunctionGraph'
+  | 'GeometryDiagram';
 
 export interface Diagram {
   id: string;

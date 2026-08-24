@@ -6,11 +6,12 @@ import { StaticImage } from './StaticImage';
 import { CellDiagram } from './CellDiagram';
 import { MoleculeDiagram } from './MoleculeDiagram';
 import { CircularMotionDiagram } from './CircularMotionDiagram';
+import { FunctionGraph } from './FunctionGraph';
+import { GeometryDiagram } from './GeometryDiagram';
 
 // Maps a `Diagram.component` key to its implementation. Adding a new
-// diagram type (TriangleDiagram, CircleDiagram, ParabolaGraph, ...) later
-// is additive: write the component, add one line here, extend
-// `DiagramComponentKey` in types/content.ts.
+// diagram type later is additive: write the component, add one line here,
+// extend `DiagramComponentKey` in types/content.ts.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- each entry's real props type is narrowed at the call site in DiagramContainer
 export const diagramRegistry: Record<DiagramComponentKey, ComponentType<any>> = {
   CoordinatePlane,
@@ -19,4 +20,6 @@ export const diagramRegistry: Record<DiagramComponentKey, ComponentType<any>> = 
   CellDiagram,
   MoleculeDiagram,
   CircularMotionDiagram,
+  FunctionGraph,
+  GeometryDiagram,
 };
