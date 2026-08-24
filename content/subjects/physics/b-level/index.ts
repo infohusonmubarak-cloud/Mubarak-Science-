@@ -3,47 +3,11 @@ import { chapter1MotionInAPlane } from './chapter-1-motion-in-a-plane';
 import { chapter2RotationalDynamics } from './chapter-2-rotational-dynamics';
 import { chapter3Pressure } from './chapter-3-pressure-in-fluids-and-atmosphere';
 import { chapter4Power } from './chapter-4-power-and-efficiency';
+import { chapter5Heat } from './chapter-5-heat-and-thermal-phenomena';
 
-// Chapters 1-4 are fully authored; the remaining eight are outline-only
+// Chapters 1-5 are fully authored; the remaining seven are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter5: Chapter = {
-  slug: 'heat-and-thermal-phenomena',
-  number: 5,
-  title: 'Heat and Thermal Phenomena',
-  blurb: 'Units of heat, internal energy, thermal and specific heat capacity, the law of heat exchange, and change of state with latent heat.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'units-of-heat-and-internal-energy-topic',
-      title: 'Units of Heat and Internal Energy',
-      concepts: [
-        { slug: 'units-of-heat', title: 'Units of Heat' },
-        { slug: 'heat-and-internal-energy', title: 'Heat and Internal Energy' },
-      ],
-    },
-    {
-      slug: 'thermal-and-specific-heat-capacity-topic',
-      title: 'Thermal Capacity and Specific Heat Capacity',
-      concepts: [
-        { slug: 'thermal-capacity', title: 'Thermal Capacity' },
-        { slug: 'specific-heat-capacity', title: 'Specific Heat Capacity' },
-        { slug: 'law-of-heat-exchange', title: 'Law of Heat Exchange' },
-      ],
-    },
-    {
-      slug: 'change-of-state-and-latent-heat-topic',
-      title: 'Change of State and Latent Heat',
-      concepts: [
-        { slug: 'change-of-state-and-latent-heat', title: 'Change of State and Latent Heat' },
-        { slug: 'vaporization-and-specific-latent-heat', title: 'Vaporization and Specific Latent Heat of Vaporization' },
-        { slug: 'fusion-and-specific-latent-heat', title: 'Fusion and Specific Latent Heat of Fusion' },
-        { slug: 'pressure-dependence-of-melting-and-boiling-point', title: 'Dependence of Melting Point and Boiling Point on Pressure' },
-      ],
-    },
-  ],
-};
 
 const chapter6: Chapter = {
   slug: 'vibration-of-strings-and-resonance',
@@ -285,7 +249,7 @@ export const bLevelPhysics: Level = {
   description: 'Twelve chapters — from motion in a plane through modern physics.',
   status: 'available',
   chapters: [
-    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5, chapter6,
+    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11, chapter12,
   ],
 };
