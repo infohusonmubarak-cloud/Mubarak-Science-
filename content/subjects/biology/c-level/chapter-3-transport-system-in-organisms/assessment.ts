@@ -1,0 +1,222 @@
+import type { Assessment } from '@/types/content';
+
+export const chapter3TransportAssessment: Assessment = {
+  id: 'transport-system-in-organisms-assessment',
+  questions: [
+    // Part A — Concept
+    {
+      id: 'ts-a1',
+      part: 'concept',
+      conceptSlug: 'xylem-and-phloem-structure',
+      conceptTitle: 'Structure of Transport Tissues',
+      question: {
+        id: 'ts-a1-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Why are xylem cells dead at maturity?',
+        options: [
+          { id: 'a', text: 'Water transport through xylem is largely passive, so living cytoplasm is not needed.' },
+          { id: 'b', text: 'Xylem cells are diseased.' },
+          { id: 'c', text: 'Dead cells transport water faster in every tissue.' },
+          { id: 'd', text: 'Xylem cells die due to lack of sunlight.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Compare to phloem, which stays alive because it actively transports sugars.'],
+        explanation: "Xylem's water transport is passive (driven by transpiration pull), so hollow, dead, lignified tubes work well without needing living cytoplasm.",
+      },
+    },
+    {
+      id: 'ts-a2',
+      part: 'concept',
+      conceptSlug: 'blood-vessels',
+      conceptTitle: 'The Blood Vessels',
+      question: {
+        id: 'ts-a2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Why do capillary walls consist of only a single cell layer?',
+        options: [
+          { id: 'a', text: 'To withstand very high blood pressure.' },
+          { id: 'b', text: 'To minimise diffusion distance for exchange with surrounding tissue.' },
+          { id: 'c', text: 'To store large volumes of blood.' },
+          { id: 'd', text: 'To prevent any exchange from happening.' },
+        ],
+        correctOptionId: 'b',
+        hints: ['Capillaries are where exchange with tissue actually occurs.'],
+        explanation: 'The single-cell-thick wall minimises diffusion distance, enabling efficient, rapid exchange of gases and nutrients.',
+      },
+    },
+    {
+      id: 'ts-a3',
+      part: 'concept',
+      conceptSlug: 'the-lymphatic-system',
+      conceptTitle: 'The Lymphatic System',
+      question: {
+        id: 'ts-a3-q',
+        type: 'multiple-choice',
+        difficulty: 'easy',
+        prompt: 'What is the main function of the lymphatic system?',
+        options: [
+          { id: 'a', text: 'Pumping blood around the body' },
+          { id: 'b', text: 'Collecting excess tissue fluid and returning it to the bloodstream, while supporting immunity' },
+          { id: 'c', text: 'Producing red blood cells' },
+          { id: 'd', text: 'Digesting food' },
+        ],
+        correctOptionId: 'b',
+        hints: ['Recall what happens to fluid capillaries leak but do not reabsorb.'],
+        explanation: "The lymphatic system collects leaked tissue fluid, filters it through lymph nodes (supporting immunity), and returns it to the bloodstream.",
+      },
+    },
+
+    // Part B — Formula & Application
+    {
+      id: 'ts-b1',
+      part: 'formula-application',
+      conceptSlug: 'cardiac-cycle-and-heartbeat-control',
+      conceptTitle: 'The Cardiac Cycle and Control of Heart Beat',
+      question: {
+        id: 'ts-b1-q',
+        type: 'numeric',
+        difficulty: 'medium',
+        prompt: 'A person has a heart rate of 80 bpm and a stroke volume of 65 mL. Calculate their cardiac output in mL/min.',
+        hints: ['CO = HR × SV.'],
+        correctAnswer: 5200,
+        tolerance: 50,
+        unit: 'mL/min',
+        explanation: 'CO = 80 × 65 = 5,200 mL/min.',
+      },
+    },
+    {
+      id: 'ts-b2',
+      part: 'formula-application',
+      conceptSlug: 'cardiac-cycle-and-heartbeat-control',
+      conceptTitle: 'The Cardiac Cycle and Control of Heart Beat',
+      question: {
+        id: 'ts-b2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'During exercise, both heart rate and stroke volume increase. What happens to cardiac output?',
+        options: [
+          { id: 'a', text: 'It decreases, since the heart works less efficiently.' },
+          { id: 'b', text: 'It increases substantially, since CO = HR × SV and both factors rise.' },
+          { id: 'c', text: 'It stays exactly the same.' },
+          { id: 'd', text: 'Cardiac output is unrelated to heart rate or stroke volume.' },
+        ],
+        correctOptionId: 'b',
+        hints: ['If both multiplied factors increase, what happens to their product?'],
+        explanation: 'Since CO = HR × SV, an increase in both heart rate and stroke volume substantially increases cardiac output, delivering more oxygen to working muscles.',
+      },
+    },
+
+    // Part C — Problem Solving
+    {
+      id: 'ts-c1',
+      part: 'problem-solving',
+      conceptSlug: 'movement-of-water-in-a-plant',
+      conceptTitle: 'Movement of Water in a Plant',
+      question: {
+        id: 'ts-c1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'A tall tree continues supplying water to its topmost leaves with no pump. Which combination of properties makes this possible?',
+        options: [
+          { id: 'a', text: 'Gravity alone pulls water upward.' },
+          { id: 'b', text: 'Transpiration pull (evaporation from leaves) combined with cohesion between water molecules and adhesion to xylem walls.' },
+          { id: 'c', text: 'Root pressure alone, with no contribution from the leaves.' },
+          { id: 'd', text: 'Active pumping by xylem cells.' },
+        ],
+        correctOptionId: 'b',
+        hints: ['This is the cohesion-tension theory.'],
+        explanation: 'Transpiration pull creates tension that, combined with cohesion (water-water) and adhesion (water-xylem wall), maintains an unbroken column of water pulled upward with no pump needed.',
+      },
+    },
+    {
+      id: 'ts-c2',
+      part: 'problem-solving',
+      conceptSlug: 'translocation-in-plants',
+      conceptTitle: 'Translocation',
+      question: {
+        id: 'ts-c2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'A developing potato tuber underground accumulates large amounts of starch even though it never photosynthesises. How does this happen?',
+        options: [
+          { id: 'a', text: 'The tuber acts as a sink, receiving sugar translocated via phloem from photosynthesising leaves.' },
+          { id: 'b', text: 'The tuber photosynthesises underground in darkness.' },
+          { id: 'c', text: 'Starch forms spontaneously in soil.' },
+          { id: 'd', text: 'The tuber absorbs starch directly from the soil.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Where does the sugar delivered to a non-photosynthetic sink actually come from?'],
+        explanation: 'The tuber is a strong sink: sugar made in the leaves (the source) is translocated via phloem to the tuber, where it is converted to and stored as starch.',
+      },
+    },
+
+    // Part D — Real-Life Application
+    {
+      id: 'ts-d1',
+      part: 'real-life-application',
+      conceptSlug: 'structure-of-the-heart',
+      conceptTitle: 'The Structure of the Heart',
+      question: {
+        id: 'ts-d1-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'A baby is diagnosed with a septal defect ("hole in the heart"). What is the direct physiological consequence?',
+        options: [
+          { id: 'a', text: 'Oxygenated and deoxygenated blood mix, reducing the oxygen content of blood sent to the body.' },
+          { id: 'b', text: 'The heart stops beating entirely.' },
+          { id: 'c', text: 'Blood clotting stops working.' },
+          { id: 'd', text: 'The lungs stop functioning.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['The septum normally keeps the two sides of the heart completely separate.'],
+        explanation: 'A septal defect allows oxygenated and deoxygenated blood to mix, lowering the oxygen content of blood delivered to body tissues.',
+      },
+    },
+    {
+      id: 'ts-d2',
+      part: 'real-life-application',
+      conceptSlug: 'blood-clotting',
+      conceptTitle: 'The Clotting of the Blood',
+      question: {
+        id: 'ts-d2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'A person with haemophilia lacks a specific clotting factor. Why does even a minor cut cause prolonged bleeding?',
+        options: [
+          { id: 'a', text: 'The clotting cascade is a chain reaction — missing one factor breaks the chain, preventing fibrin mesh formation.' },
+          { id: 'b', text: 'They have no platelets at all.' },
+          { id: 'c', text: 'Their blood has no red blood cells.' },
+          { id: 'd', text: 'Clotting factors are unrelated to bleeding time.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Each activated clotting factor normally activates the next in sequence.'],
+        explanation: 'Since each step of the clotting cascade depends on the one before it, a single missing clotting factor prevents the cascade from completing, so the fibrin mesh never properly forms.',
+      },
+    },
+
+    // Part E — Challenge
+    {
+      id: 'ts-e1',
+      part: 'challenge',
+      conceptSlug: 'principles-and-features-of-mass-transport',
+      conceptTitle: 'Principles and Features of Mass Transport Systems',
+      question: {
+        id: 'ts-e1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'Both xylem and blood are mass transport systems, yet xylem relies purely on passive forces while the cardiovascular system uses an active pump. What best explains this difference?',
+        options: [
+          { id: 'a', text: "Xylem's transpiration-driven passive flow is sufficient for water movement; but blood must be actively pumped because it must reach a much wider range of destinations against varying resistance and often against gravity, on demand." },
+          { id: 'b', text: 'Blood is lighter than water, so it needs a pump.' },
+          { id: 'c', text: 'Plants have no need for fast transport at all.' },
+          { id: 'd', text: 'Xylem actually uses a pump too, just a hidden one.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Consider how directly and predictably each system needs to respond to changing demand.'],
+        explanation: "Passive transpiration pull works well for xylem because water simply needs to move in one general direction (up, replacing evaporated water); a circulatory system, by contrast, needs an active pump to precisely and rapidly redirect blood flow to meet changing tissue demands (e.g. during exercise), which passive diffusion or pull-based forces alone could not achieve reliably.",
+      },
+    },
+  ],
+};

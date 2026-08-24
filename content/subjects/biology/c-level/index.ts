@@ -1,62 +1,11 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1Themes } from './chapter-1-themes-and-importance-of-biology';
 import { chapter2Molecular } from './chapter-2-molecular-biology';
+import { chapter3Transport } from './chapter-3-transport-system-in-organisms';
 
-// Chapters 1-2 are fully authored; the remaining four are outline-only
+// Chapters 1-3 are fully authored; the remaining three are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter3: Chapter = {
-  slug: 'transport-system-in-organisms',
-  number: 3,
-  title: 'Transport System in Organisms',
-  blurb: 'How water, sugars, and dissolved substances move through plants and animals — transpiration, translocation, and the mammalian cardiovascular and lymphatic systems.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'transport-tissues-and-water-movement-topic',
-      title: 'Transport Tissues and Water Movement in Plants',
-      concepts: [
-        { slug: 'xylem-and-phloem-structure', title: 'Structure of Transport Tissues' },
-        { slug: 'movement-of-water-in-a-plant', title: 'Movement of Water in a Plant' },
-      ],
-    },
-    {
-      slug: 'transpiration-topic',
-      title: 'Transpiration',
-      concepts: [
-        { slug: 'transpiration-and-factors-affecting-it', title: 'Transpiration and Factors Affecting It' },
-        { slug: 'benefits-and-demonstration-of-transpiration', title: 'Benefits and Demonstration of Transpiration Pull' },
-      ],
-    },
-    {
-      slug: 'translocation-topic',
-      title: 'Translocation',
-      concepts: [{ slug: 'translocation-in-plants', title: 'Translocation' }],
-    },
-    {
-      slug: 'principles-of-transport-in-animals-topic',
-      title: 'Principles of Transport in Animals',
-      concepts: [{ slug: 'principles-and-features-of-mass-transport', title: 'Principles and Features of Mass Transport Systems' }],
-    },
-    {
-      slug: 'cardiovascular-system-topic',
-      title: 'Cardiovascular System',
-      concepts: [
-        { slug: 'structure-of-the-heart', title: 'The Structure of the Heart' },
-        { slug: 'blood-vessels', title: 'The Blood Vessels' },
-        { slug: 'components-of-blood', title: 'The Components of the Blood' },
-        { slug: 'blood-clotting', title: 'The Clotting of the Blood' },
-        { slug: 'cardiac-cycle-and-heartbeat-control', title: 'The Cardiac Cycle and Control of Heart Beat' },
-      ],
-    },
-    {
-      slug: 'lymphatic-system-topic',
-      title: 'Lymphatic System',
-      concepts: [{ slug: 'the-lymphatic-system', title: 'The Lymphatic System' }],
-    },
-  ],
-};
 
 const chapter4: Chapter = {
   slug: 'diseases-in-plants-and-animals',
@@ -177,5 +126,5 @@ export const cLevelBiology: Level = {
   name: 'C-Level',
   description: 'Six chapters — from the themes of biology through biodiversity and conservation.',
   status: 'available',
-  chapters: [chapter1Themes, chapter2Molecular, chapter3, chapter4, chapter5, chapter6],
+  chapters: [chapter1Themes, chapter2Molecular, chapter3Transport, chapter4, chapter5, chapter6],
 };
