@@ -1,45 +1,11 @@
 import type { Chapter } from '@/types/content';
 import { chapter1 } from './chapter-1-coordinate-geometry';
+import { chapter2 } from './chapter-2-exponents-and-radicals';
 
-// Chapters 2-10 are outline-only stubs for this pass: every chapter is a
+// Chapters 3-10 are outline-only stubs for this pass: every chapter is a
 // real, navigable page with an accurate topic/concept map, but only
-// Chapter 1 has full concept bodies written. `status: 'coming-soon'`
+// Chapters 1-2 have full concept bodies written. `status: 'coming-soon'`
 // drives the ComingSoonPanel instead of a full concept template.
-
-const chapter2: Chapter = {
-  slug: 'exponents-and-radicals',
-  number: 2,
-  title: 'Exponents and Radicals',
-  blurb: 'The laws that govern powers and roots, from negative and fractional exponents to simplifying radicals and scientific notation.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'laws-of-exponents',
-      title: 'Laws of Exponents',
-      concepts: [
-        { slug: 'base-and-exponent', title: 'Base and Exponent' },
-        { slug: 'zero-and-negative-exponents', title: 'Zero and Negative Exponents' },
-        { slug: 'fractional-exponents', title: 'Fractional Exponents' },
-        { slug: 'laws-of-exponents', title: 'Laws of Exponents' },
-      ],
-    },
-    {
-      slug: 'radicals',
-      title: 'Radicals',
-      concepts: [
-        { slug: 'square-and-cube-roots', title: 'Square Roots and Cube Roots' },
-        { slug: 'simplifying-radicals', title: 'Simplifying Radicals' },
-        { slug: 'multiplying-and-dividing-radicals', title: 'Multiplying and Dividing Radicals' },
-        { slug: 'rationalizing-denominators', title: 'Rationalizing Denominators' },
-      ],
-    },
-    {
-      slug: 'scientific-notation',
-      title: 'Scientific Notation',
-      concepts: [{ slug: 'scientific-notation', title: 'Scientific Notation' }],
-    },
-  ],
-};
 
 const chapter3: Chapter = {
   slug: 'logarithms',
