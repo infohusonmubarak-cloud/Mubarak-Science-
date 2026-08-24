@@ -8,43 +8,11 @@ import { chapter6Vibration } from './chapter-6-vibration-of-strings-and-resonanc
 import { chapter7Refraction } from './chapter-7-refraction-of-light-b-level';
 import { chapter8Lenses } from './chapter-8-lenses';
 import { chapter9ElectricField } from './chapter-9-electric-field';
+import { chapter10Current } from './chapter-10-electric-current-and-magnetic-effect';
 
-// Chapters 1-9 are fully authored; the remaining three are outline-only
+// Chapters 1-10 are fully authored; the remaining two are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter10: Chapter = {
-  slug: 'electric-current-and-magnetic-effect',
-  number: 10,
-  title: 'Electric Current & Magnetic Effect',
-  blurb: "Current and its effects, Ohm's law, resistors and their combinations, the magnetic field due to a current, electromagnets, and meters.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'current-and-its-effects-topic',
-      title: 'Current and Effects of Current',
-      concepts: [{ slug: 'current-and-effects-of-current', title: 'Current and Effects of Current' }],
-    },
-    {
-      slug: 'ohms-law-and-resistors-topic',
-      title: "Ohm's Law, Electrical Resistance and Resistors",
-      concepts: [
-        { slug: 'ohms-law-and-resistance', title: "Ohm's Law and Electrical Resistance" },
-        { slug: 'resistors-b-level', title: 'Resistors' },
-        { slug: 'resistors-in-series-and-parallel-b-level', title: 'Resistors in Series and Resistors in Parallel' },
-      ],
-    },
-    {
-      slug: 'magnetic-effect-topic',
-      title: 'Magnetic Field Due to an Electric Current and Electromagnets',
-      concepts: [
-        { slug: 'magnetic-field-due-to-current', title: 'Magnetic Field Due to an Electric Current' },
-        { slug: 'electromagnets', title: 'Electromagnets' },
-        { slug: 'ammeter-and-voltmeter', title: 'Ammeter and Voltmeter' },
-      ],
-    },
-  ],
-};
 
 const chapter11: Chapter = {
   slug: 'fundamentals-of-electronics',
@@ -121,6 +89,6 @@ export const bLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6Vibration,
-    chapter7Refraction, chapter8Lenses, chapter9ElectricField, chapter10, chapter11, chapter12,
+    chapter7Refraction, chapter8Lenses, chapter9ElectricField, chapter10Current, chapter11, chapter12,
   ],
 };
