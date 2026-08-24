@@ -17,19 +17,21 @@ Content lives entirely as typed data in `content/`, never hardcoded into JSX. Th
 decision: `Chapter.topics` (a `Topic[]`, each holding `ConceptSummary[]`) is the **always-present
 navigation outline** — title, slug, difficulty — while the **full pedagogical body** (`Concept`,
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
-every chapter across all four subjects is a real, correctly-titled page even though only a
-handful of flagship chapters have full content yet — the rest are outline-only stubs with
-`status: 'coming-soon'`. `Level` also carries its own `status` — most subject/level combinations
-(every B-Level, and C-Level for Math/Biology/Chemistry) are `coming-soon` with an empty
+every chapter across all four subjects is a real, correctly-titled page even though most are
+still outline-only stubs with `status: 'coming-soon'` — Chemistry C-Level is the one exception,
+fully authored end to end (see below). `Level` also carries its own `status` — most subject/level
+combinations (every B-Level, and C-Level for Math and Biology) are `coming-soon` with an empty
 `chapters: []` until content is written for them; the level page
 (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
 chapter grid when `level.status === 'coming-soon'`.
 
-The flagship chapters are the reference examples for a fully-authored chapter:
+The reference examples for a fully-authored chapter are the flagship chapters —
 `mathematics/a-level/coordinate-geometry`, `biology/a-level/cell-structure-and-organization`,
-`chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`, and
-`physics/c-level/forces-in-circular-motion` (the only chapter so far with a graded `assessment`
-too — see **Assessments** below).
+`chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`,
+`physics/c-level/forces-in-circular-motion` — plus **all eight** chapters of
+`chemistry/c-level/`, the one fully-populated level in the app right now. Every chapter in
+Chemistry C-Level also has a graded `assessment` (see **Assessments** below); most stub chapters
+elsewhere don't yet.
 
 `lib/content/getters.ts` is the only way pages should read content. It holds a small
 `CONTENT_PACKS` registry mapping `level/chapter` to that chapter's full `{ concepts, formulas }`

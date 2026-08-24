@@ -12,17 +12,21 @@ All four subjects — Mathematics, Biology, Chemistry, Physics — are wired up,
 A-Level, B-Level, and C-Level tier:
 
 - The full navigation map exists for every chapter: Mathematics 21 (A-Level), Biology 5, Chemistry
-  8, Physics 11 (A-Level) + 13 (C-Level). B-Level is structurally present for every subject (and
-  C-Level for Biology/Chemistry/Mathematics) but renders a "Coming soon" state — no rebuild needed
-  to bring it online later.
-- One flagship chapter per subject/level has complete content — every concept, formula, diagram,
-  worked example, and practice question fully authored:
+  8 (A-Level) + 8 (C-Level), Physics 11 (A-Level) + 13 (C-Level). B-Level is structurally present
+  for every subject (and C-Level for Biology and Mathematics) but renders a "Coming soon" state —
+  no rebuild needed to bring it online later.
+- **Chemistry C-Level is fully authored end to end** — all 8 chapters (Chemical Bonding and
+  Intermolecular Forces, Energy Changes in Chemical Reactions, Chemical Kinetics, Chemical
+  Equilibrium, Acid-Base Reactions, Transition Elements, Chemistry and Green Environment, Organic
+  Compounds and Macromolecules), every concept, formula, worked example, and a 10-question graded
+  Assessment at the end of each chapter — see `content/subjects/chemistry/c-level/`.
+- One flagship chapter per other subject/level has complete content — every concept, formula,
+  diagram, worked example, and practice question fully authored:
   - **Mathematics, A-Level — Coordinate Geometry** (13 concepts, 4 formulas)
   - **Biology, A-Level — Cell Structure and Organization** (10 concepts, 1 formula, `CellDiagram`)
   - **Chemistry, A-Level — Quantities of Substances** (10 concepts, 4 formulas, `MoleculeDiagram`)
   - **Physics, A-Level — Motion** (9 concepts, 6 formulas, interactive velocity-time graph)
-  - **Physics, C-Level — Forces in Circular Motion** (8 concepts, 2 formulas, `CircularMotionDiagram`,
-    plus a full graded Assessment — see below)
+  - **Physics, C-Level — Forces in Circular Motion** (8 concepts, 2 formulas, `CircularMotionDiagram`)
 - Every other chapter renders as a real page in a "Coming soon" state, with its topic/concept
   outline already in place.
 - **Assessments**: a chapter can carry a graded `Assessment` — a balanced set of questions across
@@ -30,9 +34,9 @@ A-Level, B-Level, and C-Level tier:
   `AssessmentRunner` collects every answer before scoring (no per-question feedback until submit),
   then shows a score, a correct/incorrect breakdown, and a "topics to review" list linking back to
   the concepts behind any wrong answer. Results persist to `localStorage`
-  (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Currently wired up only
-  for Physics C-Level's flagship chapter; every other chapter's `/assessment` route renders a
-  "Coming soon" panel until one is authored.
+  (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Every Chemistry C-Level
+  chapter and the Physics C-Level flagship have one; every other chapter's `/assessment` route
+  renders a "Coming soon" panel until one is authored.
 - Progress, bookmarks, and notes persist to the browser via `localStorage` — no account or
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
 - Teacher Guide and an admin CMS are stubbed but not built.

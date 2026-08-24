@@ -145,7 +145,7 @@ const chapter6: Chapter = {
       title: 'Acids and Bases',
       concepts: [
         { slug: 'acids-and-bases', title: 'Acids, Bases and Alkalis' },
-        { slug: 'the-ph-scale', title: 'The pH Scale' },
+        { slug: 'the-ph-scale-a-level', title: 'The pH Scale' },
         { slug: 'strong-and-weak-acids-and-bases', title: 'Strong and Weak Acids and Bases' },
       ],
     },
