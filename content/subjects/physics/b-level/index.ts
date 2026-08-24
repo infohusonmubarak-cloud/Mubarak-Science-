@@ -6,40 +6,11 @@ import { chapter4Power } from './chapter-4-power-and-efficiency';
 import { chapter5Heat } from './chapter-5-heat-and-thermal-phenomena';
 import { chapter6Vibration } from './chapter-6-vibration-of-strings-and-resonance';
 import { chapter7Refraction } from './chapter-7-refraction-of-light-b-level';
+import { chapter8Lenses } from './chapter-8-lenses';
 
-// Chapters 1-7 are fully authored; the remaining five are outline-only
+// Chapters 1-8 are fully authored; the remaining four are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter8: Chapter = {
-  slug: 'lenses',
-  number: 8,
-  title: 'Lenses',
-  blurb: 'Refraction at a curved surface, the lens equation, image formation through lenses, and the power of a lens.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'refraction-at-curved-surface-topic',
-      title: 'Refraction at a Curved Surface',
-      concepts: [{ slug: 'refraction-at-a-curved-surface', title: 'Refraction at a Curved Surface' }],
-    },
-    {
-      slug: 'lens-equation-topic',
-      title: 'The Lens Equation',
-      concepts: [{ slug: 'the-lens-equation', title: 'The Lens Equation' }],
-    },
-    {
-      slug: 'refraction-through-lenses-topic',
-      title: 'Refraction Through Lenses',
-      concepts: [{ slug: 'refraction-through-lenses', title: 'Refraction Through Lenses' }],
-    },
-    {
-      slug: 'power-of-a-lens-topic',
-      title: 'Power of a Lens',
-      concepts: [{ slug: 'power-of-a-lens', title: 'Power of a Lens' }],
-    },
-  ],
-};
 
 const chapter9: Chapter = {
   slug: 'electric-field',
@@ -183,6 +154,6 @@ export const bLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6Vibration,
-    chapter7Refraction, chapter8, chapter9, chapter10, chapter11, chapter12,
+    chapter7Refraction, chapter8Lenses, chapter9, chapter10, chapter11, chapter12,
   ],
 };
