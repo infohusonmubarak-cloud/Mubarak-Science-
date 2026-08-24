@@ -61,6 +61,10 @@ import {
   chapter11ElectronicsFormulas,
 } from '@/content/subjects/physics/b-level/chapter-11-fundamentals-of-electronics';
 import {
+  chapter12ModernConcepts,
+  chapter12ModernFormulas,
+} from '@/content/subjects/physics/b-level/chapter-12-atomic-and-modern-physics';
+import {
   chapter2CForcesConcepts,
   chapter2CForcesFormulas,
 } from '@/content/subjects/physics/c-level/chapter-2-forces-in-circular-motion';
@@ -145,6 +149,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/electric-field': { concepts: chapter9ElectricFieldConcepts, formulas: chapter9ElectricFieldFormulas },
   'b-level/electric-current-and-magnetic-effect': { concepts: chapter10CurrentConcepts, formulas: chapter10CurrentFormulas },
   'b-level/fundamentals-of-electronics': { concepts: chapter11ElectronicsConcepts, formulas: chapter11ElectronicsFormulas },
+  'b-level/atomic-and-modern-physics': { concepts: chapter12ModernConcepts, formulas: chapter12ModernFormulas },
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
