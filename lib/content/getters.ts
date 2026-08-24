@@ -32,6 +32,10 @@ import {
   chapter3KineticsConcepts,
   chapter3KineticsFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-3-chemical-kinetics-rates-of-reaction';
+import {
+  chapter4EquilibriumConcepts,
+  chapter4EquilibriumFormulas,
+} from '@/content/subjects/chemistry/c-level/chapter-4-chemical-equilibrium';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -50,6 +54,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
   'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },
+  'c-level/chemical-equilibrium': { concepts: chapter4EquilibriumConcepts, formulas: chapter4EquilibriumFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {

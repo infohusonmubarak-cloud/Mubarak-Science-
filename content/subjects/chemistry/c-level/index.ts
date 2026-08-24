@@ -2,45 +2,11 @@ import type { Chapter, Level } from '@/types/content';
 import { chapter1Bonding } from './chapter-1-chemical-bonding-and-intermolecular-forces';
 import { chapter2Energy } from './chapter-2-energy-changes-in-chemical-reactions';
 import { chapter3Kinetics } from './chapter-3-chemical-kinetics-rates-of-reaction';
+import { chapter4Equilibrium } from './chapter-4-chemical-equilibrium';
 
-// Chapters 1-3 are fully authored; the other five are outline-only stubs
+// Chapters 1-4 are fully authored; the other four are outline-only stubs
 // for now — real, navigable pages with an accurate section map, upgraded
 // to full chapters one batch at a time.
-
-const chapter4: Chapter = {
-  slug: 'chemical-equilibrium',
-  number: 4,
-  title: 'Chemical Equilibrium',
-  blurb: 'What dynamic equilibrium means, how Le Chatelier\'s principle predicts shifts, and how equilibrium constants quantify a reaction\'s balance point.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'dynamic-equilibrium-topic',
-      title: 'State of Dynamic Equilibrium',
-      concepts: [
-        { slug: 'reversible-reactions', title: 'Reversible Reactions' },
-        { slug: 'dynamic-equilibrium', title: 'Dynamic Equilibrium' },
-      ],
-    },
-    {
-      slug: 'le-chateliers-principle-topic',
-      title: "Le Chatelier's Principle and Factors Affecting the Chemical Equilibrium",
-      concepts: [
-        { slug: 'le-chateliers-principle', title: "Le Chatelier's Principle" },
-        { slug: 'effect-of-concentration-on-equilibrium', title: 'Effect of Concentration on Equilibrium' },
-        { slug: 'effect-of-pressure-and-temperature-on-equilibrium', title: 'Effect of Pressure and Temperature on Equilibrium' },
-      ],
-    },
-    {
-      slug: 'equilibrium-constants-topic',
-      title: 'Equilibrium Constants',
-      concepts: [
-        { slug: 'the-equilibrium-constant-kc', title: 'The Equilibrium Constant, Kc' },
-        { slug: 'interpreting-the-size-of-kc', title: 'Interpreting the Size of Kc' },
-      ],
-    },
-  ],
-};
 
 const chapter5: Chapter = {
   slug: 'acid-base-reactions',
@@ -204,5 +170,5 @@ export const cLevelChemistry: Level = {
   name: 'C-Level',
   description: 'Eight chapters — from chemical bonding through organic compounds and macromolecules.',
   status: 'available',
-  chapters: [chapter1Bonding, chapter2Energy, chapter3Kinetics, chapter4, chapter5, chapter6, chapter7, chapter8],
+  chapters: [chapter1Bonding, chapter2Energy, chapter3Kinetics, chapter4Equilibrium, chapter5, chapter6, chapter7, chapter8],
 };
