@@ -1,0 +1,107 @@
+import type { Formula } from '@/types/content';
+
+export const chapter2RotationalDynamicsFormulas: Record<string, Formula> = {
+  'scalar-product-formula': {
+    slug: 'scalar-product-formula',
+    name: 'Scalar (Dot) Product',
+    expression: 'A · B = AB cosθ',
+    meaning: 'The scalar product of two vectors gives a single number (scalar), representing how much one vector points in the direction of the other.',
+    variables: [
+      { symbol: 'A · B', meaning: 'The scalar (dot) product, a number with no direction' },
+      { symbol: 'A, B', meaning: 'Magnitudes of the two vectors' },
+      { symbol: 'θ', meaning: 'The angle between the two vectors' },
+    ],
+    whenToUse: 'Use when combining two vectors should produce a plain number, such as calculating work done (force · displacement).',
+    relatedConceptSlugs: ['scalar-product-of-vectors'],
+  },
+  'vector-product-formula': {
+    slug: 'vector-product-formula',
+    name: 'Vector (Cross) Product',
+    expression: '|A × B| = AB sinθ',
+    meaning: 'The vector product of two vectors gives a new vector, perpendicular to both original vectors, with a magnitude that depends on how perpendicular the two original vectors are to each other.',
+    variables: [
+      { symbol: 'A × B', meaning: 'The vector (cross) product, itself a vector' },
+      { symbol: 'A, B', meaning: 'Magnitudes of the two vectors' },
+      { symbol: 'θ', meaning: 'The angle between the two vectors' },
+    ],
+    whenToUse: 'Use when combining two vectors should produce a new vector perpendicular to both, such as calculating torque (r × F) or angular momentum.',
+    relatedConceptSlugs: ['vector-product-of-vectors', 'torque-and-turning-effect'],
+  },
+  'torque-formula': {
+    slug: 'torque-formula',
+    name: 'Torque (Turning Effect of Force)',
+    expression: 'τ = r F sinθ',
+    meaning: 'Torque measures the turning effect of a force applied at some distance from a pivot — it depends on the force, the distance from the pivot, and the angle between them.',
+    variables: [
+      { symbol: 'τ', meaning: 'Torque, in newton-metres (N·m)' },
+      { symbol: 'r', meaning: 'Distance from the pivot (axis of rotation) to where the force is applied, in metres' },
+      { symbol: 'F', meaning: 'Magnitude of the applied force, in newtons' },
+      { symbol: 'θ', meaning: 'Angle between the force direction and the line from the pivot to the point of application' },
+    ],
+    whenToUse: 'Use to calculate the turning effect of a force about a pivot point — maximum torque occurs when the force is applied perpendicular to r (θ = 90°).',
+    relatedConceptSlugs: ['torque-and-turning-effect'],
+  },
+  'moment-of-inertia-formula': {
+    slug: 'moment-of-inertia-formula',
+    name: 'Moment of Inertia (Point Mass)',
+    expression: 'I = mr²',
+    meaning: "Moment of inertia measures an object's resistance to changes in its rotational motion — for a point mass, it depends on the mass and how far that mass is from the axis of rotation.",
+    variables: [
+      { symbol: 'I', meaning: 'Moment of inertia, in kg·m²' },
+      { symbol: 'm', meaning: 'Mass of the point/particle, in kg' },
+      { symbol: 'r', meaning: 'Distance from the axis of rotation, in metres' },
+    ],
+    whenToUse: "Use for a point mass or as the building block for finding the total moment of inertia of an extended object (by summing mr² for every mass element).",
+    relatedConceptSlugs: ['moment-of-inertia'],
+  },
+  'torque-moment-of-inertia-formula': {
+    slug: 'torque-moment-of-inertia-formula',
+    name: 'Torque and Angular Acceleration',
+    expression: 'τ = Iα',
+    meaning: "This is the rotational equivalent of Newton's second law (F = ma) — net torque produces angular acceleration, with moment of inertia playing the role mass plays in linear motion.",
+    variables: [
+      { symbol: 'τ', meaning: 'Net torque, in N·m' },
+      { symbol: 'I', meaning: 'Moment of inertia, in kg·m²' },
+      { symbol: 'α', meaning: 'Angular acceleration, in rad/s²' },
+    ],
+    whenToUse: 'Use to find the angular acceleration produced by a net torque on a rotating object, or to find the torque needed to produce a given angular acceleration.',
+    relatedConceptSlugs: ['torque-moment-of-inertia-relation'],
+  },
+  'equilibrium-conditions-formula': {
+    slug: 'equilibrium-conditions-formula',
+    name: 'Conditions for Equilibrium',
+    expression: 'ΣF = 0 and Στ = 0',
+    meaning: 'An object is in complete (static) equilibrium only when both the net force AND the net torque acting on it are zero — the first condition prevents linear acceleration, the second prevents rotational (angular) acceleration.',
+    variables: [
+      { symbol: 'ΣF', meaning: 'The vector sum of all forces acting on the object' },
+      { symbol: 'Στ', meaning: 'The sum of all torques acting on the object, about any chosen pivot' },
+    ],
+    whenToUse: 'Use to analyse any object that is not accelerating linearly or rotationally — e.g. a beam resting on supports, or a ladder leaning against a wall.',
+    relatedConceptSlugs: ['conditions-for-equilibrium'],
+  },
+  'angular-momentum-formula': {
+    slug: 'angular-momentum-formula',
+    name: 'Angular Momentum',
+    expression: 'L = Iω',
+    meaning: 'Angular momentum measures the "quantity of rotational motion" an object has — the rotational equivalent of linear momentum (p = mv).',
+    variables: [
+      { symbol: 'L', meaning: 'Angular momentum, in kg·m²/s' },
+      { symbol: 'I', meaning: 'Moment of inertia, in kg·m²' },
+      { symbol: 'ω', meaning: 'Angular velocity, in rad/s' },
+    ],
+    whenToUse: "Use to calculate the angular momentum of a rotating object, and as the basis for applying conservation of angular momentum.",
+    relatedConceptSlugs: ['angular-momentum'],
+  },
+  'conservation-of-angular-momentum-formula': {
+    slug: 'conservation-of-angular-momentum-formula',
+    name: 'Conservation of Angular Momentum',
+    expression: 'I₁ω₁ = I₂ω₂',
+    meaning: 'When no external torque acts on a system, its total angular momentum stays constant — so if its moment of inertia changes, its angular velocity must change to compensate.',
+    variables: [
+      { symbol: 'I₁, ω₁', meaning: 'Moment of inertia and angular velocity at an initial time' },
+      { symbol: 'I₂, ω₂', meaning: 'Moment of inertia and angular velocity at a later time' },
+    ],
+    whenToUse: 'Use whenever a rotating system changes shape (redistributing its mass) with no external torque acting on it, such as a spinning figure skater pulling in their arms.',
+    relatedConceptSlugs: ['conservation-of-angular-momentum'],
+  },
+};

@@ -1,53 +1,10 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1MotionInAPlane } from './chapter-1-motion-in-a-plane';
+import { chapter2RotationalDynamics } from './chapter-2-rotational-dynamics';
 
-// Chapter 1 is fully authored; the remaining eleven are outline-only
+// Chapters 1-2 are fully authored; the remaining ten are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter2: Chapter = {
-  slug: 'rotational-dynamics',
-  number: 2,
-  title: 'Rotational Dynamics',
-  blurb: 'Scalar and vector products, torque, the relation between torque and moment of inertia, equilibrium, and conservation of angular momentum.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'scalar-and-vector-product-topic',
-      title: 'Scalar Product and Vector Product',
-      concepts: [
-        { slug: 'scalar-product-of-vectors', title: 'Scalar (Dot) Product of Vectors' },
-        { slug: 'vector-product-of-vectors', title: 'Vector (Cross) Product of Vectors' },
-      ],
-    },
-    {
-      slug: 'turning-effect-of-force-topic',
-      title: 'Turning Effect of Force',
-      concepts: [{ slug: 'torque-and-turning-effect', title: 'Torque and the Turning Effect of Force' }],
-    },
-    {
-      slug: 'torque-and-moment-of-inertia-topic',
-      title: 'Relation Between Torque and Moment of Inertia',
-      concepts: [
-        { slug: 'moment-of-inertia', title: 'Moment of Inertia' },
-        { slug: 'torque-moment-of-inertia-relation', title: 'Relation Between Torque and Moment of Inertia' },
-      ],
-    },
-    {
-      slug: 'equilibrium-topic-rotational-dynamics',
-      title: 'Equilibrium',
-      concepts: [{ slug: 'conditions-for-equilibrium', title: 'Conditions for Equilibrium' }],
-    },
-    {
-      slug: 'angular-momentum-topic',
-      title: 'Angular Momentum and Law of Conservation of Angular Momentum',
-      concepts: [
-        { slug: 'angular-momentum', title: 'Angular Momentum' },
-        { slug: 'conservation-of-angular-momentum', title: 'Law of Conservation of Angular Momentum' },
-      ],
-    },
-  ],
-};
 
 const chapter3: Chapter = {
   slug: 'pressure-in-fluids-and-atmosphere',
@@ -390,7 +347,7 @@ export const bLevelPhysics: Level = {
   description: 'Twelve chapters — from motion in a plane through modern physics.',
   status: 'available',
   chapters: [
-    chapter1MotionInAPlane, chapter2, chapter3, chapter4, chapter5, chapter6,
+    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11, chapter12,
   ],
 };

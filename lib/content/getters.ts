@@ -21,6 +21,10 @@ import {
   chapter1MotionInAPlaneFormulas,
 } from '@/content/subjects/physics/b-level/chapter-1-motion-in-a-plane';
 import {
+  chapter2RotationalDynamicsConcepts,
+  chapter2RotationalDynamicsFormulas,
+} from '@/content/subjects/physics/b-level/chapter-2-rotational-dynamics';
+import {
   chapter2CForcesConcepts,
   chapter2CForcesFormulas,
 } from '@/content/subjects/physics/c-level/chapter-2-forces-in-circular-motion';
@@ -95,6 +99,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
   'b-level/motion-in-a-plane': { concepts: chapter1MotionInAPlaneConcepts, formulas: chapter1MotionInAPlaneFormulas },
+  'b-level/rotational-dynamics': { concepts: chapter2RotationalDynamicsConcepts, formulas: chapter2RotationalDynamicsFormulas },
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
