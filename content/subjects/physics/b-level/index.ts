@@ -9,40 +9,11 @@ import { chapter7Refraction } from './chapter-7-refraction-of-light-b-level';
 import { chapter8Lenses } from './chapter-8-lenses';
 import { chapter9ElectricField } from './chapter-9-electric-field';
 import { chapter10Current } from './chapter-10-electric-current-and-magnetic-effect';
+import { chapter11Electronics } from './chapter-11-fundamentals-of-electronics';
 
-// Chapters 1-10 are fully authored; the remaining two are outline-only
-// stubs for now — real, navigable pages with an accurate section map,
-// upgraded to full chapters one batch at a time.
-
-const chapter11: Chapter = {
-  slug: 'fundamentals-of-electronics',
-  number: 11,
-  title: 'Fundamentals of Electronics',
-  blurb: 'Semiconductors, the transistor, integrated circuits, and logic gates.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'semiconductors-topic',
-      title: 'Semiconductors',
-      concepts: [{ slug: 'semiconductors', title: 'Semiconductors' }],
-    },
-    {
-      slug: 'transistor-topic',
-      title: 'Transistor',
-      concepts: [{ slug: 'the-transistor', title: 'Transistor' }],
-    },
-    {
-      slug: 'integrated-circuit-topic',
-      title: 'Integrated Circuit',
-      concepts: [{ slug: 'the-integrated-circuit', title: 'Integrated Circuit' }],
-    },
-    {
-      slug: 'logic-gate-topic',
-      title: 'Logic Gate',
-      concepts: [{ slug: 'logic-gates-b-level', title: 'Logic Gate' }],
-    },
-  ],
-};
+// Chapters 1-11 are fully authored; the last remaining chapter is an
+// outline-only stub — a real, navigable page with an accurate section
+// map, upgraded to a full chapter last.
 
 const chapter12: Chapter = {
   slug: 'atomic-and-modern-physics',
@@ -89,6 +60,6 @@ export const bLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6Vibration,
-    chapter7Refraction, chapter8Lenses, chapter9ElectricField, chapter10Current, chapter11, chapter12,
+    chapter7Refraction, chapter8Lenses, chapter9ElectricField, chapter10Current, chapter11Electronics, chapter12,
   ],
 };
