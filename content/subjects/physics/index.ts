@@ -1,14 +1,7 @@
-import type { Level, Subject } from '@/types/content';
+import type { Subject } from '@/types/content';
 import { aLevelPhysics } from './a-level';
+import { bLevelPhysics } from './b-level';
 import { cLevelPhysics } from './c-level';
-
-const bLevelPhysics: Level = {
-  slug: 'b-level',
-  name: 'B-Level',
-  description: 'The next tier of Physics chapters — not written yet.',
-  status: 'coming-soon',
-  chapters: [],
-};
 
 export const physics: Subject = {
   slug: 'physics',

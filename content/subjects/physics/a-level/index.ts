@@ -107,7 +107,7 @@ const chapter5: Chapter = {
       title: 'Work and Power',
       concepts: [
         { slug: 'work-done', title: 'Work Done' },
-        { slug: 'power-and-efficiency', title: 'Power and Efficiency' },
+        { slug: 'power-and-efficiency-a-level', title: 'Power and Efficiency' },
       ],
     },
     {
@@ -150,7 +150,7 @@ const chapter6: Chapter = {
       slug: 'specific-heat-and-latent-heat',
       title: 'Specific Heat and Latent Heat',
       concepts: [
-        { slug: 'specific-heat-capacity', title: 'Specific Heat Capacity' },
+        { slug: 'specific-heat-capacity-a-level', title: 'Specific Heat Capacity' },
         { slug: 'specific-latent-heat', title: 'Specific Latent Heat' },
         { slug: 'changes-of-state', title: 'Changes of State' },
       ],
@@ -272,7 +272,7 @@ const chapter10: Chapter = {
       title: 'Magnetic Fields',
       concepts: [
         { slug: 'magnets-and-magnetic-fields', title: 'Magnets and Magnetic Fields' },
-        { slug: 'electromagnets', title: 'Electromagnets' },
+        { slug: 'electromagnets-a-level', title: 'Electromagnets' },
       ],
     },
     {
