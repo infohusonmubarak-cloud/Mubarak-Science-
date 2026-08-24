@@ -3,44 +3,12 @@ import { chapter1 } from './chapter-1-coordinate-geometry';
 import { chapter2 } from './chapter-2-exponents-and-radicals';
 import { chapter3 } from './chapter-3-logarithms';
 import { chapter4 } from './chapter-4-functions';
+import { chapter5 } from './chapter-5-quadratic-functions';
 
-// Chapters 5-10 are outline-only stubs for this pass: every chapter is a
+// Chapters 6-10 are outline-only stubs for this pass: every chapter is a
 // real, navigable page with an accurate topic/concept map, but only
-// Chapters 1-4 have full concept bodies written. `status: 'coming-soon'`
+// Chapters 1-5 have full concept bodies written. `status: 'coming-soon'`
 // drives the ComingSoonPanel instead of a full concept template.
-
-const chapter5: Chapter = {
-  slug: 'quadratic-functions',
-  number: 5,
-  title: 'Quadratic Functions',
-  blurb: 'Graphing parabolas, finding roots with the quadratic formula, and reading the discriminant.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'the-parabola',
-      title: 'The Parabola',
-      concepts: [
-        { slug: 'standard-form', title: 'Standard Form of a Quadratic' },
-        { slug: 'vertex-and-axis-of-symmetry', title: 'Vertex and Axis of Symmetry' },
-        { slug: 'roots-and-intercepts', title: 'Roots, x-Intercepts and y-Intercept' },
-      ],
-    },
-    {
-      slug: 'solving-quadratics',
-      title: 'Solving Quadratic Equations',
-      concepts: [
-        { slug: 'completing-the-square', title: 'Completing the Square' },
-        { slug: 'the-quadratic-formula', title: 'The Quadratic Formula' },
-        { slug: 'the-discriminant', title: 'The Discriminant' },
-      ],
-    },
-    {
-      slug: 'quadratic-applications',
-      title: 'Applications',
-      concepts: [{ slug: 'projectile-motion-and-optimization', title: 'Projectile Motion and Area Optimization' }],
-    },
-  ],
-};
 
 const chapter6: Chapter = {
   slug: 'absolute-value-functions',
