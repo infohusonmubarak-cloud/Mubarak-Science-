@@ -1,52 +1,10 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1Themes } from './chapter-1-themes-and-importance-of-biology';
+import { chapter2Molecular } from './chapter-2-molecular-biology';
 
-// Chapter 1 is fully authored; the other five are outline-only stubs for
-// now — real, navigable pages with an accurate section map, upgraded to
-// full chapters one batch at a time.
-
-const chapter2: Chapter = {
-  slug: 'molecular-biology',
-  number: 2,
-  title: 'Molecular Biology',
-  blurb: 'The structure and role of DNA and RNA, DNA replication, the genetic code, protein synthesis, and genetic engineering techniques.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'introduction-to-molecular-biology-topic',
-      title: 'Introduction to Molecular Biology',
-      concepts: [
-        { slug: 'the-structure-of-dna', title: 'The Structure of DNA' },
-        { slug: 'the-structure-of-rna', title: 'The Structure of RNA' },
-        { slug: 'the-role-of-dna', title: 'The Role of DNA' },
-        { slug: 'dna-replication', title: 'DNA Replication' },
-      ],
-    },
-    {
-      slug: 'genetic-code-topic',
-      title: 'Genetic Code',
-      concepts: [{ slug: 'the-genetic-code', title: 'The Genetic Code' }],
-    },
-    {
-      slug: 'protein-synthesis-topic',
-      title: 'Protein Synthesis',
-      concepts: [
-        { slug: 'transcription', title: 'Transcription' },
-        { slug: 'modification-of-mrna', title: 'Modification of mRNA' },
-        { slug: 'translation', title: 'Translation' },
-      ],
-    },
-    {
-      slug: 'techniques-in-molecular-biology-topic',
-      title: 'Some Techniques in Molecular Biology',
-      concepts: [
-        { slug: 'genetically-engineered-organisms', title: 'Production of Genetically Engineered Organisms' },
-        { slug: 'recombinant-dna', title: 'Recombinant DNA' },
-        { slug: 'applications-of-genetic-engineering', title: 'Golden Rice and Genetically Modified Animals' },
-      ],
-    },
-  ],
-};
+// Chapters 1-2 are fully authored; the remaining four are outline-only
+// stubs for now — real, navigable pages with an accurate section map,
+// upgraded to full chapters one batch at a time.
 
 const chapter3: Chapter = {
   slug: 'transport-system-in-organisms',
@@ -219,5 +177,5 @@ export const cLevelBiology: Level = {
   name: 'C-Level',
   description: 'Six chapters — from the themes of biology through biodiversity and conservation.',
   status: 'available',
-  chapters: [chapter1Themes, chapter2, chapter3, chapter4, chapter5, chapter6],
+  chapters: [chapter1Themes, chapter2Molecular, chapter3, chapter4, chapter5, chapter6],
 };

@@ -1,0 +1,221 @@
+import type { Assessment } from '@/types/content';
+
+export const chapter2MolecularAssessment: Assessment = {
+  id: 'molecular-biology-assessment',
+  questions: [
+    // Part A — Concept
+    {
+      id: 'mb-a1',
+      part: 'concept',
+      conceptSlug: 'the-structure-of-rna',
+      conceptTitle: 'The Structure of RNA',
+      question: {
+        id: 'mb-a1-q',
+        type: 'multiple-choice',
+        difficulty: 'easy',
+        prompt: 'Which base does RNA use in place of thymine?',
+        options: [
+          { id: 'a', text: 'Adenine' },
+          { id: 'b', text: 'Uracil' },
+          { id: 'c', text: 'Guanine' },
+          { id: 'd', text: 'Cytosine' },
+        ],
+        correctOptionId: 'b',
+        hints: ['This base still pairs with adenine, just like thymine does in DNA.'],
+        explanation: 'RNA uses uracil (U) instead of thymine (T), while still pairing with adenine.',
+      },
+    },
+    {
+      id: 'mb-a2',
+      part: 'concept',
+      conceptSlug: 'dna-replication',
+      conceptTitle: 'DNA Replication',
+      question: {
+        id: 'mb-a2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'What does "semi-conservative" replication mean?',
+        options: [
+          { id: 'a', text: 'Only half of the DNA molecule is copied.' },
+          { id: 'b', text: 'Each new double helix contains one original strand and one newly made strand.' },
+          { id: 'c', text: 'Replication happens only in half of all cells.' },
+          { id: 'd', text: 'DNA is destroyed and rebuilt from scratch each time.' },
+        ],
+        correctOptionId: 'b',
+        hints: ['Think about what each original strand does after the helix unwinds.'],
+        explanation: 'Each new helix "conserves" one original template strand paired with one newly synthesised strand.',
+      },
+    },
+    {
+      id: 'mb-a3',
+      part: 'concept',
+      conceptSlug: 'the-genetic-code',
+      conceptTitle: 'The Genetic Code',
+      question: {
+        id: 'mb-a3-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Why is the genetic code described as "degenerate"?',
+        options: [
+          { id: 'a', text: 'Because it breaks down over time.' },
+          { id: 'b', text: 'Because most amino acids are specified by more than one codon.' },
+          { id: 'c', text: 'Because it only works in bacteria.' },
+          { id: 'd', text: 'Because each codon specifies more than one amino acid.' },
+        ],
+        correctOptionId: 'b',
+        hints: ['There are 64 codons but only 20 amino acids to specify.'],
+        explanation: 'With 64 possible codons for only 20 amino acids, most amino acids have multiple codons — this redundancy is what "degenerate" means here.',
+      },
+    },
+
+    // Part B — Formula & Application
+    {
+      id: 'mb-b1',
+      part: 'formula-application',
+      conceptSlug: 'the-structure-of-dna',
+      conceptTitle: 'The Structure of DNA',
+      question: {
+        id: 'mb-b1-q',
+        type: 'numeric',
+        difficulty: 'medium',
+        prompt: 'A double-stranded DNA sample is 18% thymine. What percentage of the sample is guanine?',
+        hints: ['%A = %T, so find %A first.', 'A + T + G + C = 100%, and %G = %C.'],
+        correctAnswer: 32,
+        tolerance: 0.5,
+        explanation: '%A = %T = 18%, so A + T = 36%, leaving 64% for G + C. Since %G = %C, %G = 32%.',
+      },
+    },
+    {
+      id: 'mb-b2',
+      part: 'formula-application',
+      conceptSlug: 'the-structure-of-dna',
+      conceptTitle: 'The Structure of DNA',
+      question: {
+        id: 'mb-b2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'A DNA sample has 40% cytosine. What is the percentage of adenine?',
+        options: [
+          { id: 'a', text: '40%' },
+          { id: 'b', text: '20%' },
+          { id: 'c', text: '10%' },
+          { id: 'd', text: '60%' },
+        ],
+        correctOptionId: 'c',
+        hints: ['%G = %C = 40%, so G + C = 80%, leaving 20% for A + T.', '%A = %T, so split the remaining 20% evenly.'],
+        explanation: '%G = %C = 40% → G + C = 80% → A + T = 20% → since %A = %T, %A = 10%.',
+      },
+    },
+
+    // Part C — Problem Solving
+    {
+      id: 'mb-c1',
+      part: 'problem-solving',
+      conceptSlug: 'transcription',
+      conceptTitle: 'Transcription',
+      question: {
+        id: 'mb-c1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: "A DNA template strand reads 3'-GGCATT-5'. What mRNA sequence is transcribed from it?",
+        options: [
+          { id: 'a', text: "5'-CCGUAA-3'" },
+          { id: 'b', text: "5'-GGCATT-3'" },
+          { id: 'c', text: "5'-CCGTAA-3'" },
+          { id: 'd', text: "5'-UUACGG-3'" },
+        ],
+        correctOptionId: 'a',
+        hints: ['Pair each DNA base with its RNA complement: G→C, C→G, A→U, T→A.'],
+        explanation: "G→C, G→C, C→G, A→U, T→A, T→A gives 5'-CCGUAA-3' as the mRNA — note RNA uses U, never T.",
+      },
+    },
+    {
+      id: 'mb-c2',
+      part: 'problem-solving',
+      conceptSlug: 'translation',
+      conceptTitle: 'Translation',
+      question: {
+        id: 'mb-c2-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'A single DNA base substitution changes one mRNA codon from GGC (Glycine) to GAC (Aspartate). What is the most direct biological consequence?',
+        options: [
+          { id: 'a', text: 'No protein is made at all.' },
+          { id: 'b', text: 'One amino acid in the resulting protein changes from glycine to aspartate.' },
+          { id: 'c', text: 'The entire genetic code changes.' },
+          { id: 'd', text: 'Transcription stops immediately.' },
+        ],
+        correctOptionId: 'b',
+        hints: ['Each codon specifies exactly one amino acid — what happens to the protein if a codon changes?'],
+        explanation: 'Since GAC codes for aspartate instead of glycine, the ribosome inserts a different amino acid at that one position in the growing protein chain — this is exactly how a single-base mutation can alter protein structure and function (as in sickle cell disease).',
+      },
+    },
+
+    // Part D — Real-Life Application
+    {
+      id: 'mb-d1',
+      part: 'real-life-application',
+      conceptSlug: 'genetically-engineered-organisms',
+      conceptTitle: 'Production of Genetically Engineered Organisms',
+      question: {
+        id: 'mb-d1-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Why can bacteria engineered with the human insulin gene produce functional human insulin?',
+        options: [
+          { id: 'a', text: 'Bacteria and humans share a nearly universal genetic code, so the inserted gene is read correctly.' },
+          { id: 'b', text: 'Bacteria already naturally produce insulin.' },
+          { id: 'c', text: 'Insulin is not actually a protein, so any organism can make it.' },
+          { id: 'd', text: 'The human gene changes the bacteria into human cells.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['This relies directly on a property of the genetic code covered earlier in the chapter.'],
+        explanation: "Because the genetic code is shared across nearly all life, bacteria correctly translate the inserted human insulin gene into functional human insulin protein.",
+      },
+    },
+    {
+      id: 'mb-d2',
+      part: 'real-life-application',
+      conceptSlug: 'applications-of-genetic-engineering',
+      conceptTitle: 'Golden Rice and Genetically Modified Animals',
+      question: {
+        id: 'mb-d2-q',
+        type: 'multiple-choice',
+        difficulty: 'easy',
+        prompt: 'Golden Rice was engineered to help address which specific health problem?',
+        options: [
+          { id: 'a', text: 'Iron deficiency' },
+          { id: 'b', text: 'Vitamin A deficiency' },
+          { id: 'c', text: 'Protein deficiency' },
+          { id: 'd', text: 'Calcium deficiency' },
+        ],
+        correctOptionId: 'b',
+        hints: ['Golden Rice produces beta-carotene — what vitamin does that become in the body?'],
+        explanation: 'Golden Rice produces beta-carotene, which the body converts into vitamin A, specifically targeting vitamin A deficiency in rice-dependent populations.',
+      },
+    },
+
+    // Part E — Challenge
+    {
+      id: 'mb-e1',
+      part: 'challenge',
+      conceptSlug: 'recombinant-dna',
+      conceptTitle: 'Recombinant DNA',
+      question: {
+        id: 'mb-e1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'To insert a human gene into a bacterial plasmid, a scientist must use the SAME restriction enzyme to cut both the human gene and the plasmid. Why is this essential?',
+        options: [
+          { id: 'a', text: 'It is not essential — any restriction enzyme combination works equally well.' },
+          { id: 'b', text: 'The same enzyme produces matching, complementary sticky ends on both pieces, allowing DNA ligase to join them.' },
+          { id: 'c', text: 'Using the same enzyme changes the plasmid into human DNA.' },
+          { id: 'd', text: 'Restriction enzymes are only needed for the plasmid, not the gene.' },
+        ],
+        correctOptionId: 'b',
+        hints: ['Ligase can only join DNA ends that are chemically complementary to each other.'],
+        explanation: 'Using the same restriction enzyme on both the gene and the plasmid produces matching complementary "sticky ends," which is what allows DNA ligase to successfully join them into one recombinant DNA molecule.',
+      },
+    },
+  ],
+};
