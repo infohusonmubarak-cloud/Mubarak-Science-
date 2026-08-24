@@ -2,40 +2,11 @@ import type { Chapter, Level } from '@/types/content';
 import { chapter1MotionInAPlane } from './chapter-1-motion-in-a-plane';
 import { chapter2RotationalDynamics } from './chapter-2-rotational-dynamics';
 import { chapter3Pressure } from './chapter-3-pressure-in-fluids-and-atmosphere';
+import { chapter4Power } from './chapter-4-power-and-efficiency';
 
-// Chapters 1-3 are fully authored; the remaining nine are outline-only
+// Chapters 1-4 are fully authored; the remaining eight are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter4: Chapter = {
-  slug: 'power-and-efficiency',
-  number: 4,
-  title: 'Power and Efficiency',
-  blurb: 'Power and its units, mechanical and energy efficiency, the stretching of a coiled spring, and sources of energy.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'power-and-its-units-topic',
-      title: 'Power and Its Units',
-      concepts: [{ slug: 'power-and-its-units', title: 'Power and Its Units' }],
-    },
-    {
-      slug: 'efficiency-topic',
-      title: 'Efficiency',
-      concepts: [{ slug: 'efficiency-of-machines', title: 'Efficiency' }],
-    },
-    {
-      slug: 'stretching-of-coiled-spring-topic',
-      title: 'The Stretching of Coiled Spring',
-      concepts: [{ slug: 'stretching-of-a-coiled-spring', title: 'The Stretching of Coiled Spring' }],
-    },
-    {
-      slug: 'sources-of-energy-topic-b-level',
-      title: 'Sources of Energy',
-      concepts: [{ slug: 'sources-of-energy-b-level', title: 'Sources of Energy' }],
-    },
-  ],
-};
 
 const chapter5: Chapter = {
   slug: 'heat-and-thermal-phenomena',
@@ -314,7 +285,7 @@ export const bLevelPhysics: Level = {
   description: 'Twelve chapters — from motion in a plane through modern physics.',
   status: 'available',
   chapters: [
-    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4, chapter5, chapter6,
+    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11, chapter12,
   ],
 };
