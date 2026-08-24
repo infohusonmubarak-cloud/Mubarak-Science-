@@ -18,21 +18,21 @@ decision: `Chapter.topics` (a `Topic[]`, each holding `ConceptSummary[]`) is the
 navigation outline** — title, slug, difficulty — while the **full pedagogical body** (`Concept`,
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
 every chapter across all four subjects is a real, correctly-titled page even though most are
-still outline-only stubs with `status: 'coming-soon'` — Chemistry C-Level and Biology C-Level are
-the two exceptions, each fully authored end to end (see below). `Level` also carries its own
-`status` — most subject/level combinations (every B-Level, and C-Level for Math) are
-`coming-soon` with an empty `chapters: []` until content is written for them; the level page
-(`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
+still outline-only stubs with `status: 'coming-soon'` — Chemistry C-Level, Biology C-Level, and
+Physics B-Level are the three exceptions, each fully authored end to end (see below). `Level`
+also carries its own `status` — most subject/level combinations (Biology B-Level, and C-Level for
+Math) are `coming-soon` with an empty `chapters: []` until content is written for them; the level
+page (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
 chapter grid when `level.status === 'coming-soon'`.
 
 The reference examples for a fully-authored chapter are the flagship chapters —
 `mathematics/a-level/coordinate-geometry`, `biology/a-level/cell-structure-and-organization`,
 `chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`,
-`physics/c-level/forces-in-circular-motion` — plus **all eight** chapters of `chemistry/c-level/`
-and **all six** chapters of `biology/c-level/`, the two fully-populated levels in the app right
-now. Every chapter in Chemistry C-Level and Biology C-Level also has a graded `assessment` and a
-`conceptMap` (see **Assessments** and **Concept Maps** below); most stub chapters elsewhere don't
-yet.
+`physics/c-level/forces-in-circular-motion` — plus **all eight** chapters of `chemistry/c-level/`,
+**all six** chapters of `biology/c-level/`, and **all twelve** chapters of `physics/b-level/`, the
+three fully-populated levels in the app right now. Every chapter in Chemistry C-Level, Biology
+C-Level, and Physics B-Level also has a graded `assessment` and a `conceptMap` (see
+**Assessments** and **Concept Maps** below); most stub chapters elsewhere don't yet.
 
 `lib/content/getters.ts` is the only way pages should read content. It holds a small
 `CONTENT_PACKS` registry mapping `level/chapter` to that chapter's full `{ concepts, formulas }`
