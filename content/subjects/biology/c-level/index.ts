@@ -2,38 +2,11 @@ import type { Chapter, Level } from '@/types/content';
 import { chapter1Themes } from './chapter-1-themes-and-importance-of-biology';
 import { chapter2Molecular } from './chapter-2-molecular-biology';
 import { chapter3Transport } from './chapter-3-transport-system-in-organisms';
+import { chapter4Diseases } from './chapter-4-diseases-in-plants-and-animals';
 
-// Chapters 1-3 are fully authored; the remaining three are outline-only
+// Chapters 1-4 are fully authored; the remaining two are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter4: Chapter = {
-  slug: 'diseases-in-plants-and-animals',
-  number: 4,
-  title: 'Diseases in Plants and Animals',
-  blurb: 'What causes disease in plants and animals, how to recognize it, and how it is controlled.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'plant-diseases-topic',
-      title: 'Plant Diseases',
-      concepts: [
-        { slug: 'causes-of-plant-diseases', title: 'Disease Causing Factors' },
-        { slug: 'signs-and-symptoms-of-plant-diseases', title: 'Signs and Symptoms of Diseases' },
-        { slug: 'types-of-plant-pathogens', title: 'Types of Pathogens' },
-        { slug: 'control-of-plant-diseases', title: 'Control of Plant Diseases' },
-      ],
-    },
-    {
-      slug: 'animal-diseases-topic',
-      title: 'Animal Diseases',
-      concepts: [
-        { slug: 'non-infectious-animal-diseases', title: 'Non-infectious Diseases' },
-        { slug: 'infectious-animal-diseases', title: 'Infectious Diseases' },
-      ],
-    },
-  ],
-};
 
 const chapter5: Chapter = {
   slug: 'coordination-and-response',
@@ -126,5 +99,5 @@ export const cLevelBiology: Level = {
   name: 'C-Level',
   description: 'Six chapters — from the themes of biology through biodiversity and conservation.',
   status: 'available',
-  chapters: [chapter1Themes, chapter2Molecular, chapter3Transport, chapter4, chapter5, chapter6],
+  chapters: [chapter1Themes, chapter2Molecular, chapter3Transport, chapter4Diseases, chapter5, chapter6],
 };

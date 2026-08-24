@@ -64,6 +64,10 @@ import {
   chapter3TransportConcepts,
   chapter3TransportFormulas,
 } from '@/content/subjects/biology/c-level/chapter-3-transport-system-in-organisms';
+import {
+  chapter4DiseasesConcepts,
+  chapter4DiseasesFormulas,
+} from '@/content/subjects/biology/c-level/chapter-4-diseases-in-plants-and-animals';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -90,6 +94,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/themes-and-importance-of-biology': { concepts: chapter1ThemesConcepts, formulas: chapter1ThemesFormulas },
   'c-level/molecular-biology': { concepts: chapter2MolecularConcepts, formulas: chapter2MolecularFormulas },
   'c-level/transport-system-in-organisms': { concepts: chapter3TransportConcepts, formulas: chapter3TransportFormulas },
+  'c-level/diseases-in-plants-and-animals': { concepts: chapter4DiseasesConcepts, formulas: chapter4DiseasesFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {
