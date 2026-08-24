@@ -4,43 +4,11 @@ import { chapter2RotationalDynamics } from './chapter-2-rotational-dynamics';
 import { chapter3Pressure } from './chapter-3-pressure-in-fluids-and-atmosphere';
 import { chapter4Power } from './chapter-4-power-and-efficiency';
 import { chapter5Heat } from './chapter-5-heat-and-thermal-phenomena';
+import { chapter6Vibration } from './chapter-6-vibration-of-strings-and-resonance';
 
-// Chapters 1-5 are fully authored; the remaining seven are outline-only
+// Chapters 1-6 are fully authored; the remaining six are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter6: Chapter = {
-  slug: 'vibration-of-strings-and-resonance',
-  number: 6,
-  title: 'Vibration of Strings, Resonance',
-  blurb: 'Stationary waves, vibrating strings, the resonance column and organ pipes, and the intensity of waves.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'stationary-waves-topic',
-      title: 'Stationary Waves',
-      concepts: [{ slug: 'stationary-waves', title: 'Stationary Waves' }],
-    },
-    {
-      slug: 'vibrating-strings-topic',
-      title: 'Vibrating Strings',
-      concepts: [{ slug: 'vibrating-strings', title: 'Vibrating Strings' }],
-    },
-    {
-      slug: 'resonance-column-and-organ-pipes-topic',
-      title: 'Resonance Column and Organ Pipes',
-      concepts: [
-        { slug: 'resonance-column', title: 'Resonance Column' },
-        { slug: 'organ-pipes', title: 'Organ Pipes' },
-      ],
-    },
-    {
-      slug: 'intensity-of-waves-topic',
-      title: 'Intensity of Waves',
-      concepts: [{ slug: 'intensity-of-waves', title: 'Intensity of Waves' }],
-    },
-  ],
-};
 
 const chapter7: Chapter = {
   slug: 'refraction-of-light-b-level',
@@ -249,7 +217,7 @@ export const bLevelPhysics: Level = {
   description: 'Twelve chapters — from motion in a plane through modern physics.',
   status: 'available',
   chapters: [
-    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6,
+    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6Vibration,
     chapter7, chapter8, chapter9, chapter10, chapter11, chapter12,
   ],
 };

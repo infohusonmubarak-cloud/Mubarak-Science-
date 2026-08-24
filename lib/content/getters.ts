@@ -37,6 +37,10 @@ import {
   chapter5HeatFormulas,
 } from '@/content/subjects/physics/b-level/chapter-5-heat-and-thermal-phenomena';
 import {
+  chapter6VibrationConcepts,
+  chapter6VibrationFormulas,
+} from '@/content/subjects/physics/b-level/chapter-6-vibration-of-strings-and-resonance';
+import {
   chapter2CForcesConcepts,
   chapter2CForcesFormulas,
 } from '@/content/subjects/physics/c-level/chapter-2-forces-in-circular-motion';
@@ -115,6 +119,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/pressure-in-fluids-and-atmosphere': { concepts: chapter3PressureConcepts, formulas: chapter3PressureFormulas },
   'b-level/power-and-efficiency': { concepts: chapter4PowerConcepts, formulas: chapter4PowerFormulas },
   'b-level/heat-and-thermal-phenomena': { concepts: chapter5HeatConcepts, formulas: chapter5HeatFormulas },
+  'b-level/vibration-of-strings-and-resonance': { concepts: chapter6VibrationConcepts, formulas: chapter6VibrationFormulas },
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
