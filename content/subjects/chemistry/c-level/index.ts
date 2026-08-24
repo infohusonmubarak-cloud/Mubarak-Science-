@@ -3,60 +3,11 @@ import { chapter1Bonding } from './chapter-1-chemical-bonding-and-intermolecular
 import { chapter2Energy } from './chapter-2-energy-changes-in-chemical-reactions';
 import { chapter3Kinetics } from './chapter-3-chemical-kinetics-rates-of-reaction';
 import { chapter4Equilibrium } from './chapter-4-chemical-equilibrium';
+import { chapter5AcidBase } from './chapter-5-acid-base-reactions';
 
-// Chapters 1-4 are fully authored; the other four are outline-only stubs
+// Chapters 1-5 are fully authored; the other three are outline-only stubs
 // for now — real, navigable pages with an accurate section map, upgraded
 // to full chapters one batch at a time.
-
-const chapter5: Chapter = {
-  slug: 'acid-base-reactions',
-  number: 5,
-  title: 'Acid-Base Reactions',
-  blurb: 'Theories of acids and bases, pH and the ionisation of water, weak acid/base equilibria, salt hydrolysis, and how buffer solutions resist pH change.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'theories-of-acids-and-bases-topic',
-      title: 'Theories of Acids and Bases',
-      concepts: [
-        { slug: 'arrhenius-theory-of-acids-and-bases', title: 'Arrhenius Theory' },
-        { slug: 'bronsted-lowry-theory-of-acids-and-bases', title: 'Brønsted–Lowry Theory' },
-      ],
-    },
-    {
-      slug: 'ionic-dissociation-of-water-and-ph-topic',
-      title: 'Ionic Dissociation of Water and pH',
-      concepts: [
-        { slug: 'ionic-product-of-water', title: 'The Ionic Product of Water, Kw' },
-        { slug: 'the-ph-scale', title: 'The pH Scale' },
-      ],
-    },
-    {
-      slug: 'ionisation-of-acids-and-bases-topic',
-      title: 'Ionisation of Acids and Bases',
-      concepts: [
-        { slug: 'strong-and-weak-acids', title: 'Strong and Weak Acids' },
-        { slug: 'the-acid-dissociation-constant-ka', title: 'The Acid Dissociation Constant, Ka' },
-        { slug: 'strong-and-weak-bases', title: 'Strong and Weak Bases' },
-      ],
-    },
-    {
-      slug: 'salt-hydrolysis-topic',
-      title: 'Salt Hydrolysis',
-      concepts: [
-        { slug: 'salt-hydrolysis', title: 'Salt Hydrolysis' },
-      ],
-    },
-    {
-      slug: 'buffer-solutions-topic',
-      title: 'Buffer Solutions',
-      concepts: [
-        { slug: 'how-buffer-solutions-work', title: 'How Buffer Solutions Work' },
-        { slug: 'the-henderson-hasselbalch-equation', title: 'The Henderson–Hasselbalch Equation' },
-      ],
-    },
-  ],
-};
 
 const chapter6: Chapter = {
   slug: 'transition-elements',
@@ -170,5 +121,5 @@ export const cLevelChemistry: Level = {
   name: 'C-Level',
   description: 'Eight chapters — from chemical bonding through organic compounds and macromolecules.',
   status: 'available',
-  chapters: [chapter1Bonding, chapter2Energy, chapter3Kinetics, chapter4Equilibrium, chapter5, chapter6, chapter7, chapter8],
+  chapters: [chapter1Bonding, chapter2Energy, chapter3Kinetics, chapter4Equilibrium, chapter5AcidBase, chapter6, chapter7, chapter8],
 };
