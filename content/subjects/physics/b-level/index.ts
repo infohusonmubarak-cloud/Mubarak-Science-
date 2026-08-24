@@ -1,44 +1,11 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1MotionInAPlane } from './chapter-1-motion-in-a-plane';
 import { chapter2RotationalDynamics } from './chapter-2-rotational-dynamics';
+import { chapter3Pressure } from './chapter-3-pressure-in-fluids-and-atmosphere';
 
-// Chapters 1-2 are fully authored; the remaining ten are outline-only
+// Chapters 1-3 are fully authored; the remaining nine are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter3: Chapter = {
-  slug: 'pressure-in-fluids-and-atmosphere',
-  number: 3,
-  title: 'Pressure',
-  blurb: 'Atmospheric pressure and the barometer, pressure in a liquid, the manometer, and the principles of Archimedes and Pascal.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'atmospheric-pressure-topic-b-level',
-      title: 'Atmospheric Pressure and the Barometer',
-      concepts: [
-        { slug: 'atmospheric-pressure-explained', title: 'Atmospheric Pressure' },
-        { slug: 'the-mercury-barometer', title: 'The Barometer' },
-      ],
-    },
-    {
-      slug: 'pressure-in-a-liquid-topic',
-      title: 'Pressure in a Liquid and the Manometer',
-      concepts: [
-        { slug: 'pressure-in-a-liquid-b-level', title: 'Pressure in a Liquid' },
-        { slug: 'the-manometer', title: 'The Manometer' },
-      ],
-    },
-    {
-      slug: 'archimedes-and-pascal-topic',
-      title: "Archimedes' Principle and Pascal's Law",
-      concepts: [
-        { slug: 'archimedes-principle', title: "Archimedes' Principle" },
-        { slug: 'pascals-law', title: "Pascal's Law" },
-      ],
-    },
-  ],
-};
 
 const chapter4: Chapter = {
   slug: 'power-and-efficiency',
@@ -347,7 +314,7 @@ export const bLevelPhysics: Level = {
   description: 'Twelve chapters — from motion in a plane through modern physics.',
   status: 'available',
   chapters: [
-    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3, chapter4, chapter5, chapter6,
+    chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11, chapter12,
   ],
 };

@@ -1,0 +1,86 @@
+import type { Formula } from '@/types/content';
+
+export const chapter3PressureFormulas: Record<string, Formula> = {
+  'pressure-definition-formula': {
+    slug: 'pressure-definition-formula',
+    name: 'Pressure',
+    expression: 'P = F / A',
+    meaning: 'Pressure is the amount of force acting perpendicular to a surface, spread over the area of that surface.',
+    variables: [
+      { symbol: 'P', meaning: 'Pressure, in pascals (Pa), where 1 Pa = 1 N/m²' },
+      { symbol: 'F', meaning: 'Force acting perpendicular to the surface, in newtons' },
+      { symbol: 'A', meaning: 'Area over which the force is spread, in m²' },
+    ],
+    whenToUse: 'Use whenever you need to relate a force to the area it acts over — the same force spread over a smaller area produces much greater pressure.',
+    relatedConceptSlugs: ['atmospheric-pressure-explained'],
+  },
+  'barometric-pressure-formula': {
+    slug: 'barometric-pressure-formula',
+    name: 'Barometric (Column) Pressure',
+    expression: 'P = hρg',
+    meaning: 'The pressure exerted by a column of liquid depends on the height of the column, the density of the liquid, and gravity — a barometer uses this to measure atmospheric pressure from the height of a mercury column it supports.',
+    variables: [
+      { symbol: 'P', meaning: 'Pressure at the base of the column, in Pa' },
+      { symbol: 'h', meaning: 'Height of the liquid column, in metres' },
+      { symbol: 'ρ', meaning: 'Density of the liquid (e.g. mercury, 13,600 kg/m³), in kg/m³' },
+      { symbol: 'g', meaning: 'Acceleration due to gravity, 9.8 m/s²' },
+    ],
+    whenToUse: 'Use to find atmospheric pressure from the height of mercury a barometer supports, or the pressure exerted by any column of liquid of known height.',
+    relatedConceptSlugs: ['the-mercury-barometer'],
+  },
+  'liquid-pressure-formula': {
+    slug: 'liquid-pressure-formula',
+    name: 'Pressure at a Depth in a Liquid',
+    expression: 'P = P₀ + hρg',
+    meaning: 'The total pressure at a depth in a liquid equals the pressure already present at the surface (usually atmospheric pressure) plus the additional pressure from the weight of the liquid above that depth.',
+    variables: [
+      { symbol: 'P', meaning: 'Total pressure at depth h, in Pa' },
+      { symbol: 'P₀', meaning: 'Pressure at the liquid surface (often atmospheric pressure), in Pa' },
+      { symbol: 'h', meaning: 'Depth below the surface, in metres' },
+      { symbol: 'ρ', meaning: 'Density of the liquid, in kg/m³' },
+      { symbol: 'g', meaning: 'Acceleration due to gravity, 9.8 m/s²' },
+    ],
+    whenToUse: 'Use to find the total pressure at any depth within a liquid, such as at the bottom of a swimming pool or tank.',
+    relatedConceptSlugs: ['pressure-in-a-liquid-b-level'],
+  },
+  'manometer-pressure-difference-formula': {
+    slug: 'manometer-pressure-difference-formula',
+    name: 'Manometer Pressure Difference',
+    expression: 'ΔP = hρg',
+    meaning: 'A manometer measures the pressure of a gas by comparing it to atmospheric pressure, using the height difference between two liquid columns connected to the gas and the open air.',
+    variables: [
+      { symbol: 'ΔP', meaning: 'The pressure difference between the gas and the atmosphere, in Pa' },
+      { symbol: 'h', meaning: 'The height difference between the two liquid columns in the manometer, in metres' },
+      { symbol: 'ρ', meaning: 'Density of the manometer liquid, in kg/m³' },
+      { symbol: 'g', meaning: 'Acceleration due to gravity, 9.8 m/s²' },
+    ],
+    whenToUse: "Use to find a gas's pressure relative to atmospheric pressure from the height difference observed in a manometer's liquid columns.",
+    relatedConceptSlugs: ['the-manometer'],
+  },
+  'buoyant-force-formula': {
+    slug: 'buoyant-force-formula',
+    name: "Buoyant Force (Archimedes' Principle)",
+    expression: 'Fᵦ = ρVg',
+    meaning: 'The upward buoyant force on an object submerged (fully or partly) in a fluid equals the weight of the fluid that the object displaces.',
+    variables: [
+      { symbol: 'Fᵦ', meaning: 'Buoyant force, in newtons' },
+      { symbol: 'ρ', meaning: 'Density of the fluid the object is submerged in, in kg/m³' },
+      { symbol: 'V', meaning: 'Volume of fluid displaced by the object, in m³' },
+      { symbol: 'g', meaning: 'Acceleration due to gravity, 9.8 m/s²' },
+    ],
+    whenToUse: 'Use to find the upward force a fluid exerts on a submerged or floating object, and to determine whether an object will float or sink.',
+    relatedConceptSlugs: ['archimedes-principle'],
+  },
+  'pascals-law-formula': {
+    slug: 'pascals-law-formula',
+    name: "Pascal's Law (Hydraulic Press)",
+    expression: 'F₁/A₁ = F₂/A₂',
+    meaning: 'Pressure applied to an enclosed fluid is transmitted equally throughout the fluid — a small force on a small piston can therefore produce a much larger force on a larger piston, since the pressure (F/A) must be the same at both.',
+    variables: [
+      { symbol: 'F₁, A₁', meaning: 'Force applied to, and area of, the smaller (input) piston' },
+      { symbol: 'F₂, A₂', meaning: 'Resulting force on, and area of, the larger (output) piston' },
+    ],
+    whenToUse: 'Use to calculate the force multiplication produced by a hydraulic system, such as a car jack or hydraulic press.',
+    relatedConceptSlugs: ['pascals-law'],
+  },
+};
