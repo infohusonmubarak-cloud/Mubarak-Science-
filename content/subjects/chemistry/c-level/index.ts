@@ -1,46 +1,11 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1Bonding } from './chapter-1-chemical-bonding-and-intermolecular-forces';
 import { chapter2Energy } from './chapter-2-energy-changes-in-chemical-reactions';
+import { chapter3Kinetics } from './chapter-3-chemical-kinetics-rates-of-reaction';
 
-// Chapters 1-2 are fully authored; the other six are outline-only stubs
+// Chapters 1-3 are fully authored; the other five are outline-only stubs
 // for now — real, navigable pages with an accurate section map, upgraded
 // to full chapters one batch at a time.
-
-const chapter3: Chapter = {
-  slug: 'chemical-kinetics-rates-of-reaction',
-  number: 3,
-  title: 'Chemical Kinetics: Rates of Reaction',
-  blurb: 'How fast reactions happen, why collisions lead to reactions, and the factors that speed reactions up or slow them down.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'reaction-rates-topic',
-      title: 'Reaction Rates',
-      concepts: [
-        { slug: 'measuring-reaction-rate', title: 'Measuring Reaction Rate' },
-        { slug: 'average-and-instantaneous-rate', title: 'Average and Instantaneous Rate' },
-      ],
-    },
-    {
-      slug: 'collision-theory-topic',
-      title: 'Collision Theory and Activation Energy',
-      concepts: [
-        { slug: 'collision-theory', title: 'Collision Theory' },
-        { slug: 'activation-energy', title: 'Activation Energy' },
-        { slug: 'the-maxwell-boltzmann-distribution', title: 'The Maxwell–Boltzmann Distribution' },
-      ],
-    },
-    {
-      slug: 'factors-affecting-reaction-rates-topic',
-      title: 'Factors Affecting Reaction Rates',
-      concepts: [
-        { slug: 'concentration-and-pressure-effects-on-rate', title: 'Concentration and Pressure' },
-        { slug: 'temperature-effects-on-rate', title: 'Temperature' },
-        { slug: 'surface-area-and-catalysts', title: 'Surface Area and Catalysts' },
-      ],
-    },
-  ],
-};
 
 const chapter4: Chapter = {
   slug: 'chemical-equilibrium',
@@ -239,5 +204,5 @@ export const cLevelChemistry: Level = {
   name: 'C-Level',
   description: 'Eight chapters — from chemical bonding through organic compounds and macromolecules.',
   status: 'available',
-  chapters: [chapter1Bonding, chapter2Energy, chapter3, chapter4, chapter5, chapter6, chapter7, chapter8],
+  chapters: [chapter1Bonding, chapter2Energy, chapter3Kinetics, chapter4, chapter5, chapter6, chapter7, chapter8],
 };

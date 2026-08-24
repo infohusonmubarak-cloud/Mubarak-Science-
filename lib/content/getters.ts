@@ -28,6 +28,10 @@ import {
   chapter2EnergyConcepts,
   chapter2EnergyFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-2-energy-changes-in-chemical-reactions';
+import {
+  chapter3KineticsConcepts,
+  chapter3KineticsFormulas,
+} from '@/content/subjects/chemistry/c-level/chapter-3-chemical-kinetics-rates-of-reaction';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -45,6 +49,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
+  'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {
