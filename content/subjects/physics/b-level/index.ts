@@ -7,44 +7,11 @@ import { chapter5Heat } from './chapter-5-heat-and-thermal-phenomena';
 import { chapter6Vibration } from './chapter-6-vibration-of-strings-and-resonance';
 import { chapter7Refraction } from './chapter-7-refraction-of-light-b-level';
 import { chapter8Lenses } from './chapter-8-lenses';
+import { chapter9ElectricField } from './chapter-9-electric-field';
 
-// Chapters 1-8 are fully authored; the remaining four are outline-only
+// Chapters 1-9 are fully authored; the remaining three are outline-only
 // stubs for now — real, navigable pages with an accurate section map,
 // upgraded to full chapters one batch at a time.
-
-const chapter9: Chapter = {
-  slug: 'electric-field',
-  number: 9,
-  title: 'Electric Field',
-  blurb: "Coulomb's law, electric field intensity, lines of force, charge distribution, electric potential and potential difference, and equipotential surfaces.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'coulombs-law-topic',
-      title: "Coulomb's Law",
-      concepts: [{ slug: 'coulombs-law', title: "Coulomb's Law" }],
-    },
-    {
-      slug: 'electric-field-and-lines-of-force-topic',
-      title: 'Electric Field, Electric Field Intensity and Lines of Force',
-      concepts: [
-        { slug: 'electric-field-and-field-intensity', title: 'Electric Field and Electric Field Intensity' },
-        { slug: 'electric-lines-of-force', title: 'Electric Lines of Force' },
-        { slug: 'electric-charge-distribution', title: 'Electric Charge Distribution' },
-      ],
-    },
-    {
-      slug: 'electric-potential-topic',
-      title: 'Electric Potential and Potential Difference',
-      concepts: [
-        { slug: 'electric-potential-and-potential-difference', title: 'Electric Potential and Potential Difference' },
-        { slug: 'equipotential-surfaces', title: 'Equipotential Surfaces' },
-        { slug: 'electric-potential-of-the-earth', title: 'Electric Potential of the Earth' },
-        { slug: 'potential-difference-between-parallel-plates', title: 'Potential Difference Between Two Parallel Charged Plates' },
-      ],
-    },
-  ],
-};
 
 const chapter10: Chapter = {
   slug: 'electric-current-and-magnetic-effect',
@@ -154,6 +121,6 @@ export const bLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1MotionInAPlane, chapter2RotationalDynamics, chapter3Pressure, chapter4Power, chapter5Heat, chapter6Vibration,
-    chapter7Refraction, chapter8Lenses, chapter9, chapter10, chapter11, chapter12,
+    chapter7Refraction, chapter8Lenses, chapter9ElectricField, chapter10, chapter11, chapter12,
   ],
 };

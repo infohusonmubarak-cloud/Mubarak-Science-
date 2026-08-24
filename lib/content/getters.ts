@@ -49,6 +49,10 @@ import {
   chapter8LensesFormulas,
 } from '@/content/subjects/physics/b-level/chapter-8-lenses';
 import {
+  chapter9ElectricFieldConcepts,
+  chapter9ElectricFieldFormulas,
+} from '@/content/subjects/physics/b-level/chapter-9-electric-field';
+import {
   chapter2CForcesConcepts,
   chapter2CForcesFormulas,
 } from '@/content/subjects/physics/c-level/chapter-2-forces-in-circular-motion';
@@ -130,6 +134,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/vibration-of-strings-and-resonance': { concepts: chapter6VibrationConcepts, formulas: chapter6VibrationFormulas },
   'b-level/refraction-of-light-b-level': { concepts: chapter7RefractionConcepts, formulas: chapter7RefractionFormulas },
   'b-level/lenses': { concepts: chapter8LensesConcepts, formulas: chapter8LensesFormulas },
+  'b-level/electric-field': { concepts: chapter9ElectricFieldConcepts, formulas: chapter9ElectricFieldFormulas },
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
