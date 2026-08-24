@@ -38,6 +38,15 @@ export interface Chapter {
   topics: Topic[];
   quickRevision?: QuickRevision;
   assessment?: Assessment;
+  conceptMap?: ConceptMapNode;
+}
+
+/** A node in a chapter's concept map — a simple labelled tree showing how its ideas relate. */
+export interface ConceptMapNode {
+  label: string;
+  /** Optional deep link, e.g. to the concept page this node represents. */
+  href?: string;
+  children?: ConceptMapNode[];
 }
 
 export interface Topic {

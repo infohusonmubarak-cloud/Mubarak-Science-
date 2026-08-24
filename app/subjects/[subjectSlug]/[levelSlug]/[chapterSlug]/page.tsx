@@ -76,6 +76,11 @@ export default async function ChapterPage({
                 Chapter Assessment →
               </Button>
             ) : null}
+            {chapter.conceptMap ? (
+              <Button href={`/subjects/${subject.slug}/${level.slug}/${chapter.slug}/concept-map`} variant="secondary" size="sm">
+                Concept Map →
+              </Button>
+            ) : null}
           </div>
           <ChapterOutline
             subjectSlug={subject.slug}
