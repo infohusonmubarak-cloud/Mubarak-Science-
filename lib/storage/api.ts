@@ -29,3 +29,11 @@ export {
   deleteNote,
   subscribeNotes,
 } from './notes';
+
+export {
+  getAssessmentState,
+  getAssessmentStateServerSnapshot,
+  getAssessmentAttempt,
+  recordAssessmentAttempt,
+  subscribeAssessments,
+} from './assessments';

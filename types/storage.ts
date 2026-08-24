@@ -41,3 +41,20 @@ export interface ChapterProgress {
   total: number;
   percent: number;
 }
+
+export interface AssessmentAttempt {
+  chapterSlug: string;
+  score: number;
+  total: number;
+  percent: number;
+  /** Concept slugs behind any question answered incorrectly on the latest attempt. */
+  weakConceptSlugs: string[];
+  attemptCount: number;
+  lastAttemptAt: string;
+}
+
+export interface AssessmentState {
+  schemaVersion: 1;
+  /** Keyed by chapterSlug — only the latest attempt per chapter is kept. */
+  attempts: Record<string, AssessmentAttempt>;
+}

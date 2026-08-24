@@ -65,11 +65,18 @@ export default async function ChapterPage({
       ) : (
         <>
           <ChapterProgressBar chapterSlug={chapter.slug} totalConcepts={totalConcepts} />
-          {chapter.quickRevision ? (
-            <Button href={`/revision/${subject.slug}/${level.slug}/${chapter.slug}`} variant="secondary" size="sm">
-              Quick Revision for this chapter →
-            </Button>
-          ) : null}
+          <div className="flex flex-wrap gap-2">
+            {chapter.quickRevision ? (
+              <Button href={`/revision/${subject.slug}/${level.slug}/${chapter.slug}`} variant="secondary" size="sm">
+                Quick Revision for this chapter →
+              </Button>
+            ) : null}
+            {chapter.assessment ? (
+              <Button href={`/subjects/${subject.slug}/${level.slug}/${chapter.slug}/assessment`} variant="secondary" size="sm">
+                Chapter Assessment →
+              </Button>
+            ) : null}
+          </div>
           <ChapterOutline
             subjectSlug={subject.slug}
             levelSlug={level.slug}

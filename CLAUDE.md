@@ -17,27 +17,41 @@ Content lives entirely as typed data in `content/`, never hardcoded into JSX. Th
 decision: `Chapter.topics` (a `Topic[]`, each holding `ConceptSummary[]`) is the **always-present
 navigation outline** — title, slug, difficulty — while the **full pedagogical body** (`Concept`,
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
-every chapter across all four subjects is a real, correctly-titled page even though only one
-flagship chapter per subject has full content yet — the rest are outline-only stubs with
-`status: 'coming-soon'`. `Level` also carries its own `status` — every subject's B-Level and
-C-Level are `coming-soon` with an empty `chapters: []` until content is written for them; the
-level page (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead
-of a chapter grid when `level.status === 'coming-soon'`.
+every chapter across all four subjects is a real, correctly-titled page even though only a
+handful of flagship chapters have full content yet — the rest are outline-only stubs with
+`status: 'coming-soon'`. `Level` also carries its own `status` — most subject/level combinations
+(every B-Level, and C-Level for Math/Biology/Chemistry) are `coming-soon` with an empty
+`chapters: []` until content is written for them; the level page
+(`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
+chapter grid when `level.status === 'coming-soon'`.
 
-The four flagship chapters, one per subject, are the reference examples for a fully-authored
-chapter: `mathematics/a-level/coordinate-geometry`, `biology/a-level/cell-structure-and-organization`,
-`chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`.
+The flagship chapters are the reference examples for a fully-authored chapter:
+`mathematics/a-level/coordinate-geometry`, `biology/a-level/cell-structure-and-organization`,
+`chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`, and
+`physics/c-level/forces-in-circular-motion` (the only chapter so far with a graded `assessment`
+too — see **Assessments** below).
 
 `lib/content/getters.ts` is the only way pages should read content. It holds a small
 `CONTENT_PACKS` registry mapping `level/chapter` to that chapter's full `{ concepts, formulas }`
-— add an entry there when a new chapter gets full content. Chapter slugs must stay **globally
-unique across the whole app** (not just within a level, and not just within a subject — `a-level`
-is a shared level slug across all four subjects) — storage (`lib/storage/progress.ts`) keys a
-concept's completion by bare `chapterSlug`, so two chapters sharing a slug would corrupt each
-other's progress. This is why Math's Level B Circles/Trigonometry chapters are
-`circles-advanced`/`trigonometry-advanced` rather than reusing Level A's `circles`/`trigonometry`
-— re-check this invariant (e.g. `grep` every chapter's `slug:` across `content/`) whenever adding
-a new subject or level's worth of chapters.
+— add an entry there when a new chapter gets full content. **Both chapter slugs and concept
+slugs must stay globally unique across the whole app** (not just within a level, and not just
+within a subject — `a-level`/`c-level` etc. are level slugs shared across all four subjects).
+This isn't just the `CONTENT_PACKS` key: `lib/storage/progress.ts` keys a learner's completed-
+concept record by bare `conceptSlug` alone (the chapter it belongs to is stored as a *value*, not
+part of the key), and `findChapterLocation` in `getters.ts` searches every subject/level for the
+first chapter matching a bare `chapterSlug`. A collision on either kind of slug means two
+different chapters/concepts silently share one storage entry or resolve to the wrong page. This
+is why Math's Level B Circles/Trigonometry chapters are `circles-advanced`/`trigonometry-advanced`
+rather than reusing Level A's `circles`/`trigonometry` — before adding a new subject or level's
+worth of chapters, re-check both invariants, e.g.:
+```bash
+grep -rhoP "slug: '\K[^']+" content/ | sort | uniq -c | sort -rn
+```
+Expect `a-level`/`b-level`/`c-level` to repeat (level slugs, fine) and a handful of concept slugs
+to repeat exactly twice (a concept's `ConceptSummary` in `topics.ts` naturally shares its slug
+with the matching full `Concept` in `concepts.ts` — also fine). Anything else repeating is a real
+collision. (Topic slugs and formula slugs are separate namespaces — topics aren't looked up by
+bare slug anywhere, and formulas only need to be unique among themselves, via `findFormula`.)
 
 Every full `Concept` follows a fixed nine-part structure (see any entry in
 `content/subjects/mathematics/a-level/chapter-1-coordinate-geometry/concepts.ts`): simple
@@ -51,7 +65,8 @@ relies on) — only add one where a real connection exists, don't force it on ev
 ## Diagrams
 
 `components/diagrams/registry.ts` maps a `Diagram.component` key (`'CoordinatePlane' |
-'NumberLine' | 'StaticImage' | 'CellDiagram' | 'MoleculeDiagram'`) to its implementation.
+'NumberLine' | 'StaticImage' | 'CellDiagram' | 'MoleculeDiagram' | 'CircularMotionDiagram'`) to
+its implementation.
 `DiagramContainer` renders the registered component and — this is a common trap — applies
 `interactive={diagram.interactive}` **after** spreading `diagram.props`, so the top-level
 `Diagram.interactive` flag on the content object is the single source of truth for whether a
@@ -60,6 +75,26 @@ would be redundant at best and confusing at worst. `CoordinatePlane` is delibera
 enough to be relabelled for non-Math use (see its `xLabel`/`yLabel`/`slopeSymbol` props, used by
 Physics's Motion chapter to present it as a velocity-time graph) — prefer reusing it with new
 labels over building a near-duplicate graphing component.
+
+## Assessments
+
+A chapter can optionally carry `assessment?: Assessment` (set directly on the `Chapter` object,
+same pattern as `quickRevision` — no `CONTENT_PACKS` entry needed). An `Assessment` is a flat list
+of `AssessmentQuestion`, each reusing the existing `PracticeQuestion` shape (multiple-choice or
+numeric) plus a `part` (`'concept' | 'formula-application' | 'problem-solving' |
+'real-life-application' | 'challenge'`, mirroring the five-part structure a real exam uses) and a
+`conceptSlug`/`conceptTitle` so a wrong answer can be attributed back to a specific topic.
+
+`components/assessment/AssessmentRunner.tsx` renders the route at
+`/subjects/[subjectSlug]/[levelSlug]/[chapterSlug]/assessment`. Unlike `PracticeQuestion` (which
+reveals correctness immediately, per-question), it collects every answer first and only scores on
+submit — don't add per-question feedback here, that's a deliberate difference from practice
+questions. On submit it shows a score, a correct/incorrect breakdown, and a "topics to review"
+list of the concepts behind any wrong answer, each linking to that concept's page. Results persist
+via `lib/storage/assessments.ts` (`recordAssessmentAttempt`/`useAssessmentAttempt`) — only the
+latest attempt per chapter is kept, keyed by `chapterSlug`, following the same
+`readJSON`/`writeJSON`/`*ServerSnapshot` pattern as `progress.ts` (see **localStorage and
+hydration** below) since it's read via `useSyncExternalStore` too.
 
 ## localStorage and hydration
 
