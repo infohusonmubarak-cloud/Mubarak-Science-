@@ -68,6 +68,10 @@ import {
   chapter4DiseasesConcepts,
   chapter4DiseasesFormulas,
 } from '@/content/subjects/biology/c-level/chapter-4-diseases-in-plants-and-animals';
+import {
+  chapter5CoordinationConcepts,
+  chapter5CoordinationFormulas,
+} from '@/content/subjects/biology/c-level/chapter-5-coordination-and-response';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -95,6 +99,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/molecular-biology': { concepts: chapter2MolecularConcepts, formulas: chapter2MolecularFormulas },
   'c-level/transport-system-in-organisms': { concepts: chapter3TransportConcepts, formulas: chapter3TransportFormulas },
   'c-level/diseases-in-plants-and-animals': { concepts: chapter4DiseasesConcepts, formulas: chapter4DiseasesFormulas },
+  'c-level/coordination-and-response': { concepts: chapter5CoordinationConcepts, formulas: chapter5CoordinationFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {

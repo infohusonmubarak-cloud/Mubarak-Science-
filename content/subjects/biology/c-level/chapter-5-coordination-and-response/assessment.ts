@@ -1,0 +1,226 @@
+import type { Assessment } from '@/types/content';
+
+export const chapter5CoordinationAssessment: Assessment = {
+  id: 'coordination-and-response-assessment',
+  questions: [
+    // Part A — Concept
+    {
+      id: 'car-a1',
+      part: 'concept',
+      conceptSlug: 'coordination-and-response-in-plants',
+      conceptTitle: 'Coordination and Response in Plants',
+      question: {
+        id: 'car-a1-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'What causes a stem to bend toward light in phototropism?',
+        options: [
+          { id: 'a', text: 'Uneven auxin distribution causing more elongation on the shaded side.' },
+          { id: 'b', text: 'The plant physically walks toward the light.' },
+          { id: 'c', text: 'Light directly damages cells on the lit side.' },
+          { id: 'd', text: 'Chlorophyll pulls the stem toward light.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Which hormone accumulates unevenly across the stem?'],
+        explanation: 'Auxin accumulates more on the shaded side, causing greater cell elongation there and bending the stem toward the light.',
+      },
+    },
+    {
+      id: 'car-a2',
+      part: 'concept',
+      conceptSlug: 'structure-of-neurones',
+      conceptTitle: 'Structure of Neurones',
+      question: {
+        id: 'car-a2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Which part of a neurone receives signals from other neurones?',
+        options: [
+          { id: 'a', text: 'The axon' },
+          { id: 'b', text: 'Dendrites' },
+          { id: 'c', text: 'The myelin sheath' },
+          { id: 'd', text: 'The node of Ranvier' },
+        ],
+        correctOptionId: 'b',
+        hints: ['The axon transmits signals onward; a different structure receives them.'],
+        explanation: 'Dendrites are the branching structures that receive incoming signals from other neurones.',
+      },
+    },
+    {
+      id: 'car-a3',
+      part: 'concept',
+      conceptSlug: 'endocrine-glands-and-hormones',
+      conceptTitle: 'Endocrine Glands and Hormones',
+      question: {
+        id: 'car-a3-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Why does a hormone only affect certain cells, even though it circulates throughout the blood?',
+        options: [
+          { id: 'a', text: 'Only cells with the matching hormone receptor respond.' },
+          { id: 'b', text: 'Hormones only reach cells located near the gland that released them.' },
+          { id: 'c', text: 'All cells respond identically to every hormone.' },
+          { id: 'd', text: 'Hormones cannot actually enter the bloodstream.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Receptor specificity is the key idea here.'],
+        explanation: 'A hormone produces an effect only in target cells that carry a matching receptor, giving a broadly circulating signal a specific effect.',
+      },
+    },
+
+    // Part B — Framework Application (mechanistic rather than numeric)
+    {
+      id: 'car-b1',
+      part: 'formula-application',
+      conceptSlug: 'synapses',
+      conceptTitle: 'Synapses',
+      question: {
+        id: 'car-b1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'A drug blocks neurotransmitter receptors on the receiving side of a synapse. What is the most likely direct effect?',
+        options: [
+          { id: 'a', text: 'Signal transmission across that synapse is blocked or reduced, since the neurotransmitter cannot bind and trigger a new signal.' },
+          { id: 'b', text: 'The electrical signal simply jumps across the gap anyway.' },
+          { id: 'c', text: 'The drug has no effect on synaptic transmission.' },
+          { id: 'd', text: 'The neurone immediately dies.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Transmission depends on the neurotransmitter successfully binding its receptor.'],
+        explanation: 'Since chemical transmission at a synapse depends on neurotransmitter-receptor binding, blocking the receptor prevents that binding and disrupts signal transmission across the synapse.',
+      },
+    },
+    {
+      id: 'car-b2',
+      part: 'formula-application',
+      conceptSlug: 'comparing-nervous-and-endocrine-systems',
+      conceptTitle: 'Comparison between Nervous System and Endocrine System',
+      question: {
+        id: 'car-b2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Which type of response would you expect from the ENDOCRINE system rather than the nervous system?',
+        options: [
+          { id: 'a', text: 'A split-second reflex withdrawal from a hot surface' },
+          { id: 'b', text: 'A gradual, sustained increase in metabolic rate over hours' },
+          { id: 'c', text: 'An instant voluntary muscle contraction' },
+          { id: 'd', text: 'A millisecond-scale sensory reaction' },
+        ],
+        correctOptionId: 'b',
+        hints: ['Endocrine responses are generally slower to start but longer-lasting.'],
+        explanation: 'A gradual, sustained metabolic change over hours fits the slower, longer-lasting nature of endocrine (hormonal) regulation, unlike the fast, brief nervous responses in the other options.',
+      },
+    },
+
+    // Part C — Problem Solving
+    {
+      id: 'car-c1',
+      part: 'problem-solving',
+      conceptSlug: 'seed-dormancy-and-germination',
+      conceptTitle: 'Seed Dormancy and Seed Germination',
+      question: {
+        id: 'car-c1-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'A gardener plants apple seeds directly in warm soil in summer, and none of them germinate. What is the most likely explanation?',
+        options: [
+          { id: 'a', text: 'The seeds require a period of cold, moist conditions (stratification) to break dormancy, which summer planting did not provide.' },
+          { id: 'b', text: 'Apple seeds can never germinate under any conditions.' },
+          { id: 'c', text: 'The seeds were destroyed by warm temperatures.' },
+          { id: 'd', text: 'Dormancy has no relationship to germination timing.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Some seeds have a specific environmental cue required to break dormancy.'],
+        explanation: 'Without the cold period required to break dormancy (stratification), the hormone balance needed to trigger germination is never reached, so the seeds remain dormant.',
+      },
+    },
+    {
+      id: 'car-c2',
+      part: 'problem-solving',
+      conceptSlug: 'the-human-nervous-system',
+      conceptTitle: 'Human Nervous System',
+      question: {
+        id: 'car-c2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'A person touches a very hot object and pulls their hand away before consciously feeling pain. What does this demonstrate?',
+        options: [
+          { id: 'a', text: 'A spinal reflex arc processed the response without waiting for the brain, which is why the reaction is faster than conscious pain perception.' },
+          { id: 'b', text: 'The endocrine system caused the hand withdrawal.' },
+          { id: 'c', text: 'No nervous system involvement occurred.' },
+          { id: 'd', text: 'The brain processed the response before the hand moved.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Recall the knee-jerk reflex example.'],
+        explanation: 'This is a spinal reflex: the response is processed in the spinal cord directly, faster than the brain can consciously register pain, similar to the knee-jerk reflex.',
+      },
+    },
+
+    // Part D — Real-Life Application
+    {
+      id: 'car-d1',
+      part: 'real-life-application',
+      conceptSlug: 'plant-growth-regulators',
+      conceptTitle: 'Plant Growth Regulators',
+      question: {
+        id: 'car-d1-q',
+        type: 'multiple-choice',
+        difficulty: 'easy',
+        prompt: 'Why are unripe bananas sometimes exposed to ethylene gas before being sold?',
+        options: [
+          { id: 'a', text: 'Ethylene is the natural ripening hormone, so controlled exposure triggers ripening on a controlled schedule.' },
+          { id: 'b', text: 'Ethylene prevents bananas from ever ripening.' },
+          { id: 'c', text: 'Ethylene has no relationship to fruit ripening.' },
+          { id: 'd', text: 'Ethylene is used only to change the colour of bananas, not their ripeness.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Recall which hormone specifically triggers ripening.'],
+        explanation: 'Ethylene naturally triggers ripening processes (softening, colour change, sugar increase) — controlled exposure lets distributors ripen fruit on a predictable schedule.',
+      },
+    },
+    {
+      id: 'car-d2',
+      part: 'real-life-application',
+      conceptSlug: 'sense-organs',
+      conceptTitle: 'Sense Organs',
+      question: {
+        id: 'car-d2-q',
+        type: 'multiple-choice',
+        difficulty: 'easy',
+        prompt: 'Why does a person with faulty cone photoreceptors experience colour blindness specifically, rather than complete blindness?',
+        options: [
+          { id: 'a', text: 'Only the receptor type responsible for detecting colour is affected; other receptors (e.g. for brightness) still function.' },
+          { id: 'b', text: 'Cones have no relationship to vision at all.' },
+          { id: 'c', text: 'All receptor types in the eye are equally affected by any defect.' },
+          { id: 'd', text: 'Colour blindness always causes total blindness.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Receptor cells are specialised for specific aspects of a stimulus.'],
+        explanation: 'Since receptor cells are specialised (cones for colour, rods for low-light/brightness), a defect in cones specifically impairs colour detection while leaving general vision intact.',
+      },
+    },
+
+    // Part E — Challenge
+    {
+      id: 'car-e1',
+      part: 'challenge',
+      conceptSlug: 'comparing-nervous-and-endocrine-systems',
+      conceptTitle: 'Comparison between Nervous System and Endocrine System',
+      question: {
+        id: 'car-e1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'During a fight-or-flight response, heart rate rises within milliseconds, and this elevated state persists for minutes afterward even once the danger is gone. Which pairing best explains this timeline?',
+        options: [
+          { id: 'a', text: 'The nervous system triggers the immediate rise; released adrenaline (endocrine) sustains the elevated state afterward.' },
+          { id: 'b', text: 'The endocrine system alone explains both the immediate and the sustained response.' },
+          { id: 'c', text: 'The nervous system alone explains both phases, with no endocrine involvement.' },
+          { id: 'd', text: 'Neither system is involved in this response.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Match each phase of the timeline to the system best suited to that speed and duration.'],
+        explanation: "The fast nervous system triggers the immediate heart rate increase; the adrenal glands then release adrenaline into the blood, and this hormone's slower-acting, longer-lasting effect sustains the heightened state — the two systems complement each other across the response's timeline.",
+      },
+    },
+  ],
+};
