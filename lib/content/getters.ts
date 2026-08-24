@@ -72,6 +72,10 @@ import {
   chapter5CoordinationConcepts,
   chapter5CoordinationFormulas,
 } from '@/content/subjects/biology/c-level/chapter-5-coordination-and-response';
+import {
+  chapter6BiodiversityConcepts,
+  chapter6BiodiversityFormulas,
+} from '@/content/subjects/biology/c-level/chapter-6-biodiversity-and-conservation';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -100,6 +104,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/transport-system-in-organisms': { concepts: chapter3TransportConcepts, formulas: chapter3TransportFormulas },
   'c-level/diseases-in-plants-and-animals': { concepts: chapter4DiseasesConcepts, formulas: chapter4DiseasesFormulas },
   'c-level/coordination-and-response': { concepts: chapter5CoordinationConcepts, formulas: chapter5CoordinationFormulas },
+  'c-level/biodiversity-and-conservation': { concepts: chapter6BiodiversityConcepts, formulas: chapter6BiodiversityFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {

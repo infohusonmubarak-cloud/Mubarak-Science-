@@ -1,0 +1,221 @@
+import type { Assessment } from '@/types/content';
+
+export const chapter6BiodiversityAssessment: Assessment = {
+  id: 'biodiversity-and-conservation-assessment',
+  questions: [
+    // Part A — Concept
+    {
+      id: 'bc-a1',
+      part: 'concept',
+      conceptSlug: 'levels-of-biodiversity',
+      conceptTitle: 'Levels of Biodiversity',
+      question: {
+        id: 'bc-a1-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'What are the three levels of biodiversity?',
+        options: [
+          { id: 'a', text: 'Genetic diversity, species diversity, ecosystem diversity' },
+          { id: 'b', text: 'Plant diversity, animal diversity, fungal diversity' },
+          { id: 'c', text: 'Local diversity, national diversity, global diversity' },
+          { id: 'd', text: 'Only species diversity matters — there is just one level' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Diversity exists within a species, across species, and across habitats.'],
+        explanation: 'Biodiversity is assessed at three levels: genetic (within species), species (within a habitat), and ecosystem (across habitats).',
+      },
+    },
+    {
+      id: 'bc-a2',
+      part: 'concept',
+      conceptSlug: 'habitat-destruction-and-invasive-species',
+      conceptTitle: 'Habitat Destruction and Invasive Alien Species',
+      question: {
+        id: 'bc-a2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Why do invasive alien species often spread uncontrollably in new environments?',
+        options: [
+          { id: 'a', text: 'Native species typically lack evolved defences against them.' },
+          { id: 'b', text: 'Invasive species always die out quickly in new environments.' },
+          { id: 'c', text: 'Native ecosystems always successfully resist all invaders.' },
+          { id: 'd', text: 'Invasive species cannot reproduce outside their native range.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Compare to how native species handle threats they evolved alongside.'],
+        explanation: 'Because native species have not co-evolved with the invader, they often lack effective defences, letting the invasive species spread with little natural check.',
+      },
+    },
+    {
+      id: 'bc-a3',
+      part: 'concept',
+      conceptSlug: 'conservation-methods',
+      conceptTitle: 'Conservation Methods',
+      question: {
+        id: 'bc-a3-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'What distinguishes in-situ conservation from ex-situ conservation?',
+        options: [
+          { id: 'a', text: 'In-situ protects species within their natural habitat; ex-situ protects them outside it.' },
+          { id: 'b', text: 'They mean exactly the same thing.' },
+          { id: 'c', text: 'Ex-situ is always more effective than in-situ.' },
+          { id: 'd', text: 'In-situ only applies to plants.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Think about where the conservation effort physically takes place.'],
+        explanation: 'In-situ conservation protects species in their natural habitat (e.g. national parks); ex-situ conservation protects them outside it (e.g. zoos, seed banks).',
+      },
+    },
+
+    // Part B — Formula & Application
+    {
+      id: 'bc-b1',
+      part: 'formula-application',
+      conceptSlug: 'levels-of-biodiversity',
+      conceptTitle: 'Levels of Biodiversity',
+      question: {
+        id: 'bc-b1-q',
+        type: 'numeric',
+        difficulty: 'medium',
+        prompt: "A habitat has 3 species with 25, 25, and 50 individuals (N = 100). Calculate Simpson's Diversity Index (D).",
+        hints: ['D = 1 − Σ(n/N)².', 'Calculate (25/100)², (25/100)², and (50/100)² separately.'],
+        correctAnswer: 0.625,
+        tolerance: 0.01,
+        explanation: '(0.25)² + (0.25)² + (0.5)² = 0.0625 + 0.0625 + 0.25 = 0.375. D = 1 − 0.375 = 0.625.',
+      },
+    },
+    {
+      id: 'bc-b2',
+      part: 'formula-application',
+      conceptSlug: 'levels-of-biodiversity',
+      conceptTitle: 'Levels of Biodiversity',
+      question: {
+        id: 'bc-b2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'Habitat A has D = 0.15; Habitat B has D = 0.85. Which habitat has higher species diversity, and why?',
+        options: [
+          { id: 'a', text: 'Habitat B, because a D value closer to 1 indicates greater species diversity.' },
+          { id: 'b', text: 'Habitat A, because a lower D value always means more diversity.' },
+          { id: 'c', text: 'Both are equally diverse regardless of D value.' },
+          { id: 'd', text: 'D values cannot be used to compare habitats.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Recall which end of the 0-to-1 scale represents high diversity.'],
+        explanation: "Simpson's Index ranges from 0 (low diversity, one species dominates) to near 1 (high diversity) — Habitat B's D = 0.85 indicates much higher diversity than Habitat A's D = 0.15.",
+      },
+    },
+
+    // Part C — Problem Solving
+    {
+      id: 'bc-c1',
+      part: 'problem-solving',
+      conceptSlug: 'genetic-pollution-and-overexploitation',
+      conceptTitle: 'Genetic Pollution and Overexploitation',
+      question: {
+        id: 'bc-c1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'A fish population is harvested at a constant high rate for 20 years. Even after harvesting stops completely, the population fails to recover for decades. What is the most likely explanation?',
+        options: [
+          { id: 'a', text: 'The population fell below a critical threshold needed for effective natural recovery, similar to the Atlantic cod collapse.' },
+          { id: 'b', text: 'Fish populations always recover instantly once harvesting stops.' },
+          { id: 'c', text: 'Overexploitation has no lasting effect on fish populations.' },
+          { id: 'd', text: 'The fish species has gone completely extinct.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Recall the Atlantic cod collapse example.'],
+        explanation: 'Like Atlantic cod, a population depleted below a critical threshold can fail to recover naturally even after the original pressure (overfishing) stops, since very low densities can impair breeding success and other recovery mechanisms.',
+      },
+    },
+    {
+      id: 'bc-c2',
+      part: 'problem-solving',
+      conceptSlug: 'climate-change-and-human-impact-on-biodiversity',
+      conceptTitle: 'Climate Change, Overpopulation and Wildlife Trade',
+      question: {
+        id: 'bc-c2-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'A coral reef experiences a sustained rise in ocean temperature over several years. What is the most likely biological consequence?',
+        options: [
+          { id: 'a', text: 'The coral-algae symbiotic relationship breaks down (bleaching), potentially killing coral and damaging the whole reef ecosystem.' },
+          { id: 'b', text: 'Coral becomes more colourful and healthier as temperature rises.' },
+          { id: 'c', text: 'Temperature has no effect on coral biology.' },
+          { id: 'd', text: 'Only fish are affected, not the coral itself.' },
+        ],
+        correctOptionId: 'a',
+        hints: ["Recall what coral's symbiotic algae depend on and what happens when that relationship breaks down."],
+        explanation: 'Rising temperatures beyond coral tolerance disrupt the coral-algae symbiosis (bleaching), which can kill the coral if prolonged, devastating the broader reef ecosystem.',
+      },
+    },
+
+    // Part D — Real-Life Application
+    {
+      id: 'bc-d1',
+      part: 'real-life-application',
+      conceptSlug: 'protected-areas-in-myanmar',
+      conceptTitle: 'Protected Areas in Myanmar',
+      question: {
+        id: 'bc-d1-q',
+        type: 'multiple-choice',
+        difficulty: 'easy',
+        prompt: 'Why was the Hukaung Valley designated as a wildlife sanctuary?',
+        options: [
+          { id: 'a', text: 'To protect a large area of intact habitat, giving tigers and other wildlife enough undisturbed space and prey to survive.' },
+          { id: 'b', text: 'To promote logging in the region.' },
+          { id: 'c', text: 'Protected status has no relationship to habitat or wildlife.' },
+          { id: 'd', text: 'To convert the land into farmland.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Protected areas primarily aim to safeguard intact habitat.'],
+        explanation: 'The sanctuary protects a large, intact habitat area, giving tiger and other wildlife populations the space and resources needed to maintain a viable population — a direct application of in-situ conservation.',
+      },
+    },
+    {
+      id: 'bc-d2',
+      part: 'real-life-application',
+      conceptSlug: 'importance-of-biodiversity',
+      conceptTitle: 'Importance of Biodiversity',
+      question: {
+        id: 'bc-d2-q',
+        type: 'multiple-choice',
+        difficulty: 'medium',
+        prompt: 'A region relies on many different pollinator species rather than just one. What advantage does this provide?',
+        options: [
+          { id: 'a', text: 'If one pollinator species declines, others can partly compensate, providing resilience to food production.' },
+          { id: 'b', text: 'Having multiple pollinator species makes pollination impossible.' },
+          { id: 'c', text: 'Pollinator diversity has no effect on food security.' },
+          { id: 'd', text: 'A single pollinator species would always be more reliable.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['This illustrates functional redundancy.'],
+        explanation: 'Multiple pollinator species provide functional redundancy — if one declines, others can help maintain pollination, unlike relying on a single vulnerable species.',
+      },
+    },
+
+    // Part E — Challenge
+    {
+      id: 'bc-e1',
+      part: 'challenge',
+      conceptSlug: 'levels-of-biodiversity',
+      conceptTitle: 'Levels of Biodiversity',
+      question: {
+        id: 'bc-e1-q',
+        type: 'multiple-choice',
+        difficulty: 'hard',
+        prompt: 'Two habitats each have exactly 3 species and 100 total individuals. Habitat X has an even 34/33/33 split; Habitat Y has a 90/5/5 split. Without calculating exact values, which habitat has the higher Simpson\'s Diversity Index, and why?',
+        options: [
+          { id: 'a', text: 'Habitat X, because more even distribution among species produces a smaller Σ(n/N)² and therefore a higher D.' },
+          { id: 'b', text: 'Habitat Y, because having one dominant species increases diversity.' },
+          { id: 'c', text: 'Both habitats have identical D values since species richness is the same.' },
+          { id: 'd', text: 'D cannot be estimated without an exact calculation.' },
+        ],
+        correctOptionId: 'a',
+        hints: ['Recall that squaring proportions gives disproportionate weight to a dominant species.'],
+        explanation: "Even with identical species richness (3 species each), Habitat X's more even distribution produces a smaller Σ(n/N)² (since no single species dominates), giving a higher D — this shows why Simpson's Index captures evenness, not just richness.",
+      },
+    },
+  ],
+};
