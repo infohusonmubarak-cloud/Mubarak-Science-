@@ -52,6 +52,10 @@ import {
   chapter8OrganicConcepts,
   chapter8OrganicFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-8-organic-compounds-and-macromolecules';
+import {
+  chapter1ThemesConcepts,
+  chapter1ThemesFormulas,
+} from '@/content/subjects/biology/c-level/chapter-1-themes-and-importance-of-biology';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -75,6 +79,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/transition-elements': { concepts: chapter6TransitionConcepts, formulas: chapter6TransitionFormulas },
   'c-level/chemistry-and-green-environment': { concepts: chapter7EnvironmentConcepts, formulas: chapter7EnvironmentFormulas },
   'c-level/organic-compounds-and-macromolecules': { concepts: chapter8OrganicConcepts, formulas: chapter8OrganicFormulas },
+  'c-level/themes-and-importance-of-biology': { concepts: chapter1ThemesConcepts, formulas: chapter1ThemesFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {
