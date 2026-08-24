@@ -44,6 +44,10 @@ import {
   chapter6TransitionConcepts,
   chapter6TransitionFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-6-transition-elements';
+import {
+  chapter7EnvironmentConcepts,
+  chapter7EnvironmentFormulas,
+} from '@/content/subjects/chemistry/c-level/chapter-7-chemistry-and-green-environment';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -65,6 +69,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/chemical-equilibrium': { concepts: chapter4EquilibriumConcepts, formulas: chapter4EquilibriumFormulas },
   'c-level/acid-base-reactions': { concepts: chapter5AcidBaseConcepts, formulas: chapter5AcidBaseFormulas },
   'c-level/transition-elements': { concepts: chapter6TransitionConcepts, formulas: chapter6TransitionFormulas },
+  'c-level/chemistry-and-green-environment': { concepts: chapter7EnvironmentConcepts, formulas: chapter7EnvironmentFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {
