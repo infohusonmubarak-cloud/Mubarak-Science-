@@ -4,43 +4,11 @@ import { chapter2Energy } from './chapter-2-energy-changes-in-chemical-reactions
 import { chapter3Kinetics } from './chapter-3-chemical-kinetics-rates-of-reaction';
 import { chapter4Equilibrium } from './chapter-4-chemical-equilibrium';
 import { chapter5AcidBase } from './chapter-5-acid-base-reactions';
+import { chapter6Transition } from './chapter-6-transition-elements';
 
-// Chapters 1-5 are fully authored; the other three are outline-only stubs
+// Chapters 1-6 are fully authored; the other two are outline-only stubs
 // for now — real, navigable pages with an accurate section map, upgraded
 // to full chapters one batch at a time.
-
-const chapter6: Chapter = {
-  slug: 'transition-elements',
-  number: 6,
-  title: 'Transition Elements',
-  blurb: 'The 3d series transition elements, the characteristic properties that set them apart from main-group metals, and their everyday uses.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: '3d-series-transition-elements-topic',
-      title: 'The 3d Series Transition Elements',
-      concepts: [
-        { slug: 'electron-configuration-of-3d-transition-elements', title: 'Electron Configuration of the 3d Series' },
-        { slug: 'what-makes-an-element-a-transition-element', title: 'What Makes an Element a Transition Element' },
-      ],
-    },
-    {
-      slug: 'characteristic-properties-topic',
-      title: 'Characteristic Properties of the 3d Series Transition Elements',
-      concepts: [
-        { slug: 'variable-oxidation-states', title: 'Variable Oxidation States' },
-        { slug: 'coloured-compounds-and-catalytic-activity', title: 'Coloured Compounds and Catalytic Activity' },
-      ],
-    },
-    {
-      slug: 'uses-of-transition-elements-topic',
-      title: 'Uses of the 3d Series Transition Elements',
-      concepts: [
-        { slug: 'uses-of-transition-elements', title: 'Uses of Transition Elements' },
-      ],
-    },
-  ],
-};
 
 const chapter7: Chapter = {
   slug: 'chemistry-and-green-environment',
@@ -121,5 +89,5 @@ export const cLevelChemistry: Level = {
   name: 'C-Level',
   description: 'Eight chapters — from chemical bonding through organic compounds and macromolecules.',
   status: 'available',
-  chapters: [chapter1Bonding, chapter2Energy, chapter3Kinetics, chapter4Equilibrium, chapter5AcidBase, chapter6, chapter7, chapter8],
+  chapters: [chapter1Bonding, chapter2Energy, chapter3Kinetics, chapter4Equilibrium, chapter5AcidBase, chapter6Transition, chapter7, chapter8],
 };

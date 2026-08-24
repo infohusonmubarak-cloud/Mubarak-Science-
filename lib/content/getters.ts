@@ -40,6 +40,10 @@ import {
   chapter5AcidBaseConcepts,
   chapter5AcidBaseFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-5-acid-base-reactions';
+import {
+  chapter6TransitionConcepts,
+  chapter6TransitionFormulas,
+} from '@/content/subjects/chemistry/c-level/chapter-6-transition-elements';
 
 /**
  * Full concept/formula bodies only exist for chapters that have been fully
@@ -60,6 +64,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },
   'c-level/chemical-equilibrium': { concepts: chapter4EquilibriumConcepts, formulas: chapter4EquilibriumFormulas },
   'c-level/acid-base-reactions': { concepts: chapter5AcidBaseConcepts, formulas: chapter5AcidBaseFormulas },
+  'c-level/transition-elements': { concepts: chapter6TransitionConcepts, formulas: chapter6TransitionFormulas },
 };
 
 function packKey(levelSlug: string, chapterSlug: string) {
