@@ -11,15 +11,23 @@ planned to slot in later without rebuilding the app. Every lesson follows the sa
 All four subjects — Mathematics, Biology, Chemistry, Physics — are wired up, each with an
 A-Level, B-Level, and C-Level tier:
 
-- The full navigation map exists for every chapter: Mathematics 21 (A-Level), Biology 5, Chemistry
-  8 (A-Level) + 8 (C-Level), Physics 11 (A-Level) + 13 (C-Level). B-Level is structurally present
-  for every subject (and C-Level for Biology and Mathematics) but renders a "Coming soon" state —
-  no rebuild needed to bring it online later.
+- The full navigation map exists for every chapter: Mathematics 21 (A-Level), Biology 5 (A-Level)
+  + 6 (C-Level), Chemistry 8 (A-Level) + 8 (C-Level), Physics 11 (A-Level) + 13 (C-Level). B-Level
+  is structurally present for every subject (and C-Level for Mathematics) but renders a "Coming
+  soon" state — no rebuild needed to bring it online later.
 - **Chemistry C-Level is fully authored end to end** — all 8 chapters (Chemical Bonding and
   Intermolecular Forces, Energy Changes in Chemical Reactions, Chemical Kinetics, Chemical
   Equilibrium, Acid-Base Reactions, Transition Elements, Chemistry and Green Environment, Organic
   Compounds and Macromolecules), every concept, formula, worked example, and a 10-question graded
   Assessment at the end of each chapter — see `content/subjects/chemistry/c-level/`.
+- **Biology C-Level is fully authored end to end** — all 6 chapters (Introduction to Biology:
+  Themes and Importance, Molecular Biology, Transport System in Organisms, Diseases in Plants and
+  Animals, Coordination and Response, Biodiversity and Conservation), every concept, formula,
+  worked example, a 10-question graded Assessment, and a Concept Map per chapter — see
+  `content/subjects/biology/c-level/`.
+- **Concept Maps**: a chapter can carry a `conceptMap` — a simple labelled tree (rendered as nested
+  boxes, no layout-engine dependency) showing how its topics and concepts relate. Every Chemistry
+  and Biology C-Level chapter has one, at `/subjects/[subjectSlug]/[levelSlug]/[chapterSlug]/concept-map`.
 - One flagship chapter per other subject/level has complete content — every concept, formula,
   diagram, worked example, and practice question fully authored:
   - **Mathematics, A-Level — Coordinate Geometry** (13 concepts, 4 formulas)
@@ -34,9 +42,9 @@ A-Level, B-Level, and C-Level tier:
   `AssessmentRunner` collects every answer before scoring (no per-question feedback until submit),
   then shows a score, a correct/incorrect breakdown, and a "topics to review" list linking back to
   the concepts behind any wrong answer. Results persist to `localStorage`
-  (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Every Chemistry C-Level
-  chapter and the Physics C-Level flagship have one; every other chapter's `/assessment` route
-  renders a "Coming soon" panel until one is authored.
+  (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Every Chemistry and
+  Biology C-Level chapter and the Physics C-Level flagship have one; every other chapter's
+  `/assessment` route renders a "Coming soon" panel until one is authored.
 - Progress, bookmarks, and notes persist to the browser via `localStorage` — no account or
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
 - Teacher Guide and an admin CMS are stubbed but not built.

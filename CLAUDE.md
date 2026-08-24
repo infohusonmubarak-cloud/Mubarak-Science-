@@ -18,20 +18,21 @@ decision: `Chapter.topics` (a `Topic[]`, each holding `ConceptSummary[]`) is the
 navigation outline** — title, slug, difficulty — while the **full pedagogical body** (`Concept`,
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
 every chapter across all four subjects is a real, correctly-titled page even though most are
-still outline-only stubs with `status: 'coming-soon'` — Chemistry C-Level is the one exception,
-fully authored end to end (see below). `Level` also carries its own `status` — most subject/level
-combinations (every B-Level, and C-Level for Math and Biology) are `coming-soon` with an empty
-`chapters: []` until content is written for them; the level page
+still outline-only stubs with `status: 'coming-soon'` — Chemistry C-Level and Biology C-Level are
+the two exceptions, each fully authored end to end (see below). `Level` also carries its own
+`status` — most subject/level combinations (every B-Level, and C-Level for Math) are
+`coming-soon` with an empty `chapters: []` until content is written for them; the level page
 (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
 chapter grid when `level.status === 'coming-soon'`.
 
 The reference examples for a fully-authored chapter are the flagship chapters —
 `mathematics/a-level/coordinate-geometry`, `biology/a-level/cell-structure-and-organization`,
 `chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`,
-`physics/c-level/forces-in-circular-motion` — plus **all eight** chapters of
-`chemistry/c-level/`, the one fully-populated level in the app right now. Every chapter in
-Chemistry C-Level also has a graded `assessment` (see **Assessments** below); most stub chapters
-elsewhere don't yet.
+`physics/c-level/forces-in-circular-motion` — plus **all eight** chapters of `chemistry/c-level/`
+and **all six** chapters of `biology/c-level/`, the two fully-populated levels in the app right
+now. Every chapter in Chemistry C-Level and Biology C-Level also has a graded `assessment` and a
+`conceptMap` (see **Assessments** and **Concept Maps** below); most stub chapters elsewhere don't
+yet.
 
 `lib/content/getters.ts` is the only way pages should read content. It holds a small
 `CONTENT_PACKS` registry mapping `level/chapter` to that chapter's full `{ concepts, formulas }`
@@ -97,6 +98,20 @@ via `lib/storage/assessments.ts` (`recordAssessmentAttempt`/`useAssessmentAttemp
 latest attempt per chapter is kept, keyed by `chapterSlug`, following the same
 `readJSON`/`writeJSON`/`*ServerSnapshot` pattern as `progress.ts` (see **localStorage and
 hydration** below) since it's read via `useSyncExternalStore` too.
+
+## Concept Maps
+
+A chapter can optionally carry `conceptMap?: ConceptMapNode` (set directly on the `Chapter`
+object, same pattern as `quickRevision`/`assessment` — no `CONTENT_PACKS` entry needed).
+`ConceptMapNode` (`types/content.ts`) is a simple labelled tree — `{ label, href?, children? }` —
+deliberately not a freeform node-link diagram, so it needs no layout engine. `href` is usually a
+deep link to the concept's own page.
+
+`components/content/ConceptMapView.tsx` renders the tree as nested boxes at the route
+`/subjects/[subjectSlug]/[levelSlug]/[chapterSlug]/concept-map`. When authoring one, structure it
+chapter title → one node per topic → one leaf per concept, matching the chapter's own
+`topics`/`concepts` structure so the map stays an accurate outline rather than a separate,
+divergent view of the chapter.
 
 ## localStorage and hydration
 
