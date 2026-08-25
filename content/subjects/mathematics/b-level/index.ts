@@ -7,44 +7,11 @@ import { chapter5B } from './chapter-5-matrices';
 import { chapter6B } from './chapter-6-statistics';
 import { chapter7B } from './chapter-7-circles';
 import { chapter8B } from './chapter-8-areas-of-similar-triangles';
+import { chapter9B } from './chapter-9-introduction-to-vectors';
 
-// Chapters 9-11 are outline-only stubs for this pass — real, navigable
+// Chapters 10-11 are outline-only stubs for this pass — real, navigable
 // pages with accurate topic/concept maps, no full bodies yet. Chapters
-// 1-8 are now fully authored.
-
-const chapter9: Chapter = {
-  slug: 'introduction-to-vectors',
-  number: 9,
-  title: 'Introduction to Vectors',
-  blurb: 'Magnitude and direction, vector addition and subtraction, unit vectors, and the dot product.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'vector-basics',
-      title: 'Vector Basics',
-      concepts: [
-        { slug: 'scalars-and-vectors', title: 'Scalars and Vectors' },
-        { slug: 'magnitude-and-direction', title: 'Magnitude and Direction' },
-        { slug: 'position-vectors-and-components', title: 'Position Vectors and Components' },
-      ],
-    },
-    {
-      slug: 'vector-operations',
-      title: 'Vector Operations',
-      concepts: [
-        { slug: 'adding-and-subtracting-vectors', title: 'Adding and Subtracting Vectors' },
-        { slug: 'scalar-multiplication-of-vectors', title: 'Scalar Multiplication' },
-        { slug: 'unit-vectors', title: 'Unit Vectors' },
-        { slug: 'dot-product', title: 'The Dot Product' },
-      ],
-    },
-    {
-      slug: 'vector-applications',
-      title: 'Applications',
-      concepts: [{ slug: 'force-velocity-and-navigation', title: 'Force, Velocity and Navigation' }],
-    },
-  ],
-};
+// 1-9 are now fully authored.
 
 const chapter10: Chapter = {
   slug: 'trigonometry-advanced',
@@ -128,6 +95,6 @@ export const bLevelMath = {
   status: 'available' as const,
   chapters: [
     chapter1B, chapter2B, chapter3B, chapter4B, chapter5B, chapter6B,
-    chapter7B, chapter8B, chapter9, chapter10, chapter11,
+    chapter7B, chapter8B, chapter9B, chapter10, chapter11,
   ],
 };
