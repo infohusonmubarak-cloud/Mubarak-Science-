@@ -5,52 +5,11 @@ import { chapter3CFluid } from './chapter-3-fluid-dynamics';
 import { chapter4CEnergy } from './chapter-4-sources-of-energy-and-environmental-impacts';
 import { chapter5CHeat } from './chapter-5-heat-transfer-and-thermodynamics';
 import { chapter6CSound } from './chapter-6-effects-and-characteristics-of-sound';
+import { chapter7COptics } from './chapter-7-applications-of-light-and-optical-instruments';
 
-// Chapters 1-6 are fully authored. The other seven are outline-only
+// Chapters 1-7 are fully authored. The other six are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter7: Chapter = {
-  slug: 'applications-of-light-and-optical-instruments',
-  number: 7,
-  title: 'Applications of Light and Optical Instruments',
-  blurb: 'How the camera, the eye, microscopes, telescopes, lasers, fibre optics, spectrometers and photometry all put light to work.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'the-camera-and-human-eye',
-      title: 'The Camera and the Human Eye',
-      concepts: [
-        { slug: 'the-camera', title: 'The Camera' },
-        { slug: 'the-human-eye', title: 'The Human Eye' },
-      ],
-    },
-    {
-      slug: 'microscope-and-telescope',
-      title: 'Compound Microscope and Telescope',
-      concepts: [
-        { slug: 'compound-microscope', title: 'The Compound Microscope' },
-        { slug: 'astronomical-telescope', title: 'The Telescope' },
-      ],
-    },
-    {
-      slug: 'laser-and-fibre-optics',
-      title: 'Laser and Fibre Optics',
-      concepts: [
-        { slug: 'laser-light', title: 'The Laser' },
-        { slug: 'fibre-optics-and-total-internal-reflection', title: 'Fibre Optics' },
-      ],
-    },
-    {
-      slug: 'spectrometer-and-photometry',
-      title: 'Spectrometer and Photometry',
-      concepts: [
-        { slug: 'spectrometer', title: 'The Spectrometer' },
-        { slug: 'photometry-and-light-intensity', title: 'Photometry' },
-      ],
-    },
-  ],
-};
 
 const chapter8: Chapter = {
   slug: 'interference-and-diffraction-of-light',
@@ -232,7 +191,7 @@ export const cLevelPhysics: Level = {
   description: 'Thirteen chapters — from rotational motion and fluid dynamics through modern physics.',
   status: 'available',
   chapters: [
-    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7,
+    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics,
     chapter8, chapter9, chapter10, chapter11, chapter12, chapter13,
   ],
 };
