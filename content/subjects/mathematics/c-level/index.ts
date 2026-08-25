@@ -1,50 +1,10 @@
 import type { Chapter, Level } from '@/types/content';
+import { chapter1C } from './chapter-1-complex-numbers';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time.
-
-const chapter1: Chapter = {
-  slug: 'complex-numbers',
-  number: 1,
-  title: 'Complex Numbers',
-  blurb: 'The new number system — complex numbers, their operations, trigonometric form, and roots.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'the-need-for-a-new-number-system-topic',
-      title: 'The Need for a New Number System',
-      concepts: [{ slug: 'the-imaginary-unit-and-i-squared', title: 'The Imaginary Unit and i²' }],
-    },
-    {
-      slug: 'complex-numbers-and-operations-topic',
-      title: 'Complex Numbers and Their Operations',
-      concepts: [
-        { slug: 'complex-numbers-in-standard-form', title: 'Complex Numbers in Standard Form' },
-        { slug: 'adding-and-subtracting-complex-numbers', title: 'Adding and Subtracting Complex Numbers' },
-        { slug: 'multiplying-complex-numbers', title: 'Multiplying Complex Numbers' },
-        { slug: 'dividing-complex-numbers-using-conjugates', title: 'Dividing Complex Numbers Using Conjugates' },
-      ],
-    },
-    {
-      slug: 'the-complex-plane-and-trigonometric-form-topic',
-      title: 'The Complex Plane and Trigonometric Form',
-      concepts: [
-        { slug: 'the-complex-plane-and-modulus', title: 'The Complex Plane and Modulus' },
-        { slug: 'the-trigonometric-form-of-a-complex-number', title: 'The Trigonometric (Polar) Form of a Complex Number' },
-      ],
-    },
-    {
-      slug: 'de-moivres-theorem-and-roots-topic',
-      title: "De Moivre's Theorem and Roots of Complex Numbers",
-      concepts: [
-        { slug: 'de-moivres-theorem', title: "De Moivre's Theorem" },
-        { slug: 'finding-nth-roots-of-a-complex-number', title: 'Finding nth Roots of a Complex Number' },
-      ],
-    },
-  ],
-};
+// one at a time. Chapter 1 is now fully authored.
 
 const chapter2: Chapter = {
   slug: 'mathematical-induction',
@@ -462,7 +422,7 @@ export const cLevelMath: Level = {
   description: 'Eleven advanced chapters — from complex numbers and solid geometry through the methods and applications of integration.',
   status: 'available',
   chapters: [
-    chapter1, chapter2, chapter3, chapter4, chapter5, chapter6,
+    chapter1C, chapter2, chapter3, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };

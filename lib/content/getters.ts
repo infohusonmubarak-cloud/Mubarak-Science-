@@ -85,6 +85,10 @@ import {
   chapter11BFormulas as chapter11BMathFormulas,
 } from '@/content/subjects/mathematics/b-level/chapter-11-methods-of-differentiation';
 import {
+  chapter1CConcepts as chapter1CMathConcepts,
+  chapter1CFormulas as chapter1CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-1-complex-numbers';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -235,6 +239,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/introduction-to-vectors': { concepts: chapter9BMathConcepts, formulas: chapter9BMathFormulas },
   'b-level/trigonometry-advanced': { concepts: chapter10BMathConcepts, formulas: chapter10BMathFormulas },
   'b-level/method-of-differentiation': { concepts: chapter11BMathConcepts, formulas: chapter11BMathFormulas },
+  'c-level/complex-numbers': { concepts: chapter1CMathConcepts, formulas: chapter1CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
