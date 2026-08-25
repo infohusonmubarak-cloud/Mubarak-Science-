@@ -125,6 +125,10 @@ import {
   chapter10CFormulas as chapter10CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-10-methods-of-integration';
 import {
+  chapter11CConcepts as chapter11CMathConcepts,
+  chapter11CFormulas as chapter11CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-11-applications-of-integration';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -285,6 +289,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/logarithmic-and-exponential-functions': { concepts: chapter8CMathConcepts, formulas: chapter8CMathFormulas },
   'c-level/applications-of-derivatives': { concepts: chapter9CMathConcepts, formulas: chapter9CMathFormulas },
   'c-level/methods-of-integration': { concepts: chapter10CMathConcepts, formulas: chapter10CMathFormulas },
+  'c-level/applications-of-integration': { concepts: chapter11CMathConcepts, formulas: chapter11CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
