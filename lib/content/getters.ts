@@ -37,6 +37,10 @@ import {
   chapter9Formulas as chapter9MathFormulas,
 } from '@/content/subjects/mathematics/a-level/chapter-9-circles';
 import {
+  chapter10Concepts as chapter10MathConcepts,
+  chapter10Formulas as chapter10MathFormulas,
+} from '@/content/subjects/mathematics/a-level/chapter-10-trigonometry';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -175,6 +179,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/probability': { concepts: chapter7MathConcepts, formulas: chapter7MathFormulas },
   'a-level/similarity': { concepts: chapter8MathConcepts, formulas: chapter8MathFormulas },
   'a-level/circles': { concepts: chapter9MathConcepts, formulas: chapter9MathFormulas },
+  'a-level/trigonometry': { concepts: chapter10MathConcepts, formulas: chapter10MathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
