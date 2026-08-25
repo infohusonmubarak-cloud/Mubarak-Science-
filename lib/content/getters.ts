@@ -121,6 +121,10 @@ import {
   chapter9CFormulas as chapter9CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-9-applications-of-derivatives';
 import {
+  chapter10CConcepts as chapter10CMathConcepts,
+  chapter10CFormulas as chapter10CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-10-methods-of-integration';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -280,6 +284,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/trigonometric-functions-and-graphs': { concepts: chapter7CMathConcepts, formulas: chapter7CMathFormulas },
   'c-level/logarithmic-and-exponential-functions': { concepts: chapter8CMathConcepts, formulas: chapter8CMathFormulas },
   'c-level/applications-of-derivatives': { concepts: chapter9CMathConcepts, formulas: chapter9CMathFormulas },
+  'c-level/methods-of-integration': { concepts: chapter10CMathConcepts, formulas: chapter10CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
