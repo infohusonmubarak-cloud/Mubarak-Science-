@@ -5,37 +5,11 @@ import { chapter3B } from './chapter-3-elementary-functions-and-transformations'
 import { chapter4B } from './chapter-4-sequences-and-series';
 import { chapter5B } from './chapter-5-matrices';
 import { chapter6B } from './chapter-6-statistics';
+import { chapter7B } from './chapter-7-circles';
 
-// Chapters 7-11 are outline-only stubs for this pass — real, navigable
+// Chapters 8-11 are outline-only stubs for this pass — real, navigable
 // pages with accurate topic/concept maps, no full bodies yet. Chapters
-// 1-6 are now fully authored.
-
-const chapter7: Chapter = {
-  slug: 'circles-advanced',
-  number: 7,
-  title: 'Circles',
-  blurb: 'An advanced extension of Level A circle geometry — tangent-chord relationships, cyclic quadrilaterals, and circle proofs.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'advanced-circle-geometry',
-      title: 'Advanced Circle Geometry',
-      concepts: [
-        { slug: 'cyclic-quadrilaterals', title: 'Cyclic Quadrilaterals' },
-        { slug: 'tangent-chord-theorem', title: 'The Tangent-Chord Theorem' },
-        { slug: 'intersecting-chords-and-secants', title: 'Intersecting Chords and Secants' },
-      ],
-    },
-    {
-      slug: 'circle-proofs',
-      title: 'Circle Proofs and Coordinate Geometry',
-      concepts: [
-        { slug: 'circle-geometry-proofs', title: 'Circle Geometry Proofs' },
-        { slug: 'coordinate-geometry-of-circles', title: 'Coordinate Geometry of Circles' },
-      ],
-    },
-  ],
-};
+// 1-7 are now fully authored.
 
 const chapter8: Chapter = {
   slug: 'areas-of-similar-triangles',
@@ -173,6 +147,6 @@ export const bLevelMath = {
   status: 'available' as const,
   chapters: [
     chapter1B, chapter2B, chapter3B, chapter4B, chapter5B, chapter6B,
-    chapter7, chapter8, chapter9, chapter10, chapter11,
+    chapter7B, chapter8, chapter9, chapter10, chapter11,
   ],
 };
