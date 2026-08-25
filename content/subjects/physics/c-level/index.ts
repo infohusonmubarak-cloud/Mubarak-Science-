@@ -10,38 +10,11 @@ import { chapter8CInterference } from './chapter-8-interference-and-diffraction-
 import { chapter9CCapacitor } from './chapter-9-capacitor-and-capacitance';
 import { chapter10CElectrical } from './chapter-10-electrical-energy-power-and-heating-effect';
 import { chapter11CInduction } from './chapter-11-electromagnetic-induction-generation-and-distribution';
+import { chapter12CDigital } from './chapter-12-digital-electronics-and-communication-system';
 
-// Chapters 1-11 are fully authored. The other two are outline-only
-// stubs — real, navigable pages with an accurate topic/concept map, no
-// full bodies yet.
-
-const chapter12: Chapter = {
-  slug: 'digital-electronics-and-communication-system',
-  number: 12,
-  title: 'Digital Electronics and Communication System',
-  blurb: 'Electronic systems, analog vs. digital signals, logic gates, and the basics of electronic communication.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'electronic-systems-topic',
-      title: 'Electronic System',
-      concepts: [{ slug: 'electronic-systems', title: 'Electronic Systems' }],
-    },
-    {
-      slug: 'digital-electronics-topic',
-      title: 'Digital Electronics',
-      concepts: [
-        { slug: 'analog-and-digital-signals', title: 'Analog and Digital Signals' },
-        { slug: 'logic-gates-and-truth-tables', title: 'Logic Gates and Truth Tables' },
-      ],
-    },
-    {
-      slug: 'communication-topic',
-      title: 'Basic Electronic Communication',
-      concepts: [{ slug: 'communication-systems-basics', title: 'Basic Electronic Communication' }],
-    },
-  ],
-};
+// Chapters 1-12 are fully authored. Chapter 13 is the last outline-only
+// stub — a real, navigable page with an accurate topic/concept map, no
+// full body yet.
 
 const chapter13: Chapter = {
   slug: 'modern-physics',
@@ -76,6 +49,6 @@ export const cLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics, chapter8CInterference,
-    chapter9CCapacitor, chapter10CElectrical, chapter11CInduction, chapter12, chapter13,
+    chapter9CCapacitor, chapter10CElectrical, chapter11CInduction, chapter12CDigital, chapter13,
   ],
 };
