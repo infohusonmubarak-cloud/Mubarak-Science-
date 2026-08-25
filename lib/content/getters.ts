@@ -89,6 +89,10 @@ import {
   chapter1CFormulas as chapter1CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-1-complex-numbers';
 import {
+  chapter2CConcepts as chapter2CMathConcepts,
+  chapter2CFormulas as chapter2CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-2-mathematical-induction';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -240,6 +244,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/trigonometry-advanced': { concepts: chapter10BMathConcepts, formulas: chapter10BMathFormulas },
   'b-level/method-of-differentiation': { concepts: chapter11BMathConcepts, formulas: chapter11BMathFormulas },
   'c-level/complex-numbers': { concepts: chapter1CMathConcepts, formulas: chapter1CMathFormulas },
+  'c-level/mathematical-induction': { concepts: chapter2CMathConcepts, formulas: chapter2CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },

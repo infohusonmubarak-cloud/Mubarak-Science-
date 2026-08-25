@@ -1,40 +1,11 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1C } from './chapter-1-complex-numbers';
+import { chapter2C } from './chapter-2-mathematical-induction';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapter 1 is now fully authored.
-
-const chapter2: Chapter = {
-  slug: 'mathematical-induction',
-  number: 2,
-  title: 'Mathematical Induction',
-  blurb: 'The principle of mathematical induction, and using it to prove summation, divisibility, and inequality statements.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'the-principle-of-mathematical-induction-topic',
-      title: 'The Principle of Mathematical Induction',
-      concepts: [{ slug: 'the-principle-of-mathematical-induction', title: 'The Principle of Mathematical Induction' }],
-    },
-    {
-      slug: 'proving-summation-formulas-topic',
-      title: 'Proving Summation Formulas by Induction',
-      concepts: [{ slug: 'proving-summation-formulas-by-induction', title: 'Proving Summation Formulas by Induction' }],
-    },
-    {
-      slug: 'proving-divisibility-statements-topic',
-      title: 'Proving Divisibility Statements by Induction',
-      concepts: [{ slug: 'proving-divisibility-statements-by-induction', title: 'Proving Divisibility Statements by Induction' }],
-    },
-    {
-      slug: 'proving-inequalities-topic',
-      title: 'Proving Inequalities by Induction',
-      concepts: [{ slug: 'proving-inequalities-by-induction', title: 'Proving Inequalities by Induction' }],
-    },
-  ],
-};
+// one at a time. Chapters 1-2 are now fully authored.
 
 const chapter3: Chapter = {
   slug: 'analytic-solid-geometry',
@@ -422,7 +393,7 @@ export const cLevelMath: Level = {
   description: 'Eleven advanced chapters — from complex numbers and solid geometry through the methods and applications of integration.',
   status: 'available',
   chapters: [
-    chapter1C, chapter2, chapter3, chapter4, chapter5, chapter6,
+    chapter1C, chapter2C, chapter3, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
