@@ -9,43 +9,11 @@ import { chapter7COptics } from './chapter-7-applications-of-light-and-optical-i
 import { chapter8CInterference } from './chapter-8-interference-and-diffraction-of-light';
 import { chapter9CCapacitor } from './chapter-9-capacitor-and-capacitance';
 import { chapter10CElectrical } from './chapter-10-electrical-energy-power-and-heating-effect';
+import { chapter11CInduction } from './chapter-11-electromagnetic-induction-generation-and-distribution';
 
-// Chapters 1-10 are fully authored. The other three are outline-only
+// Chapters 1-11 are fully authored. The other two are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter11: Chapter = {
-  slug: 'electromagnetic-induction-generation-and-distribution',
-  number: 11,
-  title: 'Electromagnetic Induction, Generation and Distribution of Electricity',
-  blurb: "Alternating current, Faraday's and Lenz's laws, and how electricity is transmitted, wired into houses, and used safely.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'ac-and-induction',
-      title: 'Alternating Current and Electromagnetic Induction',
-      concepts: [
-        { slug: 'alternating-current', title: 'Alternating Current' },
-        { slug: 'electromagnetic-induction-basics', title: 'Electromagnetic Induction' },
-        { slug: 'faradays-law-and-lenzs-law', title: "Faraday's Law and Lenz's Law" },
-      ],
-    },
-    {
-      slug: 'applications-of-induction',
-      title: 'Applications of Electromagnetic Induction',
-      concepts: [{ slug: 'applications-of-electromagnetic-induction', title: 'Applications of Electromagnetic Induction' }],
-    },
-    {
-      slug: 'transmission-wiring-and-safety',
-      title: 'Power Transmission, House Wiring and Safety',
-      concepts: [
-        { slug: 'power-transmission', title: 'Power Transmission' },
-        { slug: 'house-wiring-principles', title: 'Principles of House Wiring' },
-        { slug: 'electrical-safety', title: 'Dangers of Electricity' },
-      ],
-    },
-  ],
-};
 
 const chapter12: Chapter = {
   slug: 'digital-electronics-and-communication-system',
@@ -108,6 +76,6 @@ export const cLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics, chapter8CInterference,
-    chapter9CCapacitor, chapter10CElectrical, chapter11, chapter12, chapter13,
+    chapter9CCapacitor, chapter10CElectrical, chapter11CInduction, chapter12, chapter13,
   ],
 };

@@ -1,0 +1,96 @@
+import type { Formula } from '@/types/content';
+
+export const chapter11CInductionFormulas: Record<string, Formula> = {
+  'rms-voltage-formula': {
+    slug: 'rms-voltage-formula',
+    name: 'RMS Voltage of an AC Supply',
+    expression: 'V_rms = V₀/√2',
+    meaning: 'Since an alternating voltage constantly changes, its "effective" value for delivering power is not its peak — the RMS (root-mean-square) voltage is the steady (DC-equivalent) voltage that would deliver the same average power.',
+    variables: [
+      { symbol: 'V_rms', meaning: 'root-mean-square (effective) voltage, in volts (V)' },
+      { symbol: 'V₀', meaning: 'peak (maximum) voltage of the AC waveform, in volts (V)' },
+    ],
+    whenToUse: 'Whenever converting between the peak voltage of an AC supply and the "effective" voltage that determines its power delivery (the value usually quoted for mains electricity).',
+    relatedConceptSlugs: ['alternating-current'],
+  },
+  'magnetic-flux-formula': {
+    slug: 'magnetic-flux-formula',
+    name: 'Magnetic Flux',
+    expression: 'Φ = BAcosθ',
+    meaning: 'Magnetic flux measures the total amount of magnetic field passing through a surface — it depends on the field strength, the area of the surface, and the angle between the field and the surface\'s normal (perpendicular) direction.',
+    variables: [
+      { symbol: 'Φ', meaning: 'magnetic flux, in webers (Wb)' },
+      { symbol: 'B', meaning: 'magnetic field strength, in tesla (T)' },
+      { symbol: 'A', meaning: 'area of the surface (e.g. a coil loop), in square metres (m²)' },
+      { symbol: 'θ', meaning: 'angle between the magnetic field and the normal (perpendicular) to the surface, in degrees' },
+    ],
+    whenToUse: "Whenever the amount of magnetic field passing through a loop or coil needs to be found — the essential first step before applying Faraday's law.",
+    relatedConceptSlugs: ['electromagnetic-induction-basics'],
+  },
+  'faradays-law-formula': {
+    slug: 'faradays-law-formula',
+    name: "Faraday's Law of Electromagnetic Induction",
+    expression: 'ε = −N(ΔΦ/Δt)',
+    meaning: "A changing magnetic flux through a coil induces an EMF, proportional to how fast the flux changes and to the number of turns in the coil — the negative sign (Lenz's law) shows the induced EMF always opposes the change that created it.",
+    variables: [
+      { symbol: 'ε', meaning: 'induced EMF, in volts (V)' },
+      { symbol: 'N', meaning: 'number of turns (loops) in the coil' },
+      { symbol: 'ΔΦ', meaning: 'change in magnetic flux through one turn, in webers (Wb)' },
+      { symbol: 'Δt', meaning: 'time over which the flux changes, in seconds (s)' },
+    ],
+    whenToUse: 'Whenever the EMF induced by a changing magnetic flux through a coil needs to be found.',
+    relatedConceptSlugs: ['faradays-law-and-lenzs-law'],
+  },
+  'transformer-equation-formula': {
+    slug: 'transformer-equation-formula',
+    name: 'The Transformer Equation',
+    expression: 'Vₛ/Vₚ = Nₛ/Nₚ',
+    meaning: 'A transformer changes AC voltage between its primary and secondary coils in direct proportion to the ratio of their turns — more turns on one side means proportionally higher voltage on that side.',
+    variables: [
+      { symbol: 'Vₚ', meaning: 'voltage across the primary coil, in volts (V)' },
+      { symbol: 'Vₛ', meaning: 'voltage across the secondary coil, in volts (V)' },
+      { symbol: 'Nₚ', meaning: 'number of turns on the primary coil' },
+      { symbol: 'Nₛ', meaning: 'number of turns on the secondary coil' },
+    ],
+    whenToUse: "Whenever a transformer's output (secondary) voltage needs to be found from its input voltage and the ratio of turns on its two coils.",
+    relatedConceptSlugs: ['applications-of-electromagnetic-induction'],
+  },
+  'transmission-power-loss-formula': {
+    slug: 'transmission-power-loss-formula',
+    name: 'Power Loss in Transmission Lines',
+    expression: 'P_loss = I²R',
+    meaning: 'Transmitting power at a HIGHER voltage requires a proportionally LOWER current for the same delivered power — and since power lost as heat in the transmission lines grows with the square of current, high-voltage transmission dramatically reduces wasted energy.',
+    variables: [
+      { symbol: 'P_loss', meaning: 'power lost as heat in the transmission line, in watts (W)' },
+      { symbol: 'I', meaning: 'current flowing through the transmission line, in amperes (A)' },
+      { symbol: 'R', meaning: 'resistance of the transmission line, in ohms (Ω)' },
+    ],
+    whenToUse: 'Whenever the power wasted as heat in a transmission line needs to be found, or to compare the efficiency of transmitting the same power at different voltages.',
+    relatedConceptSlugs: ['power-transmission'],
+  },
+  'household-current-formula': {
+    slug: 'household-current-formula',
+    name: 'Total Current in a Household Circuit',
+    expression: 'I_total = I₁+I₂+I₃+…',
+    meaning: 'Household appliances are wired in parallel (so each gets the full mains voltage independently), meaning the total current drawn from the circuit is simply the sum of each appliance\'s individual current.',
+    variables: [
+      { symbol: 'I_total', meaning: 'total current drawn from the circuit, in amperes (A)' },
+      { symbol: 'I₁, I₂, I₃, …', meaning: 'current drawn by each individual appliance, in amperes (A)' },
+    ],
+    whenToUse: 'Whenever checking whether a household circuit\'s total current draw stays within its fuse or circuit breaker\'s safe rating.',
+    relatedConceptSlugs: ['house-wiring-principles'],
+  },
+  'shock-current-formula': {
+    slug: 'shock-current-formula',
+    name: 'Electric Shock Current',
+    expression: 'I = V/R',
+    meaning: "The current that flows through a person's body during an electric shock depends on the voltage they contact and their body's own resistance — a simple application of Ohm's law, but with genuinely dangerous consequences.",
+    variables: [
+      { symbol: 'I', meaning: 'current flowing through the body, in amperes (A)' },
+      { symbol: 'V', meaning: 'voltage the body is exposed to, in volts (V)' },
+      { symbol: 'R', meaning: "the body's electrical resistance, in ohms (Ω) — far lower when skin is wet than when dry" },
+    ],
+    whenToUse: "Whenever estimating the danger of an electric shock from a given voltage and the body's resistance under those conditions.",
+    relatedConceptSlugs: ['electrical-safety'],
+  },
+};

@@ -229,6 +229,10 @@ import {
   chapter10CElectricalFormulas,
 } from '@/content/subjects/physics/c-level/chapter-10-electrical-energy-power-and-heating-effect';
 import {
+  chapter11CInductionConcepts,
+  chapter11CInductionFormulas,
+} from '@/content/subjects/physics/c-level/chapter-11-electromagnetic-induction-generation-and-distribution';
+import {
   chapter1BondingConcepts,
   chapter1BondingFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-1-chemical-bonding-and-intermolecular-forces';
@@ -351,6 +355,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/interference-and-diffraction-of-light': { concepts: chapter8CInterferenceConcepts, formulas: chapter8CInterferenceFormulas },
   'c-level/capacitor-and-capacitance': { concepts: chapter9CCapacitorConcepts, formulas: chapter9CCapacitorFormulas },
   'c-level/electrical-energy-power-and-heating-effect': { concepts: chapter10CElectricalConcepts, formulas: chapter10CElectricalFormulas },
+  'c-level/electromagnetic-induction-generation-and-distribution': { concepts: chapter11CInductionConcepts, formulas: chapter11CInductionFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
   'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },
