@@ -217,6 +217,10 @@ import {
   chapter7COpticsFormulas,
 } from '@/content/subjects/physics/c-level/chapter-7-applications-of-light-and-optical-instruments';
 import {
+  chapter8CInterferenceConcepts,
+  chapter8CInterferenceFormulas,
+} from '@/content/subjects/physics/c-level/chapter-8-interference-and-diffraction-of-light';
+import {
   chapter1BondingConcepts,
   chapter1BondingFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-1-chemical-bonding-and-intermolecular-forces';
@@ -336,6 +340,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/heat-transfer-and-thermodynamics': { concepts: chapter5CHeatConcepts, formulas: chapter5CHeatFormulas },
   'c-level/effects-and-characteristics-of-sound': { concepts: chapter6CSoundConcepts, formulas: chapter6CSoundFormulas },
   'c-level/applications-of-light-and-optical-instruments': { concepts: chapter7COpticsConcepts, formulas: chapter7COpticsFormulas },
+  'c-level/interference-and-diffraction-of-light': { concepts: chapter8CInterferenceConcepts, formulas: chapter8CInterferenceFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
   'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },

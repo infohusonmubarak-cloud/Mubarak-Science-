@@ -6,38 +6,11 @@ import { chapter4CEnergy } from './chapter-4-sources-of-energy-and-environmental
 import { chapter5CHeat } from './chapter-5-heat-transfer-and-thermodynamics';
 import { chapter6CSound } from './chapter-6-effects-and-characteristics-of-sound';
 import { chapter7COptics } from './chapter-7-applications-of-light-and-optical-instruments';
+import { chapter8CInterference } from './chapter-8-interference-and-diffraction-of-light';
 
-// Chapters 1-7 are fully authored. The other six are outline-only
+// Chapters 1-8 are fully authored. The other five are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter8: Chapter = {
-  slug: 'interference-and-diffraction-of-light',
-  number: 8,
-  title: 'Interference and Diffraction of Light',
-  blurb: "Huygens' principle, interference and diffraction of light, and how a diffraction grating splits it into a spectrum.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'huygens-principle-topic',
-      title: "Huygens' Principle",
-      concepts: [{ slug: 'huygens-principle', title: "Huygens' Principle" }],
-    },
-    {
-      slug: 'interference-and-diffraction-topic',
-      title: 'Interference and Diffraction of Light',
-      concepts: [
-        { slug: 'interference-of-light', title: 'Interference of Light' },
-        { slug: 'diffraction-of-light', title: 'Diffraction of Light' },
-      ],
-    },
-    {
-      slug: 'diffraction-grating-topic',
-      title: 'Diffraction Grating',
-      concepts: [{ slug: 'diffraction-grating', title: 'The Diffraction Grating' }],
-    },
-  ],
-};
 
 const chapter9: Chapter = {
   slug: 'capacitor-and-capacitance',
@@ -191,7 +164,7 @@ export const cLevelPhysics: Level = {
   description: 'Thirteen chapters — from rotational motion and fluid dynamics through modern physics.',
   status: 'available',
   chapters: [
-    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics,
-    chapter8, chapter9, chapter10, chapter11, chapter12, chapter13,
+    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics, chapter8CInterference,
+    chapter9, chapter10, chapter11, chapter12, chapter13,
   ],
 };
