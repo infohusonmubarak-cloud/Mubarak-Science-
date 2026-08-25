@@ -3,38 +3,11 @@ import { chapter1CRotation } from './chapter-1-rotational-motion';
 import { chapter2ForcesInCircularMotion } from './chapter-2-forces-in-circular-motion';
 import { chapter3CFluid } from './chapter-3-fluid-dynamics';
 import { chapter4CEnergy } from './chapter-4-sources-of-energy-and-environmental-impacts';
+import { chapter5CHeat } from './chapter-5-heat-transfer-and-thermodynamics';
 
-// Chapters 1-4 are fully authored. The other nine are outline-only
+// Chapters 1-5 are fully authored. The other eight are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter5: Chapter = {
-  slug: 'heat-transfer-and-thermodynamics',
-  number: 5,
-  title: 'Heat Transfer and Thermodynamics',
-  blurb: 'How heat moves, the first law of thermodynamics, and how heat engines convert heat into work.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'heat-transfer-topic',
-      title: 'Heat Transfer',
-      concepts: [{ slug: 'mechanisms-of-heat-transfer', title: 'Mechanisms of Heat Transfer' }],
-    },
-    {
-      slug: 'thermodynamics-topic',
-      title: 'Thermodynamics',
-      concepts: [
-        { slug: 'internal-energy-and-work', title: 'Internal Energy and Work' },
-        { slug: 'first-law-of-thermodynamics', title: 'The First Law of Thermodynamics' },
-      ],
-    },
-    {
-      slug: 'heat-engines-topic',
-      title: 'Heat Engines',
-      concepts: [{ slug: 'heat-engines-and-efficiency', title: 'Heat Engines and Efficiency' }],
-    },
-  ],
-};
 
 const chapter6: Chapter = {
   slug: 'effects-and-characteristics-of-sound',
@@ -289,7 +262,7 @@ export const cLevelPhysics: Level = {
   description: 'Thirteen chapters — from rotational motion and fluid dynamics through modern physics.',
   status: 'available',
   chapters: [
-    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5, chapter6, chapter7,
+    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6, chapter7,
     chapter8, chapter9, chapter10, chapter11, chapter12, chapter13,
   ],
 };
