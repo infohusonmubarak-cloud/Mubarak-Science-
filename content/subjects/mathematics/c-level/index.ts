@@ -1,55 +1,12 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1C } from './chapter-1-complex-numbers';
 import { chapter2C } from './chapter-2-mathematical-induction';
+import { chapter3C } from './chapter-3-analytic-solid-geometry';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapters 1-2 are now fully authored.
-
-const chapter3: Chapter = {
-  slug: 'analytic-solid-geometry',
-  number: 3,
-  title: 'Analytic Solid Geometry',
-  blurb: 'The line, the plane, and the sphere in three-dimensional coordinate space.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'coordinates-in-space-topic',
-      title: 'Coordinates in Space',
-      concepts: [{ slug: 'the-three-dimensional-coordinate-system', title: 'The Three-Dimensional Coordinate System' }],
-    },
-    {
-      slug: 'distance-and-midpoint-in-3d-topic',
-      title: 'Distance and Midpoint in Three Dimensions',
-      concepts: [{ slug: 'the-distance-and-midpoint-formulas-in-3d', title: 'The Distance and Midpoint Formulas in 3D' }],
-    },
-    {
-      slug: 'the-line-in-space-topic',
-      title: 'The Line in Space',
-      concepts: [
-        { slug: 'direction-numbers-of-a-line', title: 'Direction Numbers of a Line' },
-        { slug: 'symmetric-and-parametric-equations-of-a-line', title: 'Symmetric and Parametric Equations of a Line' },
-      ],
-    },
-    {
-      slug: 'the-plane-in-space-topic',
-      title: 'The Plane in Space',
-      concepts: [
-        { slug: 'the-normal-vector-and-equation-of-a-plane', title: 'The Normal Vector and Equation of a Plane' },
-        { slug: 'the-distance-from-a-point-to-a-plane', title: 'The Distance from a Point to a Plane' },
-      ],
-    },
-    {
-      slug: 'the-sphere-topic',
-      title: 'The Sphere',
-      concepts: [
-        { slug: 'the-standard-equation-of-a-sphere', title: 'The Standard Equation of a Sphere' },
-        { slug: 'finding-the-center-and-radius-by-completing-the-square', title: 'Finding the Center and Radius by Completing the Square' },
-      ],
-    },
-  ],
-};
+// one at a time. Chapters 1-3 are now fully authored.
 
 const chapter4: Chapter = {
   slug: 'vectors-in-three-dimensions',
@@ -393,7 +350,7 @@ export const cLevelMath: Level = {
   description: 'Eleven advanced chapters — from complex numbers and solid geometry through the methods and applications of integration.',
   status: 'available',
   chapters: [
-    chapter1C, chapter2C, chapter3, chapter4, chapter5, chapter6,
+    chapter1C, chapter2C, chapter3C, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
