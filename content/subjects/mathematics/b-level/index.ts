@@ -3,38 +3,11 @@ import { chapter1B } from './chapter-1-remainder-and-factor-theorem';
 import { chapter2B } from './chapter-2-binomial-theorem';
 import { chapter3B } from './chapter-3-elementary-functions-and-transformations';
 import { chapter4B } from './chapter-4-sequences-and-series';
+import { chapter5B } from './chapter-5-matrices';
 
-// Chapters 5-11 are outline-only stubs for this pass — real, navigable
+// Chapters 6-11 are outline-only stubs for this pass — real, navigable
 // pages with accurate topic/concept maps, no full bodies yet. Chapters
-// 1-4 are now fully authored.
-
-const chapter5: Chapter = {
-  slug: 'matrices',
-  number: 5,
-  title: 'Matrices',
-  blurb: 'Matrix notation, addition and multiplication, determinants and inverses, and solving simultaneous equations.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'matrix-basics',
-      title: 'Matrix Basics',
-      concepts: [
-        { slug: 'matrix-notation-and-order', title: 'Matrix Notation and Order' },
-        { slug: 'adding-and-subtracting-matrices', title: 'Adding and Subtracting Matrices' },
-        { slug: 'scalar-and-matrix-multiplication', title: 'Scalar and Matrix Multiplication' },
-      ],
-    },
-    {
-      slug: 'determinants-and-inverses',
-      title: 'Determinants and Inverses',
-      concepts: [
-        { slug: 'determinant-of-a-2x2-matrix', title: 'Determinant of a 2×2 Matrix' },
-        { slug: 'inverse-of-a-2x2-matrix', title: 'Inverse of a 2×2 Matrix' },
-        { slug: 'solving-simultaneous-equations-with-matrices', title: 'Solving Simultaneous Equations with Matrices' },
-      ],
-    },
-  ],
-};
+// 1-5 are now fully authored.
 
 const chapter6: Chapter = {
   slug: 'statistics',
@@ -227,7 +200,7 @@ export const bLevelMath = {
   description: 'Eleven advanced chapters — from polynomial theorems through differentiation.',
   status: 'available' as const,
   chapters: [
-    chapter1B, chapter2B, chapter3B, chapter4B, chapter5, chapter6,
+    chapter1B, chapter2B, chapter3B, chapter4B, chapter5B, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
