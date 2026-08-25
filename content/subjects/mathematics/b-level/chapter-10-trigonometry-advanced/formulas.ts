@@ -1,0 +1,126 @@
+import type { Formula } from '@/types/content';
+
+export const chapter10BFormulas: Record<string, Formula> = {
+  'general-trig-ratio-definition': {
+    slug: 'general-trig-ratio-definition',
+    name: 'General Definition of Trigonometric Ratios',
+    expression: 'sin θ = y/r,   cos θ = x/r,   tan θ = y/x',
+    meaning: 'For any angle θ (not just acute angles), place its vertex at the origin with one ray along the positive x-axis; take any point (x, y) on the other ray at distance r from the origin, and define the ratios from those coordinates.',
+    variables: [
+      { symbol: 'θ', meaning: 'the angle, measured counterclockwise from the positive x-axis' },
+      { symbol: '(x, y)', meaning: 'any point on the angle\'s terminal ray' },
+      { symbol: 'r', meaning: 'the distance from the origin to (x, y); always positive, r = √(x²+y²)' },
+    ],
+    whenToUse: 'Whenever a trigonometric ratio is needed for an angle that is not between 0° and 90°.',
+    relatedConceptSlugs: ['extending-trigonometric-ratios-to-any-angle'],
+  },
+  'quadrant-sign-rule': {
+    slug: 'quadrant-sign-rule',
+    name: 'The Quadrant Sign Rule (ASTC)',
+    expression: 'Quadrant I: All positive.  II: Sin (and cosec) positive.  III: Tan (and cot) positive.  IV: Cos (and sec) positive.',
+    meaning: 'A quick way to remember which trigonometric ratio is positive in each quadrant — often remembered with a phrase like "All Students Take Calculus," reading the quadrants in order I, II, III, IV.',
+    variables: [
+      { symbol: 'Quadrant I', meaning: '0° to 90° — x and y both positive' },
+      { symbol: 'Quadrant II', meaning: '90° to 180° — x negative, y positive' },
+      { symbol: 'Quadrant III', meaning: '180° to 270° — x and y both negative' },
+      { symbol: 'Quadrant IV', meaning: '270° to 360° — x positive, y negative' },
+    ],
+    whenToUse: 'Whenever you need to determine whether a trigonometric ratio should be positive or negative for a given angle.',
+    relatedConceptSlugs: ['the-quadrants-and-signs-of-trigonometric-ratios'],
+  },
+  'negative-angle-identities': {
+    slug: 'negative-angle-identities',
+    name: 'Negative Angle Identities',
+    expression: 'sin(−θ) = −sin θ,   cos(−θ) = cos θ,   tan(−θ) = −tan θ',
+    meaning: 'A negative angle is measured clockwise instead of counterclockwise. Sine and tangent of a negative angle are the negative of the positive angle\'s value; cosine is unchanged.',
+    variables: [
+      { symbol: '−θ', meaning: 'the angle θ measured in the clockwise direction instead' },
+    ],
+    whenToUse: 'Whenever an angle is given as negative (measured clockwise), to rewrite it in terms of the equivalent positive angle\'s ratios.',
+    relatedConceptSlugs: ['negative-angles-and-their-trigonometric-ratios'],
+  },
+  'basic-acute-angle-formula': {
+    slug: 'basic-acute-angle-formula',
+    name: 'The Basic Acute Angle',
+    expression: 'Quadrant II: α = 180°−θ.  Quadrant III: α = θ−180°.  Quadrant IV: α = 360°−θ',
+    meaning: 'The basic (reference) acute angle α is the acute angle formed between the terminal ray of θ and the x-axis — it lets any trig ratio be evaluated using known acute-angle values, combined with the correct quadrant sign.',
+    variables: [
+      { symbol: 'θ', meaning: 'the original angle, in any quadrant' },
+      { symbol: 'α', meaning: 'the basic acute angle, always between 0° and 90°' },
+    ],
+    whenToUse: 'Whenever a trigonometric ratio is needed for an angle greater than 90°, to reduce the problem to a familiar acute-angle calculation.',
+    relatedConceptSlugs: ['the-basic-acute-angle'],
+  },
+  'quadrantal-angle-values': {
+    slug: 'quadrantal-angle-values',
+    name: 'Trigonometric Ratios of Quadrantal Angles',
+    expression: 'sin: 0, 1, 0, −1, 0.  cos: 1, 0, −1, 0, 1.  tan: 0, undefined, 0, undefined, 0  — at 0°, 90°, 180°, 270°, 360°',
+    meaning: 'The sine, cosine, and tangent values at the four axis-aligned "quadrantal" angles (and back to 0°/360°), found by taking a point directly on an axis rather than inside a quadrant.',
+    variables: [
+      { symbol: '0°, 360°', meaning: 'point on the positive x-axis: (x,y) = (r, 0)' },
+      { symbol: '90°', meaning: 'point on the positive y-axis: (x,y) = (0, r)' },
+      { symbol: '180°', meaning: 'point on the negative x-axis: (x,y) = (−r, 0)' },
+      { symbol: '270°', meaning: 'point on the negative y-axis: (x,y) = (0, −r)' },
+    ],
+    whenToUse: 'Whenever a trigonometric ratio is needed for exactly 0°, 90°, 180°, 270°, or 360° — including recognizing where tan is undefined.',
+    relatedConceptSlugs: ['trigonometric-ratios-of-quadrantal-angles'],
+  },
+  'pythagorean-identity': {
+    slug: 'pythagorean-identity',
+    name: 'The Pythagorean Identity',
+    expression: 'sin²θ + cos²θ = 1',
+    meaning: 'For any angle θ, the square of its sine plus the square of its cosine always equals exactly 1.',
+    variables: [
+      { symbol: 'θ', meaning: 'any angle' },
+    ],
+    whenToUse: 'Whenever one of sin θ or cos θ is known and the other is needed, or to simplify an expression containing both.',
+    relatedConceptSlugs: ['the-pythagorean-identity'],
+  },
+  'quotient-identity': {
+    slug: 'quotient-identity',
+    name: 'The Quotient Identity',
+    expression: 'tan θ = sin θ / cos θ',
+    meaning: 'The tangent of an angle is always equal to its sine divided by its cosine.',
+    variables: [
+      { symbol: 'θ', meaning: 'any angle for which cos θ ≠ 0' },
+    ],
+    whenToUse: 'Whenever tan θ needs to be found from known sin θ and cos θ values, or vice versa.',
+    relatedConceptSlugs: ['the-quotient-identity'],
+  },
+  'law-of-sines': {
+    slug: 'law-of-sines',
+    name: 'The Law of Sines',
+    expression: 'a/sin A = b/sin B = c/sin C',
+    meaning: 'In any triangle, the ratio of a side\'s length to the sine of its opposite angle is the same for all three sides.',
+    variables: [
+      { symbol: 'a, b, c', meaning: 'the side lengths of the triangle' },
+      { symbol: 'A, B, C', meaning: 'the angles opposite sides a, b, c respectively' },
+    ],
+    whenToUse: 'Whenever you know two angles and one side (AAS/ASA), or two sides and a non-included angle (SSA), of any triangle (not just right triangles).',
+    relatedConceptSlugs: ['the-law-of-sines'],
+  },
+  'law-of-cosines': {
+    slug: 'law-of-cosines',
+    name: 'The Law of Cosines',
+    expression: 'c² = a² + b² − 2ab·cos C',
+    meaning: 'A generalization of the Pythagorean theorem to any triangle — gives the length of a side from the other two sides and the angle between them, or an angle from all three sides.',
+    variables: [
+      { symbol: 'a, b, c', meaning: 'the side lengths of the triangle' },
+      { symbol: 'C', meaning: 'the angle opposite side c, included between sides a and b' },
+    ],
+    whenToUse: 'Whenever you know two sides and the included angle (SAS), or all three sides (SSS), of any triangle.',
+    relatedConceptSlugs: ['the-law-of-cosines', 'bearings-and-solving-triangle-problems'],
+  },
+  'area-of-a-triangle-formula': {
+    slug: 'area-of-a-triangle-formula',
+    name: 'The Area of a Triangle Using Sine',
+    expression: 'Area = ½ab·sin C',
+    meaning: 'The area of any triangle can be found from two sides and the sine of the angle between them, without needing to know the height directly.',
+    variables: [
+      { symbol: 'a, b', meaning: 'two side lengths of the triangle' },
+      { symbol: 'C', meaning: 'the angle included between sides a and b' },
+    ],
+    whenToUse: 'Whenever two sides and the included angle of a triangle are known, and the height is not directly given.',
+    relatedConceptSlugs: ['the-area-of-a-triangle-using-sine'],
+  },
+};

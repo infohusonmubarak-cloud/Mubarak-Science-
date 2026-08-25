@@ -8,47 +8,11 @@ import { chapter6B } from './chapter-6-statistics';
 import { chapter7B } from './chapter-7-circles';
 import { chapter8B } from './chapter-8-areas-of-similar-triangles';
 import { chapter9B } from './chapter-9-introduction-to-vectors';
+import { chapter10B } from './chapter-10-trigonometry-advanced';
 
-// Chapters 10-11 are outline-only stubs for this pass — real, navigable
-// pages with accurate topic/concept maps, no full bodies yet. Chapters
-// 1-9 are now fully authored.
-
-const chapter10: Chapter = {
-  slug: 'trigonometry-advanced',
-  number: 10,
-  title: 'Trigonometry',
-  blurb: 'An advanced extension of Level A trigonometry — radians, identities, compound and double angles, and the sine and cosine rules.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'radians-and-identities',
-      title: 'Radians and Identities',
-      concepts: [
-        { slug: 'radians', title: 'Radians and Degree Conversion' },
-        { slug: 'the-unit-circle', title: 'The Unit Circle' },
-        { slug: 'trigonometric-identities', title: 'Trigonometric Identities' },
-      ],
-    },
-    {
-      slug: 'compound-angles',
-      title: 'Compound and Double Angles',
-      concepts: [
-        { slug: 'compound-angle-formulas', title: 'Compound Angle Formulas' },
-        { slug: 'double-angle-formulas', title: 'Double Angle Formulas' },
-        { slug: 'trigonometric-equations', title: 'Trigonometric Equations' },
-      ],
-    },
-    {
-      slug: 'non-right-triangles',
-      title: 'Non-Right Triangles',
-      concepts: [
-        { slug: 'sine-rule', title: 'The Sine Rule' },
-        { slug: 'cosine-rule', title: 'The Cosine Rule' },
-        { slug: 'area-of-a-triangle', title: 'Area of a Triangle Using Sine' },
-      ],
-    },
-  ],
-};
+// Chapter 11 is an outline-only stub for this pass — a real, navigable
+// page with an accurate topic/concept map, no full body yet. Chapters
+// 1-10 are now fully authored.
 
 const chapter11: Chapter = {
   slug: 'method-of-differentiation',
@@ -95,6 +59,6 @@ export const bLevelMath = {
   status: 'available' as const,
   chapters: [
     chapter1B, chapter2B, chapter3B, chapter4B, chapter5B, chapter6B,
-    chapter7B, chapter8B, chapter9B, chapter10, chapter11,
+    chapter7B, chapter8B, chapter9B, chapter10B, chapter11,
   ],
 };
