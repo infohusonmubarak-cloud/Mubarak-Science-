@@ -4,38 +4,12 @@ import { chapter2 } from './chapter-2-exponents-and-radicals';
 import { chapter3 } from './chapter-3-logarithms';
 import { chapter4 } from './chapter-4-functions';
 import { chapter5 } from './chapter-5-quadratic-functions';
+import { chapter6 } from './chapter-6-absolute-value-functions';
 
-// Chapters 6-10 are outline-only stubs for this pass: every chapter is a
+// Chapters 7-10 are outline-only stubs for this pass: every chapter is a
 // real, navigable page with an accurate topic/concept map, but only
-// Chapters 1-5 have full concept bodies written. `status: 'coming-soon'`
+// Chapters 1-6 have full concept bodies written. `status: 'coming-soon'`
 // drives the ComingSoonPanel instead of a full concept template.
-
-const chapter6: Chapter = {
-  slug: 'absolute-value-functions',
-  number: 6,
-  title: 'Absolute Value Functions',
-  blurb: 'Distance from zero, absolute value equations and inequalities, and their graphs.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'absolute-value-basics',
-      title: 'Absolute Value Basics',
-      concepts: [
-        { slug: 'distance-from-zero', title: 'Distance from Zero' },
-        { slug: 'absolute-value-graphs', title: 'Graphs and Transformations' },
-      ],
-    },
-    {
-      slug: 'equations-and-inequalities',
-      title: 'Equations and Inequalities',
-      concepts: [
-        { slug: 'absolute-value-equations', title: 'Absolute Value Equations' },
-        { slug: 'absolute-value-inequalities', title: 'Absolute Value Inequalities' },
-        { slug: 'tolerance-and-measurement-error', title: 'Tolerance and Measurement Error' },
-      ],
-    },
-  ],
-};
 
 const chapter7: Chapter = {
   slug: 'probability',

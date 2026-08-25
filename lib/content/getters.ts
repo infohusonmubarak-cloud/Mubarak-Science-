@@ -21,6 +21,10 @@ import {
   chapter5Formulas as chapter5MathFormulas,
 } from '@/content/subjects/mathematics/a-level/chapter-5-quadratic-functions';
 import {
+  chapter6Concepts as chapter6MathConcepts,
+  chapter6Formulas as chapter6MathFormulas,
+} from '@/content/subjects/mathematics/a-level/chapter-6-absolute-value-functions';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -155,6 +159,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/logarithms': { concepts: chapter3MathConcepts, formulas: chapter3MathFormulas },
   'a-level/functions': { concepts: chapter4MathConcepts, formulas: chapter4MathFormulas },
   'a-level/quadratic-functions': { concepts: chapter5MathConcepts, formulas: chapter5MathFormulas },
+  'a-level/absolute-value-functions': { concepts: chapter6MathConcepts, formulas: chapter6MathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
