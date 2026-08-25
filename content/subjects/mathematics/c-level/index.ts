@@ -3,58 +3,12 @@ import { chapter1C } from './chapter-1-complex-numbers';
 import { chapter2C } from './chapter-2-mathematical-induction';
 import { chapter3C } from './chapter-3-analytic-solid-geometry';
 import { chapter4C } from './chapter-4-vectors-in-three-dimensions';
+import { chapter5C } from './chapter-5-permutation-and-combination';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapters 1-4 are now fully authored.
-
-const chapter5: Chapter = {
-  slug: 'permutation-and-combination',
-  number: 5,
-  title: 'Permutation and Combination',
-  blurb: 'Counting techniques — permutations and combinations — and their applications across mathematics, statistics, science, and engineering.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'the-fundamental-counting-principle-topic',
-      title: 'The Fundamental Counting Principle',
-      concepts: [
-        { slug: 'the-fundamental-counting-principle', title: 'The Fundamental Counting Principle' },
-        { slug: 'factorial-notation', title: 'Factorial Notation' },
-      ],
-    },
-    {
-      slug: 'permutations-topic',
-      title: 'Permutations',
-      concepts: [
-        { slug: 'permutations-of-n-distinct-objects', title: 'Permutations of n Distinct Objects' },
-        { slug: 'permutations-of-r-objects-from-n', title: 'Permutations of r Objects from n' },
-      ],
-    },
-    {
-      slug: 'special-permutations-topic',
-      title: 'Permutations with Repetition and Circular Permutations',
-      concepts: [
-        { slug: 'permutations-with-repeated-objects', title: 'Permutations with Repeated Objects' },
-        { slug: 'circular-permutations', title: 'Circular Permutations' },
-      ],
-    },
-    {
-      slug: 'combinations-topic',
-      title: 'Combinations',
-      concepts: [
-        { slug: 'combinations-of-r-objects-from-n', title: 'Combinations of r Objects from n' },
-        { slug: 'the-relationship-between-permutations-and-combinations', title: 'The Relationship Between Permutations and Combinations' },
-      ],
-    },
-    {
-      slug: 'applications-topic',
-      title: 'Applications',
-      concepts: [{ slug: 'applications-to-probability-and-statistics', title: 'Applications to Probability and Statistics' }],
-    },
-  ],
-};
+// one at a time. Chapters 1-5 are now fully authored.
 
 const chapter6: Chapter = {
   slug: 'circles-and-parabolas',
@@ -307,7 +261,7 @@ export const cLevelMath: Level = {
   description: 'Eleven advanced chapters — from complex numbers and solid geometry through the methods and applications of integration.',
   status: 'available',
   chapters: [
-    chapter1C, chapter2C, chapter3C, chapter4C, chapter5, chapter6,
+    chapter1C, chapter2C, chapter3C, chapter4C, chapter5C, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
