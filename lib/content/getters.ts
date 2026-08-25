@@ -61,6 +61,10 @@ import {
   chapter5BFormulas as chapter5BMathFormulas,
 } from '@/content/subjects/mathematics/b-level/chapter-5-matrices';
 import {
+  chapter6BConcepts as chapter6BMathConcepts,
+  chapter6BFormulas as chapter6BMathFormulas,
+} from '@/content/subjects/mathematics/b-level/chapter-6-statistics';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -205,6 +209,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/elementary-functions-and-transformations': { concepts: chapter3BMathConcepts, formulas: chapter3BMathFormulas },
   'b-level/sequences-and-series': { concepts: chapter4BMathConcepts, formulas: chapter4BMathFormulas },
   'b-level/matrices': { concepts: chapter5BMathConcepts, formulas: chapter5BMathFormulas },
+  'b-level/statistics': { concepts: chapter6BMathConcepts, formulas: chapter6BMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },

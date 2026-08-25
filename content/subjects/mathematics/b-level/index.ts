@@ -4,39 +4,11 @@ import { chapter2B } from './chapter-2-binomial-theorem';
 import { chapter3B } from './chapter-3-elementary-functions-and-transformations';
 import { chapter4B } from './chapter-4-sequences-and-series';
 import { chapter5B } from './chapter-5-matrices';
+import { chapter6B } from './chapter-6-statistics';
 
-// Chapters 6-11 are outline-only stubs for this pass — real, navigable
+// Chapters 7-11 are outline-only stubs for this pass — real, navigable
 // pages with accurate topic/concept maps, no full bodies yet. Chapters
-// 1-5 are now fully authored.
-
-const chapter6: Chapter = {
-  slug: 'statistics',
-  number: 6,
-  title: 'Statistics',
-  blurb: 'Describing data with mean, median, mode, variance and standard deviation, and visualizing it with histograms, box plots and scatter plots.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'describing-data',
-      title: 'Describing Data',
-      concepts: [
-        { slug: 'population-and-sample', title: 'Population and Sample' },
-        { slug: 'mean-median-and-mode', title: 'Mean, Median and Mode' },
-        { slug: 'range-variance-and-standard-deviation', title: 'Range, Variance and Standard Deviation' },
-        { slug: 'quartiles-and-percentiles', title: 'Quartiles and Percentiles' },
-      ],
-    },
-    {
-      slug: 'visualizing-data',
-      title: 'Visualizing Data',
-      concepts: [
-        { slug: 'frequency-tables-and-histograms', title: 'Frequency Tables and Histograms' },
-        { slug: 'bar-and-pie-charts', title: 'Bar and Pie Charts' },
-        { slug: 'box-plots-and-scatter-plots', title: 'Box Plots and Scatter Plots' },
-      ],
-    },
-  ],
-};
+// 1-6 are now fully authored.
 
 const chapter7: Chapter = {
   slug: 'circles-advanced',
@@ -200,7 +172,7 @@ export const bLevelMath = {
   description: 'Eleven advanced chapters — from polynomial theorems through differentiation.',
   status: 'available' as const,
   chapters: [
-    chapter1B, chapter2B, chapter3B, chapter4B, chapter5B, chapter6,
+    chapter1B, chapter2B, chapter3B, chapter4B, chapter5B, chapter6B,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
