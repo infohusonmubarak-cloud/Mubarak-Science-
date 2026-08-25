@@ -1,39 +1,11 @@
 import type { Chapter } from '@/types/content';
 import { chapter1B } from './chapter-1-remainder-and-factor-theorem';
 import { chapter2B } from './chapter-2-binomial-theorem';
+import { chapter3B } from './chapter-3-elementary-functions-and-transformations';
 
-// Chapters 3-11 are outline-only stubs for this pass — real, navigable
+// Chapters 4-11 are outline-only stubs for this pass — real, navigable
 // pages with accurate topic/concept maps, no full bodies yet. Chapters
-// 1-2 are now fully authored.
-
-const chapter3: Chapter = {
-  slug: 'elementary-functions-and-transformations',
-  number: 3,
-  title: 'Elementary Functions and Transformations',
-  blurb: 'The core family of functions — linear, quadratic, cubic, reciprocal, square-root and exponential — and how they shift, reflect, stretch and compress.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'the-function-family',
-      title: 'The Function Family',
-      concepts: [
-        { slug: 'constant-and-linear-functions', title: 'Constant and Linear Functions' },
-        { slug: 'quadratic-and-cubic-functions', title: 'Quadratic and Cubic Functions' },
-        { slug: 'reciprocal-and-square-root-functions', title: 'Reciprocal and Square-Root Functions' },
-        { slug: 'exponential-functions', title: 'Exponential Functions' },
-      ],
-    },
-    {
-      slug: 'transformations',
-      title: 'Transformations',
-      concepts: [
-        { slug: 'translations', title: 'Translations' },
-        { slug: 'reflections', title: 'Reflections' },
-        { slug: 'stretches-and-compressions', title: 'Stretches and Compressions' },
-      ],
-    },
-  ],
-};
+// 1-3 are now fully authored.
 
 const chapter4: Chapter = {
   slug: 'sequences-and-series',
@@ -286,7 +258,7 @@ export const bLevelMath = {
   description: 'Eleven advanced chapters — from polynomial theorems through differentiation.',
   status: 'available' as const,
   chapters: [
-    chapter1B, chapter2B, chapter3, chapter4, chapter5, chapter6,
+    chapter1B, chapter2B, chapter3B, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };

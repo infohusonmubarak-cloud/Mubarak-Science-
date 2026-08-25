@@ -49,6 +49,10 @@ import {
   chapter2BFormulas as chapter2BMathFormulas,
 } from '@/content/subjects/mathematics/b-level/chapter-2-binomial-theorem';
 import {
+  chapter3BConcepts as chapter3BMathConcepts,
+  chapter3BFormulas as chapter3BMathFormulas,
+} from '@/content/subjects/mathematics/b-level/chapter-3-elementary-functions-and-transformations';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -190,6 +194,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/trigonometry': { concepts: chapter10MathConcepts, formulas: chapter10MathFormulas },
   'b-level/remainder-and-factor-theorem': { concepts: chapter1BMathConcepts, formulas: chapter1BMathFormulas },
   'b-level/binomial-theorem': { concepts: chapter2BMathConcepts, formulas: chapter2BMathFormulas },
+  'b-level/elementary-functions-and-transformations': { concepts: chapter3BMathConcepts, formulas: chapter3BMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
