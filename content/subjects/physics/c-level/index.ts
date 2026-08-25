@@ -2,41 +2,11 @@ import type { Chapter, Level } from '@/types/content';
 import { chapter1CRotation } from './chapter-1-rotational-motion';
 import { chapter2ForcesInCircularMotion } from './chapter-2-forces-in-circular-motion';
 import { chapter3CFluid } from './chapter-3-fluid-dynamics';
+import { chapter4CEnergy } from './chapter-4-sources-of-energy-and-environmental-impacts';
 
-// Chapters 1-3 are fully authored. The other ten are outline-only
+// Chapters 1-4 are fully authored. The other nine are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter4: Chapter = {
-  slug: 'sources-of-energy-and-environmental-impacts',
-  number: 4,
-  title: 'Sources of Energy and Environmental Impacts',
-  blurb: 'The energy crisis, renewable and non-renewable energy sources, and the environmental consequences of how we generate energy.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'energy-demand-and-sources',
-      title: 'Energy Demand and Sources of Energy',
-      concepts: [
-        { slug: 'energy-demand-and-crisis', title: 'Energy Demand and Crisis' },
-        { slug: 'sources-of-energy-overview', title: 'Sources of Energy — Overview' },
-      ],
-    },
-    {
-      slug: 'renewable-and-non-renewable-sources',
-      title: 'Non-Renewable and Renewable Sources of Energy',
-      concepts: [
-        { slug: 'non-renewable-energy-sources', title: 'Non-Renewable Sources of Energy' },
-        { slug: 'renewable-energy-sources', title: 'Renewable Sources of Energy' },
-      ],
-    },
-    {
-      slug: 'environmental-impacts-topic',
-      title: 'Environmental Impacts and Consequences',
-      concepts: [{ slug: 'environmental-impacts-of-energy-use', title: 'Environmental Impacts and Consequences' }],
-    },
-  ],
-};
 
 const chapter5: Chapter = {
   slug: 'heat-transfer-and-thermodynamics',
@@ -319,7 +289,7 @@ export const cLevelPhysics: Level = {
   description: 'Thirteen chapters — from rotational motion and fluid dynamics through modern physics.',
   status: 'available',
   chapters: [
-    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4, chapter5, chapter6, chapter7,
+    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5, chapter6, chapter7,
     chapter8, chapter9, chapter10, chapter11, chapter12, chapter13,
   ],
 };

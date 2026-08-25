@@ -201,6 +201,10 @@ import {
   chapter3CFluidFormulas,
 } from '@/content/subjects/physics/c-level/chapter-3-fluid-dynamics';
 import {
+  chapter4CEnergyConcepts,
+  chapter4CEnergyFormulas,
+} from '@/content/subjects/physics/c-level/chapter-4-sources-of-energy-and-environmental-impacts';
+import {
   chapter1BondingConcepts,
   chapter1BondingFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-1-chemical-bonding-and-intermolecular-forces';
@@ -316,6 +320,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/rotational-motion': { concepts: chapter1CRotationConcepts, formulas: chapter1CRotationFormulas },
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
   'c-level/fluid-dynamics': { concepts: chapter3CFluidConcepts, formulas: chapter3CFluidFormulas },
+  'c-level/sources-of-energy-and-environmental-impacts': { concepts: chapter4CEnergyConcepts, formulas: chapter4CEnergyFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
   'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },
