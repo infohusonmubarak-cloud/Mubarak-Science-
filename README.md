@@ -57,17 +57,24 @@ A-Level, B-Level, and C-Level tier:
   Effect, Fundamentals of Electronics, Modern Physics), every concept, formula, worked example, a
   10-question graded Assessment, and a Concept Map per chapter — see
   `content/subjects/physics/b-level/`.
+- **Physics C-Level is fully authored end to end** — all 13 chapters (Rotational Motion, Forces in
+  Circular Motion, Fluid Dynamics, Sources of Energy and Environmental Impacts, Heat Transfer and
+  Thermodynamics, Effects and Characteristics of Sound, Applications of Light and Optical
+  Instruments, Interference and Diffraction of Light, Capacitor and Capacitance, Electrical Energy
+  Power and Heating Effect, Electromagnetic Induction Generation and Distribution, Digital
+  Electronics and Communication System, Modern Physics), every concept, formula, worked example, a
+  10-question graded Assessment, and a Concept Map per chapter — see
+  `content/subjects/physics/c-level/`.
 - **Concept Maps**: a chapter can carry a `conceptMap` — a simple labelled tree (rendered as nested
   boxes, no layout-engine dependency) showing how its topics and concepts relate. Every Mathematics
-  A-Level, Mathematics B-Level, Mathematics C-Level, Chemistry C-Level, Biology C-Level, and
-  Physics B-Level chapter has one, at
+  A-Level, Mathematics B-Level, Mathematics C-Level, Chemistry C-Level, Biology C-Level, Physics
+  B-Level, and Physics C-Level chapter has one, at
   `/subjects/[subjectSlug]/[levelSlug]/[chapterSlug]/concept-map`.
 - One flagship chapter per other subject/level has complete content — every concept, formula,
   diagram, worked example, and practice question fully authored:
   - **Biology, A-Level — Cell Structure and Organization** (10 concepts, 1 formula, `CellDiagram`)
   - **Chemistry, A-Level — Quantities of Substances** (10 concepts, 4 formulas, `MoleculeDiagram`)
   - **Physics, A-Level — Motion** (9 concepts, 6 formulas, interactive velocity-time graph)
-  - **Physics, C-Level — Forces in Circular Motion** (8 concepts, 2 formulas, `CircularMotionDiagram`)
 - Every other chapter renders as a real page in a "Coming soon" state, with its topic/concept
   outline already in place.
 - **Assessments**: a chapter can carry a graded `Assessment` — a balanced set of questions across
@@ -76,9 +83,9 @@ A-Level, B-Level, and C-Level tier:
   then shows a score, a correct/incorrect breakdown, and a "topics to review" list linking back to
   the concepts behind any wrong answer. Results persist to `localStorage`
   (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Every Mathematics
-  A-Level, Mathematics B-Level, Mathematics C-Level, Chemistry C-Level, Biology C-Level, and
-  Physics B-Level chapter, plus the Physics C-Level flagship, have one; every other chapter's
-  `/assessment` route renders a "Coming soon" panel until one is authored.
+  A-Level, Mathematics B-Level, Mathematics C-Level, Chemistry C-Level, Biology C-Level, Physics
+  B-Level, and Physics C-Level chapter have one; every other chapter's `/assessment` route renders
+  a "Coming soon" panel until one is authored.
 - Progress, bookmarks, and notes persist to the browser via `localStorage` — no account or
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
 - Teacher Guide and an admin CMS are stubbed but not built.
@@ -117,7 +124,7 @@ npm run lint    # eslint
 
 ## Adding content
 
-Any of the five flagship chapters' files (e.g.
+Any fully-authored chapter's files (e.g.
 `content/subjects/physics/c-level/chapter-2-forces-in-circular-motion/` — `topics.ts`,
 `concepts.ts`, `formulas.ts`, `quickRevision.ts`, and optionally `assessment.ts`) are the
 reference example for what a fully-authored chapter looks like. Every other chapter is an
