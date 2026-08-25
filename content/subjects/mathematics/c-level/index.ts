@@ -6,52 +6,12 @@ import { chapter4C } from './chapter-4-vectors-in-three-dimensions';
 import { chapter5C } from './chapter-5-permutation-and-combination';
 import { chapter6C } from './chapter-6-circles-and-parabolas';
 import { chapter7C } from './chapter-7-trigonometric-functions-and-graphs';
+import { chapter8C } from './chapter-8-logarithmic-and-exponential-functions';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapters 1-7 are now fully authored.
-
-const chapter8: Chapter = {
-  slug: 'logarithmic-and-exponential-functions',
-  number: 8,
-  title: 'Logarithmic and Exponential Functions',
-  blurb: 'Graphs of logarithmic and exponential functions, their transformations, and their derivatives.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'graphs-of-exponential-functions-topic',
-      title: 'Graphs of Exponential Functions',
-      concepts: [{ slug: 'the-graph-of-an-exponential-function', title: 'The Graph of an Exponential Function' }],
-    },
-    {
-      slug: 'graphs-of-logarithmic-functions-topic',
-      title: 'Graphs of Logarithmic Functions',
-      concepts: [{ slug: 'the-graph-of-a-logarithmic-function', title: 'The Graph of a Logarithmic Function' }],
-    },
-    {
-      slug: 'transformations-of-log-and-exp-graphs-topic',
-      title: 'Transformations of Logarithmic and Exponential Graphs',
-      concepts: [{ slug: 'transformations-of-exponential-and-logarithmic-graphs', title: 'Transformations of Exponential and Logarithmic Graphs' }],
-    },
-    {
-      slug: 'differentiation-of-exponential-functions-topic',
-      title: 'Differentiation of Exponential Functions',
-      concepts: [
-        { slug: 'the-derivative-of-e-to-the-x', title: 'The Derivative of eˣ' },
-        { slug: 'the-derivative-of-general-exponential-functions', title: 'The Derivative of General Exponential Functions' },
-      ],
-    },
-    {
-      slug: 'differentiation-of-logarithmic-functions-topic',
-      title: 'Differentiation of Logarithmic Functions',
-      concepts: [
-        { slug: 'the-derivative-of-the-natural-logarithm', title: 'The Derivative of the Natural Logarithm' },
-        { slug: 'the-derivative-of-general-logarithmic-functions', title: 'The Derivative of General Logarithmic Functions' },
-      ],
-    },
-  ],
-};
+// one at a time. Chapters 1-8 are now fully authored.
 
 const chapter9: Chapter = {
   slug: 'applications-of-derivatives',
@@ -170,6 +130,6 @@ export const cLevelMath: Level = {
   status: 'available',
   chapters: [
     chapter1C, chapter2C, chapter3C, chapter4C, chapter5C, chapter6C,
-    chapter7C, chapter8, chapter9, chapter10, chapter11,
+    chapter7C, chapter8C, chapter9, chapter10, chapter11,
   ],
 };

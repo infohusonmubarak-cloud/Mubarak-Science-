@@ -113,6 +113,10 @@ import {
   chapter7CFormulas as chapter7CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-7-trigonometric-functions-and-graphs';
 import {
+  chapter8CConcepts as chapter8CMathConcepts,
+  chapter8CFormulas as chapter8CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-8-logarithmic-and-exponential-functions';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -270,6 +274,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/permutation-and-combination': { concepts: chapter5CMathConcepts, formulas: chapter5CMathFormulas },
   'c-level/circles-and-parabolas': { concepts: chapter6CMathConcepts, formulas: chapter6CMathFormulas },
   'c-level/trigonometric-functions-and-graphs': { concepts: chapter7CMathConcepts, formulas: chapter7CMathFormulas },
+  'c-level/logarithmic-and-exponential-functions': { concepts: chapter8CMathConcepts, formulas: chapter8CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
