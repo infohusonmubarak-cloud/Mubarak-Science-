@@ -69,6 +69,10 @@ import {
   chapter7BFormulas as chapter7BMathFormulas,
 } from '@/content/subjects/mathematics/b-level/chapter-7-circles';
 import {
+  chapter8BConcepts as chapter8BMathConcepts,
+  chapter8BFormulas as chapter8BMathFormulas,
+} from '@/content/subjects/mathematics/b-level/chapter-8-areas-of-similar-triangles';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -215,6 +219,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/matrices': { concepts: chapter5BMathConcepts, formulas: chapter5BMathFormulas },
   'b-level/statistics': { concepts: chapter6BMathConcepts, formulas: chapter6BMathFormulas },
   'b-level/circles-advanced': { concepts: chapter7BMathConcepts, formulas: chapter7BMathFormulas },
+  'b-level/areas-of-similar-triangles': { concepts: chapter8BMathConcepts, formulas: chapter8BMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
