@@ -7,44 +7,12 @@ import { chapter5 } from './chapter-5-quadratic-functions';
 import { chapter6 } from './chapter-6-absolute-value-functions';
 import { chapter7 } from './chapter-7-probability';
 import { chapter8 } from './chapter-8-similarity';
+import { chapter9 } from './chapter-9-circles';
 
-// Chapters 9-10 are outline-only stubs for this pass: every chapter is a
-// real, navigable page with an accurate topic/concept map, but only
-// Chapters 1-8 have full concept bodies written. `status: 'coming-soon'`
-// drives the ComingSoonPanel instead of a full concept template.
-
-const chapter9: Chapter = {
-  slug: 'circles',
-  number: 9,
-  title: 'Circles',
-  blurb: 'Radius, diameter, chords, arcs and sectors, tangents, and the equation of a circle on the coordinate plane.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'parts-of-a-circle',
-      title: 'Parts of a Circle',
-      concepts: [
-        { slug: 'radius-diameter-and-circumference', title: 'Radius, Diameter and Circumference' },
-        { slug: 'chords-and-arcs', title: 'Chords and Arcs' },
-        { slug: 'tangents-and-secants', title: 'Tangents and Secants' },
-      ],
-    },
-    {
-      slug: 'measuring-circles',
-      title: 'Measuring Circles',
-      concepts: [
-        { slug: 'arc-length', title: 'Arc Length' },
-        { slug: 'sector-area', title: 'Sector Area' },
-        { slug: 'central-and-inscribed-angles', title: 'Central and Inscribed Angles' },
-      ],
-    },
-    {
-      slug: 'circle-equations',
-      title: 'Circles on the Coordinate Plane',
-      concepts: [{ slug: 'equation-of-a-circle', title: 'Equation of a Circle' }],
-    },
-  ],
-};
+// Chapter 10 is an outline-only stub for this pass: it is a real,
+// navigable page with an accurate topic/concept map, but only Chapters
+// 1-9 have full concept bodies written. `status: 'coming-soon'` drives
+// the ComingSoonPanel instead of a full concept template.
 
 const chapter10: Chapter = {
   slug: 'trigonometry',
