@@ -105,6 +105,10 @@ import {
   chapter5CFormulas as chapter5CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-5-permutation-and-combination';
 import {
+  chapter6CConcepts as chapter6CMathConcepts,
+  chapter6CFormulas as chapter6CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-6-circles-and-parabolas';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -260,6 +264,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/analytic-solid-geometry': { concepts: chapter3CMathConcepts, formulas: chapter3CMathFormulas },
   'c-level/vectors-in-three-dimensions': { concepts: chapter4CMathConcepts, formulas: chapter4CMathFormulas },
   'c-level/permutation-and-combination': { concepts: chapter5CMathConcepts, formulas: chapter5CMathFormulas },
+  'c-level/circles-and-parabolas': { concepts: chapter6CMathConcepts, formulas: chapter6CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },

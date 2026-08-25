@@ -4,55 +4,12 @@ import { chapter2C } from './chapter-2-mathematical-induction';
 import { chapter3C } from './chapter-3-analytic-solid-geometry';
 import { chapter4C } from './chapter-4-vectors-in-three-dimensions';
 import { chapter5C } from './chapter-5-permutation-and-combination';
+import { chapter6C } from './chapter-6-circles-and-parabolas';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapters 1-5 are now fully authored.
-
-const chapter6: Chapter = {
-  slug: 'circles-and-parabolas',
-  number: 6,
-  title: 'Circles and Parabolas',
-  blurb: 'Conic sections, the general equations of circles and parabolas, and translation and rotation of axes.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'conic-sections-overview-topic',
-      title: 'Conic Sections: An Overview',
-      concepts: [{ slug: 'what-is-a-conic-section', title: 'What Is a Conic Section?' }],
-    },
-    {
-      slug: 'the-circle-topic',
-      title: 'The Circle',
-      concepts: [
-        { slug: 'the-standard-equation-of-a-circle', title: 'The Standard Equation of a Circle' },
-        { slug: 'the-general-equation-of-a-circle', title: 'The General Equation of a Circle' },
-      ],
-    },
-    {
-      slug: 'the-parabola-topic',
-      title: 'The Parabola',
-      concepts: [
-        { slug: 'the-focus-directrix-definition-of-a-parabola', title: 'The Focus-Directrix Definition of a Parabola' },
-        { slug: 'the-standard-equation-of-a-parabola', title: 'The Standard Equation of a Parabola' },
-      ],
-    },
-    {
-      slug: 'the-general-equation-of-a-parabola-topic',
-      title: 'The General Equation of a Parabola',
-      concepts: [{ slug: 'the-general-equation-of-a-translated-parabola', title: 'The General Equation of a Translated Parabola' }],
-    },
-    {
-      slug: 'translation-and-rotation-of-axes-topic',
-      title: 'Translation and Rotation of Axes',
-      concepts: [
-        { slug: 'translation-of-axes', title: 'Translation of Axes' },
-        { slug: 'rotation-of-axes', title: 'Rotation of Axes' },
-      ],
-    },
-  ],
-};
+// one at a time. Chapters 1-6 are now fully authored.
 
 const chapter7: Chapter = {
   slug: 'trigonometric-functions-and-graphs',
@@ -261,7 +218,7 @@ export const cLevelMath: Level = {
   description: 'Eleven advanced chapters — from complex numbers and solid geometry through the methods and applications of integration.',
   status: 'available',
   chapters: [
-    chapter1C, chapter2C, chapter3C, chapter4C, chapter5C, chapter6,
+    chapter1C, chapter2C, chapter3C, chapter4C, chapter5C, chapter6C,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
