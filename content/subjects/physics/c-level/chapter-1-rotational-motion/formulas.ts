@@ -81,8 +81,8 @@ export const chapter1CRotationFormulas: Record<string, Formula> = {
     whenToUse: 'Whenever a rotating object\'s angular acceleration needs to be converted into the linear acceleration of a specific point along its direction of motion.',
     relatedConceptSlugs: ['tangential-velocity-and-tangential-acceleration'],
   },
-  'centripetal-acceleration-formula': {
-    slug: 'centripetal-acceleration-formula',
+  'rotational-centripetal-acceleration-formula': {
+    slug: 'rotational-centripetal-acceleration-formula',
     name: 'Centripetal Acceleration',
     expression: 'a_c = v² / r = ω²r',
     meaning: 'The acceleration of an object moving on a circular path, always directed toward the centre of the circle — it changes the direction of motion, not the speed.',
@@ -95,8 +95,8 @@ export const chapter1CRotationFormulas: Record<string, Formula> = {
     whenToUse: 'Whenever an object moves on a circular path at constant speed and the acceleration responsible for curving that path is needed.',
     relatedConceptSlugs: ['centripetal-acceleration'],
   },
-  'period-frequency-formula': {
-    slug: 'period-frequency-formula',
+  'rotational-period-frequency-formula': {
+    slug: 'rotational-period-frequency-formula',
     name: 'Period, Frequency and Angular Velocity',
     expression: 'T = 1 / f;   ω = 2πf = 2π / T',
     meaning: 'Connects how long one full revolution takes (period), how many revolutions happen per second (frequency), and the angular velocity of the rotation.',

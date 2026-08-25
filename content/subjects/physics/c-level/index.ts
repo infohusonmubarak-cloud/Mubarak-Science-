@@ -1,4 +1,4 @@
-import type { Chapter, Level } from '@/types/content';
+import type { Level } from '@/types/content';
 import { chapter1CRotation } from './chapter-1-rotational-motion';
 import { chapter2ForcesInCircularMotion } from './chapter-2-forces-in-circular-motion';
 import { chapter3CFluid } from './chapter-3-fluid-dynamics';
@@ -11,36 +11,9 @@ import { chapter9CCapacitor } from './chapter-9-capacitor-and-capacitance';
 import { chapter10CElectrical } from './chapter-10-electrical-energy-power-and-heating-effect';
 import { chapter11CInduction } from './chapter-11-electromagnetic-induction-generation-and-distribution';
 import { chapter12CDigital } from './chapter-12-digital-electronics-and-communication-system';
+import { chapter13CModern } from './chapter-13-modern-physics';
 
-// Chapters 1-12 are fully authored. Chapter 13 is the last outline-only
-// stub — a real, navigable page with an accurate topic/concept map, no
-// full body yet.
-
-const chapter13: Chapter = {
-  slug: 'modern-physics',
-  number: 13,
-  title: 'Modern Physics',
-  blurb: 'Radioactivity and nuclear energy, wave-particle duality, and the principles of special relativity.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'radioactivity-and-nuclear-energy',
-      title: 'Radioactivity and Nuclear Energy',
-      concepts: [
-        { slug: 'radioactivity-and-its-uses', title: 'Radioactivity and Its Uses' },
-        { slug: 'nuclear-energy-and-environmental-impact', title: 'Nuclear Energy and Its Environmental Impact' },
-      ],
-    },
-    {
-      slug: 'wave-particle-dualism-and-relativity',
-      title: 'Wave-Particle Dualism and Special Relativity',
-      concepts: [
-        { slug: 'wave-particle-duality', title: 'Wave-Particle Dualism' },
-        { slug: 'special-theory-of-relativity', title: 'Principles of Special Theory of Relativity' },
-      ],
-    },
-  ],
-};
+// All 13 chapters are fully authored.
 
 export const cLevelPhysics: Level = {
   slug: 'c-level',
@@ -49,6 +22,6 @@ export const cLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics, chapter8CInterference,
-    chapter9CCapacitor, chapter10CElectrical, chapter11CInduction, chapter12CDigital, chapter13,
+    chapter9CCapacitor, chapter10CElectrical, chapter11CInduction, chapter12CDigital, chapter13CModern,
   ],
 };

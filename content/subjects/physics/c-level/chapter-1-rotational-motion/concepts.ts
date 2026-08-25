@@ -374,7 +374,7 @@ export const chapter1CRotationConcepts: Record<string, Concept> = {
       interactive: false,
       props: { forceLabel: 'ac', showVelocityVector: true },
     },
-    formulaSlug: 'centripetal-acceleration-formula',
+    formulaSlug: 'rotational-centripetal-acceleration-formula',
     workedExample: {
       id: 'centripetal-acceleration-worked-1',
       title: 'Find a centripetal acceleration',
@@ -428,7 +428,7 @@ export const chapter1CRotationConcepts: Record<string, Concept> = {
     whyItMatters:
       'Period and frequency are the everyday, easy-to-measure way to describe a rotation\'s speed — "how many ' +
       'times per second" or "how many seconds per turn" — that connects directly to the more abstract angular velocity.',
-    formulaSlug: 'period-frequency-formula',
+    formulaSlug: 'rotational-period-frequency-formula',
     workedExample: {
       id: 'period-frequency-worked-1',
       title: 'Find period and angular velocity from frequency',

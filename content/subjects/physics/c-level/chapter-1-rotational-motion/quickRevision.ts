@@ -41,13 +41,13 @@ export const chapter1CRotationQuickRevision: QuickRevision = {
     {
       conceptSlug: 'centripetal-acceleration',
       keyPoint: 'a_c = v²/r = ω²r, always toward the center.',
-      formulaSlug: 'centripetal-acceleration-formula',
+      formulaSlug: 'rotational-centripetal-acceleration-formula',
       miniExample: 'v=20m/s, r=50m → a_c=8 m/s².',
     },
     {
       conceptSlug: 'period-frequency-and-revolution',
       keyPoint: 'T = 1/f; ω = 2πf.',
-      formulaSlug: 'period-frequency-formula',
+      formulaSlug: 'rotational-period-frequency-formula',
       miniExample: 'f=5Hz → T=0.2s, ω≈31.42 rad/s.',
     },
   ],
@@ -91,13 +91,13 @@ export const chapter1CRotationQuickRevision: QuickRevision = {
     {
       conceptSlug: 'centripetal-acceleration',
       keyPoint: 'Exists even at constant speed, since direction is changing.',
-      formulaSlug: 'centripetal-acceleration-formula',
+      formulaSlug: 'rotational-centripetal-acceleration-formula',
       miniExample: 'Requires a net inward force to sustain (Chapter 2).',
     },
     {
       conceptSlug: 'period-frequency-and-revolution',
       keyPoint: 'Larger frequency means smaller period.',
-      formulaSlug: 'period-frequency-formula',
+      formulaSlug: 'rotational-period-frequency-formula',
       miniExample: 'T=0.1s → f=10Hz.',
     },
   ],
