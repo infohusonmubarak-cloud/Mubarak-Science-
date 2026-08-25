@@ -5,48 +5,12 @@ import { chapter3 } from './chapter-3-logarithms';
 import { chapter4 } from './chapter-4-functions';
 import { chapter5 } from './chapter-5-quadratic-functions';
 import { chapter6 } from './chapter-6-absolute-value-functions';
+import { chapter7 } from './chapter-7-probability';
 
-// Chapters 7-10 are outline-only stubs for this pass: every chapter is a
+// Chapters 8-10 are outline-only stubs for this pass: every chapter is a
 // real, navigable page with an accurate topic/concept map, but only
-// Chapters 1-6 have full concept bodies written. `status: 'coming-soon'`
+// Chapters 1-7 have full concept bodies written. `status: 'coming-soon'`
 // drives the ComingSoonPanel instead of a full concept template.
-
-const chapter7: Chapter = {
-  slug: 'probability',
-  number: 7,
-  title: 'Probability',
-  blurb: 'Sample spaces, events, the addition and multiplication rules, conditional probability, and counting with permutations and combinations.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'probability-basics',
-      title: 'Probability Basics',
-      concepts: [
-        { slug: 'experiments-and-sample-spaces', title: 'Experiments and Sample Spaces' },
-        { slug: 'events-and-probability', title: 'Events and Probability' },
-        { slug: 'complement-rule', title: 'The Complement Rule' },
-      ],
-    },
-    {
-      slug: 'combining-events',
-      title: 'Combining Events',
-      concepts: [
-        { slug: 'addition-rule', title: 'The Addition Rule' },
-        { slug: 'independent-and-dependent-events', title: 'Independent and Dependent Events' },
-        { slug: 'conditional-probability', title: 'Conditional Probability' },
-      ],
-    },
-    {
-      slug: 'counting',
-      title: 'Counting Methods',
-      concepts: [
-        { slug: 'permutations', title: 'Permutations' },
-        { slug: 'combinations', title: 'Combinations' },
-        { slug: 'expected-value', title: 'Expected Value' },
-      ],
-    },
-  ],
-};
 
 const chapter8: Chapter = {
   slug: 'similarity',
