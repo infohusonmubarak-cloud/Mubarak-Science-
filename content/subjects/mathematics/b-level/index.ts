@@ -1,36 +1,10 @@
 import type { Chapter } from '@/types/content';
 import { chapter1B } from './chapter-1-remainder-and-factor-theorem';
+import { chapter2B } from './chapter-2-binomial-theorem';
 
-// Chapters 2-11 are outline-only stubs for this pass — real, navigable
-// pages with accurate topic/concept maps, no full bodies yet. Chapter 1
-// is now fully authored (see chapter-1-remainder-and-factor-theorem/).
-
-const chapter2: Chapter = {
-  slug: 'binomial-theorem',
-  number: 2,
-  title: 'The Binomial Theorem',
-  blurb: "Expanding (a+b)ⁿ with Pascal's triangle and binomial coefficients.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'expanding-binomials',
-      title: 'Expanding Binomials',
-      concepts: [
-        { slug: 'pascals-triangle', title: "Pascal's Triangle" },
-        { slug: 'binomial-coefficients', title: 'Binomial Coefficients' },
-        { slug: 'the-binomial-expansion', title: 'The Binomial Expansion' },
-      ],
-    },
-    {
-      slug: 'using-the-expansion',
-      title: 'Using the Expansion',
-      concepts: [
-        { slug: 'general-term', title: 'The General Term' },
-        { slug: 'middle-terms', title: 'Middle Terms' },
-      ],
-    },
-  ],
-};
+// Chapters 3-11 are outline-only stubs for this pass — real, navigable
+// pages with accurate topic/concept maps, no full bodies yet. Chapters
+// 1-2 are now fully authored.
 
 const chapter3: Chapter = {
   slug: 'elementary-functions-and-transformations',
@@ -312,7 +286,7 @@ export const bLevelMath = {
   description: 'Eleven advanced chapters — from polynomial theorems through differentiation.',
   status: 'available' as const,
   chapters: [
-    chapter1B, chapter2, chapter3, chapter4, chapter5, chapter6,
+    chapter1B, chapter2B, chapter3, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
