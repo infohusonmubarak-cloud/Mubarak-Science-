@@ -97,6 +97,10 @@ import {
   chapter3CFormulas as chapter3CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-3-analytic-solid-geometry';
 import {
+  chapter4CConcepts as chapter4CMathConcepts,
+  chapter4CFormulas as chapter4CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-4-vectors-in-three-dimensions';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -250,6 +254,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/complex-numbers': { concepts: chapter1CMathConcepts, formulas: chapter1CMathFormulas },
   'c-level/mathematical-induction': { concepts: chapter2CMathConcepts, formulas: chapter2CMathFormulas },
   'c-level/analytic-solid-geometry': { concepts: chapter3CMathConcepts, formulas: chapter3CMathFormulas },
+  'c-level/vectors-in-three-dimensions': { concepts: chapter4CMathConcepts, formulas: chapter4CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },

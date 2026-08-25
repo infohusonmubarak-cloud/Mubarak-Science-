@@ -2,55 +2,12 @@ import type { Chapter, Level } from '@/types/content';
 import { chapter1C } from './chapter-1-complex-numbers';
 import { chapter2C } from './chapter-2-mathematical-induction';
 import { chapter3C } from './chapter-3-analytic-solid-geometry';
+import { chapter4C } from './chapter-4-vectors-in-three-dimensions';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapters 1-3 are now fully authored.
-
-const chapter4: Chapter = {
-  slug: 'vectors-in-three-dimensions',
-  number: 4,
-  title: 'Vectors in Three Dimensions',
-  blurb: 'The scalar (dot) product, the vector (cross) product, and lines and planes in 3D expressed with vectors.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'vectors-in-3d-and-components-topic',
-      title: 'Vectors in 3D and Their Components',
-      concepts: [{ slug: 'vectors-in-three-dimensions-and-their-magnitude', title: 'Vectors in Three Dimensions and Their Magnitude' }],
-    },
-    {
-      slug: 'the-scalar-dot-product-topic',
-      title: 'The Scalar (Dot) Product',
-      concepts: [
-        { slug: 'the-dot-product-of-two-vectors', title: 'The Dot Product of Two Vectors' },
-        { slug: 'the-angle-between-two-vectors', title: 'The Angle Between Two Vectors' },
-      ],
-    },
-    {
-      slug: 'the-vector-cross-product-topic',
-      title: 'The Vector (Cross) Product',
-      concepts: [
-        { slug: 'the-cross-product-of-two-vectors', title: 'The Cross Product of Two Vectors' },
-        { slug: 'the-cross-product-and-area-of-a-parallelogram', title: 'The Cross Product and Area of a Parallelogram' },
-      ],
-    },
-    {
-      slug: 'lines-in-3d-using-vectors-topic',
-      title: 'Lines in 3D Using Vectors',
-      concepts: [{ slug: 'the-vector-equation-of-a-line-in-space', title: 'The Vector Equation of a Line in Space' }],
-    },
-    {
-      slug: 'planes-in-3d-using-vectors-topic',
-      title: 'Planes in 3D Using Vectors',
-      concepts: [
-        { slug: 'the-vector-equation-of-a-plane-in-space', title: 'The Vector Equation of a Plane in Space' },
-        { slug: 'the-scalar-triple-product-and-volume', title: 'The Scalar Triple Product and Volume' },
-      ],
-    },
-  ],
-};
+// one at a time. Chapters 1-4 are now fully authored.
 
 const chapter5: Chapter = {
   slug: 'permutation-and-combination',
@@ -350,7 +307,7 @@ export const cLevelMath: Level = {
   description: 'Eleven advanced chapters — from complex numbers and solid geometry through the methods and applications of integration.',
   status: 'available',
   chapters: [
-    chapter1C, chapter2C, chapter3C, chapter4, chapter5, chapter6,
+    chapter1C, chapter2C, chapter3C, chapter4C, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
