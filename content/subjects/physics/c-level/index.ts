@@ -1,45 +1,10 @@
 import type { Chapter, Level } from '@/types/content';
+import { chapter1CRotation } from './chapter-1-rotational-motion';
 import { chapter2ForcesInCircularMotion } from './chapter-2-forces-in-circular-motion';
 
-// Chapter 2 is the fully-authored flagship chapter for C-Level Physics. The
-// other twelve are outline-only stubs — real, navigable pages with an
-// accurate topic/concept map, no full bodies yet.
-
-const chapter1: Chapter = {
-  slug: 'rotational-motion',
-  number: 1,
-  title: 'Rotational Motion',
-  blurb: 'Angular displacement, velocity and acceleration, how they relate to linear motion, and centripetal acceleration.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'rotational-motion-under-constant-angular-acceleration',
-      title: 'Rotational Motion Under Constant Angular Acceleration',
-      concepts: [
-        { slug: 'angular-displacement', title: 'Angular Displacement' },
-        { slug: 'angular-velocity', title: 'Angular Velocity' },
-        { slug: 'angular-acceleration', title: 'Angular Acceleration' },
-        { slug: 'rotational-kinematics-equations', title: 'Rotational Kinematics Equations' },
-      ],
-    },
-    {
-      slug: 'relations-between-linear-and-angular-quantities',
-      title: 'Relations Between Linear and Angular Quantities',
-      concepts: [
-        { slug: 'linear-and-angular-quantity-relationships', title: 'Linear and Angular Quantity Relationships' },
-        { slug: 'tangential-velocity-and-tangential-acceleration', title: 'Tangential Velocity and Tangential Acceleration' },
-      ],
-    },
-    {
-      slug: 'centripetal-acceleration-topic',
-      title: 'Centripetal Acceleration',
-      concepts: [
-        { slug: 'centripetal-acceleration', title: 'Centripetal Acceleration' },
-        { slug: 'period-frequency-and-revolution', title: 'Period, Frequency and Revolution' },
-      ],
-    },
-  ],
-};
+// Chapters 1 and 2 are fully authored. The other eleven are outline-only
+// stubs — real, navigable pages with an accurate topic/concept map, no
+// full bodies yet.
 
 const chapter3: Chapter = {
   slug: 'fluid-dynamics',
@@ -390,7 +355,7 @@ export const cLevelPhysics: Level = {
   description: 'Thirteen chapters — from rotational motion and fluid dynamics through modern physics.',
   status: 'available',
   chapters: [
-    chapter1, chapter2ForcesInCircularMotion, chapter3, chapter4, chapter5, chapter6, chapter7,
+    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3, chapter4, chapter5, chapter6, chapter7,
     chapter8, chapter9, chapter10, chapter11, chapter12, chapter13,
   ],
 };
