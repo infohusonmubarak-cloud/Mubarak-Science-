@@ -6,39 +6,12 @@ import { chapter4 } from './chapter-4-functions';
 import { chapter5 } from './chapter-5-quadratic-functions';
 import { chapter6 } from './chapter-6-absolute-value-functions';
 import { chapter7 } from './chapter-7-probability';
+import { chapter8 } from './chapter-8-similarity';
 
-// Chapters 8-10 are outline-only stubs for this pass: every chapter is a
+// Chapters 9-10 are outline-only stubs for this pass: every chapter is a
 // real, navigable page with an accurate topic/concept map, but only
-// Chapters 1-7 have full concept bodies written. `status: 'coming-soon'`
+// Chapters 1-8 have full concept bodies written. `status: 'coming-soon'`
 // drives the ComingSoonPanel instead of a full concept template.
-
-const chapter8: Chapter = {
-  slug: 'similarity',
-  number: 8,
-  title: 'Similarity',
-  blurb: 'Similar figures, scale factor, and the AA, SAS and SSS tests for similar triangles.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'similar-figures',
-      title: 'Similar Figures',
-      concepts: [
-        { slug: 'corresponding-sides-and-angles', title: 'Corresponding Sides and Angles' },
-        { slug: 'scale-factor', title: 'Scale Factor' },
-      ],
-    },
-    {
-      slug: 'similar-triangles',
-      title: 'Similar Triangles',
-      concepts: [
-        { slug: 'aa-similarity', title: 'AA Similarity' },
-        { slug: 'sas-similarity', title: 'SAS Similarity' },
-        { slug: 'sss-similarity', title: 'SSS Similarity' },
-        { slug: 'ratio-of-areas', title: 'Ratio of Areas' },
-      ],
-    },
-  ],
-};
 
 const chapter9: Chapter = {
   slug: 'circles',

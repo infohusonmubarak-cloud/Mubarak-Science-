@@ -29,6 +29,10 @@ import {
   chapter7Formulas as chapter7MathFormulas,
 } from '@/content/subjects/mathematics/a-level/chapter-7-probability';
 import {
+  chapter8Concepts as chapter8MathConcepts,
+  chapter8Formulas as chapter8MathFormulas,
+} from '@/content/subjects/mathematics/a-level/chapter-8-similarity';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -165,6 +169,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/quadratic-functions': { concepts: chapter5MathConcepts, formulas: chapter5MathFormulas },
   'a-level/absolute-value-functions': { concepts: chapter6MathConcepts, formulas: chapter6MathFormulas },
   'a-level/probability': { concepts: chapter7MathConcepts, formulas: chapter7MathFormulas },
+  'a-level/similarity': { concepts: chapter8MathConcepts, formulas: chapter8MathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
