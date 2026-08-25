@@ -8,41 +8,11 @@ import { chapter6CSound } from './chapter-6-effects-and-characteristics-of-sound
 import { chapter7COptics } from './chapter-7-applications-of-light-and-optical-instruments';
 import { chapter8CInterference } from './chapter-8-interference-and-diffraction-of-light';
 import { chapter9CCapacitor } from './chapter-9-capacitor-and-capacitance';
+import { chapter10CElectrical } from './chapter-10-electrical-energy-power-and-heating-effect';
 
-// Chapters 1-9 are fully authored. The other four are outline-only
+// Chapters 1-10 are fully authored. The other three are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter10: Chapter = {
-  slug: 'electrical-energy-power-and-heating-effect',
-  number: 10,
-  title: 'Electrical Energy, Power and Heating Effect of Electric Current',
-  blurb: "EMF and circuits, batteries in series and parallel, electrical power, and Joule's law of heating.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'emf-and-circuits',
-      title: 'Electromotive Force and Electric Circuits',
-      concepts: [
-        { slug: 'electromotive-force-and-circuits', title: 'Electromotive Force and Electric Circuits' },
-        { slug: 'batteries-in-series-and-parallel', title: 'Batteries in Series and in Parallel' },
-      ],
-    },
-    {
-      slug: 'electrical-energy-and-power-topic',
-      title: 'Electrical Energy and Electrical Power',
-      concepts: [{ slug: 'electrical-energy-and-power', title: 'Electrical Energy and Electrical Power' }],
-    },
-    {
-      slug: 'joules-law-and-applications',
-      title: "Joule's Law of Electricity and Heat",
-      concepts: [
-        { slug: 'joules-law-of-heating', title: "Joule's Law of Heating" },
-        { slug: 'applications-of-heating-effect', title: 'Applications of the Heating Effect of Current' },
-      ],
-    },
-  ],
-};
 
 const chapter11: Chapter = {
   slug: 'electromagnetic-induction-generation-and-distribution',
@@ -138,6 +108,6 @@ export const cLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics, chapter8CInterference,
-    chapter9CCapacitor, chapter10, chapter11, chapter12, chapter13,
+    chapter9CCapacitor, chapter10CElectrical, chapter11, chapter12, chapter13,
   ],
 };
