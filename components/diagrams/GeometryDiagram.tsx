@@ -21,6 +21,8 @@ export interface GDSegment {
   label?: string;
   labelDx?: number;
   labelDy?: number;
+  /** Draw an arrowhead at the 'to' end — for vectors (Chapter 9, Math B-Level). */
+  arrow?: boolean;
 }
 
 export interface GDAngleMark {
@@ -170,6 +172,11 @@ export function GeometryDiagram({
         const to = toPixel(s.to[0], s.to[1]);
         const midX = (from.px + to.px) / 2 + (s.labelDx ?? 0);
         const midY = (from.py + to.py) / 2 + (s.labelDy ?? 0);
+        const angle = Math.atan2(to.py - from.py, to.px - from.px);
+        const headLen = 9;
+        const headSpread = 0.45;
+        const arrowP1 = { px: to.px - headLen * Math.cos(angle - headSpread), py: to.py - headLen * Math.sin(angle - headSpread) };
+        const arrowP2 = { px: to.px - headLen * Math.cos(angle + headSpread), py: to.py - headLen * Math.sin(angle + headSpread) };
         return (
           <g key={`seg-${i}`}>
             <line
@@ -177,6 +184,12 @@ export function GeometryDiagram({
               stroke="var(--brand)" strokeWidth={2}
               strokeDasharray={s.dashed ? '4 3' : undefined}
             />
+            {s.arrow ? (
+              <polygon
+                points={`${to.px},${to.py} ${arrowP1.px},${arrowP1.py} ${arrowP2.px},${arrowP2.py}`}
+                fill="var(--brand)"
+              />
+            ) : null}
             {s.label ? (
               <text x={midX} y={midY} textAnchor="middle" className="fill-foreground text-[9px] font-medium">{s.label}</text>
             ) : null}
