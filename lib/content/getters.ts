@@ -53,6 +53,10 @@ import {
   chapter3BFormulas as chapter3BMathFormulas,
 } from '@/content/subjects/mathematics/b-level/chapter-3-elementary-functions-and-transformations';
 import {
+  chapter4BConcepts as chapter4BMathConcepts,
+  chapter4BFormulas as chapter4BMathFormulas,
+} from '@/content/subjects/mathematics/b-level/chapter-4-sequences-and-series';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -195,6 +199,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/remainder-and-factor-theorem': { concepts: chapter1BMathConcepts, formulas: chapter1BMathFormulas },
   'b-level/binomial-theorem': { concepts: chapter2BMathConcepts, formulas: chapter2BMathFormulas },
   'b-level/elementary-functions-and-transformations': { concepts: chapter3BMathConcepts, formulas: chapter3BMathFormulas },
+  'b-level/sequences-and-series': { concepts: chapter4BMathConcepts, formulas: chapter4BMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },

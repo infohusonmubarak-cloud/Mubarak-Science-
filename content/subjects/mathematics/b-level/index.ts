@@ -2,42 +2,11 @@ import type { Chapter } from '@/types/content';
 import { chapter1B } from './chapter-1-remainder-and-factor-theorem';
 import { chapter2B } from './chapter-2-binomial-theorem';
 import { chapter3B } from './chapter-3-elementary-functions-and-transformations';
+import { chapter4B } from './chapter-4-sequences-and-series';
 
-// Chapters 4-11 are outline-only stubs for this pass — real, navigable
+// Chapters 5-11 are outline-only stubs for this pass — real, navigable
 // pages with accurate topic/concept maps, no full bodies yet. Chapters
-// 1-3 are now fully authored.
-
-const chapter4: Chapter = {
-  slug: 'sequences-and-series',
-  number: 4,
-  title: 'Sequences and Series',
-  blurb: 'Arithmetic and geometric sequences, their sums, and infinite geometric series — the math behind savings, growth and depreciation.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'arithmetic-sequences',
-      title: 'Arithmetic Sequences and Series',
-      concepts: [
-        { slug: 'arithmetic-nth-term', title: 'The nth Term of an Arithmetic Sequence' },
-        { slug: 'arithmetic-series-sum', title: 'Sum of an Arithmetic Series' },
-      ],
-    },
-    {
-      slug: 'geometric-sequences',
-      title: 'Geometric Sequences and Series',
-      concepts: [
-        { slug: 'geometric-nth-term', title: 'The nth Term of a Geometric Sequence' },
-        { slug: 'geometric-series-sum', title: 'Sum of a Geometric Series' },
-        { slug: 'infinite-geometric-series', title: 'Infinite Geometric Series' },
-      ],
-    },
-    {
-      slug: 'sequence-applications',
-      title: 'Applications',
-      concepts: [{ slug: 'savings-growth-and-depreciation', title: 'Savings, Growth and Depreciation' }],
-    },
-  ],
-};
+// 1-4 are now fully authored.
 
 const chapter5: Chapter = {
   slug: 'matrices',
@@ -258,7 +227,7 @@ export const bLevelMath = {
   description: 'Eleven advanced chapters — from polynomial theorems through differentiation.',
   status: 'available' as const,
   chapters: [
-    chapter1B, chapter2B, chapter3B, chapter4, chapter5, chapter6,
+    chapter1B, chapter2B, chapter3B, chapter4B, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
