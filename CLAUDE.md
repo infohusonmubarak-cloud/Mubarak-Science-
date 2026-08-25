@@ -18,21 +18,23 @@ decision: `Chapter.topics` (a `Topic[]`, each holding `ConceptSummary[]`) is the
 navigation outline** — title, slug, difficulty — while the **full pedagogical body** (`Concept`,
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
 every chapter across all four subjects is a real, correctly-titled page even though most are
-still outline-only stubs with `status: 'coming-soon'` — Mathematics A-Level, Chemistry C-Level,
-Biology C-Level, and Physics B-Level are the four exceptions, each fully authored end to end (see
-below). `Level` also carries its own `status` — most subject/level combinations (Biology B-Level,
-and C-Level for Math) are `coming-soon` with an empty `chapters: []` until content is written for
-them; the level page (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a
-`ComingSoonPanel` instead of a chapter grid when `level.status === 'coming-soon'`.
+still outline-only stubs with `status: 'coming-soon'` — Mathematics A-Level, Mathematics B-Level,
+Chemistry C-Level, Biology C-Level, and Physics B-Level are the five exceptions, each fully
+authored end to end (see below). `Level` also carries its own `status` — most subject/level
+combinations (Biology B-Level, and C-Level for Math) are `coming-soon` with an empty
+`chapters: []` until content is written for them; the level page
+(`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
+chapter grid when `level.status === 'coming-soon'`.
 
 The reference examples for a fully-authored chapter are the flagship chapters —
 `biology/a-level/cell-structure-and-organization`, `chemistry/a-level/quantities-of-substances`,
 `physics/a-level/motion`, `physics/c-level/forces-in-circular-motion` — plus **all ten** chapters
-of `mathematics/a-level/`, **all eight** chapters of `chemistry/c-level/`, **all six** chapters of
-`biology/c-level/`, and **all twelve** chapters of `physics/b-level/`, the four fully-populated
-levels in the app right now. Every chapter in Mathematics A-Level, Chemistry C-Level, Biology
-C-Level, and Physics B-Level also has a graded `assessment` and a `conceptMap` (see
-**Assessments** and **Concept Maps** below); most stub chapters elsewhere don't yet.
+of `mathematics/a-level/`, **all eleven** chapters of `mathematics/b-level/`, **all eight**
+chapters of `chemistry/c-level/`, **all six** chapters of `biology/c-level/`, and **all twelve**
+chapters of `physics/b-level/`, the five fully-populated levels in the app right now. Every
+chapter in Mathematics A-Level, Mathematics B-Level, Chemistry C-Level, Biology C-Level, and
+Physics B-Level also has a graded `assessment` and a `conceptMap` (see **Assessments** and
+**Concept Maps** below); most stub chapters elsewhere don't yet.
 
 `lib/content/getters.ts` is the only way pages should read content. It holds a small
 `CONTENT_PACKS` registry mapping `level/chapter` to that chapter's full `{ concepts, formulas }`
@@ -79,10 +81,18 @@ enough to be relabelled for non-Math use (see its `xLabel`/`yLabel`/`slopeSymbol
 Physics's Motion chapter to present it as a velocity-time graph) — prefer reusing it with new
 labels over building a near-duplicate graphing component. `FunctionGraph` (Math A-Level chapters
 5-6) samples and plots a quadratic or absolute-value curve, marking the vertex/roots/axis of
-symmetry as needed. `GeometryDiagram` (Math A-Level chapters 8-10) is deliberately generic rather
-than a fixed set of named "kinds" — it renders arbitrary `points`/`segments`/`angleMarks`/
-`circles`/`arcs`/`polygons` given as plain coordinate data, auto-fitting them to the viewBox, so
-every new triangle or circle figure is just content, not a new component.
+symmetry as needed. Math B-Level extends it with a `kind: 'custom'` option — an arbitrary
+`fn`/`fn2` callback (a real TS function, not a string, since content data is TS source) plus
+`markPoints` — used for cubic/reciprocal/square-root/exponential curves (chapter 3), secant and
+tangent lines (chapter 11's rate-of-change and derivative concepts), and limits with a removable
+gap (the path breaks at any `NaN` or out-of-range sample instead of drawing a false connecting
+line). `GeometryDiagram` (Math A-Level chapters 8-10) is deliberately generic rather than a fixed
+set of named "kinds" — it renders arbitrary `points`/`segments`/`angleMarks`/`circles`/`arcs`/
+`polygons` given as plain coordinate data, auto-fitting them to the viewBox, so every new triangle
+or circle figure is just content, not a new component. Math B-Level adds an optional `arrow`
+boolean on `segments` (for vectors, chapter 9) and reuses the same point/segment machinery for
+non-triangle figures too (an ogive or scatter plot in chapter 6's Statistics, a tangent line to an
+implicit curve in chapter 11) rather than building single-purpose components for each.
 
 ## Assessments
 

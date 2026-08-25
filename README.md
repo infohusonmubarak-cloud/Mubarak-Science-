@@ -11,10 +11,10 @@ planned to slot in later without rebuilding the app. Every lesson follows the sa
 All four subjects — Mathematics, Biology, Chemistry, Physics — are wired up, each with an
 A-Level, B-Level, and C-Level tier:
 
-- The full navigation map exists for every chapter: Mathematics 10 (A-Level), Biology 5 (A-Level)
-  + 6 (C-Level), Chemistry 8 (A-Level) + 8 (C-Level), Physics 11 (A-Level) + 12 (B-Level) + 13
-  (C-Level). Mathematics C-Level and Biology B-Level are structurally present but render a "Coming
-  soon" state — no rebuild needed to bring them online later.
+- The full navigation map exists for every chapter: Mathematics 10 (A-Level) + 11 (B-Level),
+  Biology 5 (A-Level) + 6 (C-Level), Chemistry 8 (A-Level) + 8 (C-Level), Physics 11 (A-Level) + 12
+  (B-Level) + 13 (C-Level). Mathematics C-Level and Biology B-Level are structurally present but
+  render a "Coming soon" state — no rebuild needed to bring them online later.
 - **Mathematics A-Level is fully authored end to end** — all 10 chapters (Coordinate Geometry,
   Exponents and Radicals, Logarithms, Functions, Quadratic Functions, Absolute Value Functions,
   Probability, Similarity, Circles, Trigonometry), every concept, formula, worked example, a
@@ -23,6 +23,15 @@ A-Level, B-Level, and C-Level tier:
   (plots quadratic and absolute-value curves, marking the vertex/roots/axis of symmetry) and
   `GeometryDiagram` (a generic, data-driven renderer for labelled triangles, circles, and angle
   figures) — used for the graph- and geometry-heavy chapters (5, 6, 8, 9, 10).
+- **Mathematics B-Level is fully authored end to end** — all 11 chapters (Remainder and Factor
+  Theorem, The Binomial Theorem, Elementary Functions and Transformations, Sequences and Series,
+  Matrices, Statistics, Circles, Areas of Similar Triangles, Introduction to Vectors, Trigonometry,
+  Methods of Differentiation), every concept, formula, worked example, a 10-question graded
+  Assessment, and a Concept Map per chapter — see `content/subjects/mathematics/b-level/`. Extends
+  `FunctionGraph` with a `'custom'` kind (an arbitrary `fn`/`fn2` curve, e.g. tangent and secant
+  lines for the differentiation chapter) and `GeometryDiagram` with an `arrow` option on segments
+  (for vectors) — both reused as-is for the vector, trigonometry, and calculus chapters rather than
+  new one-off components.
 - **Chemistry C-Level is fully authored end to end** — all 8 chapters (Chemical Bonding and
   Intermolecular Forces, Energy Changes in Chemical Reactions, Chemical Kinetics, Chemical
   Equilibrium, Acid-Base Reactions, Transition Elements, Chemistry and Green Environment, Organic
@@ -41,8 +50,8 @@ A-Level, B-Level, and C-Level tier:
   `content/subjects/physics/b-level/`.
 - **Concept Maps**: a chapter can carry a `conceptMap` — a simple labelled tree (rendered as nested
   boxes, no layout-engine dependency) showing how its topics and concepts relate. Every Mathematics
-  A-Level, Chemistry C-Level, Biology C-Level, and Physics B-Level chapter has one, at
-  `/subjects/[subjectSlug]/[levelSlug]/[chapterSlug]/concept-map`.
+  A-Level, Mathematics B-Level, Chemistry C-Level, Biology C-Level, and Physics B-Level chapter has
+  one, at `/subjects/[subjectSlug]/[levelSlug]/[chapterSlug]/concept-map`.
 - One flagship chapter per other subject/level has complete content — every concept, formula,
   diagram, worked example, and practice question fully authored:
   - **Biology, A-Level — Cell Structure and Organization** (10 concepts, 1 formula, `CellDiagram`)
@@ -57,9 +66,9 @@ A-Level, B-Level, and C-Level tier:
   then shows a score, a correct/incorrect breakdown, and a "topics to review" list linking back to
   the concepts behind any wrong answer. Results persist to `localStorage`
   (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Every Mathematics
-  A-Level, Chemistry C-Level, Biology C-Level, and Physics B-Level chapter, plus the Physics
-  C-Level flagship, have one; every other chapter's `/assessment` route renders a "Coming soon"
-  panel until one is authored.
+  A-Level, Mathematics B-Level, Chemistry C-Level, Biology C-Level, and Physics B-Level chapter,
+  plus the Physics C-Level flagship, have one; every other chapter's `/assessment` route renders a
+  "Coming soon" panel until one is authored.
 - Progress, bookmarks, and notes persist to the browser via `localStorage` — no account or
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
 - Teacher Guide and an admin CMS are stubbed but not built.
