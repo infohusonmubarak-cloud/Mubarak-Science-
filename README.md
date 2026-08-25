@@ -11,10 +11,18 @@ planned to slot in later without rebuilding the app. Every lesson follows the sa
 All four subjects — Mathematics, Biology, Chemistry, Physics — are wired up, each with an
 A-Level, B-Level, and C-Level tier:
 
-- The full navigation map exists for every chapter: Mathematics 21 (A-Level), Biology 5 (A-Level)
+- The full navigation map exists for every chapter: Mathematics 10 (A-Level), Biology 5 (A-Level)
   + 6 (C-Level), Chemistry 8 (A-Level) + 8 (C-Level), Physics 11 (A-Level) + 12 (B-Level) + 13
   (C-Level). Mathematics C-Level and Biology B-Level are structurally present but render a "Coming
   soon" state — no rebuild needed to bring them online later.
+- **Mathematics A-Level is fully authored end to end** — all 10 chapters (Coordinate Geometry,
+  Exponents and Radicals, Logarithms, Functions, Quadratic Functions, Absolute Value Functions,
+  Probability, Similarity, Circles, Trigonometry), every concept, formula, worked example, a
+  10-question graded Assessment, and a Concept Map per chapter — see
+  `content/subjects/mathematics/a-level/`. Introduces two new diagram components: `FunctionGraph`
+  (plots quadratic and absolute-value curves, marking the vertex/roots/axis of symmetry) and
+  `GeometryDiagram` (a generic, data-driven renderer for labelled triangles, circles, and angle
+  figures) — used for the graph- and geometry-heavy chapters (5, 6, 8, 9, 10).
 - **Chemistry C-Level is fully authored end to end** — all 8 chapters (Chemical Bonding and
   Intermolecular Forces, Energy Changes in Chemical Reactions, Chemical Kinetics, Chemical
   Equilibrium, Acid-Base Reactions, Transition Elements, Chemistry and Green Environment, Organic
@@ -32,12 +40,11 @@ A-Level, B-Level, and C-Level tier:
   10-question graded Assessment, and a Concept Map per chapter — see
   `content/subjects/physics/b-level/`.
 - **Concept Maps**: a chapter can carry a `conceptMap` — a simple labelled tree (rendered as nested
-  boxes, no layout-engine dependency) showing how its topics and concepts relate. Every Chemistry
-  C-Level, Biology C-Level, and Physics B-Level chapter has one, at
+  boxes, no layout-engine dependency) showing how its topics and concepts relate. Every Mathematics
+  A-Level, Chemistry C-Level, Biology C-Level, and Physics B-Level chapter has one, at
   `/subjects/[subjectSlug]/[levelSlug]/[chapterSlug]/concept-map`.
 - One flagship chapter per other subject/level has complete content — every concept, formula,
   diagram, worked example, and practice question fully authored:
-  - **Mathematics, A-Level — Coordinate Geometry** (13 concepts, 4 formulas)
   - **Biology, A-Level — Cell Structure and Organization** (10 concepts, 1 formula, `CellDiagram`)
   - **Chemistry, A-Level — Quantities of Substances** (10 concepts, 4 formulas, `MoleculeDiagram`)
   - **Physics, A-Level — Motion** (9 concepts, 6 formulas, interactive velocity-time graph)
@@ -49,10 +56,10 @@ A-Level, B-Level, and C-Level tier:
   `AssessmentRunner` collects every answer before scoring (no per-question feedback until submit),
   then shows a score, a correct/incorrect breakdown, and a "topics to review" list linking back to
   the concepts behind any wrong answer. Results persist to `localStorage`
-  (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Every Chemistry
-  C-Level, Biology C-Level, and Physics B-Level chapter, plus the Physics C-Level flagship, have
-  one; every other chapter's `/assessment` route renders a "Coming soon" panel until one is
-  authored.
+  (`lib/storage/assessments.ts`) so a learner's last attempt is remembered. Every Mathematics
+  A-Level, Chemistry C-Level, Biology C-Level, and Physics B-Level chapter, plus the Physics
+  C-Level flagship, have one; every other chapter's `/assessment` route renders a "Coming soon"
+  panel until one is authored.
 - Progress, bookmarks, and notes persist to the browser via `localStorage` — no account or
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
 - Teacher Guide and an admin CMS are stubbed but not built.
@@ -79,9 +86,10 @@ npm run lint    # eslint
 - **`content/`** — the content data layer (pure TypeScript, no JSX). Structured as
   `Subject → Level → Chapter → Topic → Concept`, with formulas, diagrams, worked examples, and
   practice questions attached to each concept. `lib/content/getters.ts` is the read API over it.
-- **`components/diagrams/`** — reusable, typed SVG diagram components (starting with
-  `CoordinatePlane`, an interactive draggable-point diagram) behind a small registry, so adding a
-  new diagram type later is additive.
+- **`components/diagrams/`** — reusable, typed SVG diagram components (`CoordinatePlane`, an
+  interactive draggable-point diagram; `FunctionGraph`, a static quadratic/absolute-value curve
+  plotter; `GeometryDiagram`, a generic data-driven renderer for labelled triangle/circle figures;
+  and others) behind a small registry, so adding a new diagram type later is additive.
 - **`lib/storage/`** — the localStorage-backed data-access module for progress, bookmarks, and
   notes. `lib/storage/api.ts` is the one seam a future real backend would swap in behind.
 - **PWA** — a hand-rolled `public/sw.js` service worker (cache-first for static assets,

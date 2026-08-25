@@ -18,19 +18,19 @@ decision: `Chapter.topics` (a `Topic[]`, each holding `ConceptSummary[]`) is the
 navigation outline** — title, slug, difficulty — while the **full pedagogical body** (`Concept`,
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
 every chapter across all four subjects is a real, correctly-titled page even though most are
-still outline-only stubs with `status: 'coming-soon'` — Chemistry C-Level, Biology C-Level, and
-Physics B-Level are the three exceptions, each fully authored end to end (see below). `Level`
-also carries its own `status` — most subject/level combinations (Biology B-Level, and C-Level for
-Math) are `coming-soon` with an empty `chapters: []` until content is written for them; the level
-page (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
-chapter grid when `level.status === 'coming-soon'`.
+still outline-only stubs with `status: 'coming-soon'` — Mathematics A-Level, Chemistry C-Level,
+Biology C-Level, and Physics B-Level are the four exceptions, each fully authored end to end (see
+below). `Level` also carries its own `status` — most subject/level combinations (Biology B-Level,
+and C-Level for Math) are `coming-soon` with an empty `chapters: []` until content is written for
+them; the level page (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a
+`ComingSoonPanel` instead of a chapter grid when `level.status === 'coming-soon'`.
 
 The reference examples for a fully-authored chapter are the flagship chapters —
-`mathematics/a-level/coordinate-geometry`, `biology/a-level/cell-structure-and-organization`,
-`chemistry/a-level/quantities-of-substances`, `physics/a-level/motion`,
-`physics/c-level/forces-in-circular-motion` — plus **all eight** chapters of `chemistry/c-level/`,
-**all six** chapters of `biology/c-level/`, and **all twelve** chapters of `physics/b-level/`, the
-three fully-populated levels in the app right now. Every chapter in Chemistry C-Level, Biology
+`biology/a-level/cell-structure-and-organization`, `chemistry/a-level/quantities-of-substances`,
+`physics/a-level/motion`, `physics/c-level/forces-in-circular-motion` — plus **all ten** chapters
+of `mathematics/a-level/`, **all eight** chapters of `chemistry/c-level/`, **all six** chapters of
+`biology/c-level/`, and **all twelve** chapters of `physics/b-level/`, the four fully-populated
+levels in the app right now. Every chapter in Mathematics A-Level, Chemistry C-Level, Biology
 C-Level, and Physics B-Level also has a graded `assessment` and a `conceptMap` (see
 **Assessments** and **Concept Maps** below); most stub chapters elsewhere don't yet.
 
@@ -68,8 +68,8 @@ relies on) — only add one where a real connection exists, don't force it on ev
 ## Diagrams
 
 `components/diagrams/registry.ts` maps a `Diagram.component` key (`'CoordinatePlane' |
-'NumberLine' | 'StaticImage' | 'CellDiagram' | 'MoleculeDiagram' | 'CircularMotionDiagram'`) to
-its implementation.
+'NumberLine' | 'StaticImage' | 'CellDiagram' | 'MoleculeDiagram' | 'CircularMotionDiagram' |
+'FunctionGraph' | 'GeometryDiagram'`) to its implementation.
 `DiagramContainer` renders the registered component and — this is a common trap — applies
 `interactive={diagram.interactive}` **after** spreading `diagram.props`, so the top-level
 `Diagram.interactive` flag on the content object is the single source of truth for whether a
@@ -77,7 +77,12 @@ diagram is draggable. Don't also set `interactive` inside a diagram's `props` in
 would be redundant at best and confusing at worst. `CoordinatePlane` is deliberately generic
 enough to be relabelled for non-Math use (see its `xLabel`/`yLabel`/`slopeSymbol` props, used by
 Physics's Motion chapter to present it as a velocity-time graph) — prefer reusing it with new
-labels over building a near-duplicate graphing component.
+labels over building a near-duplicate graphing component. `FunctionGraph` (Math A-Level chapters
+5-6) samples and plots a quadratic or absolute-value curve, marking the vertex/roots/axis of
+symmetry as needed. `GeometryDiagram` (Math A-Level chapters 8-10) is deliberately generic rather
+than a fixed set of named "kinds" — it renders arbitrary `points`/`segments`/`angleMarks`/
+`circles`/`arcs`/`polygons` given as plain coordinate data, auto-fitting them to the viewBox, so
+every new triangle or circle figure is just content, not a new component.
 
 ## Assessments
 
