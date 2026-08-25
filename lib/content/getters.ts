@@ -109,6 +109,10 @@ import {
   chapter6CFormulas as chapter6CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-6-circles-and-parabolas';
 import {
+  chapter7CConcepts as chapter7CMathConcepts,
+  chapter7CFormulas as chapter7CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-7-trigonometric-functions-and-graphs';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -265,6 +269,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/vectors-in-three-dimensions': { concepts: chapter4CMathConcepts, formulas: chapter4CMathFormulas },
   'c-level/permutation-and-combination': { concepts: chapter5CMathConcepts, formulas: chapter5CMathFormulas },
   'c-level/circles-and-parabolas': { concepts: chapter6CMathConcepts, formulas: chapter6CMathFormulas },
+  'c-level/trigonometric-functions-and-graphs': { concepts: chapter7CMathConcepts, formulas: chapter7CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },

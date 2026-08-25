@@ -5,61 +5,12 @@ import { chapter3C } from './chapter-3-analytic-solid-geometry';
 import { chapter4C } from './chapter-4-vectors-in-three-dimensions';
 import { chapter5C } from './chapter-5-permutation-and-combination';
 import { chapter6C } from './chapter-6-circles-and-parabolas';
+import { chapter7C } from './chapter-7-trigonometric-functions-and-graphs';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapters 1-6 are now fully authored.
-
-const chapter7: Chapter = {
-  slug: 'trigonometric-functions-and-graphs',
-  number: 7,
-  title: 'Trigonometric Functions and Their Graphs',
-  blurb: 'Graphs of the trigonometric functions and their transformations, inverse trigonometric functions, and differentiation of trigonometric functions.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'graphs-of-sine-and-cosine-topic',
-      title: 'Graphs of Sine and Cosine',
-      concepts: [
-        { slug: 'the-graph-of-sine', title: 'The Graph of Sine' },
-        { slug: 'the-graph-of-cosine', title: 'The Graph of Cosine' },
-      ],
-    },
-    {
-      slug: 'graphs-of-tangent-and-others-topic',
-      title: 'Graphs of Tangent and Other Trigonometric Functions',
-      concepts: [
-        { slug: 'the-graph-of-tangent', title: 'The Graph of Tangent' },
-        { slug: 'graphs-of-cosecant-secant-and-cotangent', title: 'Graphs of Cosecant, Secant, and Cotangent' },
-      ],
-    },
-    {
-      slug: 'transformations-of-trig-graphs-topic',
-      title: 'Transformations of Trigonometric Graphs',
-      concepts: [
-        { slug: 'amplitude-period-and-phase-shift', title: 'Amplitude, Period, and Phase Shift' },
-        { slug: 'reflections-and-vertical-shifts-of-trig-graphs', title: 'Reflections and Vertical Shifts of Trigonometric Graphs' },
-      ],
-    },
-    {
-      slug: 'inverse-trig-functions-topic',
-      title: 'Inverse Trigonometric Functions and Their Graphs',
-      concepts: [
-        { slug: 'the-inverse-sine-function-and-its-graph', title: 'The Inverse Sine Function and Its Graph' },
-        { slug: 'the-inverse-cosine-and-inverse-tangent-functions', title: 'The Inverse Cosine and Inverse Tangent Functions' },
-      ],
-    },
-    {
-      slug: 'differentiation-of-trig-functions-topic',
-      title: 'Differentiation of Trigonometric Functions',
-      concepts: [
-        { slug: 'derivatives-of-sine-and-cosine', title: 'Derivatives of Sine and Cosine' },
-        { slug: 'derivatives-of-tangent-and-other-trig-functions', title: 'Derivatives of Tangent and Other Trigonometric Functions' },
-      ],
-    },
-  ],
-};
+// one at a time. Chapters 1-7 are now fully authored.
 
 const chapter8: Chapter = {
   slug: 'logarithmic-and-exponential-functions',
@@ -219,6 +170,6 @@ export const cLevelMath: Level = {
   status: 'available',
   chapters: [
     chapter1C, chapter2C, chapter3C, chapter4C, chapter5C, chapter6C,
-    chapter7, chapter8, chapter9, chapter10, chapter11,
+    chapter7C, chapter8, chapter9, chapter10, chapter11,
   ],
 };
