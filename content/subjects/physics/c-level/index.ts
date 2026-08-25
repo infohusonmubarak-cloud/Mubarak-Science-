@@ -1,47 +1,11 @@
 import type { Chapter, Level } from '@/types/content';
 import { chapter1CRotation } from './chapter-1-rotational-motion';
 import { chapter2ForcesInCircularMotion } from './chapter-2-forces-in-circular-motion';
+import { chapter3CFluid } from './chapter-3-fluid-dynamics';
 
-// Chapters 1 and 2 are fully authored. The other eleven are outline-only
+// Chapters 1-3 are fully authored. The other ten are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter3: Chapter = {
-  slug: 'fluid-dynamics',
-  number: 3,
-  title: 'Fluid Dynamics',
-  blurb: "Laminar vs. turbulent flow, the continuity equation, Bernoulli's equation and its applications, viscosity, and surface tension.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'laminar-and-turbulent-flow-topic',
-      title: 'Laminar and Turbulent Flow',
-      concepts: [{ slug: 'laminar-and-turbulent-flow', title: 'Laminar and Turbulent Flow' }],
-    },
-    {
-      slug: 'equation-of-continuity-for-fluids',
-      title: 'Equation of Continuity for Fluids',
-      concepts: [{ slug: 'equation-of-continuity', title: 'Equation of Continuity' }],
-    },
-    {
-      slug: 'bernoullis-equation-topic',
-      title: "Bernoulli's Equation",
-      concepts: [
-        { slug: 'bernoullis-equation', title: "Bernoulli's Equation" },
-        { slug: 'bernoulli-theorem-applications', title: "Manifestations of Bernoulli's Theorem" },
-      ],
-    },
-    {
-      slug: 'viscosity-surface-tension-and-capillarity',
-      title: 'Viscosity, Surface Tension and Capillarity',
-      concepts: [
-        { slug: 'viscosity-and-fluid-friction', title: 'Viscosity (Fluid Friction)' },
-        { slug: 'surface-tension', title: 'Surface Tension' },
-        { slug: 'capillarity', title: 'Capillarity' },
-      ],
-    },
-  ],
-};
 
 const chapter4: Chapter = {
   slug: 'sources-of-energy-and-environmental-impacts',
@@ -355,7 +319,7 @@ export const cLevelPhysics: Level = {
   description: 'Thirteen chapters — from rotational motion and fluid dynamics through modern physics.',
   status: 'available',
   chapters: [
-    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3, chapter4, chapter5, chapter6, chapter7,
+    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4, chapter5, chapter6, chapter7,
     chapter8, chapter9, chapter10, chapter11, chapter12, chapter13,
   ],
 };

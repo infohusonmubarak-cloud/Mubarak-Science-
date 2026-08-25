@@ -197,6 +197,10 @@ import {
   chapter2CForcesFormulas,
 } from '@/content/subjects/physics/c-level/chapter-2-forces-in-circular-motion';
 import {
+  chapter3CFluidConcepts,
+  chapter3CFluidFormulas,
+} from '@/content/subjects/physics/c-level/chapter-3-fluid-dynamics';
+import {
   chapter1BondingConcepts,
   chapter1BondingFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-1-chemical-bonding-and-intermolecular-forces';
@@ -311,6 +315,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'b-level/atomic-and-modern-physics': { concepts: chapter12ModernConcepts, formulas: chapter12ModernFormulas },
   'c-level/rotational-motion': { concepts: chapter1CRotationConcepts, formulas: chapter1CRotationFormulas },
   'c-level/forces-in-circular-motion': { concepts: chapter2CForcesConcepts, formulas: chapter2CForcesFormulas },
+  'c-level/fluid-dynamics': { concepts: chapter3CFluidConcepts, formulas: chapter3CFluidFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
   'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },
