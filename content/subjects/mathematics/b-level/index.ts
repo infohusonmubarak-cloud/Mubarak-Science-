@@ -1,34 +1,9 @@
 import type { Chapter } from '@/types/content';
+import { chapter1B } from './chapter-1-remainder-and-factor-theorem';
 
-// All 11 Level B chapters are outline-only stubs for this pass — real,
-// navigable pages with accurate topic/concept maps, no full bodies yet.
-
-const chapter1: Chapter = {
-  slug: 'remainder-and-factor-theorem',
-  number: 1,
-  title: 'The Remainder Theorem and the Factor Theorem',
-  blurb: 'Dividing polynomials, and using the remainder and factor theorems to find roots without long division.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'polynomial-division',
-      title: 'Polynomial Division',
-      concepts: [
-        { slug: 'dividing-polynomials', title: 'Dividing Polynomials' },
-        { slug: 'synthetic-division', title: 'Synthetic Division' },
-      ],
-    },
-    {
-      slug: 'the-two-theorems',
-      title: 'The Two Theorems',
-      concepts: [
-        { slug: 'remainder-theorem', title: 'The Remainder Theorem' },
-        { slug: 'factor-theorem', title: 'The Factor Theorem' },
-        { slug: 'finding-polynomial-roots', title: 'Finding Polynomial Roots' },
-      ],
-    },
-  ],
-};
+// Chapters 2-11 are outline-only stubs for this pass — real, navigable
+// pages with accurate topic/concept maps, no full bodies yet. Chapter 1
+// is now fully authored (see chapter-1-remainder-and-factor-theorem/).
 
 const chapter2: Chapter = {
   slug: 'binomial-theorem',
@@ -337,7 +312,7 @@ export const bLevelMath = {
   description: 'Eleven advanced chapters — from polynomial theorems through differentiation.',
   status: 'available' as const,
   chapters: [
-    chapter1, chapter2, chapter3, chapter4, chapter5, chapter6,
+    chapter1B, chapter2, chapter3, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
