@@ -4,41 +4,11 @@ import { chapter2ForcesInCircularMotion } from './chapter-2-forces-in-circular-m
 import { chapter3CFluid } from './chapter-3-fluid-dynamics';
 import { chapter4CEnergy } from './chapter-4-sources-of-energy-and-environmental-impacts';
 import { chapter5CHeat } from './chapter-5-heat-transfer-and-thermodynamics';
+import { chapter6CSound } from './chapter-6-effects-and-characteristics-of-sound';
 
-// Chapters 1-5 are fully authored. The other eight are outline-only
+// Chapters 1-6 are fully authored. The other seven are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter6: Chapter = {
-  slug: 'effects-and-characteristics-of-sound',
-  number: 6,
-  title: 'Effects and Characteristics of Sound',
-  blurb: 'How sound travels, echoes, audibility, the Doppler effect, and the properties of sound waves.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'propagation-and-echo',
-      title: 'Propagation of Sound in a Medium and Echo',
-      concepts: [
-        { slug: 'propagation-of-sound', title: 'Propagation of Sound in a Medium' },
-        { slug: 'echo', title: 'Echo' },
-      ],
-    },
-    {
-      slug: 'audibility-and-doppler-effect',
-      title: 'Audibility and the Doppler Effect',
-      concepts: [
-        { slug: 'audibility-and-hearing-range', title: 'Audibility' },
-        { slug: 'doppler-effect', title: 'The Doppler Effect' },
-      ],
-    },
-    {
-      slug: 'properties-of-sound-waves-topic',
-      title: 'Properties of Sound Waves',
-      concepts: [{ slug: 'properties-of-sound-waves', title: 'Properties of Sound Waves' }],
-    },
-  ],
-};
 
 const chapter7: Chapter = {
   slug: 'applications-of-light-and-optical-instruments',
@@ -262,7 +232,7 @@ export const cLevelPhysics: Level = {
   description: 'Thirteen chapters — from rotational motion and fluid dynamics through modern physics.',
   status: 'available',
   chapters: [
-    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6, chapter7,
+    chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7,
     chapter8, chapter9, chapter10, chapter11, chapter12, chapter13,
   ],
 };

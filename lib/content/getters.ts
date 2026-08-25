@@ -209,6 +209,10 @@ import {
   chapter5CHeatFormulas,
 } from '@/content/subjects/physics/c-level/chapter-5-heat-transfer-and-thermodynamics';
 import {
+  chapter6CSoundConcepts,
+  chapter6CSoundFormulas,
+} from '@/content/subjects/physics/c-level/chapter-6-effects-and-characteristics-of-sound';
+import {
   chapter1BondingConcepts,
   chapter1BondingFormulas,
 } from '@/content/subjects/chemistry/c-level/chapter-1-chemical-bonding-and-intermolecular-forces';
@@ -326,6 +330,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/fluid-dynamics': { concepts: chapter3CFluidConcepts, formulas: chapter3CFluidFormulas },
   'c-level/sources-of-energy-and-environmental-impacts': { concepts: chapter4CEnergyConcepts, formulas: chapter4CEnergyFormulas },
   'c-level/heat-transfer-and-thermodynamics': { concepts: chapter5CHeatConcepts, formulas: chapter5CHeatFormulas },
+  'c-level/effects-and-characteristics-of-sound': { concepts: chapter6CSoundConcepts, formulas: chapter6CSoundFormulas },
   'c-level/chemical-bonding-and-intermolecular-forces': { concepts: chapter1BondingConcepts, formulas: chapter1BondingFormulas },
   'c-level/energy-changes-in-chemical-reactions': { concepts: chapter2EnergyConcepts, formulas: chapter2EnergyFormulas },
   'c-level/chemical-kinetics-rates-of-reaction': { concepts: chapter3KineticsConcepts, formulas: chapter3KineticsFormulas },
