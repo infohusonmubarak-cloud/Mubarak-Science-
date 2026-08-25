@@ -7,38 +7,11 @@ import { chapter5CHeat } from './chapter-5-heat-transfer-and-thermodynamics';
 import { chapter6CSound } from './chapter-6-effects-and-characteristics-of-sound';
 import { chapter7COptics } from './chapter-7-applications-of-light-and-optical-instruments';
 import { chapter8CInterference } from './chapter-8-interference-and-diffraction-of-light';
+import { chapter9CCapacitor } from './chapter-9-capacitor-and-capacitance';
 
-// Chapters 1-8 are fully authored. The other five are outline-only
+// Chapters 1-9 are fully authored. The other four are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter9: Chapter = {
-  slug: 'capacitor-and-capacitance',
-  number: 9,
-  title: 'Capacitor and Capacitance',
-  blurb: 'What a capacitor is, the parallel-plate capacitor, the energy it stores, and combining capacitors in series and parallel.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'capacitors-and-capacitance-topic',
-      title: 'Capacitors and Capacitance',
-      concepts: [{ slug: 'capacitors-and-capacitance', title: 'Capacitors and Capacitance' }],
-    },
-    {
-      slug: 'parallel-plate-capacitor-topic',
-      title: 'Parallel-Plate Capacitor',
-      concepts: [{ slug: 'parallel-plate-capacitor', title: 'The Parallel-Plate Capacitor' }],
-    },
-    {
-      slug: 'energy-and-combinations',
-      title: 'Energy Stored and Combination of Capacitors',
-      concepts: [
-        { slug: 'energy-stored-in-a-capacitor', title: 'Energy Stored in a Capacitor' },
-        { slug: 'capacitors-in-series-and-parallel', title: 'Combination of Capacitors' },
-      ],
-    },
-  ],
-};
 
 const chapter10: Chapter = {
   slug: 'electrical-energy-power-and-heating-effect',
@@ -165,6 +138,6 @@ export const cLevelPhysics: Level = {
   status: 'available',
   chapters: [
     chapter1CRotation, chapter2ForcesInCircularMotion, chapter3CFluid, chapter4CEnergy, chapter5CHeat, chapter6CSound, chapter7COptics, chapter8CInterference,
-    chapter9, chapter10, chapter11, chapter12, chapter13,
+    chapter9CCapacitor, chapter10, chapter11, chapter12, chapter13,
   ],
 };
