@@ -7,52 +7,12 @@ import { chapter5C } from './chapter-5-permutation-and-combination';
 import { chapter6C } from './chapter-6-circles-and-parabolas';
 import { chapter7C } from './chapter-7-trigonometric-functions-and-graphs';
 import { chapter8C } from './chapter-8-logarithmic-and-exponential-functions';
+import { chapter9C } from './chapter-9-applications-of-derivatives';
 
 // Outline-only stubs for this pass — real, navigable pages with accurate
 // topic/concept maps, no full bodies yet. Each will be replaced with a
 // fully-authored chapter module (matching the a-level/b-level pattern)
-// one at a time. Chapters 1-8 are now fully authored.
-
-const chapter9: Chapter = {
-  slug: 'applications-of-derivatives',
-  number: 9,
-  title: 'Applications of Derivatives',
-  blurb: 'Critical points, maxima and minima, the second derivative test, and linear approximation.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'derivatives-of-various-functions-topic',
-      title: 'Derivatives of Polynomial, Rational, Exponential, Logarithmic, and Trigonometric Functions',
-      concepts: [{ slug: 'reviewing-derivatives-of-various-function-types', title: 'Reviewing Derivatives of Various Function Types' }],
-    },
-    {
-      slug: 'critical-points-topic',
-      title: 'Critical Points',
-      concepts: [{ slug: 'critical-points-and-where-they-occur', title: 'Critical Points and Where They Occur' }],
-    },
-    {
-      slug: 'maximum-and-minimum-topic',
-      title: 'Maximum and Minimum',
-      concepts: [
-        { slug: 'increasing-and-decreasing-intervals', title: 'Increasing and Decreasing Intervals' },
-        { slug: 'finding-absolute-and-local-extrema', title: 'Finding Absolute and Local Extrema' },
-      ],
-    },
-    {
-      slug: 'second-derivative-test-topic',
-      title: 'The Second Derivative Test',
-      concepts: [
-        { slug: 'the-second-derivative-and-concavity', title: 'The Second Derivative and Concavity' },
-        { slug: 'the-second-derivative-test-for-extrema', title: 'The Second Derivative Test for Extrema' },
-      ],
-    },
-    {
-      slug: 'approximation-topic',
-      title: 'Approximation',
-      concepts: [{ slug: 'linear-approximation-using-derivatives', title: 'Linear Approximation Using Derivatives' }],
-    },
-  ],
-};
+// one at a time. Chapters 1-9 are now fully authored.
 
 const chapter10: Chapter = {
   slug: 'methods-of-integration',
@@ -130,6 +90,6 @@ export const cLevelMath: Level = {
   status: 'available',
   chapters: [
     chapter1C, chapter2C, chapter3C, chapter4C, chapter5C, chapter6C,
-    chapter7C, chapter8C, chapter9, chapter10, chapter11,
+    chapter7C, chapter8C, chapter9C, chapter10, chapter11,
   ],
 };

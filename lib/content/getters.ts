@@ -117,6 +117,10 @@ import {
   chapter8CFormulas as chapter8CMathFormulas,
 } from '@/content/subjects/mathematics/c-level/chapter-8-logarithmic-and-exponential-functions';
 import {
+  chapter9CConcepts as chapter9CMathConcepts,
+  chapter9CFormulas as chapter9CMathFormulas,
+} from '@/content/subjects/mathematics/c-level/chapter-9-applications-of-derivatives';
+import {
   chapter2BioConcepts,
   chapter2BioFormulas,
 } from '@/content/subjects/biology/a-level/chapter-2-cell-structure-and-organization';
@@ -275,6 +279,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/circles-and-parabolas': { concepts: chapter6CMathConcepts, formulas: chapter6CMathFormulas },
   'c-level/trigonometric-functions-and-graphs': { concepts: chapter7CMathConcepts, formulas: chapter7CMathFormulas },
   'c-level/logarithmic-and-exponential-functions': { concepts: chapter8CMathConcepts, formulas: chapter8CMathFormulas },
+  'c-level/applications-of-derivatives': { concepts: chapter9CMathConcepts, formulas: chapter9CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
