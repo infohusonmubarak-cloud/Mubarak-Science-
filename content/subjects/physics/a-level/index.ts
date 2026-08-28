@@ -2,36 +2,11 @@ import type { Chapter } from '@/types/content';
 import { chapter1AUnits } from './chapter-1-units-and-measurements';
 import { chapter2Physics } from './chapter-2-motion';
 import { chapter3AForces } from './chapter-3-forces';
+import { chapter4APressure } from './chapter-4-pressure';
 
-// Chapters 1, 2 and 3 are fully authored. The other eight are
-// outline-only stubs — real, navigable pages with an accurate
-// topic/concept map, no full bodies yet.
-
-const chapter4: Chapter = {
-  slug: 'pressure',
-  number: 4,
-  title: 'Pressure',
-  blurb: 'Pressure from force and area, atmospheric and liquid pressure, and hydraulic systems using Pascal\'s principle.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'pressure-basics',
-      title: 'Pressure Basics',
-      concepts: [
-        { slug: 'pressure-force-and-area', title: 'Pressure, Force and Area' },
-        { slug: 'atmospheric-pressure', title: 'Atmospheric Pressure' },
-      ],
-    },
-    {
-      slug: 'pressure-in-liquids',
-      title: 'Pressure in Liquids',
-      concepts: [
-        { slug: 'liquid-pressure-and-density', title: 'Liquid Pressure and Density' },
-        { slug: 'pascals-principle-and-hydraulics', title: "Pascal's Principle and Hydraulic Systems" },
-      ],
-    },
-  ],
-};
+// Chapters 1-4 are fully authored. The other seven are outline-only
+// stubs — real, navigable pages with an accurate topic/concept map, no
+// full bodies yet.
 
 const chapter5: Chapter = {
   slug: 'work-and-energy',
@@ -268,7 +243,7 @@ export const aLevelPhysics = {
   description: 'Eleven chapters — from units and measurement through quantum and atomic physics.',
   status: 'available' as const,
   chapters: [
-    chapter1AUnits, chapter2Physics, chapter3AForces, chapter4, chapter5, chapter6,
+    chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
