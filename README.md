@@ -94,6 +94,48 @@ A-Level, B-Level, and C-Level tier:
   backend required yet. See `lib/storage/` for the data-access layer a real backend would replace.
 - Teacher Guide and an admin CMS are stubbed but not built.
 
+### MSMK — Mubarak Science Medical Knowledge
+
+A separate paid course under `/msmk` — Nursing, Self-Care & Family Care for Rohingya refugee
+learners — visual-first (diagrams, animations, short video slots), bilingual (English / Hanifi
+Rohingya), with its own Supabase-backed registration, access-code login, and staff admin flow.
+Unlike the Science courses above, MSMK is **not** purely a static/`localStorage` app: registration,
+access codes, per-module progress, and assessment scores are stored server-side (see
+`supabase-schema-msmk.sql`), because a paid course needs an owner-visible record of who registered
+and paid, and a login that works across devices.
+
+- **All 11 modules are fully authored**, following the TESDA Caregiving NC II Competency-Based
+  Learning Material (CBLM) structure supplied for this course — Learning Experience, Information
+  Sheet, Self-Check + Answer Sheet, Job Sheet, Specification Sheet, and a visual graded Assessment
+  per module. See `content/msmk/full/`.
+  1. Workplace Communication — 2. Basic Housekeeping — 3. **Basic First Aid & CPR** (the reference
+  module, cited to WHO Basic Emergency Care / IFRC First Aid Guidelines) — 4. Patient Services —
+  5. Infant & Toddler Care (formula milk prep, cited to WHO/UNICEF) — 6. Child Care (hygiene, cited
+  to WHO hand-hygiene guidance) — 7. Children's Social/Intellectual/Creative/Emotional Development
+  — 8. Children's Physical Development — 9. Elderly Care (ADL, cited to WHO healthy-ageing
+  guidance) — 10. Special Needs Care (informed by WHO/World Bank World Report on Disability
+  principles) — 11. Respond to Emergency (fire/flood/gas-leak scene response, cross-references
+  Module 3 for the injured-person sequence rather than duplicating it).
+- Hand-drawn, labelled SVG diagrams for every procedure that has a real technique to show
+  (`components/msmk/diagrams/`): recovery position, CPR hand placement with a 100–120bpm
+  pulse/metronome animation, choking response, formula-bottle prep, handwashing, elderly
+  mobility/transfer assistance, and children's physical-activity poses.
+- A visual-first assessment engine (`components/msmk/assessment/`): tap-the-correct-image,
+  tap-the-spot-on-a-diagram, drag-to-order (reorder via buttons, not HTML5 drag-and-drop — not
+  reliable on touch), and true/false-with-picture, each with instant feedback.
+- Front matter at `/msmk/guide`: a visual step-by-step "How to Use This Course," plus the CBLM's
+  Preface and Acknowledgement sections.
+- Staff admin at `/msmk/admin` (Supabase Auth, same pattern as the sibling Shwe-Pinya-Nandaw
+  site's `admin.html`): review registrations, mark verified/rejected, issue access codes
+  (`MSMK01`, `MSMK02`, …), and see a learner summary.
+- **Known gaps, deliberately left open rather than faked**: every Rohingya (`rhg`) string is a
+  placeholder — composing new Hanifi Rohingya text isn't something that can be verified as correct
+  without a native speaker, and wrong output would look authoritative while being linguistically
+  wrong (see `lib/msmk/translationStatus.ts`, and the banner shown on every MSMK page). Video
+  embed slots have no real YouTube IDs yet — `VideoEmbed` shows a "coming soon" card rather than a
+  fabricated link. Medical content needs a doctor's (MBBS) review before real learners are taught
+  from it.
+
 ## Getting started
 
 ```bash

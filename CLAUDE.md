@@ -147,6 +147,63 @@ follow this same two-function pattern, and derive any further-computed values (l
 `deriveChapterProgress`) from the already-fetched snapshot rather than re-reading storage
 mid-render.
 
+## MSMK — a second, architecturally different course under `/msmk`
+
+MSMK (Mubarak Science Medical Knowledge — Nursing, Self-Care & Family Care) is a **separate paid
+course**, not part of the Science content system above. Different schema (`types/msmk.ts`, not
+`types/content.ts`), different content location (`content/msmk/`, not `content/subjects/`),
+different getters (`lib/msmk/getters.ts`). Don't reuse Science-course components for it and don't
+reuse `lib/storage/` (localStorage) for anything server-authoritative — see below.
+
+- **Backend**: unlike the Science courses (100% `localStorage`, no backend), MSMK is backed by
+  Supabase (`supabase-schema-msmk.sql`) because a paid course needs an owner-visible record of
+  registrations/payments and cross-device login. `lib/supabase/anonClient.ts` (RLS: insert-only,
+  used from Server Actions), `lib/supabase/serviceClient.ts` (bypasses RLS, server-only, Route
+  Handlers), `lib/supabase/browserClient.ts` (client-side, staff auth only). `types/supabase-msmk.ts`
+  is a **hand-written** mirror of the SQL schema — there's no codegen step, so keep it in sync by
+  hand when the schema changes.
+- **Two separate auth systems, don't confuse them**: learners log in with an access code + email
+  (a signed cookie, `lib/msmk/session.ts`, validated server-side on every module/assessment page
+  against `msmk_access_codes` — see the comments in those route files about failing closed, not
+  open, when Supabase is unreachable). Staff log in with real Supabase Auth accounts (created via
+  the Supabase dashboard) at `/msmk/admin` — the same pattern the sibling Shwe-Pinya-Nandaw site's
+  `admin.html` uses.
+- **Bilingual**: every learner-facing string is `{ en, rhg }` (`Bilingual` in `types/msmk.ts`).
+  `rhg` is Hanifi Rohingya, right-to-left — `components/msmk/BilingualText.tsx` renders it with
+  `dir="rtl" lang="rhg"`, which picks up the font automatically via the `[lang='rhg']` rule in
+  `globals.css` (the font itself loads only under `app/msmk/layout.tsx`, not the root layout, so
+  Science-course pages don't pay for it). **Every `rhg` value in this codebase is currently
+  `ROHINGYA_PENDING`** (`content/msmk/modules.ts`) — a placeholder, not a real translation; see
+  `lib/msmk/translationStatus.ts` for why (composing new Hanifi Rohingya text isn't verifiable
+  without a native speaker, and wrong output looks authoritative while being wrong — a real risk
+  for a life-safety course). Don't fill in `rhg` fields with generated text; leave them as
+  `ROHINGYA_PENDING` unless you are a verified Rohingya speaker or the user explicitly supplies
+  real translated strings to use verbatim.
+- **Diagrams**: `components/msmk/diagrams/registry.tsx`, a separate registry from the Science
+  courses' `components/diagrams/registry.ts`. Same "direct object indexing, not a `getX(key)`
+  wrapper function" convention (see the comment in that file) — the new React 19
+  `react-hooks/static-components` lint rule flags a function call assigned to a capitalized
+  variable as "creating a component during render," but not plain object/array indexing. Only
+  build a new hand-drawn SVG diagram for a module when there's a genuine physical technique to
+  show (hand placement, body position, a specific sequence); for interpersonal/soft-skill content
+  (communication, housekeeping generally, patient rapport, etc.) lean on
+  `lib/msmk/visualRegistry.ts` (simple emoji + label lookup for assessment-option visuals) instead
+  of forcing a diagram that wouldn't represent anything real.
+- **Assessments**: a separate visual-first engine (`components/msmk/assessment/`) from the Science
+  courses' `AssessmentRunner` — four question types (image-choice, tap-spot, drag-order,
+  true-false-picture) with instant per-question feedback, not the Science courses' "answer
+  everything, then score on submit" model. Drag-order shuffles its steps with
+  `lib/msmk/deterministicShuffle.ts` (seeded by question id) instead of `Math.random()` — plain
+  `Math.random()` in a `'use client'` component's initial render produces different orders on the
+  server render vs. the client hydration pass and throws a hydration mismatch.
+- **Content depth**: all 11 modules are fully authored (`content/msmk/full/`), following the TESDA
+  Caregiving NC II CBLM structure — Information Sheet, Self-Check + Answer Sheet, Job Sheet,
+  Specification Sheet, Assessment, per module. Module 3 (First Aid & CPR) is the reference module
+  for visual quality (three hand-drawn animated diagrams) — match its bar when revising others.
+  Medical content is cited per section (WHO/IFRC/etc.) and carries the required in-app disclaimer;
+  it still needs a doctor's (MBBS) review before real learners are taught from it — don't add new
+  medical claims without a citable source.
+
 ## Verification
 
 No test suite exists. Verify changes with:
