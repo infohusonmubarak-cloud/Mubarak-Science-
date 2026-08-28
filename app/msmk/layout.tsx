@@ -18,6 +18,7 @@ const rohingyaFont = Noto_Sans_Hanifi_Rohingya({
 
 const MSMK_NAV = [
   { href: '/msmk', label: 'Course Home' },
+  { href: '/msmk/guide', label: 'How to Use' },
   { href: '/msmk/register', label: 'Register' },
   { href: '/msmk/dashboard', label: 'My Dashboard' },
 ] as const;

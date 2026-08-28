@@ -34,6 +34,11 @@ export default function MSMKLandingPage() {
             I have an access code
           </Button>
         </div>
+        <p className="mt-4 text-sm">
+          <a href="/msmk/guide" className="font-medium text-brand underline">
+            How does this course work?
+          </a>
+        </p>
       </section>
 
       <section className="rounded-2xl border border-warning bg-warning-soft p-5 text-sm leading-relaxed text-foreground">
