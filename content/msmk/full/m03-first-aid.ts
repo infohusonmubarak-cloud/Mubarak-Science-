@@ -124,12 +124,13 @@ export const MODULE_M03: Module = {
     { id: 'sc4', answer: en('The recovery position, on their side with the head tilted back.') },
   ],
 
+  // Job Sheet No 3 / Specification Sheet No 3: Perform CPR.
   jobSheet: {
-    title: en('Respond to an Unconscious, Breathing Person'),
+    title: en('Perform CPR (Job Sheet No. 3)'),
     description: en(
-      'Practice the full sequence on a partner or a training mannequin: check the scene, check response, check breathing, and place them in the recovery position — talking through each step out loud.'
+      'Practice the full CPR sequence on a partner or a training mannequin: check the scene, check response, call for help, check breathing, then chest compressions at the correct rate, depth, and hand position — talking through each step out loud.'
     ),
-    materials: [en('A partner or training mannequin'), en('A clear, open space on the floor')],
+    materials: [en('A partner or CPR training mannequin'), en('A clear, open space on the floor'), en('A watch or phone to check the compression rate')],
   },
 
   specification: [
@@ -139,10 +140,21 @@ export const MODULE_M03: Module = {
     { step: 4, instruction: en('Tilt the head back and check for breathing for up to 10 seconds.') },
     {
       step: 5,
-      instruction: en('Breathing normally — place them in the recovery position.'),
-      note: en('Not breathing normally? Start CPR instead — 30 chest compressions, then 2 breaths if trained.'),
+      instruction: en('Not breathing normally — start CPR. Place the heel of one hand on the center of the chest, other hand on top.'),
     },
-    { step: 6, instruction: en('Stay with them and keep checking their breathing until help arrives.') },
+    {
+      step: 6,
+      instruction: en('Push hard and fast, about 5cm deep, at 100–120 compressions per minute — 30 compressions.'),
+      note: en('Let the chest fully rise between pushes.'),
+    },
+    {
+      step: 7,
+      instruction: en('Give 2 rescue breaths if trained, then continue 30:2. If not trained, keep doing compressions only.'),
+    },
+    {
+      step: 8,
+      instruction: en('Keep going without stopping until help arrives, an AED is ready to use, or the person starts breathing.'),
+    },
   ],
 
   quickReview: [

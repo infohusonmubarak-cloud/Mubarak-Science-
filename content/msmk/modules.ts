@@ -26,7 +26,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Understand instructions and speak up clearly at work.', rhg: ROHINGYA_PENDING },
     icon: '📋',
     accentKey: 'communication',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm02',
@@ -36,7 +36,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Keep a home or workplace clean and safe.', rhg: ROHINGYA_PENDING },
     icon: '🧹',
     accentKey: 'housekeeping',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm03',
@@ -56,7 +56,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Care for patients with kindness and respect.', rhg: ROHINGYA_PENDING },
     icon: '🏥',
     accentKey: 'patientcare',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm05',
@@ -66,7 +66,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Feed, bathe, and keep babies safe — including formula milk.', rhg: ROHINGYA_PENDING },
     icon: '🍼',
     accentKey: 'infanttoddler',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm06',
@@ -76,7 +76,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Daily care and hygiene for children.', rhg: ROHINGYA_PENDING },
     icon: '🧒',
     accentKey: 'childcare',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm07',

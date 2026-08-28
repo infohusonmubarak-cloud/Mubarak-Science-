@@ -2,6 +2,10 @@ import type { ComponentType } from 'react';
 import { RecoveryPositionDiagram } from './RecoveryPositionDiagram';
 import { CPRHandsDiagram } from './CPRHandsDiagram';
 import { ChokingResponseDiagram } from './ChokingResponseDiagram';
+import { FormulaBottleDiagram } from './FormulaBottleDiagram';
+import { HandwashingDiagram } from './HandwashingDiagram';
+import { MobilityAssistDiagram } from './MobilityAssistDiagram';
+import { PhysicalActivityDiagram } from './PhysicalActivityDiagram';
 
 function ChokingBackBlows() {
   return <ChokingResponseDiagram variant="back-blows" />;
@@ -22,4 +26,8 @@ export const MSMK_DIAGRAM_REGISTRY: Record<string, ComponentType> = {
   'cpr-hands': CPRHandsDiagram,
   'choking-back-blows': ChokingBackBlows,
   'choking-abdominal-thrusts': ChokingAbdominalThrusts,
+  'formula-bottle': FormulaBottleDiagram,
+  'handwashing': HandwashingDiagram,
+  'mobility-assist': MobilityAssistDiagram,
+  'physical-activity': PhysicalActivityDiagram,
 };

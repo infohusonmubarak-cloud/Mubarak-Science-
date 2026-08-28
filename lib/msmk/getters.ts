@@ -1,9 +1,19 @@
 import { MODULE_SUMMARIES } from '@/content/msmk/modules';
+import { MODULE_M01 } from '@/content/msmk/full/m01-communication';
+import { MODULE_M02 } from '@/content/msmk/full/m02-housekeeping';
 import { MODULE_M03 } from '@/content/msmk/full/m03-first-aid';
+import { MODULE_M04 } from '@/content/msmk/full/m04-patient-services';
+import { MODULE_M05 } from '@/content/msmk/full/m05-infant-toddler';
+import { MODULE_M06 } from '@/content/msmk/full/m06-child-care';
 import type { Module, ModuleId, ModuleSummary } from '@/types/msmk';
 
 const FULL_MODULES: Partial<Record<ModuleId, Module>> = {
+  m01: MODULE_M01,
+  m02: MODULE_M02,
   m03: MODULE_M03,
+  m04: MODULE_M04,
+  m05: MODULE_M05,
+  m06: MODULE_M06,
 };
 
 export function getModuleSummaries(): ModuleSummary[] {
