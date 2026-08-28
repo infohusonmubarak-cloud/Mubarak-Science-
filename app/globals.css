@@ -296,6 +296,23 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 68ch;
 }
 
+/* CPR pacing animations — 110 compressions/min, the middle of the
+   WHO/IFRC-recommended 100-120/min range. 60000ms / 110 ≈ 545ms/beat. */
+@keyframes msmk-cpr-beat {
+  0%, 100% { transform: scale(0.85); opacity: 0.35; }
+  50% { transform: scale(1.15); opacity: 0.6; }
+}
+.msmk-cpr-pulse {
+  animation: msmk-cpr-beat 545ms ease-in-out infinite;
+}
+@keyframes msmk-metronome-tick {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.6); opacity: 1; }
+}
+.msmk-metronome-dot {
+  animation: msmk-metronome-tick 545ms ease-in-out infinite;
+}
+
 /* Respect the user's motion preference — the brief asks us to avoid
    unnecessary animation, and some learners need this for comfort. */
 @media (prefers-reduced-motion: reduce) {

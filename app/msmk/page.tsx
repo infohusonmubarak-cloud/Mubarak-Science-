@@ -69,9 +69,12 @@ export default function MSMKLandingPage() {
             {modules.filter((m) => m.status === 'available').length} of {modules.length} available now
           </p>
         </div>
+        <p className="mt-1 text-xs text-foreground-muted">
+          Module content is available after you register and log in with your access code.
+        </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {modules.map((mod) => (
-            <ModuleCard key={mod.id} module={mod} href={`/msmk/modules/${mod.id}`} />
+            <ModuleCard key={mod.id} module={mod} />
           ))}
         </div>
       </section>
