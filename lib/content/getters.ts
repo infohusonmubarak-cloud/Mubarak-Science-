@@ -177,6 +177,10 @@ import {
   chapter10AMagnetismFormulas,
 } from '@/content/subjects/physics/a-level/chapter-10-magnetism';
 import {
+  chapter11AQuantumConcepts,
+  chapter11AQuantumFormulas,
+} from '@/content/subjects/physics/a-level/chapter-11-quantum-and-atomic-physics';
+import {
   chapter1MotionInAPlaneConcepts,
   chapter1MotionInAPlaneFormulas,
 } from '@/content/subjects/physics/b-level/chapter-1-motion-in-a-plane';
@@ -386,6 +390,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/light': { concepts: chapter8ALightConcepts, formulas: chapter8ALightFormulas },
   'a-level/electricity': { concepts: chapter9AElectricityConcepts, formulas: chapter9AElectricityFormulas },
   'a-level/magnetism': { concepts: chapter10AMagnetismConcepts, formulas: chapter10AMagnetismFormulas },
+  'a-level/quantum-and-atomic-physics': { concepts: chapter11AQuantumConcepts, formulas: chapter11AQuantumFormulas },
   'b-level/motion-in-a-plane': { concepts: chapter1MotionInAPlaneConcepts, formulas: chapter1MotionInAPlaneFormulas },
   'b-level/rotational-dynamics': { concepts: chapter2RotationalDynamicsConcepts, formulas: chapter2RotationalDynamicsFormulas },
   'b-level/pressure-in-fluids-and-atmosphere': { concepts: chapter3PressureConcepts, formulas: chapter3PressureFormulas },
