@@ -4,45 +4,11 @@ import { chapter2Physics } from './chapter-2-motion';
 import { chapter3AForces } from './chapter-3-forces';
 import { chapter4APressure } from './chapter-4-pressure';
 import { chapter5AWorkEnergy } from './chapter-5-work-and-energy';
+import { chapter6AHeat } from './chapter-6-heat-and-temperature';
 
-// Chapters 1-5 are fully authored. The other six are outline-only
+// Chapters 1-6 are fully authored. The other five are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter6: Chapter = {
-  slug: 'heat-and-temperature',
-  number: 6,
-  title: 'Heat and Temperature',
-  blurb: 'The difference between heat and temperature, how heat transfers by conduction, convection and radiation, and specific heat and latent heat.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'heat-and-temperature-basics',
-      title: 'Heat and Temperature',
-      concepts: [
-        { slug: 'heat-and-temperature', title: 'Heat vs. Temperature' },
-        { slug: 'thermal-and-internal-energy', title: 'Thermal and Internal Energy' },
-      ],
-    },
-    {
-      slug: 'heat-transfer',
-      title: 'Heat Transfer',
-      concepts: [
-        { slug: 'conduction-convection-and-radiation', title: 'Conduction, Convection and Radiation' },
-        { slug: 'thermal-expansion', title: 'Thermal Expansion' },
-      ],
-    },
-    {
-      slug: 'specific-heat-and-latent-heat',
-      title: 'Specific Heat and Latent Heat',
-      concepts: [
-        { slug: 'specific-heat-capacity-a-level', title: 'Specific Heat Capacity' },
-        { slug: 'specific-latent-heat', title: 'Specific Latent Heat' },
-        { slug: 'changes-of-state', title: 'Changes of State' },
-      ],
-    },
-  ],
-};
 
 const chapter7: Chapter = {
   slug: 'waves-and-sound',
@@ -216,7 +182,7 @@ export const aLevelPhysics = {
   description: 'Eleven chapters — from units and measurement through quantum and atomic physics.',
   status: 'available' as const,
   chapters: [
-    chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5AWorkEnergy, chapter6,
+    chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5AWorkEnergy, chapter6AHeat,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
