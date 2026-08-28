@@ -8,6 +8,7 @@ import { NAV_ITEMS, SECONDARY_NAV_ITEMS } from './nav-items';
 import { ThemeToggle } from './ThemeToggle';
 import { GlobalSearchBar } from '@/components/search/GlobalSearchBar';
 import { cn } from '@/lib/utils/cn';
+import { useIsClient } from '@/hooks/useIsClient';
 
 const PRIMARY_LINKS = [
   { href: '/', label: 'Home', icon: '🏠' },
@@ -19,6 +20,7 @@ export function NavDrawer() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const titleId = useId();
+  const isClient = useIsClient();
 
   // Close on route change — compared during render (not an effect) per
   // https://react.dev/learn/you-might-not-need-an-effect#adjusting-state-based-on-a-prop-change,
@@ -143,7 +145,7 @@ export function NavDrawer() {
       >
         <span aria-hidden="true" className="text-lg leading-none">☰</span>
       </button>
-      {typeof document !== 'undefined' ? createPortal(drawer, document.body) : null}
+      {isClient ? createPortal(drawer, document.body) : null}
     </>
   );
 }
