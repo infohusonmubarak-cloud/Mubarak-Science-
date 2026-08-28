@@ -23,6 +23,20 @@
   --danger-soft: #fef2f2;
 
   --focus-ring: #4338ca;
+
+  /* Per-subject accent colours — used consistently across subject cards,
+     chapter headers, progress bars, and section navigation so a learner
+     always knows which subject they're in at a glance. */
+  --subject-mathematics: #4f46e5;
+  --subject-mathematics-soft: #eef2ff;
+  --subject-physics: #7c3aed;
+  --subject-physics-soft: #f5f3ff;
+  --subject-chemistry: #0d9488;
+  --subject-chemistry-soft: #f0fdfa;
+  --subject-biology: #db2777;
+  --subject-biology-soft: #fdf2f8;
+
+  --shadow-color: 15 23 42;
 }
 
 @theme inline {
@@ -47,12 +61,28 @@
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-subject-mathematics: var(--subject-mathematics);
+  --color-subject-mathematics-soft: var(--subject-mathematics-soft);
+  --color-subject-physics: var(--subject-physics);
+  --color-subject-physics-soft: var(--subject-physics-soft);
+  --color-subject-chemistry: var(--subject-chemistry);
+  --color-subject-chemistry-soft: var(--subject-chemistry-soft);
+  --color-subject-biology: var(--subject-biology);
+  --color-subject-biology-soft: var(--subject-biology-soft);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
 }
 
+/* Dark mode has two triggers: the OS preference (unless the learner has
+   explicitly chosen "light"), and an explicit `data-theme="dark"` from the
+   toggle in the header — set via an inline script in <head> before
+   hydration, so there is no flash of the wrong theme on load. Colours are
+   driven entirely by CSS custom properties rather than Tailwind's `dark:`
+   variant, so both triggers just redefine the same variable set. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --background: #0b1220;
     --surface: #111a2e;
     --surface-muted: #17223b;
@@ -75,17 +105,91 @@
     --danger-soft: #2a1414;
 
     --focus-ring: #a5b4fc;
+
+    --subject-mathematics: #818cf8;
+    --subject-mathematics-soft: #1e223f;
+    --subject-physics: #a78bfa;
+    --subject-physics-soft: #241f42;
+    --subject-chemistry: #2dd4bf;
+    --subject-chemistry-soft: #10262a;
+    --subject-biology: #f472b6;
+    --subject-biology-soft: #2a1220;
+
+    --shadow-color: 2 6 23;
   }
+}
+
+:root[data-theme='dark'] {
+  --background: #0b1220;
+  --surface: #111a2e;
+  --surface-muted: #17223b;
+  --foreground: #e5e9f5;
+  --foreground-muted: #9aa5c0;
+  --border: #263252;
+
+  --brand: #818cf8;
+  --brand-strong: #a5b4fc;
+  --brand-soft: #1e223f;
+
+  --accent: #2dd4bf;
+  --accent-soft: #10262a;
+
+  --success: #4ade80;
+  --success-soft: #0f2417;
+  --warning: #fbbf24;
+  --warning-soft: #2a2110;
+  --danger: #f87171;
+  --danger-soft: #2a1414;
+
+  --focus-ring: #a5b4fc;
+
+  --subject-mathematics: #818cf8;
+  --subject-mathematics-soft: #1e223f;
+  --subject-physics: #a78bfa;
+  --subject-physics-soft: #241f42;
+  --subject-chemistry: #2dd4bf;
+  --subject-chemistry-soft: #10262a;
+  --subject-biology: #f472b6;
+  --subject-biology-soft: #2a1220;
+
+  --shadow-color: 2 6 23;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 :focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+/* A soft, multi-hue wash used behind hero/section blocks instead of one
+   flat page colour — deliberately subtle so long-form study text still
+   reads cleanly on top of it. */
+.gradient-wash {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% -10%, color-mix(in srgb, var(--subject-mathematics) 16%, transparent), transparent),
+    radial-gradient(ellipse 70% 60% at 85% 0%, color-mix(in srgb, var(--subject-physics) 14%, transparent), transparent),
+    radial-gradient(ellipse 60% 50% at 50% 100%, color-mix(in srgb, var(--subject-chemistry) 10%, transparent), transparent);
+}
+
+.card-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -12px rgb(var(--shadow-color) / 0.25);
+}
+
+.prose-copy {
+  max-width: 68ch;
 }
 
 /* Respect the user's motion preference — the brief asks us to avoid
@@ -95,5 +199,8 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+  .card-hover:hover {
+    transform: none;
   }
 }

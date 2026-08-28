@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sora, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -7,13 +7,19 @@ import { BottomNav } from "@/components/layout/BottomNav";
 import { PwaRegister } from "@/components/pwa/PwaRegister";
 import { BRAND } from "@/lib/strings/copy";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const displayFont = Sora({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+});
+
+const bodyFont = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const monoFont = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -31,12 +37,29 @@ export const viewport: Viewport = {
   themeColor: '#4338ca',
 };
 
+// Runs before hydration so the chosen theme applies with no flash of the
+// wrong palette. Kept tiny and inline (not a separate script file) so it
+// blocks nothing and has zero network cost.
+const NO_FLASH_THEME_SCRIPT = `
+(function () {
+  try {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') {
+      document.documentElement.setAttribute('data-theme', stored);
+    }
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: NO_FLASH_THEME_SCRIPT }} />
+      </head>
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <a
           href="#main-content"
