@@ -6,45 +6,11 @@ import { chapter4APressure } from './chapter-4-pressure';
 import { chapter5AWorkEnergy } from './chapter-5-work-and-energy';
 import { chapter6AHeat } from './chapter-6-heat-and-temperature';
 import { chapter7AWave } from './chapter-7-wave-and-sound';
+import { chapter8ALight } from './chapter-8-light';
 
-// Chapters 1-7 are fully authored. The other four are outline-only
+// Chapters 1-8 are fully authored. The other three are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter8: Chapter = {
-  slug: 'light',
-  number: 8,
-  title: 'Light',
-  blurb: 'Reflection, refraction and refractive index, lenses and image formation, and dispersion and optical instruments.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'reflection-and-refraction',
-      title: 'Reflection and Refraction',
-      concepts: [
-        { slug: 'reflection-of-light', title: 'Reflection of Light' },
-        { slug: 'refraction-and-refractive-index', title: 'Refraction and Refractive Index' },
-        { slug: 'total-internal-reflection', title: 'Total Internal Reflection' },
-      ],
-    },
-    {
-      slug: 'lenses-and-images',
-      title: 'Lenses and Images',
-      concepts: [
-        { slug: 'mirrors-and-lenses', title: 'Mirrors and Lenses' },
-        { slug: 'image-formation', title: 'Image Formation' },
-      ],
-    },
-    {
-      slug: 'light-phenomena',
-      title: 'Light Phenomena',
-      concepts: [
-        { slug: 'dispersion-and-spectrum', title: 'Dispersion and the Spectrum' },
-        { slug: 'optical-instruments', title: 'Optical Instruments' },
-      ],
-    },
-  ],
-};
 
 const chapter9: Chapter = {
   slug: 'electricity',
@@ -150,6 +116,6 @@ export const aLevelPhysics = {
   status: 'available' as const,
   chapters: [
     chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5AWorkEnergy, chapter6AHeat,
-    chapter7AWave, chapter8, chapter9, chapter10, chapter11,
+    chapter7AWave, chapter8ALight, chapter9, chapter10, chapter11,
   ],
 };
