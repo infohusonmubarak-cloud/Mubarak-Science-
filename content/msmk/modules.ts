@@ -86,7 +86,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: "Support a child's mind, feelings, and creativity.", rhg: ROHINGYA_PENDING },
     icon: '🎨',
     accentKey: 'childdev',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm08',
@@ -96,7 +96,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Help children grow strong through movement and play.', rhg: ROHINGYA_PENDING },
     icon: '🏃',
     accentKey: 'childphysical',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm09',
@@ -106,7 +106,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Support older people with daily tasks and dignity.', rhg: ROHINGYA_PENDING },
     icon: '👵',
     accentKey: 'elderly',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm10',
@@ -116,7 +116,7 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Support people with disabilities with patience and care.', rhg: ROHINGYA_PENDING },
     icon: '♿',
     accentKey: 'specialneeds',
-    status: 'coming-soon',
+    status: 'available',
   },
   {
     id: 'm11',
@@ -126,6 +126,6 @@ export const MODULE_SUMMARIES: ModuleSummary[] = [
     shortDescription: { en: 'Act fast and safely when an emergency happens.', rhg: ROHINGYA_PENDING },
     icon: '🚨',
     accentKey: 'emergency',
-    status: 'coming-soon',
+    status: 'available',
   },
 ];
