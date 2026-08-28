@@ -5,44 +5,11 @@ import { chapter3AForces } from './chapter-3-forces';
 import { chapter4APressure } from './chapter-4-pressure';
 import { chapter5AWorkEnergy } from './chapter-5-work-and-energy';
 import { chapter6AHeat } from './chapter-6-heat-and-temperature';
+import { chapter7AWave } from './chapter-7-wave-and-sound';
 
-// Chapters 1-6 are fully authored. The other five are outline-only
+// Chapters 1-7 are fully authored. The other four are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter7: Chapter = {
-  slug: 'waves-and-sound',
-  number: 7,
-  title: 'Waves and Sound',
-  blurb: 'Transverse and longitudinal waves, wave speed, reflection, refraction, diffraction and interference, and how sound and ultrasound work.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'wave-basics',
-      title: 'Wave Basics',
-      concepts: [
-        { slug: 'wave-properties', title: 'Transverse and Longitudinal Waves' },
-        { slug: 'wave-speed-equation', title: 'The Wave Speed Equation' },
-      ],
-    },
-    {
-      slug: 'wave-behaviour',
-      title: 'Wave Behaviour',
-      concepts: [
-        { slug: 'reflection-refraction-diffraction', title: 'Reflection, Refraction and Diffraction' },
-        { slug: 'interference', title: 'Interference' },
-      ],
-    },
-    {
-      slug: 'sound',
-      title: 'Sound',
-      concepts: [
-        { slug: 'sound-waves-pitch-and-loudness', title: 'Sound Waves, Pitch and Loudness' },
-        { slug: 'ultrasound', title: 'Ultrasound' },
-      ],
-    },
-  ],
-};
 
 const chapter8: Chapter = {
   slug: 'light',
@@ -183,6 +150,6 @@ export const aLevelPhysics = {
   status: 'available' as const,
   chapters: [
     chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5AWorkEnergy, chapter6AHeat,
-    chapter7, chapter8, chapter9, chapter10, chapter11,
+    chapter7AWave, chapter8, chapter9, chapter10, chapter11,
   ],
 };
