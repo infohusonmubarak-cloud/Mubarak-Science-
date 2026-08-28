@@ -1,6 +1,75 @@
 import type { Concept } from '@/types/content';
 
 export const chapter2PhysicsConcepts: Record<string, Concept> = {
+  'vectors-and-scalars': {
+    slug: 'vectors-and-scalars',
+    title: 'Vectors and Scalars',
+    difficulty: 'easy',
+    simpleExplanation:
+      'A scalar quantity has only a size (magnitude) — like mass, time, or temperature. A vector ' +
+      'quantity has both a size and a direction — like displacement, velocity, or force. Vectors ' +
+      'are usually drawn as arrows: the length of the arrow shows the magnitude, and the way it ' +
+      'points shows the direction.',
+    whyItMatters:
+      'Almost every quantity in this chapter — displacement, velocity, acceleration — is a vector, ' +
+      "so knowing how to handle direction correctly, right from the start, is essential; forgetting " +
+      "it is one of the most common sources of wrong answers in mechanics.",
+    workedExample: {
+      id: 'vectors-scalars-worked-1',
+      title: 'Add two vectors acting in a straight line',
+      problemStatement: 'A boat\'s engine pushes it forward at 6 m/s (east) while a current pushes it at 2 m/s (west). Find the resultant velocity.',
+      steps: [
+        { step: 1, instruction: 'Choose a positive direction (east) and assign signs.', math: 'engine = +6 m/s, current = −2 m/s', explanation: 'Since the two vectors act along the same line but in opposite directions, one must be negative.' },
+        { step: 2, instruction: 'Add the vectors algebraically.', math: '6 + (−2) = 4', explanation: 'Vectors along the same line add just like signed numbers.' },
+      ],
+      finalAnswer: 'Resultant velocity = 4 m/s east',
+    },
+    whyItWorks:
+      'Because a vector already encodes direction as a sign (or an angle), adding two vectors that ' +
+      'act along the same line is exactly the same as adding signed numbers — opposing directions ' +
+      'partially cancel, matching directions reinforce.',
+    realLifeExample: {
+      title: 'A plane flying into a headwind',
+      scenario: 'An aircraft cruises at 250 m/s but flies directly into a 30 m/s headwind.',
+      explanation: "The plane's velocity relative to the ground is the vector sum of its own velocity and the wind's velocity — here, 250 − 30 = 220 m/s, since the wind vector points opposite to the plane's motion.",
+    },
+    practiceQuestions: [
+      {
+        id: 'vectors-scalars-pq-1',
+        type: 'multiple-choice',
+        difficulty: 'easy',
+        prompt: 'Which of these is a vector quantity?',
+        hints: ['A vector needs both a size and a direction.'],
+        options: [
+          { id: 'a', text: 'Mass' },
+          { id: 'b', text: 'Temperature' },
+          { id: 'c', text: 'Displacement' },
+          { id: 'd', text: 'Time' },
+        ],
+        correctOptionId: 'c',
+        explanation: 'Displacement has both a size and a direction, so it is a vector; mass, temperature and time are all scalars.',
+      },
+      {
+        id: 'vectors-scalars-pq-2',
+        type: 'numeric',
+        difficulty: 'medium',
+        prompt: 'Two forces act on an object along the same line: 15 N to the right and 9 N to the left. Find the resultant force. (Give the size only, in newtons.)',
+        hints: ['Assign right as positive, left as negative, then add.', '15 + (−9).'],
+        correctAnswer: 6,
+        unit: 'N',
+        explanation: 'Resultant = 15 + (−9) = 6 N (to the right).',
+      },
+    ],
+    commonMistake:
+      "Adding vector magnitudes directly without accounting for direction — 6 m/s and 2 m/s acting " +
+      "in opposite directions do NOT add to 8 m/s; direction has to be built into the addition.",
+    quickReview: [
+      'Scalars have magnitude only; vectors have magnitude AND direction.',
+      'Vectors are drawn as arrows — length shows size, arrowhead shows direction.',
+      'Vectors along the same line add like signed numbers; opposite directions partially cancel.',
+    ],
+  },
+
   'distance-and-displacement': {
     slug: 'distance-and-displacement',
     title: 'Distance and Displacement',

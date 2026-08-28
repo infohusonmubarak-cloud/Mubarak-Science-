@@ -1,38 +1,10 @@
 import type { Chapter } from '@/types/content';
+import { chapter1AUnits } from './chapter-1-units-and-measurements';
 import { chapter2Physics } from './chapter-2-motion';
 
-// Chapter 2 is the fully-authored reference chapter for this pass. The
-// other ten are outline-only stubs — real, navigable pages with an
-// accurate topic/concept map, no full bodies yet.
-
-const chapter1: Chapter = {
-  slug: 'units-and-measurement',
-  number: 1,
-  title: 'Units and Measurement',
-  blurb: 'SI units and prefixes, scalars vs. vectors, and how physicists handle uncertainty and significant figures.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'physical-quantities-and-units',
-      title: 'Physical Quantities and Units',
-      concepts: [
-        { slug: 'physical-quantities', title: 'Physical Quantities' },
-        { slug: 'si-units-and-prefixes', title: 'SI Units and Prefixes' },
-        { slug: 'scientific-notation', title: 'Scientific Notation' },
-      ],
-    },
-    {
-      slug: 'scalars-vectors-and-uncertainty',
-      title: 'Scalars, Vectors and Uncertainty',
-      concepts: [
-        { slug: 'scalars-and-vectors', title: 'Scalars and Vectors' },
-        { slug: 'accuracy-precision-and-uncertainty', title: 'Accuracy, Precision and Measurement Uncertainty' },
-        { slug: 'significant-figures', title: 'Significant Figures' },
-        { slug: 'dimensional-analysis', title: 'Dimensional Analysis' },
-      ],
-    },
-  ],
-};
+// Chapters 1 and 2 are fully authored. The other nine are outline-only
+// stubs — real, navigable pages with an accurate topic/concept map, no
+// full bodies yet.
 
 const chapter3: Chapter = {
   slug: 'forces',
@@ -330,7 +302,7 @@ export const aLevelPhysics = {
   description: 'Eleven chapters — from units and measurement through quantum and atomic physics.',
   status: 'available' as const,
   chapters: [
-    chapter1, chapter2Physics, chapter3, chapter4, chapter5, chapter6,
+    chapter1AUnits, chapter2Physics, chapter3, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };

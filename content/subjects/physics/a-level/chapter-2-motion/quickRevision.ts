@@ -3,6 +3,11 @@ import type { QuickRevision } from '@/types/content';
 export const chapter2PhysicsQuickRevision: QuickRevision = {
   fiveMinute: [
     {
+      conceptSlug: 'vectors-and-scalars',
+      keyPoint: 'Scalars: size only. Vectors: size AND direction.',
+      miniExample: '6 m/s east + 2 m/s west → 4 m/s east.',
+    },
+    {
       conceptSlug: 'distance-and-displacement',
       keyPoint: 'Distance = total path length. Displacement = straight-line, with direction.',
       miniExample: 'One lap of a track: distance 400 m, displacement 0 m.',
@@ -32,6 +37,11 @@ export const chapter2PhysicsQuickRevision: QuickRevision = {
     },
   ],
   fifteenMinute: [
+    {
+      conceptSlug: 'vectors-and-scalars',
+      keyPoint: 'Vectors are drawn as arrows; along one line they add like signed numbers.',
+      miniExample: '15 N right, 9 N left → resultant 6 N right.',
+    },
     {
       conceptSlug: 'distance-and-displacement',
       keyPoint: 'Distance (scalar) vs. displacement (vector, net change).',

@@ -137,6 +137,10 @@ import {
   chapter4ChemFormulas,
 } from '@/content/subjects/chemistry/a-level/chapter-4-quantities-of-substances';
 import {
+  chapter1AUnitsConcepts,
+  chapter1AUnitsFormulas,
+} from '@/content/subjects/physics/a-level/chapter-1-units-and-measurements';
+import {
   chapter2PhysicsConcepts,
   chapter2PhysicsFormulas,
 } from '@/content/subjects/physics/a-level/chapter-2-motion';
@@ -340,6 +344,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'c-level/applications-of-integration': { concepts: chapter11CMathConcepts, formulas: chapter11CMathFormulas },
   'a-level/cell-structure-and-organization': { concepts: chapter2BioConcepts, formulas: chapter2BioFormulas },
   'a-level/quantities-of-substances': { concepts: chapter4ChemConcepts, formulas: chapter4ChemFormulas },
+  'a-level/units-and-measurements': { concepts: chapter1AUnitsConcepts, formulas: chapter1AUnitsFormulas },
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
   'b-level/motion-in-a-plane': { concepts: chapter1MotionInAPlaneConcepts, formulas: chapter1MotionInAPlaneFormulas },
   'b-level/rotational-dynamics': { concepts: chapter2RotationalDynamicsConcepts, formulas: chapter2RotationalDynamicsFormulas },
