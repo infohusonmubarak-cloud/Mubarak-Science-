@@ -1,45 +1,11 @@
 import type { Chapter } from '@/types/content';
 import { chapter1AUnits } from './chapter-1-units-and-measurements';
 import { chapter2Physics } from './chapter-2-motion';
+import { chapter3AForces } from './chapter-3-forces';
 
-// Chapters 1 and 2 are fully authored. The other nine are outline-only
-// stubs — real, navigable pages with an accurate topic/concept map, no
-// full bodies yet.
-
-const chapter3: Chapter = {
-  slug: 'forces',
-  number: 3,
-  title: 'Forces',
-  blurb: "Newton's laws, mass and weight, friction and tension, resultant force and equilibrium, and momentum.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'newtons-laws',
-      title: "Newton's Laws",
-      concepts: [
-        { slug: 'newtons-laws-of-motion', title: "Newton's Laws of Motion" },
-        { slug: 'mass-and-weight', title: 'Mass and Weight' },
-      ],
-    },
-    {
-      slug: 'types-of-force',
-      title: 'Types of Force',
-      concepts: [
-        { slug: 'friction-and-normal-reaction', title: 'Friction and Normal Reaction' },
-        { slug: 'tension', title: 'Tension' },
-        { slug: 'resultant-force-and-equilibrium', title: 'Resultant Force and Equilibrium' },
-      ],
-    },
-    {
-      slug: 'momentum',
-      title: 'Momentum',
-      concepts: [
-        { slug: 'momentum-and-impulse', title: 'Momentum and Impulse' },
-        { slug: 'circular-motion-introduction', title: 'Introduction to Circular Motion' },
-      ],
-    },
-  ],
-};
+// Chapters 1, 2 and 3 are fully authored. The other eight are
+// outline-only stubs — real, navigable pages with an accurate
+// topic/concept map, no full bodies yet.
 
 const chapter4: Chapter = {
   slug: 'pressure',
@@ -302,7 +268,7 @@ export const aLevelPhysics = {
   description: 'Eleven chapters — from units and measurement through quantum and atomic physics.',
   status: 'available' as const,
   chapters: [
-    chapter1AUnits, chapter2Physics, chapter3, chapter4, chapter5, chapter6,
+    chapter1AUnits, chapter2Physics, chapter3AForces, chapter4, chapter5, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
