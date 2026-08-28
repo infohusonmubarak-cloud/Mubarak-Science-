@@ -8,38 +8,11 @@ import { chapter6AHeat } from './chapter-6-heat-and-temperature';
 import { chapter7AWave } from './chapter-7-wave-and-sound';
 import { chapter8ALight } from './chapter-8-light';
 import { chapter9AElectricity } from './chapter-9-electricity';
+import { chapter10AMagnetism } from './chapter-10-magnetism';
 
-// Chapters 1-9 are fully authored. The other two are outline-only
-// stubs — real, navigable pages with an accurate topic/concept map, no
-// full bodies yet.
-
-const chapter10: Chapter = {
-  slug: 'magnetism',
-  number: 10,
-  title: 'Magnetism',
-  blurb: 'Magnetic fields and electromagnets, the force on a current-carrying conductor, and how motors, generators and transformers work.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'magnetic-fields',
-      title: 'Magnetic Fields',
-      concepts: [
-        { slug: 'magnets-and-magnetic-fields', title: 'Magnets and Magnetic Fields' },
-        { slug: 'electromagnets-a-level', title: 'Electromagnets' },
-      ],
-    },
-    {
-      slug: 'electromagnetism',
-      title: 'Electromagnetism',
-      concepts: [
-        { slug: 'force-on-a-current-carrying-conductor', title: 'Force on a Current-Carrying Conductor' },
-        { slug: 'electric-motors', title: 'Electric Motors' },
-        { slug: 'electromagnetic-induction', title: 'Electromagnetic Induction' },
-        { slug: 'generators-and-transformers', title: 'Generators and Transformers' },
-      ],
-    },
-  ],
-};
+// Chapters 1-10 are fully authored. Chapter 11 is the last
+// outline-only stub — a real, navigable page with an accurate
+// topic/concept map, no full body yet.
 
 const chapter11: Chapter = {
   slug: 'quantum-and-atomic-physics',
@@ -84,6 +57,6 @@ export const aLevelPhysics = {
   status: 'available' as const,
   chapters: [
     chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5AWorkEnergy, chapter6AHeat,
-    chapter7AWave, chapter8ALight, chapter9AElectricity, chapter10, chapter11,
+    chapter7AWave, chapter8ALight, chapter9AElectricity, chapter10AMagnetism, chapter11,
   ],
 };
