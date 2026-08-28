@@ -169,6 +169,10 @@ import {
   chapter8ALightFormulas,
 } from '@/content/subjects/physics/a-level/chapter-8-light';
 import {
+  chapter9AElectricityConcepts,
+  chapter9AElectricityFormulas,
+} from '@/content/subjects/physics/a-level/chapter-9-electricity';
+import {
   chapter1MotionInAPlaneConcepts,
   chapter1MotionInAPlaneFormulas,
 } from '@/content/subjects/physics/b-level/chapter-1-motion-in-a-plane';
@@ -376,6 +380,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/heat-and-temperature': { concepts: chapter6AHeatConcepts, formulas: chapter6AHeatFormulas },
   'a-level/wave-and-sound': { concepts: chapter7AWaveConcepts, formulas: chapter7AWaveFormulas },
   'a-level/light': { concepts: chapter8ALightConcepts, formulas: chapter8ALightFormulas },
+  'a-level/electricity': { concepts: chapter9AElectricityConcepts, formulas: chapter9AElectricityFormulas },
   'b-level/motion-in-a-plane': { concepts: chapter1MotionInAPlaneConcepts, formulas: chapter1MotionInAPlaneFormulas },
   'b-level/rotational-dynamics': { concepts: chapter2RotationalDynamicsConcepts, formulas: chapter2RotationalDynamicsFormulas },
   'b-level/pressure-in-fluids-and-atmosphere': { concepts: chapter3PressureConcepts, formulas: chapter3PressureFormulas },

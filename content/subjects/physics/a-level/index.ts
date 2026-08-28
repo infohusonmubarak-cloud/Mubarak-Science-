@@ -7,43 +7,11 @@ import { chapter5AWorkEnergy } from './chapter-5-work-and-energy';
 import { chapter6AHeat } from './chapter-6-heat-and-temperature';
 import { chapter7AWave } from './chapter-7-wave-and-sound';
 import { chapter8ALight } from './chapter-8-light';
+import { chapter9AElectricity } from './chapter-9-electricity';
 
-// Chapters 1-8 are fully authored. The other three are outline-only
+// Chapters 1-9 are fully authored. The other two are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter9: Chapter = {
-  slug: 'electricity',
-  number: 9,
-  title: 'Electricity',
-  blurb: "Charge, current, potential difference and Ohm's law, series and parallel circuits, and electrical power and energy.",
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'current-and-potential-difference',
-      title: 'Current and Potential Difference',
-      concepts: [
-        { slug: 'electric-charge-and-current', title: 'Electric Charge and Current' },
-        { slug: 'potential-difference', title: 'Potential Difference' },
-        { slug: 'resistance-and-ohms-law', title: "Resistance and Ohm's Law" },
-      ],
-    },
-    {
-      slug: 'circuits',
-      title: 'Circuits',
-      concepts: [
-        { slug: 'series-circuits', title: 'Series Circuits' },
-        { slug: 'parallel-circuits', title: 'Parallel Circuits' },
-        { slug: 'conductors-and-insulators', title: 'Conductors and Insulators' },
-      ],
-    },
-    {
-      slug: 'electrical-power',
-      title: 'Electrical Power',
-      concepts: [{ slug: 'electrical-power-and-energy', title: 'Electrical Power and Energy' }],
-    },
-  ],
-};
 
 const chapter10: Chapter = {
   slug: 'magnetism',
@@ -116,6 +84,6 @@ export const aLevelPhysics = {
   status: 'available' as const,
   chapters: [
     chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5AWorkEnergy, chapter6AHeat,
-    chapter7AWave, chapter8ALight, chapter9, chapter10, chapter11,
+    chapter7AWave, chapter8ALight, chapter9AElectricity, chapter10, chapter11,
   ],
 };
