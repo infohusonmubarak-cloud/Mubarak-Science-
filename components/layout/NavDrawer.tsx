@@ -107,6 +107,18 @@ export function NavDrawer() {
           ))}
         </nav>
 
+        <Link
+          href="/msmk"
+          aria-current={isActive('/msmk') ? 'page' : undefined}
+          className="flex items-center gap-3 rounded-lg bg-msmk-firstaid px-3 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-msmk-firstaid/90"
+        >
+          <span aria-hidden="true">🩺</span>
+          MSMK — Medical Knowledge
+          <span className="ml-auto rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide">
+            Paid course
+          </span>
+        </Link>
+
         <hr className="border-border" />
 
         <nav aria-label="More" className="space-y-1">

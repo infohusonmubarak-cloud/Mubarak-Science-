@@ -36,6 +36,13 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/msmk"
+            className="ml-1 flex items-center gap-1.5 rounded-full bg-msmk-firstaid px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-msmk-firstaid/90"
+          >
+            <span aria-hidden="true">🩺</span>
+            MSMK
+          </Link>
         </nav>
 
         <div className="hidden flex-1 justify-end sm:flex md:max-w-xs">

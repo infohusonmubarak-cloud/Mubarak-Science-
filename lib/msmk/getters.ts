@@ -37,3 +37,10 @@ export function getModuleSummary(id: ModuleId): ModuleSummary | undefined {
 export function getFullModule(id: string): Module | undefined {
   return FULL_MODULES[id as ModuleId];
 }
+
+/** Every module with full content, in module order — used by the doctor review page. */
+export function getAllFullModules(): Module[] {
+  return getModuleSummaries()
+    .map((summary) => FULL_MODULES[summary.id])
+    .filter((module): module is Module => Boolean(module));
+}

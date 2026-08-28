@@ -69,6 +69,89 @@ function IssueCodeForm({ registration, onIssued }: { registration: Registration;
   );
 }
 
+function StandaloneCodeForm({ onIssued }: { onIssued: () => void }) {
+  const [code, setCode] = useState('');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+
+  async function issue() {
+    const client = getSupabaseBrowserClient();
+    if (!client || !code.trim() || !email.trim() || !name.trim()) return;
+    setBusy(true);
+    setError(null);
+    setSuccess(false);
+    const { error: insertError } = await client.from('msmk_access_codes').insert({
+      code: code.trim().toUpperCase(),
+      email: email.trim(),
+      full_name: name.trim(),
+      registration_id: null,
+    });
+    setBusy(false);
+    if (insertError) {
+      setError(insertError.message.includes('duplicate') ? 'That code is already in use.' : 'Could not issue the code.');
+      return;
+    }
+    setCode('');
+    setEmail('');
+    setName('');
+    setSuccess(true);
+    onIssued();
+  }
+
+  return (
+    <div className="rounded-xl border border-border bg-surface p-4">
+      <p className="text-sm text-foreground-muted">
+        Issue a code with no registration or payment behind it — for a reviewer (e.g. the MBBS doctor
+        checking medical content), a test account, or a free code. It unlocks every module and{' '}
+        <a href="/msmk/review" className="font-medium text-brand underline">
+          the one-page review view
+        </a>
+        , the same as a paid access code.
+      </p>
+      <div className="mt-3 flex flex-wrap items-end gap-2">
+        <label className="flex flex-col gap-1">
+          <span className="text-xs font-medium text-foreground-muted">Code</span>
+          <input
+            type="text"
+            placeholder="MSMKREV01"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            className="w-36 rounded-lg border border-border bg-background px-2.5 py-1.5 font-mono text-sm uppercase text-foreground"
+          />
+        </label>
+        <label className="flex flex-col gap-1">
+          <span className="text-xs font-medium text-foreground-muted">Email</span>
+          <input
+            type="email"
+            placeholder="doctor@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-52 rounded-lg border border-border bg-background px-2.5 py-1.5 text-sm text-foreground"
+          />
+        </label>
+        <label className="flex flex-col gap-1">
+          <span className="text-xs font-medium text-foreground-muted">Name</span>
+          <input
+            type="text"
+            placeholder="Dr. Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-40 rounded-lg border border-border bg-background px-2.5 py-1.5 text-sm text-foreground"
+          />
+        </label>
+        <Button size="sm" onClick={issue} disabled={busy || !code.trim() || !email.trim() || !name.trim()}>
+          {busy ? 'Issuing…' : 'Issue Code'}
+        </Button>
+      </div>
+      {error && <p className="mt-2 text-xs font-medium text-danger">{error}</p>}
+      {success && <p className="mt-2 text-xs font-medium text-success">Code issued — share it with them along with the email you entered.</p>}
+    </div>
+  );
+}
+
 function RegistrationRow({ registration, onChanged }: { registration: Registration; onChanged: () => void }) {
   const [busy, setBusy] = useState(false);
 
@@ -178,6 +261,13 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
           {filtered.map((r) => (
             <RegistrationRow key={r.id} registration={r} onChanged={refresh} />
           ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="font-[family-name:var(--font-display)] text-base font-bold text-foreground">Special Access Codes</h2>
+        <div className="mt-3">
+          <StandaloneCodeForm onIssued={refresh} />
         </div>
       </section>
 

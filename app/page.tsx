@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { BRAND } from '@/lib/strings/copy';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -51,6 +52,28 @@ export default function HomePage() {
               <p className="mt-1 text-xs text-foreground-muted">{subject.shortDescription}</p>
             </Card>
           ))}
+        </div>
+      </section>
+
+      <section className="overflow-hidden rounded-2xl border border-msmk-firstaid bg-msmk-firstaid-soft p-6 sm:p-8">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-msmk-firstaid">New — Paid Course</p>
+            <h2 className="mt-1 font-[family-name:var(--font-display)] text-xl font-bold text-foreground sm:text-2xl">
+              🩺 Mubarak Science Medical Knowledge
+            </h2>
+            <p className="mt-2 max-w-xl text-sm text-foreground-muted">
+              Nursing, Self-Care &amp; Family Care — first aid, CPR, and caregiving skills for babies,
+              children, elders, and people with special needs. Mostly pictures and videos, bilingual
+              (English / Rohingya), built for real emergencies.
+            </p>
+          </div>
+          <Link
+            href="/msmk"
+            className="inline-flex shrink-0 items-center justify-center rounded-lg bg-msmk-firstaid px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-msmk-firstaid/90"
+          >
+            Explore MSMK
+          </Link>
         </div>
       </section>
 

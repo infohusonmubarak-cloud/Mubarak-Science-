@@ -37,6 +37,13 @@ export function DashboardView({ fullName, attempts }: { fullName: string; attemp
         <ProgressBar percent={overallPercent} label={`Course progress (${passedCount} of ${modules.length} modules passed)`} />
       </section>
 
+      <p className="text-center text-sm text-foreground-muted">
+        Reviewing this course for someone else?{' '}
+        <Link href="/msmk/review" className="font-medium text-brand underline">
+          Open the one-page content review
+        </Link>
+      </p>
+
       <section
         className={`rounded-2xl border p-5 text-center ${
           certificateUnlocked ? 'border-success bg-success-soft' : 'border-border bg-surface'
