@@ -19,24 +19,25 @@ navigation outline** — title, slug, difficulty — while the **full pedagogica
 extending `ConceptSummary`) exists only for chapters that have actually been written. This is why
 every chapter across all four subjects is a real, correctly-titled page even though most are
 still outline-only stubs with `status: 'coming-soon'` — Mathematics A-Level, Mathematics B-Level,
-Mathematics C-Level, Chemistry C-Level, Biology C-Level, Physics B-Level, and Physics C-Level are
-the seven exceptions, each fully authored end to end (see below). `Level` also carries its own
-`status` —
+Mathematics C-Level, Chemistry C-Level, Biology C-Level, Physics A-Level, Physics B-Level, and
+Physics C-Level are the eight exceptions, each fully authored end to end (see below). `Level` also
+carries its own `status` —
 most subject/level combinations (Biology B-Level being the remaining example) are `coming-soon`
 with an empty `chapters: []` until content is written for them; the level page
 (`app/subjects/[subjectSlug]/[levelSlug]/page.tsx`) renders a `ComingSoonPanel` instead of a
 chapter grid when `level.status === 'coming-soon'`.
 
 The reference examples for a fully-authored chapter are the flagship chapters —
-`biology/a-level/cell-structure-and-organization`, `chemistry/a-level/quantities-of-substances`,
-`physics/a-level/motion` — plus **all ten** chapters of `mathematics/a-level/`, **all eleven**
-chapters of `mathematics/b-level/`, **all eleven** chapters of `mathematics/c-level/`, **all
-eight** chapters of `chemistry/c-level/`, **all six** chapters of `biology/c-level/`, **all
-twelve** chapters of `physics/b-level/`, and **all thirteen** chapters of `physics/c-level/`
-(including its original flagship, `forces-in-circular-motion`), the seven fully-populated levels
-in the app right now. Every chapter in Mathematics A-Level, Mathematics B-Level, Mathematics
-C-Level, Chemistry C-Level, Biology C-Level, Physics B-Level, and Physics C-Level also has a
-graded `assessment` and a `conceptMap` (see **Assessments** and **Concept Maps** below); most stub
+`biology/a-level/cell-structure-and-organization`, `chemistry/a-level/quantities-of-substances`
+— plus **all ten** chapters of `mathematics/a-level/`, **all eleven** chapters of
+`mathematics/b-level/`, **all eleven** chapters of `mathematics/c-level/`, **all eight** chapters
+of `chemistry/c-level/`, **all six** chapters of `biology/c-level/`, **all eleven** chapters of
+`physics/a-level/` (including its original flagship, `motion`), **all twelve** chapters of
+`physics/b-level/`, and **all thirteen** chapters of `physics/c-level/` (including its original
+flagship, `forces-in-circular-motion`), the eight fully-populated levels in the app right now.
+Every chapter in Mathematics A-Level, Mathematics B-Level, Mathematics C-Level, Chemistry C-Level,
+Biology C-Level, Physics A-Level, Physics B-Level, and Physics C-Level also has a graded
+`assessment` and a `conceptMap` (see **Assessments** and **Concept Maps** below); most stub
 chapters elsewhere don't yet.
 
 `lib/content/getters.ts` is the only way pages should read content. It holds a small
