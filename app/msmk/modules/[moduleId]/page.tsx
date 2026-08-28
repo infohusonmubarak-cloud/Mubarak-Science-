@@ -24,16 +24,20 @@ export default async function MSMKModulePage({ params }: { params: Promise<{ mod
   const session = parseSessionCookieValue(cookieStore.get(MSMK_SESSION_COOKIE)?.value);
   if (!session) redirect('/msmk/dashboard');
 
+  // A signed cookie only proves it was issued by this server — it does
+  // NOT prove the access code is still active. That check needs the DB,
+  // so if it's unreachable we must fail closed (deny access) rather than
+  // silently skip verification, exactly like the dashboard page does.
   const client = getSupabaseServiceClient();
-  if (client) {
-    const { data: access } = await client
-      .from('msmk_access_codes')
-      .select('code, email, active')
-      .eq('code', session.accessCode)
-      .maybeSingle();
-    if (!access || !access.active || String(access.email).toLowerCase() !== session.email) {
-      redirect('/msmk/dashboard');
-    }
+  if (!client) redirect('/msmk/dashboard');
+
+  const { data: access } = await client
+    .from('msmk_access_codes')
+    .select('code, email, active')
+    .eq('code', session.accessCode)
+    .maybeSingle();
+  if (!access || !access.active || String(access.email).toLowerCase() !== session.email) {
+    redirect('/msmk/dashboard');
   }
 
   const mod = getFullModule(moduleId);
