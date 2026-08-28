@@ -153,6 +153,10 @@ import {
   chapter4APressureFormulas,
 } from '@/content/subjects/physics/a-level/chapter-4-pressure';
 import {
+  chapter5AWorkEnergyConcepts,
+  chapter5AWorkEnergyFormulas,
+} from '@/content/subjects/physics/a-level/chapter-5-work-and-energy';
+import {
   chapter1MotionInAPlaneConcepts,
   chapter1MotionInAPlaneFormulas,
 } from '@/content/subjects/physics/b-level/chapter-1-motion-in-a-plane';
@@ -356,6 +360,7 @@ const CONTENT_PACKS: Record<string, { concepts: Record<string, Concept>; formula
   'a-level/motion': { concepts: chapter2PhysicsConcepts, formulas: chapter2PhysicsFormulas },
   'a-level/forces': { concepts: chapter3AForcesConcepts, formulas: chapter3AForcesFormulas },
   'a-level/pressure': { concepts: chapter4APressureConcepts, formulas: chapter4APressureFormulas },
+  'a-level/work-and-energy': { concepts: chapter5AWorkEnergyConcepts, formulas: chapter5AWorkEnergyFormulas },
   'b-level/motion-in-a-plane': { concepts: chapter1MotionInAPlaneConcepts, formulas: chapter1MotionInAPlaneFormulas },
   'b-level/rotational-dynamics': { concepts: chapter2RotationalDynamicsConcepts, formulas: chapter2RotationalDynamicsFormulas },
   'b-level/pressure-in-fluids-and-atmosphere': { concepts: chapter3PressureConcepts, formulas: chapter3PressureFormulas },

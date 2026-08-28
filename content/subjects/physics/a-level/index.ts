@@ -3,38 +3,11 @@ import { chapter1AUnits } from './chapter-1-units-and-measurements';
 import { chapter2Physics } from './chapter-2-motion';
 import { chapter3AForces } from './chapter-3-forces';
 import { chapter4APressure } from './chapter-4-pressure';
+import { chapter5AWorkEnergy } from './chapter-5-work-and-energy';
 
-// Chapters 1-4 are fully authored. The other seven are outline-only
+// Chapters 1-5 are fully authored. The other six are outline-only
 // stubs — real, navigable pages with an accurate topic/concept map, no
 // full bodies yet.
-
-const chapter5: Chapter = {
-  slug: 'work-and-energy',
-  number: 5,
-  title: 'Work and Energy',
-  blurb: 'Work, power and efficiency, and the kinetic, gravitational and elastic potential energy stores, tied together by conservation of energy.',
-  status: 'coming-soon',
-  topics: [
-    {
-      slug: 'work-and-power',
-      title: 'Work and Power',
-      concepts: [
-        { slug: 'work-done', title: 'Work Done' },
-        { slug: 'power-and-efficiency-a-level', title: 'Power and Efficiency' },
-      ],
-    },
-    {
-      slug: 'forms-of-energy',
-      title: 'Forms of Energy',
-      concepts: [
-        { slug: 'kinetic-energy', title: 'Kinetic Energy' },
-        { slug: 'gravitational-potential-energy', title: 'Gravitational Potential Energy' },
-        { slug: 'elastic-potential-energy', title: 'Elastic Potential Energy' },
-        { slug: 'conservation-of-energy', title: 'Conservation of Energy' },
-      ],
-    },
-  ],
-};
 
 const chapter6: Chapter = {
   slug: 'heat-and-temperature',
@@ -243,7 +216,7 @@ export const aLevelPhysics = {
   description: 'Eleven chapters — from units and measurement through quantum and atomic physics.',
   status: 'available' as const,
   chapters: [
-    chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5, chapter6,
+    chapter1AUnits, chapter2Physics, chapter3AForces, chapter4APressure, chapter5AWorkEnergy, chapter6,
     chapter7, chapter8, chapter9, chapter10, chapter11,
   ],
 };
