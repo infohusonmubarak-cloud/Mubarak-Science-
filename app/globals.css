@@ -36,6 +36,32 @@
   --subject-biology: #db2777;
   --subject-biology-soft: #fdf2f8;
 
+  /* MSMK module accent colours — one per module, distinct from the
+     Science-subject palette above so the two course areas never look like
+     the same product wearing different labels. */
+  --msmk-communication: #2563eb;
+  --msmk-communication-soft: #eff6ff;
+  --msmk-housekeeping: #059669;
+  --msmk-housekeeping-soft: #ecfdf5;
+  --msmk-firstaid: #dc2626;
+  --msmk-firstaid-soft: #fef2f2;
+  --msmk-patientcare: #7c3aed;
+  --msmk-patientcare-soft: #f5f3ff;
+  --msmk-infanttoddler: #db2777;
+  --msmk-infanttoddler-soft: #fdf2f8;
+  --msmk-childcare: #ea580c;
+  --msmk-childcare-soft: #fff7ed;
+  --msmk-childdev: #0891b2;
+  --msmk-childdev-soft: #ecfeff;
+  --msmk-childphysical: #65a30d;
+  --msmk-childphysical-soft: #f7fee7;
+  --msmk-elderly: #9333ea;
+  --msmk-elderly-soft: #faf5ff;
+  --msmk-specialneeds: #0d9488;
+  --msmk-specialneeds-soft: #f0fdfa;
+  --msmk-emergency: #e11d48;
+  --msmk-emergency-soft: #fff1f2;
+
   --shadow-color: 15 23 42;
 }
 
@@ -70,6 +96,30 @@
   --color-subject-biology: var(--subject-biology);
   --color-subject-biology-soft: var(--subject-biology-soft);
 
+  --color-msmk-communication: var(--msmk-communication);
+  --color-msmk-communication-soft: var(--msmk-communication-soft);
+  --color-msmk-housekeeping: var(--msmk-housekeeping);
+  --color-msmk-housekeeping-soft: var(--msmk-housekeeping-soft);
+  --color-msmk-firstaid: var(--msmk-firstaid);
+  --color-msmk-firstaid-soft: var(--msmk-firstaid-soft);
+  --color-msmk-patientcare: var(--msmk-patientcare);
+  --color-msmk-patientcare-soft: var(--msmk-patientcare-soft);
+  --color-msmk-infanttoddler: var(--msmk-infanttoddler);
+  --color-msmk-infanttoddler-soft: var(--msmk-infanttoddler-soft);
+  --color-msmk-childcare: var(--msmk-childcare);
+  --color-msmk-childcare-soft: var(--msmk-childcare-soft);
+  --color-msmk-childdev: var(--msmk-childdev);
+  --color-msmk-childdev-soft: var(--msmk-childdev-soft);
+  --color-msmk-childphysical: var(--msmk-childphysical);
+  --color-msmk-childphysical-soft: var(--msmk-childphysical-soft);
+  --color-msmk-elderly: var(--msmk-elderly);
+  --color-msmk-elderly-soft: var(--msmk-elderly-soft);
+  --color-msmk-specialneeds: var(--msmk-specialneeds);
+  --color-msmk-specialneeds-soft: var(--msmk-specialneeds-soft);
+  --color-msmk-emergency: var(--msmk-emergency);
+  --color-msmk-emergency-soft: var(--msmk-emergency-soft);
+
+  --font-rohingya: var(--font-rohingya);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
@@ -115,6 +165,29 @@
     --subject-biology: #f472b6;
     --subject-biology-soft: #2a1220;
 
+    --msmk-communication: #60a5fa;
+    --msmk-communication-soft: #172554;
+    --msmk-housekeeping: #34d399;
+    --msmk-housekeeping-soft: #022c22;
+    --msmk-firstaid: #f87171;
+    --msmk-firstaid-soft: #450a0a;
+    --msmk-patientcare: #a78bfa;
+    --msmk-patientcare-soft: #2e1065;
+    --msmk-infanttoddler: #f472b6;
+    --msmk-infanttoddler-soft: #500724;
+    --msmk-childcare: #fb923c;
+    --msmk-childcare-soft: #431407;
+    --msmk-childdev: #22d3ee;
+    --msmk-childdev-soft: #083344;
+    --msmk-childphysical: #a3e635;
+    --msmk-childphysical-soft: #1a2e05;
+    --msmk-elderly: #c084fc;
+    --msmk-elderly-soft: #3b0764;
+    --msmk-specialneeds: #2dd4bf;
+    --msmk-specialneeds-soft: #042f2e;
+    --msmk-emergency: #fb7185;
+    --msmk-emergency-soft: #4c0519;
+
     --shadow-color: 2 6 23;
   }
 }
@@ -152,6 +225,29 @@
   --subject-biology: #f472b6;
   --subject-biology-soft: #2a1220;
 
+  --msmk-communication: #60a5fa;
+  --msmk-communication-soft: #172554;
+  --msmk-housekeeping: #34d399;
+  --msmk-housekeeping-soft: #022c22;
+  --msmk-firstaid: #f87171;
+  --msmk-firstaid-soft: #450a0a;
+  --msmk-patientcare: #a78bfa;
+  --msmk-patientcare-soft: #2e1065;
+  --msmk-infanttoddler: #f472b6;
+  --msmk-infanttoddler-soft: #500724;
+  --msmk-childcare: #fb923c;
+  --msmk-childcare-soft: #431407;
+  --msmk-childdev: #22d3ee;
+  --msmk-childdev-soft: #083344;
+  --msmk-childphysical: #a3e635;
+  --msmk-childphysical-soft: #1a2e05;
+  --msmk-elderly: #c084fc;
+  --msmk-elderly-soft: #3b0764;
+  --msmk-specialneeds: #2dd4bf;
+  --msmk-specialneeds-soft: #042f2e;
+  --msmk-emergency: #fb7185;
+  --msmk-emergency-soft: #4c0519;
+
   --shadow-color: 2 6 23;
 }
 
@@ -163,6 +259,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display), var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Applies automatically to any element BilingualText marks lang="rhg" —
+   no per-callsite class needed. --font-rohingya only exists under
+   app/msmk/layout.tsx, which is the only place this selector can match. */
+[lang='rhg'] {
+  font-family: var(--font-rohingya), 'Noto Sans', sans-serif;
+  line-height: 1.8;
 }
 
 :focus-visible {
