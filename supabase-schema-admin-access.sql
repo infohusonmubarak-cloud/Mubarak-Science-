@@ -22,27 +22,16 @@ create table if not exists public.admins (
 
 create index if not exists admins_email_idx on public.admins (lower(email));
 
-alter table public.admins enable row level security;
-
--- Only existing admins can see or manage the admin list itself.
-create policy "admins can view the admin list"
-  on public.admins for select
-  to authenticated
-  using (public.is_current_user_admin());
-
-create policy "admins can manage the admin list"
-  on public.admins for all
-  to authenticated
-  using (public.is_current_user_admin())
-  with check (public.is_current_user_admin());
-
-grant select, insert, update, delete on public.admins to authenticated;
-
 -- security definer: runs with the table owner's privileges, so it can read
--- `admins` even though the RLS policy above would otherwise block a
+-- `admins` even though the RLS policies below would otherwise block a
 -- non-admin from reading the row that proves they're not an admin. This is
 -- the one deliberate bypass in this whole schema, and it only ever returns
 -- a boolean — it can't leak any row data.
+--
+-- Defined here, right after the table and before any policy that calls it
+-- — Postgres resolves a policy's expression at CREATE POLICY time, so a
+-- policy referencing this function has to come after this definition, not
+-- before it.
 create or replace function public.is_current_user_admin()
 returns boolean
 language sql
@@ -58,6 +47,22 @@ as $$
 $$;
 
 grant execute on function public.is_current_user_admin() to authenticated, anon;
+
+alter table public.admins enable row level security;
+
+-- Only existing admins can see or manage the admin list itself.
+create policy "admins can view the admin list"
+  on public.admins for select
+  to authenticated
+  using (public.is_current_user_admin());
+
+create policy "admins can manage the admin list"
+  on public.admins for all
+  to authenticated
+  using (public.is_current_user_admin())
+  with check (public.is_current_user_admin());
+
+grant select, insert, update, delete on public.admins to authenticated;
 
 -- Seed your own account here once you know its email (see the setup
 -- instructions), e.g.:
