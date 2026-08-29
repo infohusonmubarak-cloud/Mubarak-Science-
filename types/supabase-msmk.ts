@@ -6,6 +6,27 @@
 export interface Database {
   public: {
     Tables: {
+      admins: {
+        Row: {
+          id: string;
+          email: string;
+          full_name: string | null;
+          added_at: string;
+        };
+        Insert: {
+          id?: string;
+          email: string;
+          full_name?: string | null;
+          added_at?: string;
+        };
+        Update: {
+          id?: string;
+          email?: string;
+          full_name?: string | null;
+          added_at?: string;
+        };
+        Relationships: [];
+      };
       msmk_registrations: {
         Row: {
           id: string;
@@ -137,6 +158,11 @@ export interface Database {
         Relationships: [];
       };
     };
-    Functions: Record<string, never>;
+    Functions: {
+      is_current_user_admin: {
+        Args: Record<string, never>;
+        Returns: boolean;
+      };
+    };
   };
 }

@@ -6,12 +6,23 @@
 -- and (2) access-code + email login must be checked against real records,
 -- not something shippable in client JS.
 --
+-- Run supabase-schema-admin-access.sql FIRST — every "staff" policy below
+-- calls the public.is_current_user_admin() function it defines. Without
+-- that file, these `create policy` statements will fail with "function
+-- does not exist."
+--
 -- Run this in the Supabase SQL Editor (a fresh project, or a new schema in
 -- an existing one — either is fine, table names are namespaced with
 -- `msmk_`). As with the sibling Shwe-Pinya-Nandaw project: Supabase's
 -- default is that a new table isn't reachable through the API without an
 -- explicit `grant`, on top of RLS — RLS controls *which rows* a role sees,
 -- `grant` controls whether the role can touch the table *at all*.
+--
+-- "Staff" below means: signed in via Supabase Auth AND listed in the
+-- `admins` table (see supabase-schema-admin-access.sql). A Supabase Auth
+-- account on its own is no longer enough — this was a real gap in the
+-- original version of this file, where `to authenticated using (true)`
+-- gave full staff access to any account, not just ones you meant to admit.
 --
 -- Access model:
 --   msmk_registrations      anon: insert only               staff: full (review + status updates)
@@ -54,18 +65,18 @@ create policy "anon can submit a registration"
 create policy "staff can review registrations"
   on public.msmk_registrations for select
   to authenticated
-  using (true);
+  using (public.is_current_user_admin());
 
 create policy "staff can update registrations"
   on public.msmk_registrations for update
   to authenticated
-  using (true)
-  with check (true);
+  using (public.is_current_user_admin())
+  with check (public.is_current_user_admin());
 
 create policy "staff can delete registrations"
   on public.msmk_registrations for delete
   to authenticated
-  using (true);
+  using (public.is_current_user_admin());
 
 grant insert on public.msmk_registrations to anon;
 grant select, insert, update, delete on public.msmk_registrations to authenticated;
@@ -91,8 +102,8 @@ alter table public.msmk_access_codes enable row level security;
 create policy "staff can manage access codes"
   on public.msmk_access_codes for all
   to authenticated
-  using (true)
-  with check (true);
+  using (public.is_current_user_admin())
+  with check (public.is_current_user_admin());
 
 grant select, insert, update, delete on public.msmk_access_codes to authenticated;
 -- No grant to anon at all — learner login is validated server-side with
@@ -113,7 +124,7 @@ alter table public.msmk_progress enable row level security;
 create policy "staff can view all progress"
   on public.msmk_progress for select
   to authenticated
-  using (true);
+  using (public.is_current_user_admin());
 
 grant select on public.msmk_progress to authenticated;
 -- Reads/writes for the learner's own dashboard go through the service-role
@@ -137,13 +148,18 @@ alter table public.msmk_assessment_attempts enable row level security;
 create policy "staff can view all assessment attempts"
   on public.msmk_assessment_attempts for select
   to authenticated
-  using (true);
+  using (public.is_current_user_admin());
 
 grant select on public.msmk_assessment_attempts to authenticated;
 
 -- 5. Convenience view for staff: overall course completion per learner ---
 
-create or replace view public.msmk_learner_summary as
+-- security_invoker: without this, the view would run with its owner's
+-- privileges (which bypass RLS) rather than the querying user's — meaning
+-- the underlying is_current_user_admin() check on msmk_access_codes /
+-- msmk_assessment_attempts wouldn't actually apply to this view.
+create or replace view public.msmk_learner_summary
+with (security_invoker = true) as
 select
   ac.code as access_code,
   ac.full_name,

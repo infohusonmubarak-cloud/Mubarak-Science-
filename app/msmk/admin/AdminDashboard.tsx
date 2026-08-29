@@ -152,6 +152,99 @@ function StandaloneCodeForm({ onIssued }: { onIssued: () => void }) {
   );
 }
 
+interface AdminRow {
+  id: string;
+  email: string;
+  full_name: string | null;
+  added_at: string;
+}
+
+function AdminsManager({ admins, onChanged }: { admins: AdminRow[]; onChanged: () => void }) {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function addAdmin() {
+    const client = getSupabaseBrowserClient();
+    if (!client || !email.trim()) return;
+    setBusy(true);
+    setError(null);
+    const { error: insertError } = await client
+      .from('admins')
+      .insert({ email: email.trim().toLowerCase(), full_name: name.trim() || null });
+    setBusy(false);
+    if (insertError) {
+      setError(insertError.message.includes('duplicate') ? 'That email is already an admin.' : 'Could not add admin.');
+      return;
+    }
+    setEmail('');
+    setName('');
+    onChanged();
+  }
+
+  async function removeAdmin(id: string) {
+    const client = getSupabaseBrowserClient();
+    if (!client) return;
+    if (admins.length <= 1) {
+      setError("Can't remove the last admin — add another one first.");
+      return;
+    }
+    await client.from('admins').delete().eq('id', id);
+    onChanged();
+  }
+
+  return (
+    <div className="rounded-xl border border-border bg-surface p-4">
+      <p className="text-sm text-foreground-muted">
+        Only emails listed here can sign in to <code className="font-mono">/admin</code> or{' '}
+        <code className="font-mono">/msmk/admin</code> — a Supabase account on its own is not enough. The account
+        still needs to be created in Supabase → Authentication → Users first (with the same email).
+      </p>
+      <div className="mt-3 flex flex-wrap items-end gap-2">
+        <label className="flex flex-col gap-1">
+          <span className="text-xs font-medium text-foreground-muted">Email</span>
+          <input
+            type="email"
+            placeholder="new-admin@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-56 rounded-lg border border-border bg-background px-2.5 py-1.5 text-sm text-foreground"
+          />
+        </label>
+        <label className="flex flex-col gap-1">
+          <span className="text-xs font-medium text-foreground-muted">Name (optional)</span>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-40 rounded-lg border border-border bg-background px-2.5 py-1.5 text-sm text-foreground"
+          />
+        </label>
+        <Button size="sm" onClick={addAdmin} disabled={busy || !email.trim()}>
+          {busy ? 'Adding…' : 'Add Admin'}
+        </Button>
+      </div>
+      {error && <p className="mt-2 text-xs font-medium text-danger">{error}</p>}
+
+      <ul className="mt-4 space-y-2">
+        {admins.map((a) => (
+          <li key={a.id} className="flex items-center justify-between gap-2 rounded-lg border border-border px-3 py-2 text-sm">
+            <span>
+              {a.email}
+              {a.full_name ? ` — ${a.full_name}` : ''}
+            </span>
+            <button type="button" onClick={() => removeAdmin(a.id)} className="text-xs font-medium text-danger underline">
+              Remove
+            </button>
+          </li>
+        ))}
+        {admins.length === 0 && <li className="text-sm text-foreground-muted">No admins yet.</li>}
+      </ul>
+    </div>
+  );
+}
+
 function RegistrationRow({ registration, onChanged }: { registration: Registration; onChanged: () => void }) {
   const [busy, setBusy] = useState(false);
 
@@ -199,6 +292,7 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
   const [filter, setFilter] = useState<StatusFilter>('pending');
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [learners, setLearners] = useState<LearnerSummaryRow[]>([]);
+  const [admins, setAdmins] = useState<AdminRow[]>([]);
   const [loading, setLoading] = useState(true);
   // Bumped to trigger a refetch — the fetch itself lives inline in the
   // effect below (a `.then()` callback, not a named function called
@@ -213,9 +307,11 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
     Promise.all([
       client.from('msmk_registrations').select('*').order('submitted_at', { ascending: false }),
       client.from('msmk_learner_summary').select('*').order('access_code', { ascending: true }),
-    ]).then(([{ data: regs }, { data: summary }]) => {
+      client.from('admins').select('*').order('added_at', { ascending: true }),
+    ]).then(([{ data: regs }, { data: summary }, { data: adminRows }]) => {
       setRegistrations((regs ?? []) as Registration[]);
       setLearners((summary ?? []) as LearnerSummaryRow[]);
+      setAdmins((adminRows ?? []) as AdminRow[]);
       setLoading(false);
     });
   }, [reloadToken]);
@@ -303,6 +399,13 @@ export function AdminDashboard({ onSignOut }: { onSignOut: () => void }) {
               )}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="font-[family-name:var(--font-display)] text-base font-bold text-foreground">Site Admins</h2>
+        <div className="mt-3">
+          <AdminsManager admins={admins} onChanged={refresh} />
         </div>
       </section>
     </div>
