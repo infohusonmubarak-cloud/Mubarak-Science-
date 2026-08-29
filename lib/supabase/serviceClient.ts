@@ -11,7 +11,7 @@
 // server-side, against the session cookie set at login.
 
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
-import type { Database } from '@/types/supabase-msmk';
+import type { Database } from '@/types/supabase';
 import { SUPABASE_SERVICE_ROLE_KEY, SUPABASE_URL, supabaseServiceConfigured } from './env';
 
 let cached: SupabaseClient<Database> | null = null;

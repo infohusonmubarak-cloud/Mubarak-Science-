@@ -15,7 +15,7 @@
 // → Authentication → Users, same as the sibling site.
 
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
-import type { Database } from '@/types/supabase-msmk';
+import type { Database } from '@/types/supabase';
 import { SUPABASE_ANON_KEY, SUPABASE_URL, supabasePublicConfigured } from './env';
 
 let cached: SupabaseClient<Database> | null = null;
