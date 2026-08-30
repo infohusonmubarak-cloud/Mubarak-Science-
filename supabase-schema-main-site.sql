@@ -43,22 +43,26 @@ create table if not exists public.subjects (
 
 alter table public.subjects enable row level security;
 
+drop policy if exists "anyone can read available subjects" on public.subjects;
 create policy "anyone can read available subjects"
   on public.subjects for select
   to anon, authenticated
   using (status = 'available' or public.is_current_user_admin());
 
+drop policy if exists "admins can manage subjects" on public.subjects;
 create policy "admins can manage subjects"
   on public.subjects for insert
   to authenticated
   with check (public.is_current_user_admin());
 
+drop policy if exists "admins can update subjects" on public.subjects;
 create policy "admins can update subjects"
   on public.subjects for update
   to authenticated
   using (public.is_current_user_admin())
   with check (public.is_current_user_admin());
 
+drop policy if exists "admins can delete subjects" on public.subjects;
 create policy "admins can delete subjects"
   on public.subjects for delete
   to authenticated
@@ -82,11 +86,13 @@ create table if not exists public.levels (
 
 alter table public.levels enable row level security;
 
+drop policy if exists "anyone can read available levels" on public.levels;
 create policy "anyone can read available levels"
   on public.levels for select
   to anon, authenticated
   using (status = 'available' or public.is_current_user_admin());
 
+drop policy if exists "admins can manage levels" on public.levels;
 create policy "admins can manage levels"
   on public.levels for all
   to authenticated
@@ -113,11 +119,13 @@ create index if not exists chapters_level_id_idx on public.chapters (level_id);
 
 alter table public.chapters enable row level security;
 
+drop policy if exists "anyone can read available chapters" on public.chapters;
 create policy "anyone can read available chapters"
   on public.chapters for select
   to anon, authenticated
   using (status = 'available' or public.is_current_user_admin());
 
+drop policy if exists "admins can manage chapters" on public.chapters;
 create policy "admins can manage chapters"
   on public.chapters for all
   to authenticated
@@ -142,6 +150,7 @@ create index if not exists topics_chapter_id_idx on public.topics (chapter_id);
 
 alter table public.topics enable row level security;
 
+drop policy if exists "anyone can read topics of available chapters" on public.topics;
 create policy "anyone can read topics of available chapters"
   on public.topics for select
   to anon, authenticated
@@ -150,6 +159,7 @@ create policy "anyone can read topics of available chapters"
     or exists (select 1 from public.chapters c where c.id = chapter_id and c.status = 'available')
   );
 
+drop policy if exists "admins can manage topics" on public.topics;
 create policy "admins can manage topics"
   on public.topics for all
   to authenticated
@@ -182,11 +192,13 @@ create index if not exists sections_topic_id_idx on public.sections (topic_id);
 
 alter table public.sections enable row level security;
 
+drop policy if exists "anyone can read available sections" on public.sections;
 create policy "anyone can read available sections"
   on public.sections for select
   to anon, authenticated
   using (status = 'available' or public.is_current_user_admin());
 
+drop policy if exists "admins can manage sections" on public.sections;
 create policy "admins can manage sections"
   on public.sections for all
   to authenticated
@@ -211,22 +223,26 @@ create table if not exists public.learners (
 
 alter table public.learners enable row level security;
 
+drop policy if exists "a learner can read their own row" on public.learners;
 create policy "a learner can read their own row"
   on public.learners for select
   to authenticated
   using (id = auth.uid() or public.is_current_user_admin());
 
+drop policy if exists "a learner can create their own row" on public.learners;
 create policy "a learner can create their own row"
   on public.learners for insert
   to authenticated
   with check (id = auth.uid());
 
+drop policy if exists "a learner can update their own row" on public.learners;
 create policy "a learner can update their own row"
   on public.learners for update
   to authenticated
   using (id = auth.uid() or public.is_current_user_admin())
   with check (id = auth.uid() or public.is_current_user_admin());
 
+drop policy if exists "admins can delete learners" on public.learners;
 create policy "admins can delete learners"
   on public.learners for delete
   to authenticated
@@ -247,12 +263,14 @@ create index if not exists progress_learner_id_idx on public.progress (learner_i
 
 alter table public.progress enable row level security;
 
+drop policy if exists "a learner can manage their own progress" on public.progress;
 create policy "a learner can manage their own progress"
   on public.progress for all
   to authenticated
   using (learner_id = auth.uid())
   with check (learner_id = auth.uid());
 
+drop policy if exists "admins can read all progress" on public.progress;
 create policy "admins can read all progress"
   on public.progress for select
   to authenticated
@@ -271,6 +289,7 @@ create table if not exists public.bookmarks (
 
 alter table public.bookmarks enable row level security;
 
+drop policy if exists "a learner can manage their own bookmarks" on public.bookmarks;
 create policy "a learner can manage their own bookmarks"
   on public.bookmarks for all
   to authenticated
@@ -300,11 +319,13 @@ create index if not exists assessment_attempts_chapter_id_idx on public.assessme
 
 alter table public.assessment_attempts enable row level security;
 
+drop policy if exists "a learner can record their own attempts" on public.assessment_attempts;
 create policy "a learner can record their own attempts"
   on public.assessment_attempts for insert
   to authenticated
   with check (learner_id = auth.uid());
 
+drop policy if exists "a learner can read their own attempts" on public.assessment_attempts;
 create policy "a learner can read their own attempts"
   on public.assessment_attempts for select
   to authenticated
@@ -333,22 +354,26 @@ create index if not exists feedback_status_idx on public.feedback (status);
 
 alter table public.feedback enable row level security;
 
+drop policy if exists "anyone can submit feedback" on public.feedback;
 create policy "anyone can submit feedback"
   on public.feedback for insert
   to anon, authenticated
   with check (true);
 
+drop policy if exists "admins can read feedback" on public.feedback;
 create policy "admins can read feedback"
   on public.feedback for select
   to authenticated
   using (public.is_current_user_admin());
 
+drop policy if exists "admins can update feedback" on public.feedback;
 create policy "admins can update feedback"
   on public.feedback for update
   to authenticated
   using (public.is_current_user_admin())
   with check (public.is_current_user_admin());
 
+drop policy if exists "admins can delete feedback" on public.feedback;
 create policy "admins can delete feedback"
   on public.feedback for delete
   to authenticated

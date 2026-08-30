@@ -51,11 +51,13 @@ grant execute on function public.is_current_user_admin() to authenticated, anon;
 alter table public.admins enable row level security;
 
 -- Only existing admins can see or manage the admin list itself.
+drop policy if exists "admins can view the admin list" on public.admins;
 create policy "admins can view the admin list"
   on public.admins for select
   to authenticated
   using (public.is_current_user_admin());
 
+drop policy if exists "admins can manage the admin list" on public.admins;
 create policy "admins can manage the admin list"
   on public.admins for all
   to authenticated

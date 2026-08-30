@@ -57,22 +57,26 @@ create table if not exists public.msmk_registrations (
 
 alter table public.msmk_registrations enable row level security;
 
+drop policy if exists "anon can submit a registration" on public.msmk_registrations;
 create policy "anon can submit a registration"
   on public.msmk_registrations for insert
   to anon
   with check (true);
 
+drop policy if exists "staff can review registrations" on public.msmk_registrations;
 create policy "staff can review registrations"
   on public.msmk_registrations for select
   to authenticated
   using (public.is_current_user_admin());
 
+drop policy if exists "staff can update registrations" on public.msmk_registrations;
 create policy "staff can update registrations"
   on public.msmk_registrations for update
   to authenticated
   using (public.is_current_user_admin())
   with check (public.is_current_user_admin());
 
+drop policy if exists "staff can delete registrations" on public.msmk_registrations;
 create policy "staff can delete registrations"
   on public.msmk_registrations for delete
   to authenticated
@@ -99,6 +103,7 @@ create index if not exists msmk_access_codes_email_idx on public.msmk_access_cod
 
 alter table public.msmk_access_codes enable row level security;
 
+drop policy if exists "staff can manage access codes" on public.msmk_access_codes;
 create policy "staff can manage access codes"
   on public.msmk_access_codes for all
   to authenticated
@@ -121,6 +126,7 @@ create table if not exists public.msmk_progress (
 
 alter table public.msmk_progress enable row level security;
 
+drop policy if exists "staff can view all progress" on public.msmk_progress;
 create policy "staff can view all progress"
   on public.msmk_progress for select
   to authenticated
@@ -145,6 +151,7 @@ create table if not exists public.msmk_assessment_attempts (
 
 alter table public.msmk_assessment_attempts enable row level security;
 
+drop policy if exists "staff can view all assessment attempts" on public.msmk_assessment_attempts;
 create policy "staff can view all assessment attempts"
   on public.msmk_assessment_attempts for select
   to authenticated
