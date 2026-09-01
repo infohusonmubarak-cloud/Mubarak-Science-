@@ -13,6 +13,8 @@ import { ChapterOutline } from '@/components/content/ChapterOutline';
 import { ChapterProgressBar } from '@/components/content/ChapterProgressBar';
 import { ComingSoonPanel } from '@/components/content/ComingSoonPanel';
 import { Button } from '@/components/ui/Button';
+import { PhetEmbed } from '@/components/simulations/PhetEmbed';
+import { getSimulationsForChapter } from '@/content/simulations';
 
 export const dynamicParams = false;
 
@@ -42,6 +44,7 @@ export default async function ChapterPage({
   if (!subject || !level || !chapter) notFound();
 
   const totalConcepts = getChapterConceptCount(chapter);
+  const simulations = getSimulationsForChapter(chapter.slug);
 
   return (
     <div className="space-y-6">
@@ -89,6 +92,15 @@ export default async function ChapterPage({
             topics={chapter.topics}
             linkable
           />
+
+          {simulations.length > 0 && (
+            <section className="space-y-4">
+              <h2 className="text-lg font-bold text-foreground">Try it yourself</h2>
+              {simulations.map((sim) => (
+                <PhetEmbed key={sim.id} simulation={sim} />
+              ))}
+            </section>
+          )}
         </>
       )}
 
