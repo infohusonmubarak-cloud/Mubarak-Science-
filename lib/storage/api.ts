@@ -37,3 +37,11 @@ export {
   recordAssessmentAttempt,
   subscribeAssessments,
 } from './assessments';
+
+export {
+  getQuestionHistory,
+  getQuestionHistoryServerSnapshot,
+  addQuestionToHistory,
+  clearQuestionHistory,
+  subscribeQuestionHistory,
+} from './questions';

@@ -3,6 +3,7 @@
 import { useMemo } from 'react';
 import { useBookmarks } from '@/hooks/useBookmarks';
 import { useProgress } from '@/hooks/useProgress';
+import { useQuestionHistory } from '@/hooks/useQuestionHistory';
 import {
   findChapterLocation,
   findFormula,
@@ -23,6 +24,7 @@ export default function DashboardPage() {
   // what was baked into the static HTML at build time.
   const { progress } = useProgress();
   const { bookmarks } = useBookmarks();
+  const { questions } = useQuestionHistory();
 
   const availableChapters = useMemo(() => {
     const chapters: { subjectSlug: string; levelSlug: string; chapterSlug: string; title: string; total: number }[] = [];
@@ -128,6 +130,28 @@ export default function DashboardPage() {
                 </Card>
               );
             })}
+          </div>
+        )}
+      </section>
+
+      <section>
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-lg font-semibold text-foreground">Recent Questions</h2>
+          <Button href="/ask" variant="ghost" size="sm">Ask a Question →</Button>
+        </div>
+        {questions.length === 0 ? (
+          <p className="text-sm text-foreground-muted">
+            Nothing asked yet — use <Button href="/ask" variant="ghost" size="sm">Ask a Question</Button> to get a
+            step-by-step worked answer to anything you&apos;re stuck on.
+          </p>
+        ) : (
+          <div className="space-y-2">
+            {questions.slice(0, 5).map((q) => (
+              <Card key={q.id} href="/ask" className="p-3.5">
+                <p className="text-xs font-medium uppercase tracking-wide text-brand">{q.subject}</p>
+                <p className="truncate text-sm font-medium text-foreground">{q.questionText || '(photo question)'}</p>
+              </Card>
+            ))}
           </div>
         )}
       </section>

@@ -58,3 +58,21 @@ export interface AssessmentState {
   /** Keyed by chapterSlug — only the latest attempt per chapter is kept. */
   attempts: Record<string, AssessmentAttempt>;
 }
+
+export type QASubject = 'mathematics' | 'physics' | 'chemistry' | 'biology';
+
+export interface QuestionHistoryEntry {
+  id: string;
+  subject: QASubject;
+  questionText: string;
+  hadImage: boolean;
+  answer: string;
+  chapterLink?: { subjectSlug: string; levelSlug: string; chapterSlug: string; title: string };
+  askedAt: string;
+}
+
+export interface QuestionsState {
+  schemaVersion: 1;
+  /** Most recent first. Capped at MAX_QUESTION_HISTORY in lib/storage/questions.ts. */
+  questions: QuestionHistoryEntry[];
+}

@@ -465,6 +465,10 @@ export interface Database {
         Args: Record<string, never>;
         Returns: boolean;
       };
+      increment_qa_rate_limit: {
+        Args: { key: string };
+        Returns: number;
+      };
     };
   };
 }
