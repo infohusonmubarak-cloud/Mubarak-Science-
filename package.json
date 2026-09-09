@@ -11,7 +11,9 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.122.0",
     "@supabase/supabase-js": "^2.112.4",
+    "@types/katex": "^0.16.8",
     "jspdf": "^4.2.1",
+    "katex": "^0.18.7",
     "next": "16.3.2",
     "react": "19.2.8",
     "react-dom": "19.2.8"
