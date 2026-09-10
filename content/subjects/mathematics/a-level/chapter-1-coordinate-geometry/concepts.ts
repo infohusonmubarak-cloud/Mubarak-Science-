@@ -746,6 +746,17 @@ export const chapter1Concepts: Record<string, Concept> = {
       'Recognizing parallel lines from their equations alone, without graphing, is a ' +
       'quick way to check whether two paths or edges will ever cross.',
     formulaSlug: 'slope-formula',
+    diagram: {
+      id: 'parallel-lines-ggb',
+      title: 'Two lines sharing one slope — always parallel',
+      altText: 'An interactive GeoGebra graph of two lines that share a common slope slider, showing that they stay parallel no matter how the slope or either y-intercept changes.',
+      component: 'GeoGebraEmbed',
+      interactive: true,
+      props: {
+        appName: 'graphing',
+        commands: ['m=Slider(-4,4,0.5)', 'c1=Slider(-6,6,0.5)', 'c2=Slider(-6,6,0.5)', 'f(x)=m x+c1', 'g(x)=m x+c2'],
+      },
+    },
     workedExample: {
       id: 'parallel-worked-1',
       title: 'Check whether two lines are parallel',

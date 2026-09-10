@@ -154,6 +154,17 @@ export const chapter6Concepts: Record<string, Concept> = {
       interactive: false,
       props: { kind: 'absolute-value', a: 0.5, h: 0, k: 0, min: -8, max: 8, showVertex: true },
     },
+    interactiveDiagram: {
+      id: 'effect-of-a-abs-ggb',
+      title: 'Drag the slider to change a yourself',
+      altText: 'An interactive GeoGebra graph of y = a|x| with a draggable slider for a, showing live how its sign and size change the V-shape.',
+      component: 'GeoGebraEmbed',
+      interactive: true,
+      props: {
+        appName: 'graphing',
+        commands: ['a=Slider(-3,3,0.1)', 'f(x)=a abs(x)'],
+      },
+    },
     workedExample: {
       id: 'effect-of-a-abs-worked-1',
       title: 'Compare two absolute value graphs',

@@ -15,6 +15,17 @@ export const chapter9BConcepts: Record<string, Concept> = {
     whyItMatters:
       'Recognizing which real-world quantities need a direction (vectors) and which don\'t (scalars) ' +
       'is the essential first step before doing any vector mathematics.',
+    diagram: {
+      id: 'scalar-vector-ggb',
+      title: 'Drag the point — see magnitude and direction together',
+      altText: 'An interactive GeoGebra construction of a vector arrow from the origin to a draggable point, showing that a vector carries both a length (magnitude) and a direction, unlike a plain number.',
+      component: 'GeoGebraEmbed',
+      interactive: true,
+      props: {
+        appName: 'geometry',
+        commands: ['O=(0,0)', 'P=(4,3)', 'v=Vector(O,P)'],
+      },
+    },
     workedExample: {
       id: 'scalar-vector-worked-1',
       title: 'Classify a quantity as a scalar or a vector',

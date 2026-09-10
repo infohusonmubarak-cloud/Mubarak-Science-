@@ -8,6 +8,7 @@ import { MoleculeDiagram } from './MoleculeDiagram';
 import { CircularMotionDiagram } from './CircularMotionDiagram';
 import { FunctionGraph } from './FunctionGraph';
 import { GeometryDiagram } from './GeometryDiagram';
+import { GeoGebraEmbed } from './GeoGebraEmbed';
 
 // Maps a `Diagram.component` key to its implementation. Adding a new
 // diagram type later is additive: write the component, add one line here,
@@ -22,4 +23,5 @@ export const diagramRegistry: Record<DiagramComponentKey, ComponentType<any>> = 
   CircularMotionDiagram,
   FunctionGraph,
   GeometryDiagram,
+  GeoGebraEmbed,
 };

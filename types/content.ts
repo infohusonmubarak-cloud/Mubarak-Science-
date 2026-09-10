@@ -65,6 +65,10 @@ export interface Concept extends ConceptSummary {
   simpleExplanation: string;
   whyItMatters: string;
   diagram?: Diagram;
+  /** A second, optional live/manipulable diagram (e.g. a GeoGebra applet) shown
+   *  alongside `diagram` — additive, for concepts where a static illustration
+   *  already exists but hands-on exploration adds genuine value. */
+  interactiveDiagram?: Diagram;
   formulaSlug?: string;
   workedExample?: WorkedExample;
   whyItWorks: string;
@@ -99,7 +103,8 @@ export type DiagramComponentKey =
   | 'MoleculeDiagram'
   | 'CircularMotionDiagram'
   | 'FunctionGraph'
-  | 'GeometryDiagram';
+  | 'GeometryDiagram'
+  | 'GeoGebraEmbed';
 
 export interface Diagram {
   id: string;
