@@ -15,6 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SECONDARY_NAV_ITEMS: NavItem[] = [
+  { href: '/calculator', label: 'Calculator', icon: '🧮' },
   { href: '/ask', label: 'Ask a Question', icon: '💬' },
   { href: '/simulations', label: 'Simulations', icon: '🔬' },
   { href: '/teacher-guide', label: 'Teacher Guide', icon: '🧑‍🏫' },
