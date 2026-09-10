@@ -1,11 +1,13 @@
 // Hand-written mirror of supabase-schema-admin-access.sql,
-// supabase-schema-msmk.sql, and supabase-schema-main-site.sql — gives
-// supabase-js real row types instead of `never` (its default when no
-// Database generic is passed to createClient). Keep this in sync by hand
-// whenever a SQL schema file changes; there's no CLI codegen step in this
-// project. One shared Database type for the whole project (MSMK + main
-// site) since both sets of tables live in the same `public` schema of the
-// same Supabase project.
+// supabase-schema-msmk.sql, supabase-schema-main-site.sql, and
+// supabase-schema-chemistry-cache.sql — gives supabase-js real row types
+// instead of `never` (its default when no Database generic is passed to
+// createClient). Keep this in sync by hand whenever a SQL schema file
+// changes; there's no CLI codegen step in this project. One shared
+// Database type for the whole project (MSMK + main site) since both sets
+// of tables live in the same `public` schema of the same Supabase project.
+
+export type Json = string | number | boolean | null | { [key: string]: Json } | Json[];
 
 export interface Database {
   public: {
@@ -456,6 +458,27 @@ export interface Database {
           question_id: string | null;
           wrong_count: number;
           total_attempts: number;
+        };
+        Relationships: [];
+      };
+      chemistry_cache: {
+        Row: {
+          query_key: string;
+          cid: number | null;
+          data: Json;
+          fetched_at: string;
+        };
+        Insert: {
+          query_key: string;
+          cid?: number | null;
+          data: Json;
+          fetched_at?: string;
+        };
+        Update: {
+          query_key?: string;
+          cid?: number | null;
+          data?: Json;
+          fetched_at?: string;
         };
         Relationships: [];
       };
