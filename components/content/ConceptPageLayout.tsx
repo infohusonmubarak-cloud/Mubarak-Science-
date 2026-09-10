@@ -54,6 +54,12 @@ export function ConceptPageLayout({ concept, formula, chapterSlug }: ConceptPage
         </Section>
       ) : null}
 
+      {concept.interactiveDiagram ? (
+        <Section title="Explore It Yourself">
+          <DiagramContainer diagram={concept.interactiveDiagram} />
+        </Section>
+      ) : null}
+
       {formula ? (
         <Section title="Formula">
           <FormulaCard formula={formula} chapterSlug={chapterSlug} />

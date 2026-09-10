@@ -33,6 +33,25 @@ export const chapter10Concepts: Record<string, Concept> = {
         arcs: [{ cx: 0, cy: 0, r: 1.5, startDeg: 0, endDeg: 40, label: 'θ' }],
       },
     },
+    interactiveDiagram: {
+      id: 'standard-position-ggb',
+      title: 'Drag the slider to sweep the angle around',
+      altText: 'An interactive GeoGebra construction of an angle in standard position, with a draggable slider that rotates the terminal side around the origin.',
+      component: 'GeoGebraEmbed',
+      interactive: true,
+      props: {
+        appName: 'geometry',
+        commands: [
+          'O=(0,0)',
+          'A=(3,0)',
+          'theta=Slider(-360°,360°,1°)',
+          'B=Rotate(A,theta,O)',
+          'Segment(O,A)',
+          'Segment(O,B)',
+          'Angle(A,O,B)',
+        ],
+      },
+    },
     formulaSlug: 'coterminal-angles-formula',
     workedExample: {
       id: 'standard-position-worked-1',

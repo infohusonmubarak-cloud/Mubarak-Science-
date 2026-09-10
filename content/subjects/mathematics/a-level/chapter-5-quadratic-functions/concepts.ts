@@ -346,6 +346,17 @@ export const chapter5Concepts: Record<string, Concept> = {
       'Not every quadratic factors nicely — the quadratic formula is the universal method that ' +
       'solves every quadratic equation, guaranteed, using only the coefficients.',
     formulaSlug: 'quadratic-formula',
+    diagram: {
+      id: 'quadratic-formula-ggb',
+      title: 'Watch the roots move as a, b, c change',
+      altText: 'An interactive GeoGebra graph of y = ax² + bx + c with draggable sliders for a, b, and c, showing how the parabola and its x-intercepts (the roots the formula finds) change.',
+      component: 'GeoGebraEmbed',
+      interactive: true,
+      props: {
+        appName: 'graphing',
+        commands: ['a=Slider(-3,3,0.1)', 'b=Slider(-8,8,0.5)', 'c=Slider(-8,8,0.5)', 'f(x)=a x^2+b x+c'],
+      },
+    },
     workedExample: {
       id: 'quadratic-formula-worked-1',
       title: 'Solve using the quadratic formula',
